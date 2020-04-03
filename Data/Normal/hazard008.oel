@@ -1,0 +1,101 @@
+<level width="160" height="272">
+  <Layout exportMode="Rectangles">
+    <rect x="0" y="48" w="32" h="32" />
+    <rect x="0" y="208" w="32" h="32" />
+    <rect x="32" y="128" w="32" h="32" />
+    <rect x="64" y="32" w="32" h="32" />
+    <rect x="64" y="224" w="32" h="32" />
+    <rect x="96" y="128" w="32" h="32" />
+    <rect x="128" y="48" w="32" h="32" />
+    <rect x="128" y="208" w="32" h="32" />
+  </Layout>
+  <Background exportMode="Bitstring">0000110000
+0001111000
+0001001000
+0001001000
+0011001100
+0011001100
+0011001100
+0111001110
+0100000010
+1100000011
+1100000011
+1100000011
+1110000111
+0010000100
+0011001100
+0111001110
+0100000010</Background>
+  <Foreground exportMode="Bitstring">0000000000
+0000000000
+0000110000
+1100110011
+1100000010
+1000000000
+0000000000
+0000000000
+0011001100
+0011001100
+0000000000
+0000000000
+0000000000
+1100000011
+1100110011
+1000110001
+0000000000</Foreground>
+  <UpDoodad exportMode="Bitstring">0000000000
+0000110000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+1100000011
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad>
+  <DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000110001
+0100000010
+1000000000
+0000000000
+0000000000
+0000000000
+0011001100
+0000000000
+0000000000
+0000000000
+0000000000
+0100000010
+1000110001</DownDoodad>
+  <Geometry tileset="Zones" exportMode="XMLCoords" />
+  <Doodads tileset="Zones" exportMode="XMLCoords" />
+  <Platforms />
+  <Props>
+    <Light id="0" x="48" y="16" />
+    <Light id="1" x="96" y="16" />
+    <Light id="2" x="128" y="112" />
+    <Light id="3" x="16" y="112" />
+    <Light id="4" x="32" y="192" />
+    <Light id="5" x="112" y="192" />
+  </Props>
+  <Triggers />
+  <Items />
+  <Hazards>
+    <SpikeTrap id="0" x="0" y="32" width="32" height="16" />
+    <SpikeTrap id="1" x="32" y="112" width="32" height="16" />
+    <SpikeTrap id="2" x="96" y="112" width="32" height="16" />
+    <SpikeTrap id="3" x="128" y="32" width="32" height="16" />
+    <SpikeTrap id="4" x="64" y="208" width="32" height="16" />
+  </Hazards>
+  <Monsters />
+</level>

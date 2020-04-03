@@ -1,0 +1,5 @@
+{
+   SpriteSheetLocation: "C:\\Users\\noume\\Documents\\Code\\Abyss\\Art Assets\\spritesheets.txt",
+   AtlasLocation: "C:\\Users\\noume\\Documents\\Code\\Abyss\\Projects\\Abyss.Content.Mono\\Abyss.Content.Mono\\Abyss.Content.MonoContent\\Data\\spriteatlas.xml",
+   AtlasKeys: ["gameplay", "interface", "debug"]
+}

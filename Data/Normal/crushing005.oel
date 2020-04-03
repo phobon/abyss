@@ -1,0 +1,110 @@
+<level width="160" height="272">
+  <Layout exportMode="Rectangles">
+    <rect x="48" y="128" w="64" h="16" />
+    <rect x="64" y="48" w="32" h="16" />
+    <rect x="64" y="208" w="32" h="16" />
+  </Layout>
+  <Background exportMode="Bitstring">0000000000
+0000010000
+0000111000
+0000001000
+0000011000
+0000010000
+0011010000
+0011111000
+0110000000
+0111000000
+0001100000
+0000000000
+0000100000
+0000000000
+0000110000
+0000010000
+0000000000</Background>
+  <Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000110000
+0000000000
+0000000000
+0000000000
+0000000000
+0001111000
+0000110000
+0000000000
+0000000000
+0000000000
+0000110000
+0000000000
+0000000000
+0000000000</Foreground>
+  <UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000110000
+0000000000
+0000000000
+0000000000
+0000000000
+0001111000
+0000000000
+0000000000
+0000000000
+0000000000
+0000110000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad>
+  <DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000110000
+0000000000
+0000000000
+0000000000
+0000000000
+0001001000
+0000110000
+0000000000
+0000000000
+0000000000
+0000110000
+0000000000
+0000000000</DownDoodad>
+  <Geometry tileset="Zones" exportMode="XMLCoords">
+    <tile x="3" y="8" tx="0" ty="0" />
+    <tile x="4" y="3" tx="0" ty="0" />
+    <tile x="4" y="8" tx="0" ty="0" />
+    <tile x="4" y="13" tx="0" ty="0" />
+    <tile x="5" y="3" tx="0" ty="0" />
+    <tile x="5" y="8" tx="0" ty="0" />
+    <tile x="5" y="13" tx="0" ty="0" />
+    <tile x="6" y="8" tx="0" ty="0" />
+  </Geometry>
+  <Doodads tileset="Zones" exportMode="XMLCoords" />
+  <Platforms>
+    <Crushing id="0" x="96" y="48" width="16" height="16">
+      <node x="144" y="48" />
+    </Crushing>
+    <Crushing id="1" x="96" y="208" width="16" height="16">
+      <node x="144" y="208" />
+    </Crushing>
+    <Crushing id="2" x="48" y="208" width="16" height="16">
+      <node x="0" y="208" />
+    </Crushing>
+    <Crushing id="3" x="48" y="48" width="16" height="16">
+      <node x="0" y="48" />
+    </Crushing>
+  </Platforms>
+  <Props>
+    <Light id="0" x="80" y="32" />
+    <Light id="1" x="48" y="112" />
+    <Light id="2" x="96" y="112" />
+    <Light id="3" x="64" y="192" />
+  </Props>
+  <Triggers />
+  <Items />
+  <Hazards />
+  <Monsters />
+</level>

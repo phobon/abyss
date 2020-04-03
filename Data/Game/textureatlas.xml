@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Textures>
+  <Texture id="Logo" location="Graphics/logo"/>
+  <Texture id="Debug" location="Graphics/debug"/>
+  <Texture id="UI" location="Graphics/Sprites/UI/ui"/>
+  <Texture id="UIParts" location="Graphics/Sprites/UI/uiparts"/>
+  <Texture id="HeartGlyph" location="Graphics/Sprites/UI/heartglyph"/>
+  <Texture id="RiftGlyph" location="Graphics/Sprites/UI/riftglyph"/>
+  <Texture id="DimensionIndicator" location="Graphics/Sprites/UI/dimensionindicatorui"/>
+  <Texture id="ScoreUI" location="Graphics/Sprites/UI/scoreui"/>
+  <Texture id="PhaseNameUI" location="Graphics/Sprites/UI/phasenameui"/>
+  <Texture id="Player" location="Graphics/Sprites/Tiles/Player"/>
+  <Texture id="Props" location="Graphics/Sprites/Tiles/Props"/>
+  <Texture id="Monsters" location="Graphics/Sprites/Tiles/Monsters"/>
+  <Texture id="Zones" location="Graphics/Sprites/Tiles/Zones"/>
+  <Texture id="Doodads" location="Graphics/Sprites/Tiles/doodads"/>
+  <Texture id="Items" location="Graphics/Sprites/Tiles/Items"/>
+  <Texture id="NormalBackground" location="Graphics/Sprites/Backgrounds/Zones/normal"/>
+  <Texture id="Platforms" location="Graphics/Sprites/Tiles/platforms"/>
+  <Texture id="Particles" location="Graphics/Sprites/Tiles/particles"/>
+</Textures>

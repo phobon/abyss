@@ -1,0 +1,1132 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Chunks><Chunk type="crumbling"><Layout exportMode="Rectangles" /><Geometry tileset="Zones" exportMode="XMLCoords" /><Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background><Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground><UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad><DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad><Doodads tileset="Zones" exportMode="XMLCoords" /><Platforms /><Props /><Triggers /><Items /><Hazards /><Monsters>
+  <Crumbling id="0" x="48" y="80" width="64" height="16" />
+  <Crumbling id="1" x="48" y="112" width="64" height="16" />
+  <Crumbling id="2" x="48" y="144" width="64" height="16" />
+</Monsters></Chunk><Chunk type="crusher"><Layout exportMode="Rectangles">
+  <rect x="32" y="64" w="32" h="16" />
+  <rect x="32" y="192" w="96" h="16" />
+  <rect x="96" y="64" w="32" h="16" />
+</Layout><Geometry tileset="Zones" exportMode="XMLCoords">
+  <tile x="2" y="4" tx="6" ty="2" />
+  <tile x="2" y="12" tx="6" ty="1" />
+  <tile x="3" y="4" tx="7" ty="2" />
+  <tile x="3" y="12" tx="7" ty="1" />
+  <tile x="4" y="12" tx="8" ty="1" />
+  <tile x="5" y="12" tx="3" ty="1" />
+  <tile x="6" y="4" tx="4" ty="2" />
+  <tile x="6" y="12" tx="0" ty="2" />
+  <tile x="7" y="4" tx="5" ty="2" />
+  <tile x="7" y="12" tx="1" ty="2" />
+</Geometry><Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background><Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground><UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad><DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad><Doodads tileset="Zones" exportMode="XMLCoords" /><Platforms /><Props /><Triggers /><Items /><Hazards /><Monsters>
+  <Crusher id="0" x="32" y="80" width="16" height="16">
+    <node x="32" y="176" />
+  </Crusher>
+  <Crusher id="1" x="112" y="80" width="16" height="16">
+    <node x="112" y="176" />
+  </Crusher>
+</Monsters></Chunk><Chunk type="crusher"><Layout exportMode="Rectangles">
+  <rect x="48" y="48" w="16" h="16" />
+  <rect x="48" y="208" w="16" h="16" />
+  <rect x="64" y="128" w="32" h="16" />
+  <rect x="96" y="48" w="16" h="16" />
+  <rect x="96" y="208" w="16" h="16" />
+</Layout><Geometry tileset="Zones" exportMode="XMLCoords">
+  <tile x="3" y="3" tx="4" ty="1" />
+  <tile x="3" y="13" tx="5" ty="1" />
+  <tile x="4" y="8" tx="6" ty="2" />
+  <tile x="5" y="8" tx="7" ty="2" />
+  <tile x="6" y="3" tx="6" ty="1" />
+  <tile x="6" y="13" tx="9" ty="1" />
+</Geometry><Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background><Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground><UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad><DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad><Doodads tileset="Zones" exportMode="XMLCoords" /><Platforms>
+  <Crusher id="0" x="32" y="48" width="16" height="16">
+    <node x="0" y="48" />
+  </Crusher>
+  <Crusher id="1" x="112" y="48" width="16" height="16">
+    <node x="144" y="48" />
+  </Crusher>
+  <Crusher id="4" x="112" y="208" width="16" height="16">
+    <node x="144" y="208" />
+  </Crusher>
+  <Crusher id="5" x="32" y="208" width="16" height="16">
+    <node x="0" y="208" />
+  </Crusher>
+</Platforms><Props /><Triggers /><Items /><Hazards /><Monsters /></Chunk><Chunk type="doodads"><Layout exportMode="Rectangles" /><Geometry tileset="Zones" exportMode="XMLCoords">
+  <tile x="2" y="11" tx="6" ty="2" />
+  <tile x="3" y="11" tx="7" ty="2" />
+  <tile x="4" y="11" tx="4" ty="3" />
+  <tile x="5" y="11" tx="5" ty="3" />
+  <tile x="6" y="11" tx="6" ty="3" />
+  <tile x="7" y="11" tx="7" ty="3" />
+</Geometry><Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background><Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground><UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad><DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad><Doodads tileset="Doodads" exportMode="XMLCoords">
+  <tile x="3" y="11" tx="12" ty="3" />
+  <tile x="3" y="12" tx="12" ty="3" />
+  <tile x="3" y="13" tx="12" ty="3" />
+  <tile x="3" y="14" tx="12" ty="3" />
+  <tile x="3" y="15" tx="12" ty="3" />
+</Doodads><Platforms /><Props /><Triggers /><Items /><Hazards /><Monsters /></Chunk><Chunk type="icy"><Layout exportMode="Rectangles" /><Geometry tileset="Zones" exportMode="XMLCoords">
+  <tile x="0" y="10" tx="2" ty="1" />
+  <tile x="1" y="10" tx="3" ty="1" />
+  <tile x="2" y="6" tx="2" ty="1" />
+  <tile x="2" y="10" tx="4" ty="1" />
+  <tile x="3" y="6" tx="3" ty="1" />
+  <tile x="4" y="6" tx="4" ty="1" />
+  <tile x="5" y="6" tx="5" ty="1" />
+  <tile x="6" y="6" tx="6" ty="1" />
+  <tile x="7" y="6" tx="7" ty="1" />
+  <tile x="7" y="10" tx="2" ty="1" />
+  <tile x="8" y="10" tx="3" ty="1" />
+  <tile x="9" y="10" tx="4" ty="1" />
+</Geometry><Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background><Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground><UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad><DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad><Doodads tileset="Zones" exportMode="XMLCoords" /><Platforms>
+  <Icy id="0" x="32" y="96" width="96" height="16" />
+  <Icy id="1" x="0" y="160" width="48" height="16" />
+  <Icy id="2" x="112" y="160" width="48" height="16" />
+</Platforms><Props /><Triggers /><Items /><Hazards /><Monsters /></Chunk><Chunk type="key"><Layout exportMode="Rectangles">
+  <rect x="0" y="144" w="32" h="16" />
+  <rect x="0" y="208" w="48" h="16" />
+  <rect x="32" y="80" w="32" h="16" />
+  <rect x="96" y="80" w="32" h="16" />
+  <rect x="112" y="208" w="48" h="16" />
+  <rect x="128" y="144" w="32" h="16" />
+</Layout><Geometry tileset="Zones" exportMode="XMLCoords">
+  <tile x="0" y="9" tx="4" ty="3" />
+  <tile x="0" y="13" tx="6" ty="1" />
+  <tile x="1" y="9" tx="5" ty="3" />
+  <tile x="1" y="13" tx="8" ty="1" />
+  <tile x="2" y="5" tx="6" ty="2" />
+  <tile x="2" y="13" tx="9" ty="1" />
+  <tile x="3" y="5" tx="7" ty="2" />
+  <tile x="6" y="5" tx="4" ty="1" />
+  <tile x="7" y="5" tx="6" ty="1" />
+  <tile x="7" y="13" tx="5" ty="1" />
+  <tile x="8" y="9" tx="5" ty="1" />
+  <tile x="8" y="13" tx="6" ty="1" />
+  <tile x="9" y="9" tx="6" ty="1" />
+  <tile x="9" y="13" tx="4" ty="1" />
+</Geometry><Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background><Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground><UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad><DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad><Doodads tileset="Zones" exportMode="XMLCoords" /><Platforms>
+  <Key id="0" x="64" y="80" width="32" height="16" />
+  <Key id="1" x="32" y="144" width="32" height="16" />
+  <Key id="2" x="96" y="144" width="32" height="16" />
+  <Gate id="3" x="48" y="208" width="64" height="16" Warp="0" />
+</Platforms><Props /><Triggers /><Items /><Hazards /><Monsters /></Chunk><Chunk type="monsters"><Layout exportMode="Rectangles">
+  <rect x="16" y="112" w="48" h="16" />
+  <rect x="16" y="192" w="128" h="16" />
+  <rect x="32" y="48" w="32" h="16" />
+  <rect x="96" y="48" w="32" h="16" />
+  <rect x="96" y="112" w="48" h="16" />
+</Layout><Geometry tileset="Zones" exportMode="XMLCoords">
+  <tile x="1" y="7" tx="8" ty="1" />
+  <tile x="1" y="12" tx="4" ty="2" />
+  <tile x="2" y="3" tx="4" ty="1" />
+  <tile x="2" y="7" tx="4" ty="2" />
+  <tile x="2" y="12" tx="5" ty="2" />
+  <tile x="3" y="3" tx="5" ty="1" />
+  <tile x="3" y="7" tx="5" ty="2" />
+  <tile x="3" y="12" tx="4" ty="2" />
+  <tile x="4" y="12" tx="5" ty="2" />
+  <tile x="5" y="12" tx="4" ty="2" />
+  <tile x="6" y="3" tx="4" ty="1" />
+  <tile x="6" y="7" tx="4" ty="2" />
+  <tile x="6" y="12" tx="5" ty="2" />
+  <tile x="7" y="3" tx="5" ty="1" />
+  <tile x="7" y="7" tx="5" ty="2" />
+  <tile x="7" y="12" tx="4" ty="2" />
+  <tile x="8" y="7" tx="8" ty="1" />
+  <tile x="8" y="12" tx="5" ty="2" />
+</Geometry><Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background><Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground><UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad><DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad><Doodads tileset="Zones" exportMode="XMLCoords" /><Platforms /><Props /><Triggers /><Items /><Hazards /><Monsters>
+  <Floater id="0" x="48" y="16" />
+  <Idler id="1" x="48" y="176" />
+  <Jumper id="2" x="16" y="176" />
+  <Flyer id="3" x="144" y="224">
+    <node x="0" y="224" />
+  </Flyer>
+  <Walker id="4" x="128" y="96">
+    <node x="96" y="96" />
+  </Walker>
+  <Faller id="5" x="128" y="128">
+    <node x="128" y="176" />
+  </Faller>
+  <Shooter id="6" x="96" y="176" />
+  <Stalker id="7" x="144" y="0" />
+  <Crawler id="8" x="16" y="96">
+    <node x="0" y="96" />
+    <node x="0" y="128" />
+    <node x="64" y="128" />
+    <node x="64" y="96" />
+    <node x="16" y="96" />
+  </Crawler>
+</Monsters></Chunk><Chunk type="moving"><Layout exportMode="Rectangles">
+  <rect x="64" y="144" w="32" h="16" />
+</Layout><Geometry tileset="Zones" exportMode="XMLCoords">
+  <tile x="4" y="9" tx="6" ty="2" />
+  <tile x="5" y="9" tx="7" ty="2" />
+</Geometry><Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background><Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground><UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad><DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad><Doodads tileset="Zones" exportMode="XMLCoords" /><Platforms>
+  <Moving id="0" x="32" y="80" width="32" height="16">
+    <node x="96" y="80" />
+  </Moving>
+  <Moving id="1" x="96" y="208" width="32" height="16">
+    <node x="32" y="208" />
+  </Moving>
+</Platforms><Props /><Triggers /><Items /><Hazards /><Monsters /></Chunk><Chunk type="moving"><Layout exportMode="Rectangles" /><Geometry tileset="Zones" exportMode="XMLCoords" /><Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background><Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground><UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad><DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad><Doodads tileset="Zones" exportMode="XMLCoords" /><Platforms>
+  <Moving id="0" x="48" y="32" width="64" height="16">
+    <node x="48" y="208" />
+  </Moving>
+</Platforms><Props /><Triggers /><Items /><Hazards /><Monsters /></Chunk><Chunk type="shop"><Layout exportMode="Rectangles">
+  <rect x="16" y="112" w="128" h="16" />
+</Layout><Geometry tileset="Zones" exportMode="XMLCoords">
+  <tile x="1" y="7" tx="0" ty="1" />
+  <tile x="2" y="7" tx="1" ty="1" />
+  <tile x="3" y="7" tx="2" ty="1" />
+  <tile x="4" y="7" tx="3" ty="1" />
+  <tile x="5" y="7" tx="4" ty="1" />
+  <tile x="6" y="7" tx="5" ty="1" />
+  <tile x="7" y="7" tx="6" ty="1" />
+  <tile x="8" y="7" tx="7" ty="1" />
+</Geometry><Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background><Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground><UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad><DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad><Doodads tileset="Zones" exportMode="XMLCoords" /><Platforms /><Props>
+  <PurchasableItem id="0" x="48" y="96" />
+  <PurchasableItem id="1" x="64" y="96" />
+  <PurchasableItem id="2" x="80" y="96" />
+</Props><Triggers /><Items /><Hazards /><Monsters /></Chunk><Chunk type="springy"><Layout exportMode="Rectangles">
+  <rect x="32" y="208" w="32" h="16" />
+  <rect x="96" y="208" w="32" h="16" />
+</Layout><Geometry tileset="Zones" exportMode="XMLCoords">
+  <tile x="2" y="13" tx="6" ty="1" />
+  <tile x="3" y="13" tx="3" ty="1" />
+  <tile x="6" y="13" tx="6" ty="2" />
+  <tile x="7" y="13" tx="7" ty="2" />
+</Geometry><Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background><Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground><UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad><DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad><Doodads tileset="Zones" exportMode="XMLCoords" /><Platforms>
+  <Springy id="0" x="64" y="208" width="32" height="16" />
+  <Springy id="1" x="32" y="144" width="32" height="16" />
+  <Springy id="2" x="96" y="144" width="32" height="16" />
+</Platforms><Props /><Triggers /><Items /><Hazards /><Monsters /></Chunk><Chunk type="treasure"><Layout exportMode="Rectangles">
+  <rect x="48" y="128" w="64" h="16" />
+</Layout><Geometry tileset="Zones" exportMode="XMLCoords">
+  <tile x="3" y="8" tx="2" ty="1" />
+  <tile x="4" y="8" tx="8" ty="1" />
+  <tile x="5" y="8" tx="6" ty="2" />
+  <tile x="6" y="8" tx="7" ty="2" />
+</Geometry><Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background><Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground><UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad><DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad><Doodads tileset="Zones" exportMode="XMLCoords" /><Platforms /><Props>
+  <TreasureChest id="0" x="48" y="112" />
+  <TreasureChest id="1" x="64" y="112" />
+  <TreasureChest id="2" x="80" y="112" />
+  <TreasureChest id="3" x="96" y="112" />
+</Props><Triggers /><Items /><Hazards /><Monsters /></Chunk><Chunk type="unstable"><Layout exportMode="Rectangles">
+  <rect x="48" y="160" w="64" h="16" />
+</Layout><Geometry tileset="Zones" exportMode="XMLCoords">
+  <tile x="3" y="10" tx="4" ty="2" />
+  <tile x="4" y="10" tx="5" ty="2" />
+  <tile x="5" y="10" tx="6" ty="2" />
+  <tile x="6" y="10" tx="7" ty="2" />
+</Geometry><Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background><Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground><UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad><DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad><Doodads tileset="Zones" exportMode="XMLCoords" /><Platforms>
+  <Volatile id="0" x="48" y="96" width="64" height="16" />
+</Platforms><Props /><Triggers /><Items /><Hazards /><Monsters /></Chunk><Chunk type="walker"><Layout exportMode="Rectangles" /><Geometry tileset="Zones" exportMode="XMLCoords">
+  <tile x="0" y="11" tx="6" ty="1" />
+  <tile x="1" y="11" tx="6" ty="1" />
+  <tile x="2" y="11" tx="6" ty="1" />
+  <tile x="3" y="11" tx="6" ty="1" />
+  <tile x="4" y="11" tx="6" ty="1" />
+  <tile x="5" y="11" tx="6" ty="1" />
+  <tile x="6" y="11" tx="6" ty="1" />
+  <tile x="7" y="11" tx="6" ty="1" />
+  <tile x="8" y="11" tx="6" ty="1" />
+  <tile x="9" y="11" tx="6" ty="1" />
+</Geometry><Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background><Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground><UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad><DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad><Doodads tileset="Zones" exportMode="XMLCoords" /><Platforms /><Props /><Triggers /><Items /><Hazards /><Monsters>
+  <Walker id="0" x="512" y="640">
+    <node x="320" y="640" />
+  </Walker>
+</Monsters></Chunk></Chunks>

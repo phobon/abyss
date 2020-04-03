@@ -1,0 +1,145 @@
+﻿<UserControl 
+    x:Class="Atlasser.Views.LoadDataView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Colours.xaml" />
+                <ResourceDictionary Source="../Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Row="0"
+            Margin="25">
+            <TextBlock 
+                Text="data location"
+                Style="{StaticResource ExtraLargeHeaderStyle}"/>
+
+            <StackPanel 
+                Orientation="Horizontal"
+                HorizontalAlignment="Left"
+                Margin="0 25 0 0">
+                <TextBox 
+                    Text="{Binding DataLocation}" 
+                    IsReadOnly="True"
+                    Width="350"/>
+                <Button 
+                    Style="{StaticResource BlockButtonStyle}"
+                    Content="..."
+                    Click="FilePickerOnClick"
+                    Margin="10 0 0 0"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Grid 
+            Grid.Row="1"
+            Margin="25 0 25 25">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBlock 
+                    Text="spritesheet location"
+                    Style="{StaticResource LargeHeaderStyle}"/>
+
+                <StackPanel 
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    Margin="0 15 0 0">
+                    <TextBox 
+                        Text="{Binding SpriteSheetLocation}" 
+                        IsReadOnly="True"
+                        Width="350"/>
+                    <Button 
+                        Style="{StaticResource BlockButtonStyle}"
+                        Content="..."
+                        Click="SpritesheetLocationOnClick"
+                        Margin="10 0 0 0"/>
+                </StackPanel>
+
+                <TextBlock 
+                    Margin="0 25 0 0"
+                    Text="atlas location"
+                    Style="{StaticResource LargeHeaderStyle}"/>
+
+                <StackPanel 
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    Margin="0 15 0 0">
+                    <TextBox 
+                        Text="{Binding AtlasLocation}" 
+                        IsReadOnly="True"
+                        Width="350"/>
+                    <Button 
+                        Style="{StaticResource BlockButtonStyle}"
+                        Content="..."
+                        Click="AtlasLocationOnClick"
+                        Margin="10 0 0 0"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <StackPanel 
+                Grid.Column="1"
+                Margin="25 0 0 0">
+                <TextBlock 
+                    Text="atlas keys"
+                    Style="{StaticResource LargeHeaderStyle}"/>
+
+                <StackPanel 
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    Margin="0 15 0 0">
+                    <TextBox 
+                        x:Name="atlasKeyTextBox"
+                        Width="350"/>
+                    <Button 
+                        Style="{StaticResource BlockButtonStyle}"
+                        Content="add key"
+                        Click="AddAtlasKeyOnClick"
+                        Margin="10 0 0 0"/>
+                </StackPanel>
+
+                <Border
+                    Margin="0 10 0 0"
+                    Padding="15"
+                    Background="White">
+                    <ItemsControl ItemsSource="{Binding Parent.SpriteSheetPresenter.AtlasKeys}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel 
+                                    Orientation="Horizontal"
+                                    Margin="0 0 0 5">
+                                    <Button Click="DeleteAtlasKeyOnClick">
+                                        <Button.Style>
+                                            <Style TargetType="Button" BasedOn="{StaticResource CloseButtonStyle}">
+                                                <Setter Property="Background" Value="{StaticResource GrayMediumBrush}"/>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                    <TextBlock 
+                                        Text="{Binding}"
+                                        VerticalAlignment="Center"
+                                        Margin="10 0 0 0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

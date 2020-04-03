@@ -1,0 +1,158 @@
+<level width="160" height="272">
+  <Layout exportMode="Rectangles">
+    <rect x="0" y="48" w="64" h="48" />
+    <rect x="96" y="80" w="64" h="48" />
+  </Layout>
+  <Background exportMode="Bitstring">0000000000
+0011000000
+0011100000
+0000100000
+0000111011
+0000110000
+0111110000
+0010110000
+0000111100
+0000000000
+0000000001
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background>
+  <Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+1111000000
+1011000000
+1111001111
+0000001110
+0000001100
+0000000000
+0000000011
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground>
+  <UpDoodad exportMode="Bitstring">0000000000
+0000000000
+1111000000
+0000000000
+0000001111
+0000000000
+0000000000
+0000000000
+0000000011
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad>
+  <DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+1111000001
+0000000010
+0000001100
+0000000000
+0000000011
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad>
+  <Geometry tileset="Zones" exportMode="XMLCoords">
+    <tile x="0" y="3" tx="10" ty="5" />
+    <tile x="0" y="4" tx="11" ty="5" />
+    <tile x="0" y="5" tx="9" ty="5" />
+    <tile x="1" y="3" tx="8" ty="5" />
+    <tile x="1" y="5" tx="10" ty="5" />
+    <tile x="1" y="6" tx="2" ty="13" />
+    <tile x="2" y="1" tx="6" ty="15" />
+    <tile x="2" y="2" tx="6" ty="16" />
+    <tile x="2" y="3" tx="9" ty="5" />
+    <tile x="2" y="4" tx="13" ty="5" />
+    <tile x="2" y="5" tx="8" ty="5" />
+    <tile x="2" y="6" tx="3" ty="13" />
+    <tile x="2" y="7" tx="4" ty="18" />
+    <tile x="3" y="1" tx="7" ty="15" />
+    <tile x="3" y="2" tx="7" ty="16" />
+    <tile x="3" y="3" tx="10" ty="5" />
+    <tile x="3" y="4" tx="12" ty="5" />
+    <tile x="3" y="5" tx="9" ty="5" />
+    <tile x="3" y="6" tx="4" ty="13" />
+    <tile x="4" y="2" tx="19" ty="15" />
+    <tile x="4" y="3" tx="19" ty="16" />
+    <tile x="4" y="4" tx="6" ty="15" />
+    <tile x="4" y="5" tx="4" ty="24" />
+    <tile x="4" y="6" tx="4" ty="25" />
+    <tile x="4" y="7" tx="16" ty="15" />
+    <tile x="4" y="8" tx="16" ty="16" />
+    <tile x="5" y="4" tx="7" ty="15" />
+    <tile x="5" y="5" tx="5" ty="24" />
+    <tile x="5" y="6" tx="5" ty="25" />
+    <tile x="5" y="7" tx="17" ty="15" />
+    <tile x="5" y="8" tx="17" ty="16" />
+    <tile x="6" y="4" tx="6" ty="13" />
+    <tile x="6" y="5" tx="13" ty="2" />
+    <tile x="6" y="6" tx="13" ty="3" />
+    <tile x="6" y="7" tx="6" ty="2" />
+    <tile x="6" y="8" tx="6" ty="13" />
+    <tile x="7" y="5" tx="14" ty="2" />
+    <tile x="7" y="6" tx="14" ty="3" />
+    <tile x="7" y="7" tx="7" ty="2" />
+    <tile x="7" y="8" tx="7" ty="13" />
+    <tile x="8" y="4" tx="0" ty="13" />
+    <tile x="8" y="5" tx="15" ty="2" />
+    <tile x="8" y="6" tx="15" ty="3" />
+    <tile x="8" y="9" tx="4" ty="2" />
+    <tile x="9" y="4" tx="15" ty="23" />
+    <tile x="9" y="5" tx="4" ty="4" />
+    <tile x="9" y="6" tx="9" ty="13" />
+    <tile x="9" y="9" tx="5" ty="2" />
+    <tile x="9" y="10" tx="7" ty="13" />
+  </Geometry>
+  <Doodads tileset="Doodads" exportMode="XMLCoords">
+    <tile x="0" y="5" tx="12" ty="20" />
+    <tile x="0" y="6" tx="4" ty="0" />
+    <tile x="1" y="2" tx="6" ty="4" />
+    <tile x="1" y="3" tx="10" ty="9" />
+    <tile x="1" y="5" tx="8" ty="20" />
+    <tile x="2" y="3" tx="12" ty="9" />
+    <tile x="2" y="4" tx="7" ty="22" />
+    <tile x="2" y="5" tx="11" ty="21" />
+    <tile x="3" y="3" tx="19" ty="9" />
+    <tile x="3" y="4" tx="8" ty="24" />
+    <tile x="6" y="5" tx="6" ty="7" />
+    <tile x="6" y="7" tx="10" ty="7" />
+    <tile x="7" y="4" tx="12" ty="5" />
+    <tile x="7" y="7" tx="14" ty="7" />
+    <tile x="8" y="4" tx="16" ty="4" />
+    <tile x="8" y="7" tx="16" ty="0" />
+    <tile x="8" y="8" tx="6" ty="4" />
+    <tile x="8" y="9" tx="11" ty="21" />
+    <tile x="8" y="10" tx="8" ty="0" />
+  </Doodads>
+  <Platforms />
+  <Props>
+    <Light id="1" x="48" y="32" />
+    <Light id="2" x="96" y="64" />
+    <Waterfall id="0" x="144" y="80" height="64" />
+  </Props>
+  <Triggers>
+    <BeginGame id="0" x="64" y="80" width="32" height="16" />
+  </Triggers>
+  <Items />
+  <Hazards />
+  <Monsters />
+</level>

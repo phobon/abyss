@@ -1,0 +1,94 @@
+<level width="160" height="272">
+  <Layout exportMode="Rectangles">
+    <rect x="0" y="192" w="32" h="32" />
+    <rect x="32" y="48" w="32" h="32" />
+    <rect x="96" y="48" w="32" h="32" />
+    <rect x="128" y="192" w="32" h="32" />
+  </Layout>
+  <Background exportMode="Bitstring">0000000000
+0000000000
+0110000110
+0100000010
+0000110000
+0011111100
+0111111110
+0011001100
+0000000000
+0000000000
+1110000111
+1110000111
+0010000100
+0010000100
+0000000000
+0000000000
+0000000000</Background>
+  <Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0011001100
+0011001100
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+1100000011
+1100000011
+0000000000
+0000000000
+0000000000</Foreground>
+  <UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad>
+  <DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0011001100
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+1100000011
+0000000000
+0000000000</DownDoodad>
+  <Geometry tileset="Zones" exportMode="XMLCoords" />
+  <Doodads tileset="Zones" exportMode="XMLCoords" />
+  <Platforms />
+  <Props>
+    <Light id="0" x="16" y="32" />
+    <Light id="1" x="128" y="32" />
+    <Light id="2" x="112" y="160" />
+    <Light id="3" x="32" y="160" />
+  </Props>
+  <Triggers />
+  <Items />
+  <Hazards>
+    <SpikeTrap id="0" x="32" y="32" width="32" height="16" />
+    <SpikeTrap id="1" x="96" y="32" width="32" height="16" />
+    <SpikeTrap id="2" x="128" y="176" width="32" height="16" />
+    <SpikeTrap id="3" x="0" y="176" width="32" height="16" />
+  </Hazards>
+  <Monsters />
+</level>

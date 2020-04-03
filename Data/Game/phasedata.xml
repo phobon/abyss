@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Phases>
+  <!-- Aberth phases. -->
+  <Phase id="Calm" plane="Aberth" difficulty="0" score="0" />
+  <Phase id="Abundance" plane="Aberth" difficulty="1" score="0" active="false" />
+  <Phase id="Overpower" plane="Aberth" difficulty="1" score="0" active="false" />
+  
+  <!-- Argus phases. -->
+  <Phase id="CursedChests" plane="Argus" difficulty="1" score="1000" />
+  <Phase id="ShortSighted" plane="Argus" difficulty="3" score="1000" />
+  <Phase id="Darkness" plane="Argus" difficulty="4" score="1000" />
+  <Phase id="CursedShifts" plane="Argus" difficulty="5" score="1000" />
+  <Phase id="LimboWalking" plane="Argus" difficulty="3" score="1000" />
+
+  <!-- Dionin phases. -->
+  <Phase id="EmptyPockets" plane="Dionin" difficulty="1" score="1000" />
+  <Phase id="Haywire" plane="Dionin" difficulty="2" score="1000" />
+  <Phase id="Inversion" plane="Dionin" difficulty="5" score="1000" />
+  <Phase id="Mirror" plane="Dionin" difficulty="4" score="1000" />
+  <Phase id="LeadBones" plane="Dionin" difficulty="2" score="1000" />
+  <Phase id="Malfunction" plane="Dionin" difficulty="3" score="1000" />
+
+  <!-- Phobon phases. -->
+  <Phase id="DeadWeight" plane="Phobon" difficulty="2" score="1000" />
+  <Phase id="LowGravity" plane="Phobon" difficulty="1" score="1000" />
+  <Phase id="RiftVeil" plane="Phobon" difficulty="3" score="1000" />
+  <Phase id="Unstable" plane="Phobon" difficulty="4" score="1000" />
+  <Phase id="VoidZone" plane="Phobon" difficulty="5" score="1000" />
+  <Phase id="Vortex" plane="Phobon" difficulty="3" score="1000" />
+
+  <!-- Valus phases. -->
+  <Phase id="LavaFissure" plane="Valus" difficulty="5" score="1000" />
+  <Phase id="LavaTorrent" plane="Valus" difficulty="4" score="1000" />
+  <Phase id="Volatile" plane="Valus" difficulty="3" score="1000" />
+  <Phase id="Marooned" plane="Valus" difficulty="2" score="1000" />
+  <Phase id="Swiftness" plane="Valus" difficulty="1" score="1000" />
+  
+  <!-- active="false" -->
+</Phases>
+
+

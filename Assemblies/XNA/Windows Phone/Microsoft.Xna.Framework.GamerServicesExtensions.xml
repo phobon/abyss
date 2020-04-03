@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="T:Microsoft.Xna.Framework.GamerServices.SignedInGamerExtensions">
+      <summary>Provides additional services to Gamer Services for Xbox LIVE.</summary>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInGamerExtensions.AwardAvatarAssets(Microsoft.Xna.Framework.GamerServices.SignedInGamer,System.String[])">
+      <summary>Awards an Avatar asset</summary>
+      <param name="gamer">A signed in gamer.</param>
+      <param name="assetKeys">Avatar asset keys.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInGamerExtensions.BeginAwardAvatarAssets(Microsoft.Xna.Framework.GamerServices.SignedInGamer,System.String[],System.AsyncCallback,System.Object)">
+      <summary>Begins the asyncronous process of awarding the specified avatar assets to a signed in gamer.</summary>
+      <param name="gamer">A signed in gamer.</param>
+      <param name="assetKeys">Avatar asset keys.</param>
+      <param name="callback">An AsyncCallback that represents the method called when the operation is complete.</param>
+      <param name="state">A user-created object used to uniquely identify the request, or null.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.GamerServices.SignedInGamerExtensions.EndAwardAvatarAssets(Microsoft.Xna.Framework.GamerServices.SignedInGamer,System.IAsyncResult)">
+      <summary>Call this function after the system has finished awarding the avatar asset.</summary>
+      <param name="gamer">A signed in gamer.</param>
+      <param name="result">The IAsyncResult used to determine when the asynchronous request is finished.</param>
+    </member>
+  </members>
+</doc>

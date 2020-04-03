@@ -1,0 +1,21 @@
+{
+  "name": "titan",
+  "version": "0.1.0",
+  "main": "main.js",
+  "devDependencies": {
+    "cssnano": "^3.4.0",
+    "electron-prebuilt": "^0.36.5",
+    "es6-promise": "^3.1.2",
+    "gulp": "^3.9.0",
+    "gulp-less": "^3.0.5",
+    "gulp-postcss": "^6.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.10.0",
+    "jquery": "^2.2.0",
+    "pouchdb": "^5.2.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "velocity-animate": "^1.2.3"
+  }
+}

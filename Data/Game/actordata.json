@@ -1,0 +1,134 @@
+{
+    "ActorData": [
+        {
+            "Name": "Player",
+            "Movement": {
+                "slow": 1,
+                "normal": 3,
+                "fast": 5
+            },
+            "Fall": {
+                "slow": 2,
+                "normal": 5,
+                "fast": 8
+            }
+        },
+        {
+            "Name": "Flyer",
+            "Movement": {
+                "slow": 5,
+                "normal": 10,
+                "fast": 15
+            },
+            "Fall": {
+                "slow": 0,
+                "normal": 0,
+                "fast": 20
+            }
+        },
+        {
+            "Name": "Walker",
+            "Movement": {
+                "slow": 3,
+                "normal": 5,
+                "fast": 10
+            },
+            "Fall": {
+                "slow": 8,
+                "normal": 12,
+                "fast": 16
+            }
+        },
+        {
+            "Name": "Crawler",
+            "Movement": {
+                "slow": 3,
+                "normal": 5,
+                "fast": 10
+            },
+            "Fall": {
+                "slow": 8,
+                "normal": 12,
+                "fast": 16
+            }
+        },
+        {
+            "Name": "Faller",
+            "Movement": {
+                "slow": 0,
+                "normal": 0,
+                "fast": 0
+            },
+            "Fall": {
+                "slow": 8,
+                "normal": 12,
+                "fast": 16
+            }
+        },
+        {
+            "Name": "Floater",
+            "Movement": {
+                "slow": 0,
+                "normal": 0,
+                "fast": 0
+            },
+            "Fall": {
+                "slow": 0,
+                "normal": 0,
+                "fast": 20
+            }
+        },
+        {
+            "Name": "Idler",
+            "Movement": {
+                "slow": 0,
+                "normal": 0,
+                "fast": 0
+            },
+            "Fall": {
+                "slow": 0,
+                "normal": 0,
+                "fast": 0
+            }
+        },
+        {
+            "Name": "Jumper",
+            "Movement": {
+                "slow": 0,
+                "normal": 0,
+                "fast": 0
+            },
+            "Fall": {
+                "slow": 8,
+                "normal": 12,
+                "fast": 16
+            }
+        },
+        {
+            "Name": "Shooter",
+            "Movement": {
+                "slow": 0,
+                "normal": 0,
+                "fast": 0
+            },
+            "Fall": {
+                "slow": 8,
+                "normal": 12,
+                "fast": 16
+            }
+        },
+        {
+            "Name": "Stalker",
+            "Movement": {
+                "slow": 5,
+                "normal": 10,
+                "fast": 15
+            },
+            "Fall": {
+                "slow": 0,
+                "normal": 0,
+                "fast": 16
+            }
+        }
+    ]
+}

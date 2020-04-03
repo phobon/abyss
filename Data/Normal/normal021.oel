@@ -1,0 +1,149 @@
+<level width="160" height="272">
+  <Layout exportMode="Rectangles">
+    <rect x="48" y="32" w="16" h="32" />
+    <rect x="48" y="224" w="64" h="48" />
+    <rect x="64" y="16" w="32" h="16" />
+    <rect x="96" y="32" w="16" h="32" />
+  </Layout>
+  <Background exportMode="Bitstring">0000110000
+0000000000
+0000000000
+0000000110
+0000111100
+0000111100
+0001110100
+0011110000
+0000110000
+0000110000
+0000110000
+0000110000
+0000110000
+0000111100
+0000000110
+0010100110
+0110000000</Background>
+  <Foreground exportMode="Bitstring">0000000000
+0000110000
+0001111000
+0001111000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0001111000
+0001011000
+0001001000</Foreground>
+  <UpDoodad exportMode="Bitstring">0000110000
+0001001000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0001111000
+0000000000
+0000000000
+0000000000</UpDoodad>
+  <DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0001111000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000100000
+0000010000</DownDoodad>
+  <Geometry tileset="Zones" exportMode="XMLCoords">
+    <tile x="1" y="16" tx="17" ty="19" />
+    <tile x="2" y="7" tx="2" ty="18" />
+    <tile x="2" y="15" tx="19" ty="19" />
+    <tile x="2" y="16" tx="18" ty="19" />
+    <tile x="3" y="2" tx="6" ty="3" />
+    <tile x="3" y="3" tx="11" ty="7" />
+    <tile x="3" y="6" tx="16" ty="15" />
+    <tile x="3" y="7" tx="16" ty="16" />
+    <tile x="3" y="14" tx="5" ty="10" />
+    <tile x="3" y="15" tx="19" ty="2" />
+    <tile x="3" y="16" tx="19" ty="3" />
+    <tile x="4" y="0" tx="3" ty="18" />
+    <tile x="4" y="1" tx="4" ty="3" />
+    <tile x="4" y="2" tx="7" ty="3" />
+    <tile x="4" y="3" tx="2" ty="3" />
+    <tile x="4" y="4" tx="8" ty="18" />
+    <tile x="4" y="5" tx="11" ty="18" />
+    <tile x="4" y="6" tx="12" ty="15" />
+    <tile x="4" y="7" tx="12" ty="16" />
+    <tile x="4" y="8" tx="5" ty="23" />
+    <tile x="4" y="9" tx="3" ty="23" />
+    <tile x="4" y="10" tx="1" ty="23" />
+    <tile x="4" y="11" tx="12" ty="23" />
+    <tile x="4" y="12" tx="9" ty="23" />
+    <tile x="4" y="13" tx="2" ty="17" />
+    <tile x="4" y="14" tx="6" ty="10" />
+    <tile x="5" y="0" tx="4" ty="18" />
+    <tile x="5" y="1" tx="5" ty="3" />
+    <tile x="5" y="2" tx="12" ty="7" />
+    <tile x="5" y="3" tx="3" ty="3" />
+    <tile x="5" y="4" tx="9" ty="18" />
+    <tile x="5" y="5" tx="12" ty="18" />
+    <tile x="5" y="6" tx="13" ty="15" />
+    <tile x="5" y="7" tx="13" ty="16" />
+    <tile x="5" y="8" tx="6" ty="23" />
+    <tile x="5" y="9" tx="4" ty="23" />
+    <tile x="5" y="10" tx="2" ty="23" />
+    <tile x="5" y="11" tx="13" ty="23" />
+    <tile x="5" y="12" tx="10" ty="23" />
+    <tile x="5" y="13" tx="3" ty="17" />
+    <tile x="5" y="14" tx="14" ty="2" />
+    <tile x="5" y="15" tx="14" ty="3" />
+    <tile x="6" y="2" tx="13" ty="7" />
+    <tile x="6" y="3" tx="14" ty="7" />
+    <tile x="6" y="4" tx="10" ty="18" />
+    <tile x="6" y="5" tx="13" ty="18" />
+    <tile x="6" y="13" tx="5" ty="17" />
+    <tile x="6" y="14" tx="15" ty="2" />
+    <tile x="6" y="15" tx="15" ty="3" />
+    <tile x="6" y="16" tx="4" ty="4" />
+    <tile x="7" y="3" tx="11" ty="18" />
+    <tile x="7" y="4" tx="9" ty="18" />
+    <tile x="7" y="5" tx="12" ty="18" />
+    <tile x="7" y="6" tx="8" ty="18" />
+    <tile x="7" y="13" tx="16" ty="17" />
+    <tile x="7" y="14" tx="3" ty="17" />
+    <tile x="7" y="15" tx="2" ty="17" />
+    <tile x="8" y="3" tx="12" ty="18" />
+    <tile x="8" y="14" tx="13" ty="17" />
+    <tile x="8" y="15" tx="15" ty="17" />
+  </Geometry>
+  <Doodads tileset="Doodads" exportMode="XMLCoords" />
+  <Platforms />
+  <Props>
+    <Light id="0" x="80" y="0" />
+    <Light id="1" x="64" y="128" />
+    <Light id="2" x="80" y="208" />
+  </Props>
+  <Triggers />
+  <Items />
+  <Hazards />
+  <Monsters />
+</level>

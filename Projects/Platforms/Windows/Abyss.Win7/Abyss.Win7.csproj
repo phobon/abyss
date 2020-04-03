@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{779FC93E-FC1E-4DA0-88D5-BC7B57E16A7D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Abyss.Win7</RootNamespace>
+    <AssemblyName>Abyss.Win7</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <NuGetPackageImportStamp>c1b476f7</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Windows\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Windows\Release\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.4.0.459, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MonoGame.Framework.WindowsDX.3.4.0.459\lib\net40\MonoGame.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.8.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Data\actordata.xml">
+      <Link>Content\Data\actordata.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Data\doodadatlas.xml">
+      <Link>Content\Data\doodadatlas.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Data\Level\normal.xml">
+      <Link>Content\Data\Level\normal.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Data\Level\test.xml">
+      <Link>Content\Data\Level\test.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Data\Level\transition.xml">
+      <Link>Content\Data\Level\transition.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Data\Level\tutorial.xml">
+      <Link>Content\Data\Level\tutorial.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Data\phasedata.xml">
+      <Link>Content\Data\phasedata.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Data\soundatlas.xml">
+      <Link>Content\Data\soundatlas.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Data\spriteatlas.xml">
+      <Link>Content\Data\spriteatlas.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Data\textureatlas.xml">
+      <Link>Content\Data\textureatlas.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Data\tileatlas.xml">
+      <Link>Content\Data\tileatlas.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Data\zonedata.xml">
+      <Link>Content\Data\zonedata.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Abyss.World.Win7\Abyss.World.Win7.csproj">
+      <Project>{6db486d1-c82b-4c0c-90e2-cd9355648ae7}</Project>
+      <Name>Abyss.World.Win7</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Occasus.Core.Win7\Occasus.Core.Win7.csproj">
+      <Project>{29fbcd69-a8a7-4d40-b55a-f5ec88b0dfcd}</Project>
+      <Name>Occasus.Core.Win7</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Effects\lighting.xnb">
+      <Link>Content\Effects\lighting.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Effects\ripple.xnb">
+      <Link>Content\Effects\ripple.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Effects\screen.xnb">
+      <Link>Content\Effects\screen.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\blank.xnb">
+      <Link>Content\Graphics\blank.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\debug.xnb">
+      <Link>Content\Graphics\debug.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Fonts\gamecounterfont.xnb">
+      <Link>Content\Graphics\Fonts\gamecounterfont.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Fonts\menufont.xnb">
+      <Link>Content\Graphics\Fonts\menufont.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Lighting\pointlight.xnb">
+      <Link>Content\Graphics\Lighting\pointlight.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\logo.xnb">
+      <Link>Content\Graphics\logo.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Sprites\Backgrounds\Zones\normal.xnb">
+      <Link>Content\Graphics\Sprites\Backgrounds\Zones\normal.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Sprites\Tiles\doodads.xnb">
+      <Link>Content\Graphics\Sprites\Tiles\doodads.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Sprites\Tiles\items.xnb">
+      <Link>Content\Graphics\Sprites\Tiles\items.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Sprites\Tiles\monsters.xnb">
+      <Link>Content\Graphics\Sprites\Tiles\monsters.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Sprites\Tiles\particles.xnb">
+      <Link>Content\Graphics\Sprites\Tiles\particles.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Sprites\Tiles\platforms.xnb">
+      <Link>Content\Graphics\Sprites\Tiles\platforms.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Sprites\Tiles\player.xnb">
+      <Link>Content\Graphics\Sprites\Tiles\player.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Sprites\Tiles\props.xnb">
+      <Link>Content\Graphics\Sprites\Tiles\props.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Sprites\Tiles\zones.xnb">
+      <Link>Content\Graphics\Sprites\Tiles\zones.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Sprites\UI\dimensionindicatorui.xnb">
+      <Link>Content\Graphics\Sprites\UI\dimensionindicatorui.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Sprites\UI\heartglyph.xnb">
+      <Link>Content\Graphics\Sprites\UI\heartglyph.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Sprites\UI\phasenameui.xnb">
+      <Link>Content\Graphics\Sprites\UI\phasenameui.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Sprites\UI\riftglyph.xnb">
+      <Link>Content\Graphics\Sprites\UI\riftglyph.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Sprites\UI\scoreui.xnb">
+      <Link>Content\Graphics\Sprites\UI\scoreui.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Sprites\UI\ui.xnb">
+      <Link>Content\Graphics\Sprites\UI\ui.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Sprites\UI\uiparts.xnb">
+      <Link>Content\Graphics\Sprites\UI\uiparts.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Sounds\Player\itempickup.xnb">
+      <Link>Content\Sounds\Player\itempickup.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Sounds\Player\land.xnb">
+      <Link>Content\Sounds\Player\land.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Sounds\Player\step.xnb">
+      <Link>Content\Sounds\Player\step.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Sounds\UI\menubeep.xnb">
+      <Link>Content\Sounds\UI\menubeep.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Sounds\Player\dimensionshift.xnb">
+      <Link>Content\Sounds\Player\dimensionshift.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Sounds\Player\dimensionshiftcooldown.xnb">
+      <Link>Content\Sounds\Player\dimensionshiftcooldown.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Sounds\Player\monsterstomped.xnb">
+      <Link>Content\Sounds\Player\monsterstomped.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Sounds\Player\hurt.xnb">
+      <Link>Content\Sounds\Player\hurt.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.Mono\bin\Windows\Content\Graphics\Fonts\pixelhud.xnb">
+      <Link>Content\Graphics\Fonts\pixelhud.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

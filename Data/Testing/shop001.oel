@@ -1,0 +1,94 @@
+<level width="160" height="272">
+  <Layout exportMode="Rectangles">
+    <rect x="16" y="112" w="128" h="16" />
+  </Layout>
+  <Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background>
+  <Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground>
+  <UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad>
+  <DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad>
+  <Geometry tileset="Zones" exportMode="XMLCoords">
+    <tile x="1" y="7" tx="0" ty="1" />
+    <tile x="2" y="7" tx="1" ty="1" />
+    <tile x="3" y="7" tx="2" ty="1" />
+    <tile x="4" y="7" tx="3" ty="1" />
+    <tile x="5" y="7" tx="4" ty="1" />
+    <tile x="6" y="7" tx="5" ty="1" />
+    <tile x="7" y="7" tx="6" ty="1" />
+    <tile x="8" y="7" tx="7" ty="1" />
+  </Geometry>
+  <Doodads tileset="Zones" exportMode="XMLCoords" />
+  <Platforms />
+  <Props>
+    <PurchasableItem id="0" x="48" y="96" />
+    <PurchasableItem id="1" x="64" y="96" />
+    <PurchasableItem id="2" x="80" y="96" />
+  </Props>
+  <Triggers />
+  <Items />
+  <Hazards />
+  <Monsters />
+</level>

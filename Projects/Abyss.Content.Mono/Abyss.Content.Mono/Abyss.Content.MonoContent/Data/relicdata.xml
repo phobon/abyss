@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Relics>
+  <!-- Key relics. -->
+  <Relic id="ArgusKey" type="Key" />
+  <Relic id="DioninKey" type="Key" />
+  <Relic id="PhobonKey" type="Key" />
+  <Relic id="ValusKey" type="Key" />
+
+  <!-- Persistent relics. -->
+  <Relic id="Conduit" type="Persistent" />
+  <Relic id="Shift" type="Persistent" />
+  <Relic id="SpeedUp" type="Persistent" />
+  <Relic id="Vampire" type="Persistent" />
+  <Relic id="Wallet" type="Persistent" />
+
+  <!-- PowerUp relics. -->
+  <Relic id="Cataclysm" type="PowerUp" lifespan="" />
+  <Relic id="Invulnerability" type="PowerUp" lifespan="" />
+  <Relic id="Shield" type="PowerUp" lifespan="" />
+  <Relic id="SlowTime" type="PowerUp" lifespan="" />
+  
+  <!-- Transient relics. -->
+</Relics>
+
+

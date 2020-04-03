@@ -1,0 +1,111 @@
+<level width="160" height="272">
+  <Layout exportMode="Rectangles">
+    <rect x="48" y="16" w="64" h="16" />
+    <rect x="48" y="96" w="64" h="16" />
+    <rect x="48" y="176" w="64" h="16" />
+    <rect x="48" y="256" w="64" h="16" />
+  </Layout>
+  <Background exportMode="Bitstring">0000001100
+0000000110
+0000011110
+0000001000
+0001100000
+0011100000
+0010000000
+0000111000
+0000010000
+0000010000
+0001111000
+0000000000
+0001111000
+0001111000
+0111111000
+0111111000
+0110000000</Background>
+  <Foreground exportMode="Bitstring">0000000000
+0001111000
+0000000000
+0000000000
+0000000000
+0000000000
+0001111000
+0000000000
+0000000000
+0000000000
+0000000000
+0001111000
+0000000000
+0000000000
+0000000000
+0000000000
+0001111000</Foreground>
+  <UpDoodad exportMode="Bitstring">0001111000
+0000000000
+0000000000
+0000000000
+0000000000
+0001111000
+0000000000
+0000000000
+0000000000
+0000000000
+0001111000
+0000000000
+0000000000
+0000000000
+0000000000
+0001111000
+0000000000</UpDoodad>
+  <DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0001111000
+0000000000
+0000000000
+0000000000
+0000000000
+0001111000
+0000000000
+0000000000
+0000000000
+0000000000
+0001111000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad>
+  <Geometry tileset="Zones" exportMode="XMLCoords">
+    <tile x="3" y="1" tx="0" ty="0" />
+    <tile x="3" y="6" tx="0" ty="0" />
+    <tile x="3" y="11" tx="0" ty="0" />
+    <tile x="3" y="16" tx="0" ty="0" />
+    <tile x="4" y="1" tx="0" ty="0" />
+    <tile x="4" y="6" tx="0" ty="0" />
+    <tile x="4" y="11" tx="0" ty="0" />
+    <tile x="4" y="16" tx="0" ty="0" />
+    <tile x="5" y="1" tx="0" ty="0" />
+    <tile x="5" y="6" tx="0" ty="0" />
+    <tile x="5" y="11" tx="0" ty="0" />
+    <tile x="5" y="16" tx="0" ty="0" />
+    <tile x="6" y="1" tx="0" ty="0" />
+    <tile x="6" y="6" tx="0" ty="0" />
+    <tile x="6" y="11" tx="0" ty="0" />
+    <tile x="6" y="16" tx="0" ty="0" />
+  </Geometry>
+  <Doodads tileset="Zones" exportMode="XMLCoords" />
+  <Platforms>
+    <Crumbling id="0" x="0" y="16" width="48" height="16" />
+    <Crumbling id="1" x="112" y="96" width="48" height="16" />
+    <Crumbling id="2" x="0" y="176" width="48" height="16" />
+    <Crumbling id="3" x="112" y="256" width="48" height="16" />
+  </Platforms>
+  <Props>
+    <Light id="0" x="96" y="0" />
+    <Light id="1" x="48" y="80" />
+    <Light id="2" x="96" y="160" />
+    <Light id="3" x="48" y="240" />
+  </Props>
+  <Triggers />
+  <Items />
+  <Hazards />
+  <Monsters />
+</level>

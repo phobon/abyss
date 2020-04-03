@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E7706E83-8C47-4CF8-B692-AC37F2EDFA38}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Abyss.World</RootNamespace>
+    <AssemblyName>Abyss.World</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Devices.Sensors, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\Sensors\Windows\Microsoft.Devices.Sensors.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework, Version=3.4.0.459, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MonoGame.Framework.WindowsDX.3.4.0.459\lib\net40\MonoGame.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AtlasTags.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\Aura.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\DimensionMerge.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\DimensionSplit.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\Curse.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\VoidSparkle.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\Lava.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\Splash.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\DustPuff.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\Implosion.cs" />
+    <Compile Include="Drawing\ParticleEffects\ParticleEffectConstants.cs" />
+    <Compile Include="Drawing\Shaders\BlurEffect.cs" />
+    <Compile Include="Drawing\Shaders\TestEffect.cs" />
+    <Compile Include="Drawing\Shaders\MaskEffect.cs" />
+    <Compile Include="Drawing\Shaders\RippleEffect.cs" />
+    <Compile Include="Drawing\Shaders\FlipHorizontalEffect.cs" />
+    <Compile Include="Drawing\Shaders\FlipVerticalEffect.cs" />
+    <Compile Include="Entities\Items\Concrete\Folder.cs" />
+    <Compile Include="Entities\Items\Concrete\Coalescer.cs" />
+    <Compile Include="Entities\Items\Concrete\Heart.cs" />
+    <Compile Include="Entities\Items\Concrete\Hourglass.cs" />
+    <Compile Include="Entities\Items\Concrete\RiftShards\LargeRiftShard.cs" />
+    <Compile Include="Entities\Items\Concrete\RiftShards\MediumRiftShard.cs" />
+    <Compile Include="Entities\Items\Concrete\RiftShards\RiftShard.cs" />
+    <Compile Include="Entities\Items\Concrete\RiftShards\RiftShardStates.cs" />
+    <Compile Include="Entities\Items\Concrete\RiftShards\SmallRiftShard.cs" />
+    <Compile Include="Entities\Items\IItem.cs" />
+    <Compile Include="Entities\Items\Item.cs" />
+    <Compile Include="Entities\Items\ItemFactory.cs" />
+    <Compile Include="Entities\Items\ItemStates.cs" />
+    <Compile Include="Entities\Items\ItemType.cs" />
+    <Compile Include="Entities\Monsters\Concrete\Shooter.cs" />
+    <Compile Include="Entities\Monsters\Concrete\Faller.cs" />
+    <Compile Include="Entities\Monsters\Concrete\Jumper.cs" />
+    <Compile Include="Entities\Monsters\Concrete\Stalker.cs" />
+    <Compile Include="Entities\Monsters\Concrete\Idler.cs" />
+    <Compile Include="Entities\Monsters\Concrete\Floater.cs" />
+    <Compile Include="Entities\Monsters\Concrete\Flyer.cs" />
+    <Compile Include="Entities\Monsters\Concrete\Walker.cs" />
+    <Compile Include="Entities\Monsters\Concrete\Crawler.cs" />
+    <Compile Include="Entities\Monsters\Monster.cs" />
+    <Compile Include="Entities\Monsters\IMonster.cs" />
+    <Compile Include="Entities\Monsters\MonsterFactory.cs" />
+    <Compile Include="Entities\Monsters\MonsterSpawnDefinition.cs" />
+    <Compile Include="Entities\Monsters\MonsterStates.cs" />
+    <Compile Include="Entities\Platforms\Concrete\ActivatedPlatform.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Activated\Spikey.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Activated\Exploding.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Activated\Warping.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Activated\Key.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Activated\Gate.cs" />
+    <Compile Include="Entities\Platforms\Concrete\IConnectedPlatform.cs" />
+    <Compile Include="Entities\Platforms\PlatformExtensions.cs" />
+    <Compile Include="Entities\Platforms\PlatformKeys.cs" />
+    <Compile Include="Entities\Platforms\PlatformStates.cs" />
+    <Compile Include="Entities\Player\Components\IPhaseGem.cs" />
+    <Compile Include="Entities\Player\Components\PhaseGem.cs" />
+    <Compile Include="Entities\Player\Components\PhaseGemStates.cs" />
+    <Compile Include="Entities\Player\IPlayer.cs" />
+    <Compile Include="Entities\Player\Components\IBarrier.cs" />
+    <Compile Include="Entities\Props\Concrete\Waterfall.cs" />
+    <Compile Include="Entities\Props\ExclamationBubble.cs" />
+    <Compile Include="Entities\Props\IExclamationBubble.cs" />
+    <Compile Include="Entities\Relics\Concrete\ActiveRelic.cs" />
+    <Compile Include="Entities\Relics\Concrete\Active\Rumble.cs" />
+    <Compile Include="Entities\Relics\Concrete\Active\Phase.cs" />
+    <Compile Include="Entities\Relics\Concrete\Active\Dash.cs" />
+    <Compile Include="Entities\Relics\Concrete\Cosmetic\MonsterCostume.cs" />
+    <Compile Include="Entities\Relics\Concrete\Cosmetic\VagrantCostume.cs" />
+    <Compile Include="Entities\Relics\Concrete\Cosmetic\RoyalCostume.cs" />
+    <Compile Include="Entities\Relics\Concrete\Cosmetic\ShadowTrail.cs" />
+    <Compile Include="Entities\Relics\Concrete\Cosmetic\FireTrail.cs" />
+    <Compile Include="Entities\Relics\Concrete\Cosmetic\SparkleTrail.cs" />
+    <Compile Include="Entities\Relics\Concrete\Cosmetic\RainbowTrail.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\Key\DioninKey.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\Key\KeyRelic.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\Key\PhobonKey.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\Key\ValusKey.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\Key\ArgusKey.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Crusher.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Drain.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\HeartSeeker.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Parachute.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Vampire.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\Persistent\Shift.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\Persistent\Stability.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Wallet.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\PowerUp\Abundance.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\PowerUp\Merge.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\BoostRelic.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Magnet.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\Coalesce.cs" />
+    <Compile Include="Entities\Relics\Concrete\StompRelic.cs" />
+    <Compile Include="Entities\Relics\Concrete\Active\Warp.cs" />
+    <Compile Include="Entities\Relics\Concrete\Active\Vortex.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\TreasureSeeker.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\ChainReaction.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Spelunker.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\RiftWalker.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\VoidWalker.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\Firewalker.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\ShieldBoost.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\InvulnerabilityBoost.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\CataclysmBoost.cs" />
+    <Compile Include="Entities\Relics\Concrete\CosmeticRelic.cs" />
+    <Compile Include="Entities\Relics\IRelicCollection.cs" />
+    <Compile Include="Entities\Player\Player.cs" />
+    <Compile Include="Entities\Player\PlayerColourMask.cs" />
+    <Compile Include="Entities\Player\PlayerConstants.cs" />
+    <Compile Include="Entities\Player\PlayerEvents.cs" />
+    <Compile Include="Entities\Player\PlayerFlag.cs" />
+    <Compile Include="Entities\Player\Components\Barrier.cs" />
+    <Compile Include="Entities\Player\Components\BarrierStates.cs" />
+    <Compile Include="Entities\Player\PlayerStates.cs" />
+    <Compile Include="Entities\Props\ActiveProp.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\Explosion.cs" />
+    <Compile Include="Entities\Props\Concrete\Light.cs" />
+    <Compile Include="Entities\Props\Concrete\PurchasableItem.cs" />
+    <Compile Include="Entities\Props\Concrete\Exit.cs" />
+    <Compile Include="Entities\Props\Concrete\RiftSheet.cs" />
+    <Compile Include="Entities\Props\Concrete\VoidPatch.cs" />
+    <Compile Include="Entities\Props\Concrete\LavaColumns\VerticalLavaColumn.cs" />
+    <Compile Include="Entities\Props\Concrete\LavaColumns\HorizontalLavaColumn.cs" />
+    <Compile Include="Entities\Props\Concrete\LavaColumns\LavaColumn.cs" />
+    <Compile Include="Entities\Props\Concrete\ShopEntrance.cs" />
+    <Compile Include="Entities\Props\Concrete\SpikeTrap.cs" />
+    <Compile Include="Entities\Props\Concrete\TreasureChest.cs" />
+    <Compile Include="Entities\Props\IActiveProp.cs" />
+    <Compile Include="Entities\Props\IProp.cs" />
+    <Compile Include="Entities\Props\Prop.cs" />
+    <Compile Include="Entities\Props\PropFactory.cs" />
+    <Compile Include="Entities\Props\PropStates.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Conduit.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Agility.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\PowerUp\Cataclysm.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Vitality.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Shield.cs" />
+    <Compile Include="Entities\Relics\Concrete\Legacy\PowerUp\Invulnerability.cs" />
+    <Compile Include="Entities\Relics\RelicActivationType.cs" />
+    <Compile Include="Entities\Relics\RelicCollection.cs" />
+    <Compile Include="Entities\Relics\RelicKeys.cs" />
+    <Compile Include="Entities\Relics\RelicsActivatedEvent.cs" />
+    <Compile Include="Entities\Relics\RelicType.cs" />
+    <Compile Include="Entities\Triggers\Concrete\BeginGame.cs" />
+    <Compile Include="EntityTags.cs" />
+    <Compile Include="GameData.cs" />
+    <Compile Include="GameManager.cs" />
+    <Compile Include="GameManagerFlags.cs" />
+    <Compile Include="GameWorld.cs" />
+    <Compile Include="Maps\IMapArea.cs" />
+    <Compile Include="Entities\Platforms\IPlatformDefinition.cs" />
+    <Compile Include="Maps\IZoneData.cs" />
+    <Compile Include="Maps\MapArea.cs" />
+    <Compile Include="Maps\IMapEntities.cs" />
+    <Compile Include="Maps\IMapChunk.cs" />
+    <Compile Include="Maps\MapChunk.cs" />
+    <Compile Include="Maps\MapChunkTypes.cs" />
+    <Compile Include="Maps\MapEntities.cs" />
+    <Compile Include="Maps\MapFactory.cs" />
+    <Compile Include="Entities\Platforms\PlatformDefinition.cs" />
+    <Compile Include="Entities\Monsters\IMonsterSpawnDefinition.cs" />
+    <Compile Include="Maps\ZoneData.cs" />
+    <Compile Include="Phases\Concrete\Aberth\AberthPhase.cs" />
+    <Compile Include="Phases\Concrete\Aberth\Invulnerable.cs" />
+    <Compile Include="Phases\Concrete\Aberth\Overpower.cs" />
+    <Compile Include="Phases\Concrete\Aberth\Abundance.cs" />
+    <Compile Include="Phases\Concrete\Aberth\Calm.cs" />
+    <Compile Include="Phases\Concrete\Argus\CursedShifts.cs" />
+    <Compile Include="Phases\Concrete\Argus\LimboWalking.cs" />
+    <Compile Include="Phases\Concrete\Dionin\Haywire.cs" />
+    <Compile Include="Phases\Concrete\Argus\CursedChests.cs" />
+    <Compile Include="Phases\Concrete\Argus\ShortSighted.cs" />
+    <Compile Include="Phases\Concrete\Phobon\Vortex.cs" />
+    <Compile Include="Phases\Concrete\Valus\LavaTorrent.cs" />
+    <Compile Include="Phases\Concrete\Valus\Volatile.cs" />
+    <Compile Include="Phases\Concrete\Valus\Swiftness.cs" />
+    <Compile Include="Phases\Concrete\Phobon\RiftVeil.cs" />
+    <Compile Include="Phases\Concrete\Phobon\VoidZone.cs" />
+    <Compile Include="Phases\Concrete\Dionin\EmptyPockets.cs" />
+    <Compile Include="Phases\Concrete\Valus\Marooned.cs" />
+    <Compile Include="Phases\Concrete\Argus\Darkness.cs" />
+    <Compile Include="Phases\Concrete\Dionin\Inversion.cs" />
+    <Compile Include="Phases\Concrete\Valus\LavaFissure.cs" />
+    <Compile Include="Phases\Concrete\Dionin\Mirror.cs" />
+    <Compile Include="Phases\Concrete\Dionin\Malfunction.cs" />
+    <Compile Include="Phases\Concrete\Phobon\LowGravity.cs" />
+    <Compile Include="Phases\Concrete\Phobon\Unstable.cs" />
+    <Compile Include="Phases\Concrete\Phobon\DeadWeight.cs" />
+    <Compile Include="Phases\Concrete\Dionin\LeadBones.cs" />
+    <Compile Include="Phases\IPhase.cs" />
+    <Compile Include="Phases\IPhaseFactory.cs" />
+    <Compile Include="Phases\PhaseBase.cs" />
+    <Compile Include="Phases\PhaseChangedEvent.cs" />
+    <Compile Include="Phases\PhaseConstants.cs" />
+    <Compile Include="Phases\PhaseFactory.cs" />
+    <Compile Include="Phases\Phase.cs" />
+    <Compile Include="Maps\IMap.cs" />
+    <Compile Include="Maps\Map.cs" />
+    <Compile Include="Maps\MapData.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\Power.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\Snow.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\Starburst.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\Fire.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\Impact.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\Smoke.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\Sparkle.cs" />
+    <Compile Include="Drawing\ParticleEffects\Concrete\Speck.cs" />
+    <Compile Include="Drawing\ParticleEffects\ParticleEffectFactory.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Dynamic\Moving.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Activated\Crumbling.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Dynamic\Crushing.cs" />
+    <Compile Include="Entities\Platforms\Concrete\DynamicPlatform.cs" />
+    <Compile Include="Entities\Platforms\Concrete\IDynamicPlatform.cs" />
+    <Compile Include="Phases\PhaseManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\Relics\IRelic.cs" />
+    <Compile Include="Entities\Relics\Relic.cs" />
+    <Compile Include="Entities\Relics\RelicFactory.cs" />
+    <Compile Include="Scenes\GameOver\GameOverScene.cs" />
+    <Compile Include="Scenes\GameOver\Layers\GameOverInterfaceLayer.cs" />
+    <Compile Include="Scenes\Menu\Layers\Interface\LogoElement.cs" />
+    <Compile Include="Scenes\Menu\Layers\MenuInterfaceLayer.cs" />
+    <Compile Include="Scenes\Menu\Layers\MenuBackgroundLayer.cs" />
+    <Compile Include="Scenes\Menu\MenuScene.cs" />
+    <Compile Include="Scenes\Shop\Layers\ShopInterfaceLayer.cs" />
+    <Compile Include="Scenes\Shop\Layers\ShopBackgroundLayer.cs" />
+    <Compile Include="Scenes\Shop\ShopScene.cs" />
+    <Compile Include="Scenes\Zone\Layers\Interface\DimensionIndicator.cs" />
+    <Compile Include="Scenes\Zone\Layers\Interface\RiftGlyph.cs" />
+    <Compile Include="Scenes\Zone\Layers\Interface\PhaseNotification.cs" />
+    <Compile Include="Scenes\Zone\Layers\Interface\GameInterface.cs" />
+    <Compile Include="Scenes\Zone\Layers\Interface\HeartGlyph.cs" />
+    <Compile Include="Scenes\Zone\Layers\ZoneBackgroundLayer.cs" />
+    <Compile Include="Scenes\Zone\Layers\ZonePhysicsDebugLayer.cs" />
+    <Compile Include="Scenes\Zone\Layers\ZoneGameplayLayer.cs" />
+    <Compile Include="Scenes\Zone\Layers\ZoneInterfaceLayer.cs" />
+    <Compile Include="Scenes\Zone\ZoneScene.cs" />
+    <Compile Include="Drawing\Shaders\SepiaEffect.cs" />
+    <Compile Include="Drawing\Shaders\DesaturateEffect.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Dynamic\Phasing.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Activated\Icy.cs" />
+    <Compile Include="Entities\Platforms\IPlatform.cs" />
+    <Compile Include="Entities\Platforms\Platform.cs" />
+    <Compile Include="Maps\TileConstants.cs" />
+    <Compile Include="Entities\Platforms\PlatformFactory.cs" />
+    <Compile Include="Entities\Platforms\PlatformType.cs" />
+    <Compile Include="Entities\Triggers\Concrete\InvisibleWall.cs" />
+    <Compile Include="Entities\Triggers\TriggerFactory.cs" />
+    <Compile Include="Scoring\IPhaseScore.cs" />
+    <Compile Include="Scoring\IStatisticManager.cs" />
+    <Compile Include="Scoring\PhaseRank.cs" />
+    <Compile Include="Scoring\PhaseScore.cs" />
+    <Compile Include="Scoring\StatisticManager.cs" />
+    <Compile Include="Universe\Dimension.cs" />
+    <Compile Include="Universe\GameMode.cs" />
+    <Compile Include="Universe\Plane.cs" />
+    <Compile Include="Universe\UniverseConstants.cs" />
+    <Compile Include="Universe\ZoneType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Occasus.Core\Occasus.Core.csproj">
+      <Project>{f458aff5-6bcc-4efa-9932-5894919e58a5}</Project>
+      <Name>Occasus.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\Props\Concrete\Shrines\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

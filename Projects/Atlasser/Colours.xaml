@@ -1,0 +1,74 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="ThemeIndependantLightColor">White</Color>
+    <Color x:Key="ThemeIndependantDarkColor">#FF505050</Color>
+    <Color x:Key="TopBarDarkColor">#FF202020</Color>
+
+    <SolidColorBrush x:Key="ThemeIndependantLightBrush" Color="{StaticResource ThemeIndependantLightColor}"/>
+    <SolidColorBrush x:Key="ThemeIndependantDarkBrush" Color="{StaticResource ThemeIndependantDarkColor}"/>
+    <SolidColorBrush x:Key="TopBarDarkBrush" Color="{StaticResource TopBarDarkColor}"/>
+
+    <Color x:Key="BackgroundColor" x:Shared="false">White</Color>
+    <Color x:Key="ForegroundColor" x:Shared="false">#FF181818</Color>
+    
+    <Color x:Key="GrayHeavyColor">#FF606060</Color>
+    <Color x:Key="GrayMediumColor">#FFa0a0a0</Color>
+    <Color x:Key="GrayLightColor">#FFe0e0e0</Color>
+
+    <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}" x:Shared="false"/>
+    <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource ForegroundColor}" x:Shared="false"/>
+
+    <SolidColorBrush x:Key="GrayHeavyBrush" Color="{StaticResource GrayHeavyColor}" x:Shared="false"/>
+    <SolidColorBrush x:Key="GrayMediumBrush" Color="{StaticResource GrayMediumColor}" x:Shared="false"/>
+    <SolidColorBrush x:Key="GrayLightBrush" Color="{StaticResource GrayLightColor}" x:Shared="false"/>
+
+    <!-- Orange accent colours. -->
+    <Color x:Key="AccentHeavyColor">#FFfa8d3e</Color>
+    <Color x:Key="AccentMediumColor">#FFf8b17e</Color>
+    <Color x:Key="AccentLightColor">#FFfacdad</Color>
+
+    <!-- Accent brushes. -->
+    <SolidColorBrush x:Key="AccentHeavyBrush" Color="{StaticResource AccentHeavyColor}"/>
+    <SolidColorBrush x:Key="AccentMediumBrush" Color="{StaticResource AccentMediumColor}"/>
+    <SolidColorBrush x:Key="AccentLightBrush" Color="{StaticResource AccentLightColor}"/>
+
+    <Color x:Key="AccentBlueColor">#FF1ba1e2</Color>
+    <Color x:Key="AccentBrownColor">#FF825a2b</Color>
+    <Color x:Key="AccentGreenColor">#FF60a917</Color>
+    <Color x:Key="AccentEmeraldColor">#FF008a00</Color>
+    <Color x:Key="AccentLimeColor">#FFa4c400</Color>
+    <Color x:Key="AccentMagentaColor">#FFd80073</Color>
+    <Color x:Key="AccentMustardColor">#FFd7c000</Color>
+    <Color x:Key="AccentOrangeColor">#FFfa6800</Color>
+    <Color x:Key="AccentPinkColor">#FFf25bd3</Color>
+    <Color x:Key="AccentRedColor">#FFe51400</Color>
+    <Color x:Key="AccentPurpleColor">#FFaa00ff</Color>
+    <Color x:Key="AccentSilverColor">#FF666666</Color>
+    <Color x:Key="AccentTealColor">#FF00aba9</Color>
+
+    <Color x:Key="AccentPastelBlueColor">#FF54b3e3</Color>
+    <Color x:Key="AccentPastelGreenColor">#FF75a842</Color>
+    <Color x:Key="AccentPastelOrangeColor">#FFfa8d3e</Color>
+    <Color x:Key="AccentPastelRedColor">#FFe64839</Color>
+
+    <SolidColorBrush x:Key="AccentBlueBrush" Color="{StaticResource AccentBlueColor}"/>
+    <SolidColorBrush x:Key="AccentBrownBrush" Color="{StaticResource AccentBrownColor}"/>
+    <SolidColorBrush x:Key="AccentGreenBrush" Color="{StaticResource AccentGreenColor}"/>
+    <SolidColorBrush x:Key="AccentEmeraldBrush" Color="{StaticResource AccentEmeraldColor}"/>
+    <SolidColorBrush x:Key="AccentLimeBrush" Color="{StaticResource AccentLimeColor}"/>
+    <SolidColorBrush x:Key="AccentMagentaBrush" Color="{StaticResource AccentMagentaColor}"/>
+    <SolidColorBrush x:Key="AccentMustardBrush" Color="{StaticResource AccentMustardColor}"/>
+    <SolidColorBrush x:Key="AccentOrangeBrush" Color="{StaticResource AccentOrangeColor}"/>
+    <SolidColorBrush x:Key="AccentPinkBrush" Color="{StaticResource AccentPinkColor}"/>
+    <SolidColorBrush x:Key="AccentRedBrush" Color="{StaticResource AccentRedColor}"/>
+    <SolidColorBrush x:Key="AccentPurpleBrush" Color="{StaticResource AccentPurpleColor}"/>
+    <SolidColorBrush x:Key="AccentSilverBrush" Color="{StaticResource AccentSilverColor}"/>
+    <SolidColorBrush x:Key="AccentTealBrush" Color="{StaticResource AccentTealColor}"/>
+
+    <SolidColorBrush x:Key="AccentPastelBlueBrush" Color="{StaticResource AccentPastelBlueColor}"/>
+    <SolidColorBrush x:Key="AccentPastelGreenBrush" Color="{StaticResource AccentPastelGreenColor}"/>
+    <SolidColorBrush x:Key="AccentPastelOrangeBrush" Color="{StaticResource AccentPastelOrangeColor}"/>
+    <SolidColorBrush x:Key="AccentPastelRedBrush" Color="{StaticResource AccentPastelRedColor}"/>
+</ResourceDictionary>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Zones>
+  <ZoneData
+    zone="Normal"
+    minimumChunkCount="50"
+    maximumChunkCount="100">
+    <Structure default="Normal">
+      <!-- End test stuff -->
+      <Blank chance="20"/>
+      <Normal/>
+      <Blank chance="20"/>
+      <Crumbling chance="50"/>
+      <Blank chance="20"/>
+      <Crushing chance="50"/>
+      <Blank chance="20"/>
+      <Hazard chance="50"/>
+      <Blank chance="20"/>
+      <Treasure chance="25"/>
+      <Blank chance="20"/>
+      <Normal/>
+      <Blank chance="20"/>
+      <Key chance="50"/>
+      <Blank chance="20"/>
+    </Structure>
+  </ZoneData>
+  <!--<ZoneData 
+    zone="Aberth" 
+    minimumChunkCount="30" 
+    maximumChunkCount="40">
+    <Structure default="Normal">
+      <Blank/>
+      <Normal/>
+      <Blank chance="15"/>
+      <Treasure chance="50"/>
+      <Blank chance="15"/>
+      <Normal/>
+      <Treasure chance="50"/>
+      <Blank chance="15"/>
+      <Normal/>
+      <Blank chance="15"/>
+      <Key/>
+      <Blank/>
+      <Blank chance="15"/>
+      <Shop chance="20"/>
+    </Structure>
+  </ZoneData>
+
+  <ZoneData
+    zone="Argus"
+    minimumChunkCount="30"
+    maximumChunkCount="40">
+    <Structure default="Normal">
+      <Blank/>
+      <Normal/>
+      <Blank chance="15"/>
+      <Treasure chance="50"/>
+      <Blank chance="15"/>
+      <Normal/>
+      <Treasure chance="50"/>
+      <Blank chance="15"/>
+      <Normal/>
+      <Blank chance="15"/>
+      <Key/>
+      <Blank/>
+      <Blank chance="15"/>
+      <Shop chance="20"/>
+    </Structure>
+  </ZoneData>
+
+  <ZoneData
+    zone="Dionin"
+    minimumChunkCount="30"
+    maximumChunkCount="40">
+    <Structure default="Normal">
+      <Blank/>
+      <Normal/>
+      <Blank chance="15"/>
+      <Treasure chance="50"/>
+      <Blank chance="15"/>
+      <Normal/>
+      <Treasure chance="50"/>
+      <Blank chance="15"/>
+      <Normal/>
+      <Blank chance="15"/>
+      <Key/>
+      <Blank/>
+      <Blank chance="15"/>
+      <Shop chance="20"/>
+    </Structure>
+  </ZoneData>
+
+  <ZoneData
+    zone="Phobon"
+    minimumChunkCount="30"
+    maximumChunkCount="40">
+    <Structure default="Normal">
+      <Blank/>
+      <Normal/>
+      <Blank chance="15"/>
+      <Treasure chance="50"/>
+      <Blank chance="15"/>
+      <Normal/>
+      <Treasure chance="50"/>
+      <Blank chance="15"/>
+      <Normal/>
+      <Blank chance="15"/>
+      <Key/>
+      <Blank/>
+      <Blank chance="15"/>
+      <Shop chance="20"/>
+    </Structure>
+  </ZoneData>
+
+  <ZoneData
+    zone="Valus"
+    minimumChunkCount="30"
+    maximumChunkCount="40">
+    <Structure default="Normal">
+      <Blank/>
+      <Normal/>
+      <Blank chance="15"/>
+      <Treasure chance="50"/>
+      <Blank chance="15"/>
+      <Normal/>
+      <Treasure chance="50"/>
+      <Blank chance="15"/>
+      <Normal/>
+      <Blank chance="15"/>
+      <Key/>
+      <Blank/>
+      <Blank chance="15"/>
+      <Shop chance="20"/>
+    </Structure>
+  </ZoneData>-->
+
+  <ZoneData
+    zone="Transition"
+    minimumChunkCount="4"
+    maximumChunkCount="8">
+    <Structure default="Transition">
+      <Transition/>
+    </Structure>
+  </ZoneData>
+</Zones>
+
+

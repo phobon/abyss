@@ -1,0 +1,183 @@
+{
+    "PhaseData": [
+        {
+            "Plane": "Aberth",
+            "Phases": [
+                {
+                    "Id": "Calm",
+                    "Difficulty": 0,
+                    "Score": 0
+                },
+                {
+                    "Id": "Abundance",
+                    "Difficulty": 1,
+                    "Score": 0
+                },
+                {
+                    "Id": "Overpower",
+                    "Difficulty": 1,
+                    "Score": 0
+                }
+            ],
+            "Active": [
+                0
+            ]
+        },
+        {
+            "Plane": "Argus",
+            "Phases": [
+                {
+                    "Id": "CursedChests",
+                    "Difficulty": 1,
+                    "Score": 1000
+                },
+                {
+                    "Id": "ShortSighted",
+                    "Difficulty": 3,
+                    "Score": 1000
+                },
+                {
+                    "Id": "Darkness",
+                    "Difficulty": 4,
+                    "Score": 1000
+                },
+                {
+                    "Id": "CursedShifts",
+                    "Difficulty": 5,
+                    "Score": 1000
+                },
+                {
+                    "Id": "LimboWalking",
+                    "Difficulty": 3,
+                    "Score": 1000
+                }
+            ],
+            "Active": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "Plane": "Dionin",
+            "Phases": [
+                {
+                    "Id": "EmptyPockets",
+                    "Difficulty": 1,
+                    "Score": 1000
+                },
+                {
+                    "Id": "Haywire",
+                    "Difficulty": 2,
+                    "Score": 1000
+                },
+                {
+                    "Id": "Inversion",
+                    "Difficulty": 5,
+                    "Score": 1000
+                },
+                {
+                    "Id": "Mirror",
+                    "Difficulty": 4,
+                    "Score": 1000
+                },
+                {
+                    "Id": "LeadBones",
+                    "Difficulty": 2,
+                    "Score": 1000
+                },
+                {
+                    "Id": "Malfunction",
+                    "Difficulty": 3,
+                    "Score": 1000
+                }
+            ],
+            "Active": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        {
+            "Plane": "Phobon",
+            "Phases": [
+                {
+                    "Id": "DeadWeight",
+                    "Difficulty": 2,
+                    "Score": 1000
+                },
+                {
+                    "Id": "LowGravity",
+                    "Difficulty": 1,
+                    "Score": 1000
+                },
+                {
+                    "Id": "RiftVeil",
+                    "Difficulty": 3,
+                    "Score": 1000
+                },
+                {
+                    "Id": "Unstable",
+                    "Difficulty": 4,
+                    "Score": 1000
+                },
+                {
+                    "Id": "VoidZone",
+                    "Difficulty": 5,
+                    "Score": 1000
+                },
+                {
+                    "Id": "Vortex",
+                    "Difficulty": 3,
+                    "Score": 1000
+                }
+            ],
+            "Active": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        {
+            "Plane": "Valus",
+            "Phases": [
+                {
+                    "Id": "LavaFissure",
+                    "Difficulty": 5,
+                    "Score": 1000
+                },
+                {
+                    "Id": "LavaTorrent",
+                    "Difficulty": 4,
+                    "Score": 1000
+                },
+                {
+                    "Id": "Volatile",
+                    "Difficulty": 3,
+                    "Score": 1000
+                },
+                {
+                    "Id": "Marooned",
+                    "Difficulty": 2,
+                    "Score": 1000
+                },
+                {
+                    "Id": "Swiftness",
+                    "Difficulty": 1,
+                    "Score": 1000
+                },
+            ],
+            "Active": [ 
+                0, 1, 2, 3, 4
+            ]
+        }
+    ]
+}

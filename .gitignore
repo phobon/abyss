@@ -1,0 +1,68 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Projects/Abyss.Content/obj
+/Projects/Abyss.World/bin
+/Projects/Abyss.World/obj
+/Projects/Abysser/bin
+/Projects/Abysser/obj
+/Projects/Occasus.Core/bin
+/Projects/Occasus.Core/obj
+/Projects/Platforms/Windows/Abyss.Win7/bin
+/Projects/Platforms/Windows/Abyss.Win7/obj
+/Projects/Platforms/Windows/Abyss.World.Win7/bin
+/Projects/Platforms/Windows/Abyss.World.Win7/obj
+/Projects/Platforms/Windows/Occasus.Core.Win7/bin
+/Projects/Platforms/Windows/Occasus.Core.Win7/obj
+/Projects/Platforms/Windows 8/Abyss.Win8/bin
+/Projects/Platforms/Windows 8/Abyss.Win8/obj
+/Projects/Platforms/Windows 8/Abyss.World.Win8/bin
+/Projects/Platforms/Windows 8/Abyss.World.Win8/obj
+/Projects/Platforms/Windows 8/Common.Xna.Win8/bin
+/Projects/Platforms/Windows 8/Common.Xna.Win8/obj
+/Art Assets/HiDef/Concept/Thumbs.db
+/Art Assets/HiDef/Legacy/Thumbs.db
+/Art Assets/HiDef/Ogmo Assets/Thumbs.db
+/Art Assets/HiDef/Thumbs.db
+/Art Assets/Reference/Thumbs.db
+*.cachefile
+*.db
+/Projects/Abyss.Content.Mono/Abyss.Content.Mono/Abyss.Content.Mono/bin
+/Projects/Abyss.Content.Mono/Abyss.Content.Mono/Abyss.Content.MonoContent/obj
+/Projects/Abyss.Content.Mono/Abyss.Content.Mono/Abyss.Content.Mono/obj
+/Projects/*.htm
+/Projects/Chunker/bin
+/Projects/Chunker/obj
+/Projects/Abysser/bin
+/Projects/Abysser/obj
+/Projects/Atlasser/obj
+/Projects/Atlasser/bin
+spriteatlas.xml
+*.suo
+/Projects/Abyss.Content/*.suo
+/Projects/Abyss.Content.Mono/Abyss.Content.Mono/Abyss.Content.Mono/bin/Windows8/IgnoreMe.dll
+/Projects/Abyss.Content.Mono/*.suo
+/Projects/Abyss.Content.Mono/Abyss.Content.Mono/Abyss.Content.Mono/bin
+/Projects/Abyss.Win7.psess
+/Projects/Abyss.Win7140925.vspx
+/Projects/Abyss.Content.Mono/Abyss.Content.Mono/Abyss.Content.MonoContent/Data/spriteatlas.xml.bak
+/Projects/Abyss.Win7-1.psess
+/Projects/Abyss.Win7140925(1).vsp
+/Projects/Abyss.Win7140925.vsp
+/Data/Chunker/Chunker.instr.pdb
+/Data/Chunker/Chunker.vshost.exe
+/Projects/Platforms/Windows 8/Abyss.Win8/Content/obj/Windows
+/Projects/Platforms/Windows 8/Content/bin
+/Projects/Platforms/Windows 8/Content/Data
+/Projects/Platforms/Windows 8/Content/Effects
+/Projects/Platforms/Windows 8/Content/Graphics
+/Projects/Platforms/Windows 8/Content/Sounds
+/Projects/Platforms/Windows 8/Abyss.Win8/Content
+/Projects/Abyss.sln.GhostDoc.xml
+/Projects/packages
+/Projects/Titan/bin/*.js
+/Projects/Titan/bin/stylesheets
+/Projects/Titan/node_modules
+/Projects/Titan/typings/browser
+/Projects/Titan/typings/main

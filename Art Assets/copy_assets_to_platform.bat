@@ -1,0 +1,4 @@
+xcopy /s /y "..\Projects\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.MonoContent\Data" "..\Projects\Platforms\Windows 8\Abyss.Win8\Content\Data" /i
+xcopy /s /y "..\Projects\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.MonoContent\Graphics" "..\Projects\Platforms\Windows 8\Abyss.Win8\Content\Graphics" /i
+xcopy /s /y "..\Projects\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.MonoContent\Effects" "..\Projects\Platforms\Windows 8\Abyss.Win8\Content\Effects" /i
+xcopy /s /y "..\Projects\Abyss.Content.Mono\Abyss.Content.Mono\Abyss.Content.MonoContent\Sounds" "..\Projects\Platforms\Windows 8\Abyss.Win8\Content\Sounds" /i

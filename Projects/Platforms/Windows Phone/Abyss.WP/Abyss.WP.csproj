@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{C3715194-1104-4729-9FA6-A33D8790EF62}</ProjectGuid>
+    <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">Windows Phone</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Abyss.WP</RootNamespace>
+    <AssemblyName>Abyss.WP</AssemblyName>
+    <XnaRefreshLevel>1</XnaRefreshLevel>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
+    <XnaPlatform>Windows Phone</XnaPlatform>
+    <XnaProfile>Reach</XnaProfile>
+    <XnaCrossPlatformGroupID>f171f7ba-d908-48fc-ad19-9a5e4d715313</XnaCrossPlatformGroupID>
+    <XnaOutputType>Game</XnaOutputType>
+    <WPTombstoneEnabled>false</WPTombstoneEnabled>
+    <XapFilename>$(AssemblyName).xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <XnaWindowsPhoneManifestTemplate>Properties\WMAppManifest.xml</XnaWindowsPhoneManifestTemplate>
+    <TileImage>Background.png</TileImage>
+    <TileTitle>Abyss.WP</TileTitle>
+    <SupportedCultures>
+    </SupportedCultures>
+    <ApplicationIcon>Game.ico</ApplicationIcon>
+    <Thumbnail>PhoneGameThumb.png</Thumbnail>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Windows Phone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Windows Phone\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS_PHONE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <XnaCompressContent>false</XnaCompressContent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Windows Phone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Windows Phone\Release</OutputPath>
+    <DefineConstants>TRACE;WINDOWS_PHONE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <XnaCompressContent>false</XnaCompressContent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework" />
+    <Reference Include="Microsoft.Xna.Framework.Game" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics" />
+    <Reference Include="Microsoft.Xna.Framework.GamerServices" />
+    <Reference Include="Microsoft.Xna.Framework.Input.Touch" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Net" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="..\..\..\Abyss.Content.Wrapper\Windows Phone\bin\Windows Phone\Release\Abyss.Content.WP\Graphics\blank.xnb">
+      <Link>Content\Graphics\blank.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Wrapper\Windows Phone\bin\Windows Phone\Release\Abyss.Content.WP\Graphics\debug.xnb">
+      <Link>Content\Graphics\debug.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Wrapper\Windows Phone\bin\Windows Phone\Release\Abyss.Content.WP\Graphics\Fonts\menufont.xnb">
+      <Link>Content\Graphics\Fonts\menufont.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Wrapper\Windows Phone\bin\Windows Phone\Release\Abyss.Content.WP\Graphics\Fonts\pixelhud.xnb">
+      <Link>Content\Graphics\Fonts\pixelhud.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Wrapper\Windows Phone\bin\Windows Phone\Release\Abyss.Content.WP\Graphics\Sprites\Backgrounds\Zones\normal.xnb">
+      <Link>Content\Graphics\Sprites\Backgrounds\Zones\normal.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Wrapper\Windows Phone\bin\Windows Phone\Release\Abyss.Content.WP\Graphics\Sprites\Tiles\common.xnb">
+      <Link>Content\Graphics\Sprites\Tiles\common.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Wrapper\Windows Phone\bin\Windows Phone\Release\Abyss.Content.WP\Graphics\Sprites\Tiles\items.xnb">
+      <Link>Content\Graphics\Sprites\Tiles\items.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Wrapper\Windows Phone\bin\Windows Phone\Release\Abyss.Content.WP\Graphics\Sprites\Tiles\monsters.xnb">
+      <Link>Content\Graphics\Sprites\Tiles\monsters.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Wrapper\Windows Phone\bin\Windows Phone\Release\Abyss.Content.WP\Graphics\Sprites\Tiles\player.xnb">
+      <Link>Content\Graphics\Sprites\Tiles\player.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Wrapper\Windows Phone\bin\Windows Phone\Release\Abyss.Content.WP\Graphics\Sprites\Tiles\props.xnb">
+      <Link>Content\Graphics\Sprites\Tiles\props.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Wrapper\Windows Phone\bin\Windows Phone\Release\Abyss.Content.WP\Graphics\Sprites\UI\ui.xnb">
+      <Link>Content\Graphics\Sprites\UI\ui.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Wrapper\Windows Phone\bin\Windows Phone\Release\Abyss.Content.WP\Graphics\Sprites\UI\uiparts.xnb">
+      <Link>Content\Graphics\Sprites\UI\uiparts.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Wrapper\Windows Phone\bin\Windows Phone\Release\Abyss.Content.WP\Graphics\Sprites\Effects\effecticons.xnb">
+      <Link>Content\Graphics\Sprites\Effects\effecticons.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Wrapper\Windows Phone\bin\Windows Phone\Release\Abyss.Content.WP\Graphics\Sprites\Effects\effects.xnb">
+      <Link>Content\Graphics\Sprites\Effects\effects.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Abyss.Content.Wrapper\Windows Phone\bin\Windows Phone\Release\Abyss.Content.WP\Graphics\Sprites\Tiles\zones.xnb">
+      <Link>Content\Graphics\Sprites\Tiles\zones.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\AppManifest.xml">
+      <XnaPlatformSpecific>true</XnaPlatformSpecific>
+    </None>
+    <None Include="Properties\WMAppManifest.xml">
+      <XnaPlatformSpecific>true</XnaPlatformSpecific>
+    </None>
+    <Compile Include="Program.cs" />
+    <Compile Include="AbyssGame.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Game.ico" />
+    <Content Include="PhoneGameThumb.png">
+      <XnaPlatformSpecific>true</XnaPlatformSpecific>
+    </Content>
+    <Content Include="Background.png">
+      <XnaPlatformSpecific>true</XnaPlatformSpecific>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Abyss.World.WP\Abyss.World.WP.csproj">
+      <Project>{B8A213C3-1018-4E59-82C7-A0CB21003273}</Project>
+      <Name>Abyss.World.WP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Xna.WP\Common.Xna.WP.csproj">
+      <Project>{CAD3826B-7621-4453-902A-01BC30893660}</Project>
+      <Name>Common.Xna.WP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
+  <!--
+      To modify your build process, add your task inside one of the targets below and uncomment it. 
+      Other similar extension points exist, see Microsoft.Common.targets.
+      <Target Name="BeforeBuild">
+      </Target>
+      <Target Name="AfterBuild">
+      </Target>
+    -->
+</Project>

@@ -1,0 +1,126 @@
+<level width="160" height="272">
+  <Layout exportMode="Rectangles">
+    <rect x="16" y="112" w="48" h="16" />
+    <rect x="16" y="192" w="128" h="16" />
+    <rect x="32" y="48" w="32" h="16" />
+    <rect x="96" y="48" w="32" h="16" />
+    <rect x="96" y="112" w="48" h="16" />
+  </Layout>
+  <Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background>
+  <Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground>
+  <UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad>
+  <DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad>
+  <Geometry tileset="Zones" exportMode="XMLCoords">
+    <tile x="1" y="7" tx="8" ty="1" />
+    <tile x="1" y="12" tx="4" ty="2" />
+    <tile x="2" y="3" tx="4" ty="1" />
+    <tile x="2" y="7" tx="4" ty="2" />
+    <tile x="2" y="12" tx="5" ty="2" />
+    <tile x="3" y="3" tx="5" ty="1" />
+    <tile x="3" y="7" tx="5" ty="2" />
+    <tile x="3" y="12" tx="4" ty="2" />
+    <tile x="4" y="12" tx="5" ty="2" />
+    <tile x="5" y="12" tx="4" ty="2" />
+    <tile x="6" y="3" tx="4" ty="1" />
+    <tile x="6" y="7" tx="4" ty="2" />
+    <tile x="6" y="12" tx="5" ty="2" />
+    <tile x="7" y="3" tx="5" ty="1" />
+    <tile x="7" y="7" tx="5" ty="2" />
+    <tile x="7" y="12" tx="4" ty="2" />
+    <tile x="8" y="7" tx="8" ty="1" />
+    <tile x="8" y="12" tx="5" ty="2" />
+  </Geometry>
+  <Doodads tileset="Zones" exportMode="XMLCoords" />
+  <Platforms />
+  <Props />
+  <Triggers />
+  <Items />
+  <Hazards />
+  <Monsters>
+    <Floater id="0" x="48" y="16" />
+    <Idler id="1" x="48" y="176" />
+    <Jumper id="2" x="16" y="176" />
+    <Flyer id="3" x="144" y="224">
+      <node x="0" y="224" />
+    </Flyer>
+    <Walker id="4" x="128" y="96">
+      <node x="96" y="96" />
+    </Walker>
+    <Faller id="5" x="128" y="128">
+      <node x="128" y="176" />
+    </Faller>
+    <Shooter id="6" x="96" y="176" />
+    <Stalker id="7" x="144" y="0" />
+    <Crawler id="8" x="16" y="96">
+      <node x="0" y="96" />
+      <node x="0" y="128" />
+      <node x="64" y="128" />
+      <node x="64" y="96" />
+      <node x="16" y="96" />
+    </Crawler>
+  </Monsters>
+</level>

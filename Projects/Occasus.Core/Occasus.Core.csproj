@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F458AFF5-6BCC-4EFA-9932-5894919E58A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Occasus.Core</RootNamespace>
+    <AssemblyName>Occasus.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.4.0.459, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MonoGame.Framework.WindowsDX.3.4.0.459\lib\net40\MonoGame.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Atlas.cs" />
+    <Compile Include="Assets\AtlasDefinitions\DoodadAtlasDefinition.cs" />
+    <Compile Include="Assets\AtlasDefinitions\DoodadPlacement.cs" />
+    <Compile Include="Assets\AtlasDefinitions\TileAtlasDefinition.cs" />
+    <Compile Include="Audio\AudioManager.cs" />
+    <Compile Include="Audio\LoopingSound.cs" />
+    <Compile Include="Audio\InstancedSound.cs" />
+    <Compile Include="Audio\ISound.cs" />
+    <Compile Include="Audio\Sound.cs" />
+    <Compile Include="Audio\SoundBase.cs" />
+    <Compile Include="Audio\SoundEffectExtensions.cs" />
+    <Compile Include="Audio\SoundType.cs" />
+    <Compile Include="Components\Graphics\GraphicsComponent.cs" />
+    <Compile Include="Components\Graphics\IGraphicsComponent.cs" />
+    <Compile Include="Components\Logic\Coroutine.cs" />
+    <Compile Include="Components\Logic\ICoroutine.cs" />
+    <Compile Include="Debugger.cs" />
+    <Compile Include="Drawing\Animation\AnimationExtensions.cs" />
+    <Compile Include="Drawing\DrawingExtensions.cs" />
+    <Compile Include="Drawing\Images\IImage.cs" />
+    <Compile Include="Drawing\Images\Image.cs" />
+    <Compile Include="Drawing\Images\ImageLayerExtensions.cs" />
+    <Compile Include="Drawing\Interface\IInterfaceElement.cs" />
+    <Compile Include="Drawing\Interface\InterfaceElement.cs" />
+    <Compile Include="Drawing\Lighting\ILightSource.cs" />
+    <Compile Include="Drawing\Lighting\Lighting.cs" />
+    <Compile Include="Drawing\Lighting\LightSource.cs" />
+    <Compile Include="Drawing\Lighting\LightSourceType.cs" />
+    <Compile Include="Drawing\Lighting\PointLight.cs" />
+    <Compile Include="Drawing\ParticleEffects\AnimatedParticle.cs" />
+    <Compile Include="Drawing\ParticleEffects\IAnimatedParticle.cs" />
+    <Compile Include="Drawing\ParticleEffects\IInterfaceParticleEffect.cs" />
+    <Compile Include="Drawing\ParticleEffects\InterfaceParticleEffect.cs" />
+    <Compile Include="Drawing\ParticleEffects\BoundParticleEffect.cs" />
+    <Compile Include="Drawing\ParticleEffects\ParticleFlag.cs" />
+    <Compile Include="Drawing\Shaders\IShader.cs" />
+    <Compile Include="Drawing\Shaders\Shader.cs" />
+    <Compile Include="Drawing\Shaders\ShaderManager.cs" />
+    <Compile Include="Drawing\Shaders\ShaderUsage.cs" />
+    <Compile Include="Drawing\SpriteBatchExtensions.cs" />
+    <Compile Include="Drawing\Sprites\ISpriteData.cs" />
+    <Compile Include="Drawing\Sprites\OldSprite.cs" />
+    <Compile Include="Drawing\Sprites\SpriteData.cs" />
+    <Compile Include="Drawing\Sprites\SpriteDataExtensions.cs" />
+    <Compile Include="Drawing\Sprites\SpriteFlag.cs" />
+    <Compile Include="Drawing\Text\ITextElement.cs" />
+    <Compile Include="Drawing\Text\TextAlignment.cs" />
+    <Compile Include="Drawing\Text\TextElement.cs" />
+    <Compile Include="Drawing\Text\TextExtensions.cs" />
+    <Compile Include="Drawing\Vector2Extensions.cs" />
+    <Compile Include="EngineEvents.cs" />
+    <Compile Include="Entities\EntityExtensions.cs" />
+    <Compile Include="Generation\Factory.cs" />
+    <Compile Include="Generation\IFactory.cs" />
+    <Compile Include="IDebugger.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Physics\CollisionPosition.cs" />
+    <Compile Include="Physics\CollisionTypes.cs" />
+    <Compile Include="Physics\Tween.cs" />
+    <Compile Include="Drawing\Animation\AnimationFlag.cs" />
+    <Compile Include="Drawing\Animation\Animation.cs" />
+    <Compile Include="Drawing\Animation\IAnimation.cs" />
+    <Compile Include="Drawing\Animation\TimingHelper.cs" />
+    <Compile Include="Assets\TextureManager.cs" />
+    <Compile Include="Camera\Camera2D.cs" />
+    <Compile Include="Camera\CameraFlag.cs" />
+    <Compile Include="Camera\ICamera2D.cs" />
+    <Compile Include="Components\CompositeEntityComponent.cs" />
+    <Compile Include="Components\EntityComponent.cs" />
+    <Compile Include="Components\ICompositeEntityComponent.cs" />
+    <Compile Include="Components\IEntityComponent.cs" />
+    <Compile Include="Components\Logic\Coroutines.cs" />
+    <Compile Include="Components\Logic\CoroutineManager.cs" />
+    <Compile Include="Drawing\Direction.cs" />
+    <Compile Include="Drawing\DrawingManager.cs" />
+    <Compile Include="Drawing\RectangleExtensions.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="EngineComponent.cs" />
+    <Compile Include="EngineFlag.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\IEntity.cs" />
+    <Compile Include="Maths\EaseType.cs" />
+    <Compile Include="Physics\ITransform.cs" />
+    <Compile Include="Physics\Transform.cs" />
+    <Compile Include="IEngineComponent.cs" />
+    <Compile Include="Input\IInputState.cs" />
+    <Compile Include="Input\InputManager.cs" />
+    <Compile Include="Input\InputState.cs" />
+    <Compile Include="Layers\ILayer.cs" />
+    <Compile Include="Layers\Layer.cs" />
+    <Compile Include="Layers\LayerType.cs" />
+    <Compile Include="Maths\Ease.cs" />
+    <Compile Include="Maths\MathsHelper.cs" />
+    <Compile Include="Drawing\ParticleEffects\FullScreenParticleEffect.cs" />
+    <Compile Include="Drawing\ParticleEffects\IFullScreenParticleEffect.cs" />
+    <Compile Include="Drawing\ParticleEffects\IParticle.cs" />
+    <Compile Include="Drawing\ParticleEffects\IParticleEffect.cs" />
+    <Compile Include="Drawing\ParticleEffects\Particle.cs" />
+    <Compile Include="Drawing\ParticleEffects\ParticleDensity.cs" />
+    <Compile Include="Drawing\ParticleEffects\ParticleEffect.cs" />
+    <Compile Include="Drawing\ParticleEffects\ParticleEffectFlag.cs" />
+    <Compile Include="Physics\Collider.cs" />
+    <Compile Include="Physics\CollisionEvent.cs" />
+    <Compile Include="Physics\ICollider.cs" />
+    <Compile Include="Physics\PhysicsFlag.cs" />
+    <Compile Include="Physics\PhysicsManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scenes\IScene.cs" />
+    <Compile Include="Scenes\Scene.cs" />
+    <Compile Include="Drawing\Sprites\ISprite.cs" />
+    <Compile Include="Drawing\Images\IImageLayer.cs" />
+    <Compile Include="Drawing\Sprites\Sprite.cs" />
+    <Compile Include="Drawing\Images\ImageLayer.cs" />
+    <Compile Include="States\State.cs" />
+    <Compile Include="States\StateEvents.cs" />
+    <Compile Include="States\IState.cs" />
+    <Compile Include="States\IStateMachine.cs" />
+    <Compile Include="States\StateChangedEvent.cs" />
+    <Compile Include="States\StateMachine.cs" />
+    <Compile Include="Tiles\ITile.cs" />
+    <Compile Include="Tiles\Tile.cs" />
+    <Compile Include="Entities\ITrigger.cs" />
+    <Compile Include="Entities\Trigger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\Debug\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,264 @@
+﻿<UserControl 
+    x:Class="Atlasser.Views.Nodes.SpriteNodeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:drawing="clr-namespace:Atlasser.Model.Drawing"
+    mc:Ignorable="d" 
+    d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Colours.xaml" />
+                <ResourceDictionary Source="../../Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <ObjectDataProvider x:Key="LayerDepthValues" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+                <ObjectDataProvider.MethodParameters>
+                    <x:Type TypeName="drawing:LayerDepth" />
+                </ObjectDataProvider.MethodParameters>
+            </ObjectDataProvider>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel>
+        <TextBlock 
+            Margin="0 10 0 0"
+            Text="properties"
+            Style="{StaticResource LargeHeaderStyle}"/>
+
+        <StackPanel 
+            Margin="0 5 0 0" 
+            Orientation="Horizontal">
+            <TextBlock 
+                Text="id"
+                Style="{StaticResource LabelStyle}"/>
+            <TextBox 
+                Text="{Binding Id, Mode=TwoWay}"
+                Width="150"/>
+        </StackPanel>
+
+        <StackPanel 
+            Margin="0 5 0 0"
+            Orientation="Horizontal">
+            <TextBlock 
+                Text="atlas key"
+                Style="{StaticResource LabelStyle}"/>
+            <ComboBox
+                ItemsSource="{Binding AtlasKeys}"
+                SelectedItem="{Binding Atlas, Mode=TwoWay}"/>
+        </StackPanel>
+
+        <StackPanel 
+            Orientation="Horizontal"
+            Margin="0 5 0 0">
+            <TextBlock 
+                Text="centre"
+                Style="{StaticResource LabelStyle}"/>
+            <CheckBox IsChecked="{Binding Centre, Mode=TwoWay}"/>
+        </StackPanel>
+
+        <StackPanel 
+            Orientation="Horizontal"
+            Margin="0 5 0 0">
+            <TextBlock 
+                Text="tile"
+                Style="{StaticResource LabelStyle}"/>
+            <CheckBox IsChecked="{Binding Tile, Mode=TwoWay}"/>
+        </StackPanel>
+
+        <Grid Margin="0 25 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock 
+                Grid.Column="0"
+                Text="layers"
+                Style="{StaticResource LargeHeaderStyle}"/>
+            <Button
+                Grid.Column="2"
+                Style="{StaticResource BlockButtonStyle}"
+                Content="add"
+                Click="AddLayerOnClick"
+                HorizontalAlignment="Right"/>
+        </Grid>
+
+        <ItemsControl 
+            Margin="0 5 0 0"
+            ItemsSource="{Binding Layers}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border 
+                        Margin="0 5 0 0"
+                        Padding="10"
+                        Background="{StaticResource DiagonalLineBrush}">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock 
+                                    Text="id"
+                                    Style="{StaticResource LabelStyle}"/>
+                                <TextBox 
+                                    Text="{Binding Id, Mode=TwoWay}"
+                                    Width="150"/>
+                                <Button
+                                    Style="{StaticResource BlockButtonStyle}"
+                                    Content="delete"
+                                    Click="DeleteLayerOnClick"
+                                    HorizontalAlignment="Right"
+                                    Margin="5 0 0 0"/>
+                            </StackPanel>
+
+                            <StackPanel 
+                                Margin="0 5 0 0"
+                                Orientation="Horizontal">
+                                <TextBlock 
+                                    Text="depth"
+                                    Style="{StaticResource LabelStyle}"/>
+                                <ComboBox 
+                                    ItemsSource="{Binding Source={StaticResource LayerDepthValues}}"
+                                    SelectedItem="{Binding Depth, Mode=TwoWay}"
+                                    Width="150"/>
+                            </StackPanel>
+
+                            <StackPanel 
+                                Margin="0 5 0 0"
+                                Orientation="Horizontal">
+                                <TextBlock 
+                                    Text="x"
+                                    Style="{StaticResource LabelStyle}"/>
+                                <TextBox 
+                                    Text="{Binding X, Mode=TwoWay}"
+                                    Width="50"/>
+                                <TextBlock 
+                                    Text="y"
+                                    Width="25"
+                                    Style="{StaticResource LabelStyle}"/>
+                                <TextBox 
+                                    Text="{Binding Y, Mode=TwoWay}"
+                                    Width="50"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <Grid Margin="0 25 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock 
+                Grid.Column="0"
+                Text="animations"
+                Style="{StaticResource LargeHeaderStyle}"/>
+            <Button
+                Grid.Column="2"
+                Style="{StaticResource BlockButtonStyle}"
+                Content="add"
+                Click="AddAnimationOnClick"
+                HorizontalAlignment="Right"/>
+        </Grid>
+
+        <ItemsControl 
+            Margin="0 5 0 0"
+            ItemsSource="{Binding Animations}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border 
+                        Margin="0 5 0 0"
+                        Padding="10">
+                        <Border.Background>
+                            <VisualBrush 
+                                TileMode="Tile" 
+                                Viewport="0 0 10 10" 
+                                ViewportUnits="Absolute"
+                                Opacity="0.5">
+                                <VisualBrush.Visual>
+                                    <Path Stroke="{Binding UniqueColorBrush}" Data="M 0 0 l 10 10" />
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Border.Background>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock 
+                                    Text="name"
+                                    Style="{StaticResource LabelStyle}"/>
+                                <TextBox 
+                                    Text="{Binding Name, Mode=TwoWay}"
+                                    Width="150"/>
+                                <Button
+                                    Style="{StaticResource BlockButtonStyle}"
+                                    Content="delete"
+                                    Click="DeleteAnimationOnClick"
+                                    Margin="5 0 0 0"/>
+                            </StackPanel>
+
+                            <StackPanel 
+                                Margin="0 5 0 0" 
+                                Orientation="Horizontal">
+                                <TextBlock 
+                                    Text="speed"
+                                    Style="{StaticResource LabelStyle}"/>
+                                <TextBox 
+                                    Text="{Binding Speed, Mode=TwoWay}"
+                                    Width="50"/>
+                            </StackPanel>
+
+                            <StackPanel 
+                                Orientation="Horizontal"
+                                Margin="0 5 0 0">
+                                <TextBlock 
+                                    Text="looping"
+                                    Style="{StaticResource LabelStyle}"/>
+                                <CheckBox 
+                                    IsChecked="{Binding IsLooping, Mode=TwoWay}"
+                                    VerticalAlignment="Center"/>
+                                <TextBlock 
+                                    Text="looplag"
+                                    Style="{StaticResource LabelStyle}"/>
+                                <TextBox 
+                                    Text="{Binding LoopLagFrames, Mode=TwoWay}"
+                                    Width="50"/>
+                            </StackPanel>
+
+                            <StackPanel 
+                                Margin="0 5 0 0"
+                                Orientation="Horizontal">
+                                <TextBlock 
+                                    Text="frames"
+                                    Style="{StaticResource LabelStyle}"/>
+                                <TextBox 
+                                    Text="{Binding Frames, Mode=TwoWay}"
+                                    Width="50"/>
+                            </StackPanel>
+
+                            <StackPanel 
+                                Margin="0 5 0 0"
+                                Orientation="Horizontal">
+                                <TextBlock 
+                                    Text="x"
+                                    Style="{StaticResource LabelStyle}"/>
+                                <TextBox 
+                                    Text="{Binding X, Mode=TwoWay}"
+                                    Width="50"/>
+                                <TextBlock 
+                                    Text="y"
+                                    Style="{StaticResource LabelStyle}"
+                                    Width="25"/>
+                                <TextBox 
+                                    Text="{Binding Y, Mode=TwoWay}"
+                                    Width="50"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </StackPanel>
+</UserControl>

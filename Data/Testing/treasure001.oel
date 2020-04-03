@@ -1,0 +1,91 @@
+<level width="160" height="272">
+  <Layout exportMode="Rectangles">
+    <rect x="48" y="128" w="64" h="16" />
+  </Layout>
+  <Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background>
+  <Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground>
+  <UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad>
+  <DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad>
+  <Geometry tileset="Zones" exportMode="XMLCoords">
+    <tile x="3" y="8" tx="2" ty="1" />
+    <tile x="4" y="8" tx="8" ty="1" />
+    <tile x="5" y="8" tx="6" ty="2" />
+    <tile x="6" y="8" tx="7" ty="2" />
+  </Geometry>
+  <Doodads tileset="Zones" exportMode="XMLCoords" />
+  <Platforms />
+  <Props>
+    <TreasureChest id="0" x="48" y="112" />
+    <TreasureChest id="1" x="64" y="112" />
+    <TreasureChest id="2" x="80" y="112" />
+    <TreasureChest id="3" x="96" y="112" />
+  </Props>
+  <Triggers />
+  <Items />
+  <Hazards />
+  <Monsters />
+</level>
