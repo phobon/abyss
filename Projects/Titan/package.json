@@ -12,7 +12,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.10.0",
-    "jquery": "^2.2.0",
+    "jquery": "^3.4.1",
     "pouchdb": "^5.2.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
