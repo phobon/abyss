@@ -21,11 +21,16 @@ namespace Occasus.Core.Drawing.Interface
             : base(name, description)
         {
             this.Transform.Position = initialPosition;
+        }
 
-            // Add tags.
+        protected override void InitializeTags()
+        {
             this.Tags.Add("InterfaceElement");
+        }
 
-            this.Components.Add(Sprite.Tag, Atlas.GetSprite("Interface", this.Name, this));
+        protected override void InitializeSprite()
+        {
+            this.AddComponent(Sprite.Tag, Atlas.GetSprite("Interface", this.Name, this));
         }
     }
 }

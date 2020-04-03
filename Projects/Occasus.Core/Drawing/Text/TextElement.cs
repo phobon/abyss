@@ -28,7 +28,7 @@ namespace Occasus.Core.Drawing.Text
             this.Color = Color.White;
             this.Opacity = 1f;
             this.SpriteEffects = SpriteEffects.None;
-             this.font = DrawingManager.Font;
+            this.font = DrawingManager.Font;
         }
 
         /// <summary>
@@ -166,6 +166,12 @@ namespace Occasus.Core.Drawing.Text
 
             // Take an initial measurement.
             this.Measure(this.Transform.Position);
+        }
+
+        protected override void InitializeTags()
+        {
+            this.Tags.Add("InterfaceElement");
+            this.Tags.Add("Text");
         }
     }
 }

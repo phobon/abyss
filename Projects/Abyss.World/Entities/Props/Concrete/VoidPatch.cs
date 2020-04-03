@@ -21,7 +21,9 @@ namespace Abyss.World.Entities.Props.Concrete
     public class VoidPatch : Entity, IProp
     {
         private readonly Color voidColor = new Color(54, 0, 66);
+
         private readonly Vector2 origin;
+        private readonly Rectangle boundingBox;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="VoidPatch" /> class.
@@ -32,41 +34,8 @@ namespace Abyss.World.Entities.Props.Concrete
             : base("VoidPatch", "Patches of void energy that suck all matter inside it.")
         {
             this.Transform.Position = initialPosition;
-
-            // Add tags.
-            this.Tags.Add(EntityTags.Prop);
-            this.Tags.Add("VoidPatch");
-
+            this.boundingBox = boundingBox;
             this.origin = new Vector2(boundingBox.Width / 2, boundingBox.Height / 2);
-
-            // Has collision.
-            this.Collider = new Collider(this, boundingBox, origin)
-                                {
-                                    MovementSpeed = new Vector2(PhysicsManager.BaseActorSpeed, PhysicsManager.BaseActorSpeed)
-                                };
-
-            this.Transform.Scale = Vector2.Zero;
-
-            // Setup lighting.
-            this.Tags.Add(Lighting.DeferredRenderEntity);
-            this.Flags[EngineFlag.DeferredRender] = true;
-            this.Components.Add(LightSource.Tag, new PointLight(this, 1f, 3f, Color.Black));
-        }
-
-        /// <summary>
-        /// Initializes the Engine Component.
-        /// </summary>
-        public override void Initialize()
-        {
-            if (!this.Components.ContainsKey(VoidSparkle.ComponentName))
-            {
-                var effect = ParticleEffectFactory.GetParticleEffect(
-                    this,
-                    VoidSparkle.ComponentName);
-                this.Components.Add(VoidSparkle.ComponentName, effect);
-            }
-
-            base.Initialize();
         }
 
         /// <summary>
@@ -106,6 +75,33 @@ namespace Abyss.World.Entities.Props.Concrete
             this.States.Add(PropStates.Activating, new State(PropStates.Activating, this.BeginEffect(), true));
             this.States.Add(PropStates.Deactivating, new State(PropStates.Deactivating, this.EndEffect(), true));
             base.SetupStates();
+        }
+
+        protected override void InitializeTags()
+        {
+            this.Tags.Add(EntityTags.Prop);
+            this.Tags.Add("VoidPatch");
+        }
+
+        protected override void InitializeCollider()
+        {
+            this.Collider = new Collider(this, boundingBox, origin)
+            {
+                MovementSpeed = new Vector2(PhysicsManager.BaseActorSpeed, PhysicsManager.BaseActorSpeed)
+            };
+            this.Transform.Scale = Vector2.Zero;
+        }
+
+        protected override void InitializeLighting()
+        {
+            this.Tags.Add(Lighting.DeferredRender);
+            this.Flags[EngineFlag.DeferredRender] = true;
+            this.AddComponent(LightSource.Tag, new PointLight(this, 1f, 3f, Color.Black));
+        }
+
+        protected override void InitializeComponents()
+        {
+            this.AddComponent(VoidSparkle.ComponentName, ParticleEffectFactory.GetParticleEffect(this, VoidSparkle.ComponentName));
         }
 
         /// <summary>

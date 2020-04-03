@@ -32,12 +32,7 @@ namespace Abyss.World.Entities.Props.Concrete.LavaColumns
             boundingBox,
             Vector2.Zero)
         {
-            this.Tags.Add("LavaColumn");
             this.EruptionDirection = eruptionDirection;
-
-            // Setup lighting.
-            this.Tags.Add(Lighting.DeferredRenderEntity);
-            this.Flags[EngineFlag.DeferredRender] = true;
         }
 
         /// <summary>
@@ -52,22 +47,6 @@ namespace Abyss.World.Entities.Props.Concrete.LavaColumns
         }
 
         /// <summary>
-        /// Initializes the Engine Component.
-        /// </summary>
-        public override void Initialize()
-        {
-            if (!this.Components.ContainsKey(Lava.ComponentName))
-            {
-                var effect = ParticleEffectFactory.GetParticleEffect(
-                    this,
-                    Lava.ComponentName);
-                this.Components.Add(Lava.ComponentName, effect);
-            }
-
-            base.Initialize();
-        }
-
-        /// <summary>
         /// Performs any animations, state logic or operations required when this engine component begins.
         /// </summary>
         public override void Begin()
@@ -76,6 +55,23 @@ namespace Abyss.World.Entities.Props.Concrete.LavaColumns
             this.Resume();
             CoroutineManager.Add(this.Id + "_Begin", this.BeginEffect());
             ((IParticleEffect)this.Components[Lava.ComponentName]).Emit();
+        }
+
+        protected override void InitializeTags()
+        {
+            base.InitializeTags();
+            this.Tags.Add("LavaColumn");
+        }
+
+        protected override void InitializeLighting()
+        {
+            this.Tags.Add(Lighting.DeferredRender);
+            this.Flags[EngineFlag.DeferredRender] = true;
+        }
+
+        protected override void InitializeComponents()
+        {
+            this.AddComponent(Lava.ComponentName, ParticleEffectFactory.GetParticleEffect(this, Lava.ComponentName));
         }
 
         protected override void ColliderOnCollision(CollisionEventArgs args)

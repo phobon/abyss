@@ -15,7 +15,9 @@ using Occasus.Core.Maths;
 using Occasus.Core.Physics;
 using System.Collections;
 using System.Collections.Generic;
+using Abyss.World.Drawing.ParticleEffects.Concrete;
 using Abyss.World.Phases;
+using Occasus.Core.Debugging.Components;
 using Occasus.Core.Drawing.Sprites;
 
 
@@ -23,6 +25,8 @@ namespace Abyss.World.Entities.Monsters
 {
     public abstract class Monster : Entity, IMonster
     {
+        private readonly Rectangle boundingBox;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Monster" /> class.
         /// </summary>
@@ -41,50 +45,21 @@ namespace Abyss.World.Entities.Monsters
             ZoneType zoneType)
             : base(name, description)
         {
+            this.boundingBox = boundingBox;
             this.Transform.Position = initialPosition;
             this.Path = path;
-
-            // Add tags.
-            this.Tags.Add(EntityTags.Monster);
-
-            // Add a sprite to this component.
-            var sprite = Atlas.GetSprite(AtlasTags.Gameplay, this.Name, this);
-            sprite.Layers["outline"].Opacity = 0f;
-            this.Components.Add(Sprite.Tag, sprite);
-
-            // Has collision.
-            this.Collider = new Collider(this, boundingBox, Vector2.Zero)
-                                {
-                                    MovementSpeed = new Vector2(PhysicsManager.ActorMovementSpeeds[this.Name][ActorSpeed.Normal], PhysicsManager.ActorFallSpeeds[this.Name][ActorSpeed.Normal])
-                                };
-            this.Collider.Flags[PhysicsFlag.ReactsToPhysics] = true;
-            this.Collider.Flags[PhysicsFlag.ReactsToGravity] = false;
-
             this.ZoneType = zoneType;
-
-            // Setup lighting.
-            this.Tags.Add(Lighting.DeferredRenderEntity);
-            this.Flags[EngineFlag.DeferredRender] = true;
-            this.Components.Add(LightSource.Tag, new PointLight(this, 0.5f, 2f, Color.White));
         }
 
         /// <summary>
         /// Gets the type of zone this Monster lives in.
         /// </summary>
-        public ZoneType ZoneType
-        {
-            get;
-            private set;
-        }
+        public ZoneType ZoneType { get; private set; }
 
         /// <summary>
         /// Gets the path that this monster travels on.
         /// </summary>
-        public IEnumerable<Vector2> Path
-        {
-            get;
-            private set;
-        }
+        public IEnumerable<Vector2> Path { get; private set; }
 
         /// <summary>
         /// Triggers a movement decision.
@@ -98,25 +73,44 @@ namespace Abyss.World.Entities.Monsters
             // Destroy this monster, it shouldn't hurt the player anymore!
             CoroutineManager.Add(this.Id + "_Die", this.DieEffect());
         }
-
-        /// <summary>
-        /// Initializes the Engine Component.
-        /// </summary>
-        public override void Initialize()
+        
+        protected override void InitializeTags()
         {
-            base.Initialize();
+            this.Tags.Add(EntityTags.Monster);
+        }
 
-            // Implosion effect.
-            if (!this.Components.ContainsKey("ImplosionEffect"))
+        protected override void InitializeSprite()
+        {
+            var sprite = Atlas.GetSprite(AtlasTags.Gameplay, this.Name, this);
+            sprite.Layers["outline"].Opacity = 0f;
+            this.AddComponent(Sprite.Tag, sprite);
+        }
+
+        protected override void InitializeCollider()
+        {
+            this.Collider = new Collider(this, boundingBox, Vector2.Zero)
             {
-                var effect = ParticleEffectFactory.GetParticleEffect(
-                    this,
-                    "Implosion",
-                    new Vector2(
-                        this.Collider.BoundingBox.Center.X,
-                        this.Collider.BoundingBox.Bottom));
-                this.Components.Add("ImplosionEffect", effect);
-            }
+                MovementSpeed = new Vector2(PhysicsManager.ActorMovementSpeeds[this.Name][ActorSpeed.Normal], PhysicsManager.ActorFallSpeeds[this.Name][ActorSpeed.Normal])
+            };
+            this.Collider.Flags[PhysicsFlag.ReactsToPhysics] = true;
+            this.Collider.Flags[PhysicsFlag.ReactsToGravity] = false;
+        }
+
+        protected override void InitializeLighting()
+        {
+            this.Tags.Add(Lighting.DeferredRender);
+            this.Flags[EngineFlag.DeferredRender] = true;
+            this.AddComponent(LightSource.Tag, new PointLight(this, 0.5f, 2f, Color.White));
+        }
+
+        protected override void InitializeComponents()
+        {
+            var origin = new Vector2(this.Collider.BoundingBox.Center.X, this.Collider.BoundingBox.Bottom);
+            this.AddComponent(Implosion.ComponentName, ParticleEffectFactory.GetParticleEffect(this, Implosion.ComponentName, origin));
+
+#if DEBUG
+            this.AddComponent("BoundingBox", new Border(this, Color.Orange));
+#endif
         }
 
         protected override void ColliderOnCollision(CollisionEventArgs args)
@@ -161,7 +155,7 @@ namespace Abyss.World.Entities.Monsters
             // Make the player stomp.
             var newArgs = new CollisionEventArgs(args.CollisionEntity, args.Rectangle, CollisionTypes.Monster);
             player.Stomp(newArgs);
-            GameManager.StatisticManager.TotalScore += 50;
+            Monde.GameManager.StatisticManager.TotalScore += 50;
         }
 
         protected virtual IEnumerator DieEffect()

@@ -60,7 +60,7 @@ namespace Abyss.World.Phases.Concrete.Argus
 
         private void TreasureChestOnActivated(object sender, EventArgs eventArgs)
         {
-            GameManager.Player.TakeDamage(this.Name);
+            Monde.GameManager.Player.TakeDamage(this.Name);
         }
     }
 }

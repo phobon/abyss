@@ -31,7 +31,7 @@ namespace Abyss.World.Entities.Relics.Concrete.Active
 
             foreach (var i in entityCache)
             {
-                if (Vector2.Distance(i.Transform.Position, GameManager.Player.Transform.Position) < 5)
+                if (Vector2.Distance(i.Transform.Position, Monde.GameManager.Player.Transform.Position) < 5)
                 {
                     var monster = (IMonster)i;
                     monster.Die();

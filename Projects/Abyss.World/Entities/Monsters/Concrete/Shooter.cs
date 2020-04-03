@@ -31,5 +31,12 @@ namespace Abyss.World.Entities.Monsters.Concrete
             this.States.Add(MonsterStates.Shoot, new State(MonsterStates.Shoot, null, false));
             base.SetupStates();
         }
+
+        protected override void InitializeTags()
+        {
+            base.InitializeTags();
+            this.Tags.Add(EntityTags.GroundedMonster);
+            this.Tags.Add(EntityTags.Shooter);
+        }
     }
 }

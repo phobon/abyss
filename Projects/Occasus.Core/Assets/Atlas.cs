@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using Microsoft.Xna.Framework;
 using Occasus.Core.Assets.AtlasDefinitions;
 using Occasus.Core.Drawing;
@@ -11,8 +10,8 @@ using Occasus.Core.Entities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using Occasus.Core.Maps.Tiles;
 using Occasus.Core.Maths;
-using Occasus.Core.Tiles;
 
 namespace Occasus.Core.Assets
 {

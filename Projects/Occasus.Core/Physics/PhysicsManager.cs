@@ -5,6 +5,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
+using Occasus.Core.Entities;
 
 namespace Occasus.Core.Physics
 {
@@ -309,7 +310,7 @@ namespace Occasus.Core.Physics
             position.X += velocityX;
 
 #if DEBUG
-            Engine.Debugger.Add(HorizontalVelocityDebugKey, velocityX.ToString(CultureInfo.InvariantCulture));
+            Engine<IGameManager<IEntity>>.Debugger.Add(HorizontalVelocityDebugKey, velocityX.ToString(CultureInfo.InvariantCulture));
 #endif
 
             // Clamp Position to world boundaries and check for small changes. The crap here with bounding boxes is so that world boundaries are not restricted to the collider's position

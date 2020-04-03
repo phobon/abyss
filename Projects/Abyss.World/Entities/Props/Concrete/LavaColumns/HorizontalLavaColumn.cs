@@ -35,7 +35,7 @@ namespace Abyss.World.Entities.Props.Concrete.LavaColumns
             base.Initialize();
 
             // Determine a random vertical starting position for this lava column. 
-            var verticalPosition = (GameManager.GameViewPort.Top * DrawingManager.TileHeight) + (MathsHelper.Random(5, 17) * DrawingManager.TileHeight);
+            var verticalPosition = (Monde.GameManager.ViewPort.Top * DrawingManager.TileHeight) + (MathsHelper.Random(5, 17) * DrawingManager.TileHeight);
             verticalPosition += MathsHelper.Random(DrawingManager.TileHeight);
             switch (this.EruptionDirection)
             {

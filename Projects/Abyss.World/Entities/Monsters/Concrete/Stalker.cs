@@ -31,10 +31,6 @@ namespace Abyss.World.Entities.Monsters.Concrete
             boundingBox,
             ZoneType.Normal)
         {
-            this.Tags.Add(EntityTags.Stalker);
-            this.Tags.Add(EntityTags.FlyingMonster);
-
-            this.Collider.Flags[PhysicsFlag.CollidesWithEnvironment] = false;
         }
 
         protected override void SetupStates()
@@ -43,16 +39,29 @@ namespace Abyss.World.Entities.Monsters.Concrete
             base.SetupStates();
         }
 
+        protected override void InitializeTags()
+        {
+            base.InitializeTags();
+            this.Tags.Add(EntityTags.FlyingMonster);
+            this.Tags.Add(EntityTags.Stalker);
+        }
+
+        protected override void InitializeCollider()
+        {
+            base.InitializeCollider();
+            this.Collider.Flags[PhysicsFlag.CollidesWithEnvironment] = false;
+        }
+
         private IEnumerable Stalk()
         {
             while (this.Flags[EngineFlag.Active])
             {
                 // Calculate the direction between two positions to determine the vector direction.
-                var direction = Vector2.Normalize(GameManager.Player.Transform.Position - this.Transform.Position) * 3;
+                var direction = Vector2.Normalize(Monde.GameManager.Player.Transform.Position - this.Transform.Position) * 3;
                 this.Transform.Position += direction;
 
                 // Process sprite effects based on movement.
-                this.ProcessMovement(this.Transform.Position.X < GameManager.Player.Transform.Position.X ? Direction.Right : Direction.Left);
+                this.ProcessMovement(this.Transform.Position.X < Monde.GameManager.Player.Transform.Position.X ? Direction.Right : Direction.Left);
 
                 yield return null;
             }

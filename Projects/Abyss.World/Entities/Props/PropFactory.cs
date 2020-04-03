@@ -101,9 +101,9 @@ namespace Abyss.World.Entities.Props
             var boundingBox = new Rectangle(0, 0, size, size);
             
             // Get the position of this void patch.
-            var verticalPosition = MathsHelper.Random(GameManager.GameViewPort.Y, GameManager.GameViewPort.Y + GameManager.GameViewPort.Height) * DrawingManager.TileHeight;
+            var verticalPosition = MathsHelper.Random(Monde.GameManager.ViewPort.Y, Monde.GameManager.ViewPort.Y + Monde.GameManager.ViewPort.Height) * DrawingManager.TileHeight;
             verticalPosition += MathsHelper.Random(DrawingManager.TileHeight);
-            var horizontalPosition = MathsHelper.Random(GameManager.GameViewPort.Width)*DrawingManager.TileWidth;
+            var horizontalPosition = MathsHelper.Random(Monde.GameManager.ViewPort.Width)*DrawingManager.TileWidth;
             horizontalPosition += MathsHelper.Random(DrawingManager.TileWidth);
 
             // Get a random spritelocation based on the sizeMultiplier.
@@ -128,7 +128,7 @@ namespace Abyss.World.Entities.Props
             var horizontalPosition = originDirection == Direction.Left
                 ? -DrawingManager.BaseResolutionWidth * 1.5
                 : DrawingManager.BaseResolutionWidth * 1.5;
-            var verticalPosition = GameManager.GameViewPort.Center.Y;
+            var verticalPosition = Monde.GameManager.ViewPort.Center.Y;
             var sheet = (IProp)Activator.CreateInstance(
                 Type.GetType(Qualifier + "RiftSheet"), 
                 new Vector2((int)horizontalPosition, verticalPosition), boundingBox);
@@ -155,9 +155,11 @@ namespace Abyss.World.Entities.Props
 
         public static IProp GetLight(Vector2 position, Color color, float intensity, float scale)
         {
-            return (IProp)Activator.CreateInstance(
+            var light = (IProp)Activator.CreateInstance(
                  Type.GetType(Qualifier + "Light"),
                  position, color, intensity, scale);
+            light.Initialize();
+            return light;
         }
     }
 }

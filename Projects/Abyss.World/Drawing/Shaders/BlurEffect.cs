@@ -10,7 +10,7 @@ namespace Abyss.World.Drawing.Shaders
         /// Initializes a new instance of the <see cref="BlurEffect"/> class.
         /// </summary>
         public BlurEffect()
-            : base("Blur Effect", "Pixel shader that adds a gaussian blur effect.", new[] { ShaderUsage.IncludeDeferredRenderEntities })
+            : base("Blur Effect", "Pixel shader that adds a gaussian blur effect.", "GaussianBlurTechnique", new[] { ShaderUsage.IncludeDeferredRenderEntities })
         {
         }
 
@@ -20,14 +20,6 @@ namespace Abyss.World.Drawing.Shaders
         public override void LoadContent()
         {
             //this.Effect = DrawingManager.ContentManager.Load<Effect>("Effects/Blur");
-        }
-
-        /// <summary>
-        /// Applies this Shader.
-        /// </summary>
-        public override void Apply()
-        {
-            //ShaderManager.CurrentShader.Effect.CurrentTechnique = ShaderManager.CurrentShader.Effect.Techniques["GaussianBlurTechnique"];
         }
     }
 }

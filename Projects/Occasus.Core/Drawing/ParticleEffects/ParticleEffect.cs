@@ -6,6 +6,7 @@ using Occasus.Core.Entities;
 using Occasus.Core.Input;
 using System.Collections.Generic;
 using Occasus.Core.Components.Logic;
+using System;
 
 namespace Occasus.Core.Drawing.ParticleEffects
 {
@@ -43,51 +44,27 @@ namespace Occasus.Core.Drawing.ParticleEffects
         /// <summary>
         /// Gets the offset position for this particle effect.
         /// </summary>
-        public Vector2 Position
-        {
-            get
-            {
-                return this.Parent.Transform.Position + this.Offset;
-            }
-        }
+        public Vector2 Position => this.Parent.Transform.Position + this.Offset;
 
         /// <summary>
         /// Gets the offset for this particle effect.
         /// </summary>
-        public Vector2 Offset
-        {
-            get; private set;
-        }
+        public Vector2 Offset { get; private set; }
 
         /// <summary>
         /// Gets a value indicating the maximum number of Particles can exist in this ParticleEffect.
         /// </summary>
-        public int MaximumParticles
-        {
-            get; set;
-        }
+        public int MaximumParticles { get; set; }
 
         /// <summary>
         /// Gets the particle cloud.
         /// </summary>
-        public IEnumerable<IParticle> ParticleCloud
-        {
-            get
-            {
-                return this.particleCloud;
-            }
-        }
+        public IEnumerable<IParticle> ParticleCloud => this.particleCloud;
 
         /// <summary>
         /// Gets or sets the scale.
         /// </summary>
-        /// <value>
-        /// The scale.
-        /// </value>
-        public Vector2 Scale
-        {
-            get; set;
-        }
+        public Vector2 Scale { get; set; }
 
         /// <summary>
         /// Updates the Engine Component.
@@ -96,8 +73,6 @@ namespace Occasus.Core.Drawing.ParticleEffects
         /// <param name="inputState">The current input state.</param>
         public override void Update(GameTime gameTime, IInputState inputState)
         {
-            base.Update(gameTime, inputState);
-
             var deadParticles = new List<IParticle>();
             foreach (var p in this.ParticleCloud)
             {
@@ -191,6 +166,11 @@ namespace Occasus.Core.Drawing.ParticleEffects
         public void Stop()
         {
             this.Flags[ParticleEffectFlag.Recycle] = false;
+        }
+
+        protected override void InitializeTags()
+        {
+            this.Tags.Add("ParticleEffect");
         }
 
         private IEnumerable EmitEffect(int frames)

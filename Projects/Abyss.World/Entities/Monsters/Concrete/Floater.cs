@@ -17,7 +17,7 @@ namespace Abyss.World.Entities.Monsters.Concrete
         /// </summary>
         /// <param name="initialPosition">The initial position.</param>
         /// <param name="path">The path.</param>
-        public Floater(Vector2 initialPosition, IEnumerable<Vector2> path)
+        public Floater(Vector2 initialPosition)
             : base(
             "Floater",
             "Floaters hover in place, awaiting witless prey.",
@@ -26,14 +26,19 @@ namespace Abyss.World.Entities.Monsters.Concrete
             boundingBox,
             ZoneType.Normal)
         {
-            this.Tags.Add(EntityTags.Floater);
-            this.Tags.Add(EntityTags.FlyingMonster);
         }
 
         protected override void SetupStates()
         {
             this.States.Add(MonsterStates.Idle, new State(MonsterStates.Idle, this.Float(), true));
             base.SetupStates();
+        }
+
+        protected override void InitializeTags()
+        {
+            base.InitializeTags();
+            this.Tags.Add(EntityTags.FlyingMonster);
+            this.Tags.Add(EntityTags.Floater);
         }
 
         private IEnumerable Float()

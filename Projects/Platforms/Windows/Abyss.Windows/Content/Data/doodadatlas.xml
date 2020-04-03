@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DoodadAtlas>
+  <Zone id="normal">
+    <DoodadDefinition id="vines" placement="Below">
+      <Doodad x="0" y="0"/>
+      <Doodad x="2" y="0"/>
+      <Doodad x="4" y="0"/>
+      <Doodad x="6" y="0"/>
+      <Doodad x="8" y="0"/>
+      <Doodad x="10" y="0"/>
+      <Doodad x="12" y="0"/>
+      <Doodad x="14" y="0"/>
+      <Doodad x="16" y="0"/>
+      <Doodad x="18" y="0"/>
+      <Doodad x="0" y="1"/>
+      <Doodad x="2" y="1"/>
+      <Doodad x="4" y="1"/>
+      <Doodad x="6" y="1"/>
+      <Doodad x="8" y="1"/>
+      <Doodad x="10" y="1"/>
+      <Doodad x="12" y="1"/>
+      <Doodad x="14" y="1"/>
+      <Doodad x="16" y="1"/>
+      <Doodad x="18" y="1"/>
+    </DoodadDefinition>
+    
+    <DoodadDefinition id="geodes" placement="Below">
+      <Doodad x="0" y="2"/>
+      <Doodad x="2" y="2"/>
+      <Doodad x="4" y="2"/>
+      <Doodad x="6" y="2"/>
+      <Doodad x="8" y="2"/>
+      <Doodad x="10" y="2"/>
+      <Doodad x="12" y="2"/>
+      <Doodad x="14" y="2"/>
+      <Doodad x="16" y="2"/>
+      <Doodad x="18" y="2"/>
+      <Doodad x="0" y="3"/>
+      <Doodad x="2" y="3"/>
+      <Doodad x="4" y="3"/>
+      <Doodad x="6" y="3"/>
+      <Doodad x="8" y="3"/>
+      <Doodad x="10" y="3"/>
+      <Doodad x="12" y="3"/>
+      <Doodad x="14" y="3"/>
+      <Doodad x="16" y="3"/>
+      <Doodad x="18" y="3"/>
+    </DoodadDefinition>
+
+    <DoodadDefinition id="flowersrocks" placement="Above">
+      <Doodad x="0" y="4"/>
+      <Doodad x="2" y="4"/>
+      <Doodad x="4" y="4"/>
+      <Doodad x="6" y="4"/>
+      <Doodad x="8" y="4"/>
+      <Doodad x="10" y="4"/>
+      <Doodad x="12" y="4"/>
+      <Doodad x="14" y="4"/>
+      <Doodad x="16" y="4"/>
+      <Doodad x="18" y="4"/>
+      <Doodad x="0" y="5"/>
+      <Doodad x="2" y="5"/>
+      <Doodad x="4" y="5"/>
+      <Doodad x="6" y="5"/>
+      <Doodad x="8" y="5"/>
+      <Doodad x="10" y="5"/>
+      <Doodad x="12" y="5"/>
+      <Doodad x="14" y="5"/>
+      <Doodad x="16" y="5"/>
+      <Doodad x="18" y="5"/>
+      <Doodad x="0" y="6"/>
+      <Doodad x="2" y="6"/>
+      <Doodad x="4" y="6"/>
+      <Doodad x="6" y="6"/>
+      <Doodad x="8" y="6"/>
+      <Doodad x="10" y="6"/>
+      <Doodad x="12" y="6"/>
+      <Doodad x="14" y="6"/>
+      <Doodad x="16" y="6"/>
+      <Doodad x="18" y="6"/>
+    </DoodadDefinition>
+    
+    <DoodadDefinition id="weeds" placement="Below,Tile" tiles="1,2,4,5,6,7">
+      <Doodad x="0" y="7"/>
+      <Doodad x="1" y="7"/>
+      <Doodad x="2" y="7"/>
+      <Doodad x="3" y="7"/>
+      <Doodad x="4" y="7"/>
+      <Doodad x="5" y="7"/>
+      <Doodad x="6" y="7"/>
+      <Doodad x="7" y="7"/>
+      <Doodad x="8" y="7"/>
+      <Doodad x="9" y="7"/>
+      <Doodad x="10" y="7"/>
+      <Doodad x="11" y="7"/>
+      <Doodad x="12" y="7"/>
+      <Doodad x="13" y="7"/>
+      <Doodad x="14" y="7"/>
+      <Doodad x="15" y="7"/>
+      <Doodad x="16" y="7"/>
+      <Doodad x="17" y="7"/>
+      <Doodad x="18" y="7"/>
+      <Doodad x="19" y="7"/>
+      <Doodad x="0" y="8"/>
+      <Doodad x="1" y="8"/>
+      <Doodad x="2" y="8"/>
+      <Doodad x="3" y="8"/>
+      <Doodad x="4" y="8"/>
+      <Doodad x="5" y="8"/>
+      <Doodad x="6" y="8"/>
+      <Doodad x="7" y="8"/>
+      <Doodad x="8" y="8"/>
+      <Doodad x="9" y="8"/>
+      <Doodad x="10" y="8"/>
+      <Doodad x="11" y="8"/>
+      <Doodad x="12" y="8"/>
+      <Doodad x="13" y="8"/>
+      <Doodad x="14" y="8"/>
+      <Doodad x="15" y="8"/>
+      <Doodad x="16" y="8"/>
+      <Doodad x="17" y="8"/>
+      <Doodad x="18" y="8"/>
+      <Doodad x="19" y="8"/>
+    </DoodadDefinition>
+
+    <DoodadDefinition id="grass" placement="Tile" tiles="1,2,4,5,6,7">
+      <Doodad x="0" y="9"/>
+      <Doodad x="1" y="9"/>
+      <Doodad x="2" y="9"/>
+      <Doodad x="3" y="9"/>
+      <Doodad x="4" y="9"/>
+      <Doodad x="5" y="9"/>
+      <Doodad x="6" y="9"/>
+      <Doodad x="7" y="9"/>
+      <Doodad x="8" y="9"/>
+      <Doodad x="9" y="9"/>
+      <Doodad x="10" y="9"/>
+      <Doodad x="11" y="9"/>
+      <Doodad x="12" y="9"/>
+      <Doodad x="13" y="9"/>
+      <Doodad x="14" y="9"/>
+      <Doodad x="15" y="9"/>
+      <Doodad x="16" y="9"/>
+      <Doodad x="17" y="9"/>
+      <Doodad x="18" y="9"/>
+      <Doodad x="19" y="9"/>
+      <Doodad x="0" y="10"/>
+      <Doodad x="1" y="10"/>
+      <Doodad x="2" y="10"/>
+      <Doodad x="3" y="10"/>
+      <Doodad x="4" y="10"/>
+      <Doodad x="5" y="10"/>
+      <Doodad x="6" y="10"/>
+      <Doodad x="7" y="10"/>
+      <Doodad x="8" y="10"/>
+      <Doodad x="9" y="10"/>
+      <Doodad x="10" y="10"/>
+      <Doodad x="11" y="10"/>
+      <Doodad x="12" y="10"/>
+      <Doodad x="13" y="10"/>
+      <Doodad x="14" y="10"/>
+      <Doodad x="15" y="10"/>
+      <Doodad x="16" y="10"/>
+      <Doodad x="17" y="10"/>
+      <Doodad x="18" y="10"/>
+      <Doodad x="19" y="10"/>
+    </DoodadDefinition>
+
+    <DoodadDefinition id="graves" placement="Above">
+      <Doodad x="0" y="14"/>
+      <Doodad x="1" y="14"/>
+      <Doodad x="2" y="14"/>
+      <Doodad x="3" y="14"/>
+
+      <Doodad x="0" y="15"/>
+      <Doodad x="1" y="15"/>
+      <Doodad x="2" y="15"/>
+      <Doodad x="3" y="15"/>
+    </DoodadDefinition>
+    
+    <DoodadDefinition id="mushrooms" placement="Above">
+      <Doodad x="0" y="16"/>
+      <Doodad x="5" y="16"/>
+      <Doodad x="10" y="16"/>
+      <Doodad x="15" y="16"/>
+
+      <Doodad x="0" y="17"/>
+      <Doodad x="5" y="17"/>
+      <Doodad x="10" y="17"/>
+      <Doodad x="15" y="17"/>
+
+      <Doodad x="0" y="18"/>
+      <Doodad x="5" y="18"/>
+      <Doodad x="10" y="18"/>
+      <Doodad x="15" y="18"/>
+    </DoodadDefinition>
+
+    <DoodadDefinition id="creepers1" placement="Tile" tiles="1,3,4,8">
+      <Doodad x="1" y="20"/>
+      <Doodad x="2" y="20"/>
+      <Doodad x="3" y="20"/>
+      <Doodad x="4" y="20"/>
+      <Doodad x="5" y="20"/>
+      <Doodad x="6" y="20"/>
+      <Doodad x="7" y="20"/>
+      <Doodad x="8" y="20"/>
+      <Doodad x="9" y="20"/>
+    </DoodadDefinition>
+    <DoodadDefinition id="creepers2" placement="Tile" tiles="1,3,5,9">
+      <Doodad x="11" y="20"/>
+      <Doodad x="12" y="20"/>
+      <Doodad x="13" y="20"/>
+      <Doodad x="14" y="20"/>
+      <Doodad x="15" y="20"/>
+      <Doodad x="16" y="20"/>
+      <Doodad x="17" y="20"/>
+      <Doodad x="18" y="20"/>
+      <Doodad x="19" y="20"/>
+    </DoodadDefinition>
+    
+    <DoodadDefinition id="creepers3" placement="Tile" tiles="1,2,5,7">
+      <Doodad x="1" y="21"/>
+      <Doodad x="2" y="21"/>
+      <Doodad x="3" y="21"/>
+      <Doodad x="4" y="21"/>
+      <Doodad x="5" y="21"/>
+      <Doodad x="6" y="21"/>
+      <Doodad x="7" y="21"/>
+      <Doodad x="8" y="21"/>
+      <Doodad x="9" y="21"/>
+    </DoodadDefinition>
+    <DoodadDefinition id="creepers4" placement="Tile" tiles="1,2,4,6">
+      <Doodad x="11" y="21"/>
+      <Doodad x="12" y="21"/>
+      <Doodad x="13" y="21"/>
+      <Doodad x="14" y="21"/>
+      <Doodad x="15" y="21"/>
+      <Doodad x="16" y="21"/>
+      <Doodad x="17" y="21"/>
+      <Doodad x="18" y="21"/>
+      <Doodad x="19" y="21"/>
+    </DoodadDefinition>
+
+    <DoodadDefinition id="creepers5" placement="Tile" tiles="1">
+      <Doodad x="1" y="22"/>
+      <Doodad x="2" y="22"/>
+      <Doodad x="3" y="22"/>
+      <Doodad x="4" y="22"/>
+      <Doodad x="5" y="22"/>
+      <Doodad x="6" y="22"/>
+      <Doodad x="7" y="22"/>
+      <Doodad x="8" y="22"/>
+      <Doodad x="9" y="22"/>
+    </DoodadDefinition>
+
+    <DoodadDefinition id="creepers6" placement="Tile" tiles="1">
+      <Doodad x="1" y="23"/>
+      <Doodad x="2" y="23"/>
+      <Doodad x="3" y="23"/>
+      <Doodad x="4" y="23"/>
+      <Doodad x="5" y="23"/>
+      <Doodad x="6" y="23"/>
+      <Doodad x="7" y="23"/>
+      <Doodad x="8" y="23"/>
+      <Doodad x="9" y="23"/>
+    </DoodadDefinition>
+
+    <DoodadDefinition id="creepers7" placement="Tile" tiles="1">
+      <Doodad x="1" y="24"/>
+      <Doodad x="2" y="24"/>
+      <Doodad x="3" y="24"/>
+      <Doodad x="4" y="24"/>
+      <Doodad x="5" y="24"/>
+      <Doodad x="6" y="24"/>
+      <Doodad x="7" y="24"/>
+      <Doodad x="8" y="24"/>
+      <Doodad x="9" y="24"/>
+    </DoodadDefinition>
+    
+  </Zone>
+</DoodadAtlas>

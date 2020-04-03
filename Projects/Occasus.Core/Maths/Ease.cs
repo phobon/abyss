@@ -8,23 +8,22 @@ namespace Occasus.Core.Maths
     public static class Ease
     {
         public static readonly Easer NullEase = (float t) => { return 0; };
-        static public readonly Easer QuadIn = (float t) => { return t * t; };
-        static public readonly Easer QuadOut = (float t) => { return 1 - QuadIn(1 - t); };
-        static public readonly Easer QuadInOut = (float t) => { return (t <= 0.5f) ? QuadIn(t * 2) / 2 : QuadOut(t * 2 - 1) / 2 + 0.5f; };
-        static public readonly Easer CubeIn = (float t) => { return t * t * t; };
-        static public readonly Easer CubeOut = (float t) => { return 1 - CubeIn(1 - t); };
-        static public readonly Easer CubeInOut = (float t) => { return (t <= 0.5f) ? CubeIn(t * 2) / 2 : CubeOut(t * 2 - 1) / 2 + 0.5f; };
-        static public readonly Easer BackIn = (float t) => { return t * t * (2.70158f * t - 1.70158f); };
-        static public readonly Easer BackOut = (float t) => { return 1 - BackIn(1 - t); };
-        static public readonly Easer BackInOut = (float t) => { return (t <= 0.5f) ? BackIn(t * 2) / 2 : BackOut(t * 2 - 1) / 2 + 0.5f; };
-        static public readonly Easer ExpoIn = (float t) => { return (float)Math.Pow(2, 10 * (t - 1)); };
-        static public readonly Easer ExpoOut = (float t) => { return 1 - ExpoIn(t); };
-        static public readonly Easer ExpoInOut = (float t) => { return t < .5f ? ExpoIn(t * 2) / 2 : ExpoOut(t * 2) / 2; };
-        static public readonly Easer SineIn = (float t) => { return -(float)Math.Cos(MathHelper.PiOver2 * t) + 1; };
-        static public readonly Easer SineOut = (float t) => { return (float)Math.Sin(MathHelper.PiOver2 * t); };
-        static public readonly Easer SineInOut = (float t) => { return -(float)Math.Cos(MathHelper.Pi * t) / 2f + .5f; };
-
-
+        public static readonly Easer QuadIn = (float t) => { return t * t; };
+        public static readonly Easer QuadOut = (float t) => { return 1 - QuadIn(1 - t); };
+        public static readonly Easer QuadInOut = (float t) => { return (t <= 0.5f) ? QuadIn(t * 2) / 2 : QuadOut(t * 2 - 1) / 2 + 0.5f; };
+        public static readonly Easer CubeIn = (float t) => { return t * t * t; };
+        public static readonly Easer CubeOut = (float t) => { return 1 - CubeIn(1 - t); };
+        public static readonly Easer CubeInOut = (float t) => { return (t <= 0.5f) ? CubeIn(t * 2) / 2 : CubeOut(t * 2 - 1) / 2 + 0.5f; };
+        public static readonly Easer BackIn = (float t) => { return t * t * (2.70158f * t - 1.70158f); };
+        public static readonly Easer BackOut = (float t) => { return 1 - BackIn(1 - t); };
+        public static readonly Easer BackInOut = (float t) => { return (t <= 0.5f) ? BackIn(t * 2) / 2 : BackOut(t * 2 - 1) / 2 + 0.5f; };
+        public static readonly Easer ExpoIn = (float t) => { return (float)Math.Pow(2, 10 * (t - 1)); };
+        public static readonly Easer ExpoOut = (float t) => { return 1 - ExpoIn(t); };
+        public static readonly Easer ExpoInOut = (float t) => { return t < .5f ? ExpoIn(t * 2) / 2 : ExpoOut(t * 2) / 2; };
+        public static readonly Easer SineIn = (float t) => { return -(float)Math.Cos(MathHelper.PiOver2 * t) + 1; };
+        public static readonly Easer SineOut = (float t) => { return (float)Math.Sin(MathHelper.PiOver2 * t); };
+        public static readonly Easer SineInOut = (float t) => { return -(float)Math.Cos(MathHelper.Pi * t) / 2f + .5f; };
+        
         public static readonly Easer Linear = (o) => o;
         //public static readonly Easer QuadIn = (o) => o * o;
         //public static readonly Easer QuadOut = (o) => 1 - QuadIn(1 - o);

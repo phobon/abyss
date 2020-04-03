@@ -10,7 +10,7 @@ namespace Abyss.World.Drawing.Shaders
         /// Initializes a new instance of the <see cref="MaskEffect"/> class.
         /// </summary>
         public MaskEffect()
-            : base("Mask Effect", "Pixel shader that blacks out all textures.", new[] { ShaderUsage.IncludeDeferredRenderEntities })
+            : base("Mask Effect", "Pixel shader that blacks out all textures.", "MaskTechnique", new[] { ShaderUsage.IncludeDeferredRenderEntities })
         {
         }
 
@@ -20,14 +20,6 @@ namespace Abyss.World.Drawing.Shaders
         public override void LoadContent()
         {
             this.Effect = DrawingManager.ContentManager.Load<Effect>("Effects/Screen");
-        }
-
-        /// <summary>
-        /// Applies this Shader.
-        /// </summary>
-        public override void Apply()
-        {
-            ShaderManager.CurrentShader.Effect.CurrentTechnique = ShaderManager.CurrentShader.Effect.Techniques["MaskTechnique"];
         }
     }
 }

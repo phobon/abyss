@@ -14,11 +14,13 @@ using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Occasus.Core.Debugging;
+using Occasus.Core.Entities;
 using Occasus.Core.Physics;
 
 namespace Occasus.Core
 {
-    public abstract class Engine : Game
+    public abstract class Engine<T> : Game
     {
         private const string EngineDataUri = "Content\\enginedata.json";
 
@@ -70,11 +72,9 @@ namespace Occasus.Core
         /// <summary>
         /// Gets the time between frames.
         /// </summary>
-        public static float DeltaTime
-        {
-            get;
-            private set;
-        }
+        public static float DeltaTime { get; private set; }
+
+        public static T GameManager { get; set; }
 
         /// <summary>
         /// Gets the framerate.
@@ -105,39 +105,20 @@ namespace Occasus.Core
         /// <summary>
         /// Gets a dictionary containing all of the scenes in this Engine.
         /// </summary>
-        public IDictionary<string, IScene> Scenes
-        {
-            get
-            {
-                return scenes;
-            }
-        }
+        public IDictionary<string, IScene> Scenes => scenes;
 
         /// <summary>
         /// Gets the current scene.
         /// </summary>
-        public IScene CurrentScene
-        {
-            get
-            {
-                return currentScene;
-            }
-        }
+        public IScene CurrentScene => currentScene;
 
         /// <summary>
         /// Gets an object that contains input state data.
         /// </summary>
-        public IInputState InputState
-        {
-            get;
-            private set;
-        }
+        public IInputState InputState { get; private set; }
 
 #if DEBUG
-        public static IDebugger Debugger
-        {
-            get { return debugger ?? (debugger = new Debugger()); }
-        }
+        public static IDebugger Debugger => debugger ?? (debugger = new Debugger());
 #endif
 
         /// <summary>

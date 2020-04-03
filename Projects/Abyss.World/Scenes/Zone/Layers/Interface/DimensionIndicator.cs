@@ -52,18 +52,6 @@ namespace Abyss.World.Scenes.Zone.Layers.Interface
             "Dimension indicator element.",
             initialPosition)
         {
-            this.Flags[EngineFlag.DeferredBegin] = true;
-            var sprite = this.GetSprite();
-            this.Transform.Scale = Vector2.One * DrawingManager.WindowScale;
-            sprite.Opacity = 0f;
-            sprite.Layers[GemLayerKey].Opacity = 0f;
-
-            // Set up various layer opacity.
-            sprite.Layers[Pattern1LayerKey].Opacity = 0f;
-            sprite.Layers[Pattern2LayerKey].Opacity = 0f;
-            sprite.Layers[Pattern3LayerKey].Opacity = 0f;
-            sprite.Layers[Pattern4LayerKey].Opacity = 0f;
-
             this.shakeKey = this.Id + "_Shake";
         }
 
@@ -91,8 +79,8 @@ namespace Abyss.World.Scenes.Zone.Layers.Interface
         {
             base.Initialize();
 
-            GameManager.Player.PhaseGem.ChargeGenerated += PhaseGemOnChargeGenerated;
-            GameManager.Player.PhaseGem.ChargeUsed += PhaseGemOnChargeUsed;
+            Monde.GameManager.Player.PhaseGem.ChargeGenerated += PhaseGemOnChargeGenerated;
+            Monde.GameManager.Player.PhaseGem.ChargeUsed += PhaseGemOnChargeUsed;
 
             this.StateChanged += delegate(StateChangedEventEventArgs args)
             {
@@ -108,20 +96,6 @@ namespace Abyss.World.Scenes.Zone.Layers.Interface
                     this.Transform.Position = initialPosition;
                 }
             };
-
-            if (!this.Components.ContainsKey(Curse.ComponentName))
-            {
-                var curseEffect = ParticleEffectFactory.GetParticleEffect(
-                    this,
-                    Curse.ComponentName,
-                    new Vector2(50f, -10f));
-                curseEffect.Scale = Vector2.One * 4;
-                curseEffect.MaximumParticles = 10;
-
-                this.Components.Add(
-                    Curse.ComponentName,
-                    curseEffect);
-            }
         }
 
         /// <summary>
@@ -131,8 +105,8 @@ namespace Abyss.World.Scenes.Zone.Layers.Interface
         {
             base.Dispose();
 
-            GameManager.Player.PhaseGem.ChargeGenerated -= PhaseGemOnChargeGenerated;
-            GameManager.Player.PhaseGem.ChargeUsed -= PhaseGemOnChargeUsed;
+            Monde.GameManager.Player.PhaseGem.ChargeGenerated -= PhaseGemOnChargeGenerated;
+            Monde.GameManager.Player.PhaseGem.ChargeUsed -= PhaseGemOnChargeUsed;
         }
 
         /// <summary>
@@ -193,6 +167,39 @@ namespace Abyss.World.Scenes.Zone.Layers.Interface
             this.States.Add(RechargingState, new State(RechargingState, this.RechargingEffect(), false));
 
             this.CurrentState = DeactivatedState;
+        }
+
+        protected override void InitializeFlags()
+        {
+            this.Flags[EngineFlag.DeferredBegin] = true;
+        }
+
+        protected override void InitializeSprite()
+        {
+            base.InitializeSprite();
+
+            var sprite = this.GetSprite();
+            this.Transform.Scale = Vector2.One * DrawingManager.WindowScale;
+            sprite.Opacity = 0f;
+            sprite.Layers[GemLayerKey].Opacity = 0f;
+
+            // Set up various layer opacity.
+            sprite.Layers[Pattern1LayerKey].Opacity = 0f;
+            sprite.Layers[Pattern2LayerKey].Opacity = 0f;
+            sprite.Layers[Pattern3LayerKey].Opacity = 0f;
+            sprite.Layers[Pattern4LayerKey].Opacity = 0f;
+        }
+
+        protected override void InitializeComponents()
+        {
+            var curseEffect = ParticleEffectFactory.GetParticleEffect(
+                this,
+                Curse.ComponentName,
+                new Vector2(50f, -10f));
+            curseEffect.Scale = Vector2.One * 4;
+            curseEffect.MaximumParticles = 10;
+
+            this.AddComponent(Curse.ComponentName, curseEffect);
         }
 
         private IEnumerable ActivatedEffect()
@@ -307,7 +314,7 @@ namespace Abyss.World.Scenes.Zone.Layers.Interface
 
         private void PhaseGemOnChargeUsed(object sender, EventArgs eventArgs)
         {
-            if (GameManager.Player.PhaseGem.Charges == 0)
+            if (Monde.GameManager.Player.PhaseGem.Charges == 0)
             {
                 this.CurrentState = RechargingState;
             }

@@ -36,14 +36,19 @@ namespace Abyss.World.Entities.Monsters.Concrete
             boundingBox,
             ZoneType.Normal)
         {
-            this.Tags.Add(EntityTags.Flyer);
-            this.Tags.Add(EntityTags.FlyingMonster);
         }
 
         protected override void SetupStates()
         {
             this.States.Add(MonsterStates.Fly, new State(MonsterStates.Fly, this.Fly(), false));
             base.SetupStates();
+        }
+
+        protected override void InitializeTags()
+        {
+            base.InitializeTags();
+            this.Tags.Add(EntityTags.FlyingMonster);
+            this.Tags.Add(EntityTags.Flyer);
         }
 
         private IEnumerable Fly()

@@ -19,12 +19,6 @@ namespace Occasus.Core.Scenes
         IDictionary<string, IList<IEntity>> TagCache { get; }
 
         /// <summary>
-        /// Handles the input for this scene.
-        /// </summary>
-        /// <param name="inputState">State of the input.</param>
-        void HandleInput(IInputState inputState);
-
-        /// <summary>
         /// Adds layers to this scene.
         /// </summary>
         void AddLayers();

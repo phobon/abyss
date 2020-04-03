@@ -52,7 +52,7 @@ namespace Abyss.World.Phases.Concrete.Valus
                 var column = PropFactory.GetHorizontalLavaColumn(eruptionDirection);
                 column.Begin();
                 layer.AddEntity(column);
-                layer.UpdateEntityCache(GameManager.GameViewPort);
+                layer.UpdateEntityCache(Monde.GameManager.ViewPort);
                 yield return Coroutines.Pause(TimingHelper.GetFrameCount(5f));
             }
         }

@@ -1,16 +1,19 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Occasus.Core.Components;
 using Occasus.Core.Input;
 using Occasus.Core.Physics;
 using System.Collections.Generic;
-
+using Occasus.Core.Drawing.Lighting;
 using Occasus.Core.States;
 
 namespace Occasus.Core.Entities
 {
     public abstract class Entity : StateMachine, IEntity
     {
+        private readonly IDictionary<string, IEntityComponent> components;
+
         private ICollider collider;
 
         /// <summary>
@@ -22,17 +25,14 @@ namespace Occasus.Core.Entities
             : base(name, description)
         {
             this.Transform = new Transform();
-            this.Components = new Dictionary<string, IEntityComponent>();
+            this.components = new Dictionary<string, IEntityComponent>();
             this.Tags = new List<string>();
         }
 
         /// <summary>
         /// Gets the transform.
         /// </summary>
-        public ITransform Transform
-        {
-            get; private set;
-        }
+        public ITransform Transform { get; private set; }
 
         /// <summary>
         /// Gets a list of entity components associated with this entity.
@@ -40,10 +40,7 @@ namespace Occasus.Core.Entities
         /// <remarks>
         /// Entity components are reusable objects that implement some sort of base-level functionality; such as drawing a sprite, etc.
         /// </remarks>
-        public IDictionary<string, IEntityComponent> Components
-        {
-            get; private set;
-        }
+        public IDictionary<string, IEntityComponent> Components => this.components;
 
         /// <summary>
         /// Gets or sets an object that is used in physics collision methods.
@@ -80,6 +77,9 @@ namespace Occasus.Core.Entities
                 {
                     this.Flags[EngineFlag.Collidable] = true;
                     this.collider.Collision += this.ColliderOnCollision;
+
+                    this.Transform.Size = new Vector2(this.collider.BoundingBox.X, this.collider.BoundingBox.Y);
+                    this.Transform.Origin = new Vector2(0.5f, 0.5f);
                 }
             }
         }
@@ -90,10 +90,7 @@ namespace Occasus.Core.Entities
         /// <remarks>
         /// Used primarily to accelerate lookups in a parent Scene. The Scene caches these tags as entities are created.
         /// </remarks>
-        public IList<string> Tags
-        {
-            get; private set;
-        }
+        public IList<string> Tags { get; private set; }
 
         /// <summary>
         /// Updates the Engine Component.
@@ -102,7 +99,8 @@ namespace Occasus.Core.Entities
         /// <param name="inputState">The current input state.</param>
         public override void Update(GameTime gameTime, IInputState inputState)
         {
-            base.Update(gameTime, inputState);
+            // Handle input if it's applicable.
+            this.HandleInput(inputState);
 
             foreach (var c in this.Components.Values)
             {
@@ -120,11 +118,9 @@ namespace Occasus.Core.Entities
         /// <param name="spriteBatch">The sprite batch.</param>
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            base.Draw(gameTime, spriteBatch);
-
             foreach (var c in this.Components.Values)
             {
-                if (c.Flags[EngineFlag.Visible])
+                if (c.Flags[EngineFlag.Visible] && !c.Tags.Contains(Lighting.DeferredRender))
                 {
                     c.Draw(gameTime, spriteBatch);
                 }
@@ -136,6 +132,15 @@ namespace Occasus.Core.Entities
         /// </summary>
         public override void Initialize()
         {
+            // Some virtual methods to initialize aspects of this entity without having to override constructors too much.
+            InitializeTags();
+            InitializeSprite();
+            InitializeCollider();
+            InitializeLighting();
+
+            // A method to initialize components. This is really mainly for visual components like particle effects, etc.
+            InitializeComponents();
+
             base.Initialize();
 
             foreach (var c in this.Components.Values)
@@ -202,7 +207,60 @@ namespace Occasus.Core.Entities
             }
         }
 
+        public IEnumerable<IEntityComponent> GetComponentsByTag(string tag)
+        {
+            var tagComponents = new List<IEntityComponent>();
+            foreach (var c in Components.Values)
+            {
+                if (c.Tags.Contains(tag))
+                {
+                    tagComponents.Add(c);
+                }
+            }
+
+            return tagComponents;
+        }
+
+        public void AddComponent(string key, IEntityComponent component)
+        {
+            if (!this.components.ContainsKey(key))
+            {
+                this.components.Add(key, component);
+            }
+        }
+
+        public void RemoveComponent(string key)
+        {
+            if (this.components.ContainsKey(key))
+            {
+                this.components.Remove(key);
+            }
+        }
+
+        public void ClearComponents()
+        {
+            this.components.Clear();
+        }
+
+        protected abstract void InitializeTags();
+
+        protected virtual void InitializeSprite()
+        {
+        }
+
+        protected virtual void InitializeCollider()
+        {
+        }
+
+        protected virtual void InitializeLighting()
+        {
+        }
+
         protected virtual void ColliderOnCollision(CollisionEventArgs args)
+        {
+        }
+
+        protected virtual void InitializeComponents()
         {
         }
     }

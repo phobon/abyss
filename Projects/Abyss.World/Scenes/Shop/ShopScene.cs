@@ -28,7 +28,7 @@ namespace Abyss.World.Scenes.Shop
             // Check whether we should quit the game.
             if (inputState.IsNewKeyPress(Keys.Q, PlayerIndex.One, out playerIndex))
             {
-                Engine.ActivateScene("GameOver");
+                Monde.ActivateScene("GameOver");
             }
             
             if (inputState.IsNewKeyPress(Keys.Enter, PlayerIndex.One, out playerIndex))
@@ -50,27 +50,27 @@ namespace Abyss.World.Scenes.Shop
 
             if (inputState.IsNewKeyPress(Keys.F5, PlayerIndex.One, out playerIndex))
             {
-                GameManager.LightsOut();
+                Monde.GameManager.LightsOut();
             }
 
             if (inputState.IsNewKeyPress(Keys.F6, PlayerIndex.One, out playerIndex))
             {
-                GameManager.LightsOn();
+                Monde.GameManager.LightsOn();
             }
 
             if (inputState.IsNewKeyPress(Keys.F7, PlayerIndex.One, out playerIndex))
             {
-                Engine.ChangeFramerate(30f, 0);
+                Monde.ChangeFramerate(30f, 0);
             }
 
             if (inputState.IsNewKeyPress(Keys.F8, PlayerIndex.One, out playerIndex))
             {
-                Engine.ChangeFramerate(60f, 0);
+                Monde.ChangeFramerate(60f, 0);
             }
 #endif
 
             // Handle player input.
-            GameManager.Player.HandleInput(inputState);
+            Monde.GameManager.Player.HandleInput(inputState);
         }
 
         public override void AddLayers()

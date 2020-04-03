@@ -382,7 +382,7 @@ namespace Occasus.Core.Camera
             this.isShaking = true;
 
             var elapsedFrames = 0;
-            var totalFrames = duration / Engine.DeltaTime;
+            var totalFrames = duration / Engine<IGameManager<IEntity>>.DeltaTime;
 
             while (elapsedFrames <= totalFrames)
             {

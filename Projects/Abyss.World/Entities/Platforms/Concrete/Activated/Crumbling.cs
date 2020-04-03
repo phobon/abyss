@@ -4,6 +4,8 @@ using Occasus.Core.Components.Logic;
 using Occasus.Core.Drawing.Animation;
 using Occasus.Core.Physics;
 using System.Collections;
+using Occasus.Core.Maps;
+using Occasus.Core.Maps.Definitions;
 
 namespace Abyss.World.Entities.Platforms.Concrete.Activated
 {

@@ -6,11 +6,27 @@ namespace Abyss.World.Drawing.Shaders
 {
     public class DesaturateEffect : Shader
     {
+        private static string Technique = "DesaturateTechnique";
+        private static string DesaturationAmountKey = "DesaturationAmount";
+
+        public float DesaturationAmount
+        {
+            get
+            {
+                return this.Effect.Parameters[DesaturationAmountKey].GetValueSingle();
+            }
+
+            set
+            {
+                this.Effect.Parameters[DesaturationAmountKey].SetValue(value);
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="DesaturateEffect"/> class.
         /// </summary>
         public DesaturateEffect()
-            : base("Desaturate Effect", "Pixel shader that removes all colour from a particular scene.", new [] { ShaderUsage.IncludeDeferredRenderEntities })
+            : base("Desaturate Effect", "Pixel shader that removes all colour from a particular scene.", Technique, new [] { ShaderUsage.IncludeDeferredRenderEntities })
         {
         }
 
@@ -20,15 +36,7 @@ namespace Abyss.World.Drawing.Shaders
         public override void LoadContent()
         {
             this.Effect = DrawingManager.ContentManager.Load<Effect>("Effects/Screen");
-        }
-
-        /// <summary>
-        /// Applies this Shader.
-        /// </summary>
-        public override void Apply()
-        {
-            ShaderManager.CurrentShader.Effect.CurrentTechnique = ShaderManager.CurrentShader.Effect.Techniques["DesaturateTechnique"];
-            ShaderManager.CurrentShader.Effect.Parameters["DesaturationAmount"].SetValue(1.0f);
+            DesaturationAmount = 1.0f;
         }
     }
 }

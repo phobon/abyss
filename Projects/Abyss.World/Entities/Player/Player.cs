@@ -27,6 +27,7 @@ using Occasus.Core.States;
 using System;
 using System.Collections;
 using Abyss.World.Entities.Player.Components;
+using Occasus.Core.Debugging.Components;
 using Occasus.Core.Drawing.Sprites;
 
 namespace Abyss.World.Entities.Player
@@ -50,39 +51,15 @@ namespace Abyss.World.Entities.Player
         /// </summary>
         public Player()
             : base(
-            "Player",
-            "The main player of the game.")
+                name: "Player",
+                description: "The main player of the game."
+            )
         {
-            // Add tags.
-            this.Tags.Add(EntityTags.Player);
-
-            // Initialize player flags.
-            this.Flags.Add(PlayerFlags.Invulnerable, false);
-            this.Flags.Add(PlayerFlags.Shielded, false);
-
-            // Add sprites.
-            this.Components.Add(Sprite.Tag, Atlas.GetSprite(AtlasTags.Gameplay, "Player", this));
-
             // Create a new phase gem.
             this.PhaseGem = new PhaseGem(this);
 
             // Create a new shield.
             this.Barrier = new Barrier(this);
-
-            // Has collision.
-            this.MovementSpeed = (int)PhysicsManager.ActorMovementSpeeds[this.Name][ActorSpeed.Normal];
-            this.FallSpeed = (int)PhysicsManager.ActorFallSpeeds[this.Name][ActorSpeed.Normal];
-            this.Collider = new Collider(this, boundingBox, Vector2.Zero)
-                                {
-                                    MovementSpeed = new Vector2(this.MovementSpeed, this.FallSpeed)
-                                };
-            this.Collider.Flags[PhysicsFlag.ReactsToPhysics] = true;
-            this.Collider.Flags[PhysicsFlag.ReactsToGravity] = true;
-
-            // Setup lighting.
-            this.Tags.Add(Lighting.DeferredRenderEntity);
-            this.Flags[EngineFlag.DeferredRender] = true;
-            this.Components.Add(LightSource.Tag, new PointLight(this, 0.8f, 2f, Color.White));
         }
 
         /// <summary>
@@ -113,20 +90,12 @@ namespace Abyss.World.Entities.Player
         /// <summary>
         /// Gets the Phase Gem that the player uses to switch dimensions.
         /// </summary>
-        public IPhaseGem PhaseGem
-        {
-            get;
-            private set;
-        }
+        public IPhaseGem PhaseGem { get; private set; }
 
         /// <summary>
         /// Gets the shield that protects the player.
         /// </summary>
-        public IBarrier Barrier
-        {
-            get;
-            private set;
-        }
+        public IBarrier Barrier { get; private set; }
 
         /// <summary>
         /// Gets or sets the Player's current Rift.
@@ -166,11 +135,7 @@ namespace Abyss.World.Entities.Player
         /// <value>
         /// The maximum rift.
         /// </value>
-        public int MaximumRift
-        {
-            get;
-            set;
-        }
+        public int MaximumRift { get; set; }
 
         /// <summary>
         /// Gets or sets the maximum lives.
@@ -178,11 +143,7 @@ namespace Abyss.World.Entities.Player
         /// <value>
         /// The maximum lives.
         /// </value>
-        public int MaximumLives
-        {
-            get;
-            set;
-        }
+        public int MaximumLives { get; set; }
 
         /// <summary>
         /// Gets or sets the Player's remaining lives.
@@ -227,7 +188,7 @@ namespace Abyss.World.Entities.Player
                 if (this.lives == 0)
                 {
                     // TODO: Coroutine to transition out of this scene.
-                    Engine.ActivateScene("GameOver");
+                    Monde.ActivateScene("GameOver");
                 }
             }
         }
@@ -238,11 +199,7 @@ namespace Abyss.World.Entities.Player
         /// <value>
         /// The movement speed.
         /// </value>
-        public int MovementSpeed
-        {
-            get;
-            set;
-        }
+        public int MovementSpeed { get; set; }
 
         /// <summary>
         /// Gets or sets the fall speed.
@@ -250,11 +207,7 @@ namespace Abyss.World.Entities.Player
         /// <value>
         /// The fall speed.
         /// </value>
-        public int FallSpeed
-        {
-            get;
-            set;
-        }
+        public int FallSpeed { get; set; }
 
         /// <summary>
         /// Gets or sets the time the player can spend in Limbo.
@@ -262,11 +215,7 @@ namespace Abyss.World.Entities.Player
         /// <value>
         /// The time that the player can spend in Limbo.
         /// </value>
-        public int LimboTime
-        {
-            get;
-            set;
-        }
+        public int LimboTime { get; set; }
 
         /// <summary>
         /// Gets or sets the current prop.
@@ -274,11 +223,7 @@ namespace Abyss.World.Entities.Player
         /// <value>
         /// The current prop.
         /// </value>
-        public IActiveProp CurrentProp
-        {
-            get;
-            set;
-        }
+        public IActiveProp CurrentProp { get; set; }
 
         /// <summary>
         /// Initializes the player for a new game.
@@ -301,54 +246,6 @@ namespace Abyss.World.Entities.Player
 
             var outlineLayer = sprite.Layers["outline"];
             outlineLayer.Color = Color.Transparent;
-
-            // Set up all the different effects that the player requires.
-            if (!this.Components.ContainsKey(Impact.ComponentName))
-            {
-                var effect = ParticleEffectFactory.GetParticleEffect(
-                    this,
-                    Impact.ComponentName,
-                    new Vector2(
-                        this.Collider.BoundingBox.Center.X,
-                        this.Collider.BoundingBox.Bottom - 1));
-                this.Components.Add(Impact.ComponentName, effect);
-            }
-
-            // Explosion effect.
-            if (!this.Components.ContainsKey(Explosion.ComponentName))
-            {
-                var effect = ParticleEffectFactory.GetParticleEffect(
-                    this,
-                    Explosion.ComponentName,
-                    new Vector2(
-                        this.Collider.BoundingBox.Center.X,
-                        this.Collider.BoundingBox.Bottom - 1));
-                this.Components.Add(Explosion.ComponentName, effect);
-            }
-
-            // Implosion effect.
-            if (!this.Components.ContainsKey(Implosion.ComponentName))
-            {
-                var effect = ParticleEffectFactory.GetParticleEffect(
-                    this,
-                    Implosion.ComponentName,
-                    new Vector2(
-                        this.Collider.BoundingBox.Center.X,
-                        this.Collider.BoundingBox.Bottom - 1));
-                this.Components.Add(Implosion.ComponentName, effect);
-            }
-
-            // Puff of dust effect.
-            if (!this.Components.ContainsKey(DustPuff.ComponentName))
-            {
-                var effect = ParticleEffectFactory.GetParticleEffect(
-                    this,
-                    DustPuff.ComponentName,
-                    new Vector2(
-                        this.Collider.BoundingBox.Center.X,
-                        this.Collider.BoundingBox.Bottom - 1));
-                this.Components.Add(DustPuff.ComponentName, effect);
-            }
         }
 
         /// <summary>
@@ -393,7 +290,7 @@ namespace Abyss.World.Entities.Player
             this.CurrentState = PlayerStates.Die;
 
             // Update the statistics.
-            GameManager.StatisticManager.Deaths.Add(damageSource);
+            Monde.GameManager.StatisticManager.Deaths.Add(damageSource);
 
             return true;
         }
@@ -411,7 +308,7 @@ namespace Abyss.World.Entities.Player
             }
 
             // Add the relic to the collection.
-            GameManager.RelicCollection.AddRelic(relic);
+            Monde.GameManager.RelicCollection.AddRelic(relic);
         }
 
         /// <summary>
@@ -440,7 +337,7 @@ namespace Abyss.World.Entities.Player
             {
                 // This is an environment, so fire off a platform stomped event.
                 this.OnPlatformStomped(new PlatformStompedEventArgs(args.Rectangle));
-                GameManager.RelicCollection.ActivateRelics(RelicActivationType.Stomp);
+                Monde.GameManager.RelicCollection.ActivateRelics(RelicActivationType.Stomp);
 
                 this.CurrentState = PlayerStates.Impact;
             }
@@ -461,13 +358,19 @@ namespace Abyss.World.Entities.Player
             CoroutineManager.Add(this.Id + "_Invulnerable", this.InvulnerabilityEffect(totalFrames));
         }
 
+        public void Squash()
+        {
+            var s = this.GetSprite();
+            s.Squash(0.8f, 10);
+        }
+
         /// <summary>
         /// Handles the input.
         /// </summary>
         /// <param name="inputState">State of the input.</param>
-        public void HandleInput(IInputState inputState)
+        public override void HandleInput(IInputState inputState)
         {
-            if (!GameManager.Player.Flags[EngineFlag.Active])
+            if (!Monde.GameManager.Player.Flags[EngineFlag.Active])
             {
                 return;
             }
@@ -523,27 +426,25 @@ namespace Abyss.World.Entities.Player
                 var prop = this.CurrentProp;
                 if (prop != null && prop.CanActivate)
                 {
-                    prop.Activate(GameManager.Player);
+                    prop.Activate(Monde.GameManager.Player);
                     return;
                 }
 
                 this.PhaseGem.Use();
             }
-
-            while (TouchPanel.IsGestureAvailable)
+            else if (inputState.IsNewKeyPress(Keys.Z, PlayerIndex.One, out playerIndex))
             {
-                var gs = TouchPanel.ReadGesture();
-                switch (gs.GestureType)
-                {
-                    case GestureType.Flick:
-                        break;
-                    case GestureType.Tap:
-                        break;
-                    case GestureType.VerticalDrag:
-                        break;
-                    case GestureType.HorizontalDrag:
-                        break;
-                }
+                this.Squash();
+            }
+            else if (inputState.IsNewKeyPress(Keys.X, PlayerIndex.One, out playerIndex))
+            {
+                var s = this.GetSprite();
+                //s.Origin = new Vector2(s.Origin.X + 1, s.Origin.Y);
+            }
+            else if (inputState.IsNewKeyPress(Keys.C, PlayerIndex.One, out playerIndex))
+            {
+                var s = this.GetSprite();
+                //s.Origin = new Vector2(s.Origin.X - 1, s.Origin.Y);
             }
         }
 
@@ -569,32 +470,6 @@ namespace Abyss.World.Entities.Player
             sprite.Layers["outline"].Opacity = 0f;
         }
 
-        //public bool MoveLeft()
-        //{
-        //    if (this.isMoving || this.playerPosition == UniverseConstants.PlayerPositionLowConstraint)
-        //    {
-        //        return false;
-        //    }
-
-        //    // Add the move left coroutine.
-        //    CoroutineManager.Add(MoveKey, this.MovePlayerLeft().GetEnumerator());
-
-        //    return true;
-        //}
-
-        //public bool MoveRight()
-        //{
-        //    if (this.isMoving || this.playerPosition == UniverseConstants.PlayerPositionHighConstraint)
-        //    {
-        //        return false;
-        //    }
-
-        //    // Add the move right coroutine.
-        //    CoroutineManager.Add(MoveKey, this.MovePlayerRight().GetEnumerator());
-
-        //    return true;
-        //}
-
         protected override void SetupStates()
         {
             var sprites = this.GetSprites();
@@ -610,6 +485,54 @@ namespace Abyss.World.Entities.Player
             this.States.Add(PlayerStates.Die, new State(PlayerStates.Die, this.Die(), true));
             this.States.Add(PlayerStates.ShiftDimension, new State(PlayerStates.ShiftDimension, this.ShiftDimension(), true));
             base.SetupStates();
+        }
+        protected override void InitializeTags()
+        {
+            this.Tags.Add(EntityTags.Player);
+        }
+
+        protected override void InitializeFlags()
+        {
+            this.Flags.Add(PlayerFlags.Invulnerable, false);
+            this.Flags.Add(PlayerFlags.Shielded, false);
+        }
+
+        protected override void InitializeSprite()
+        {
+            this.AddComponent(Sprite.Tag, Atlas.GetSprite(AtlasTags.Gameplay, "Player", this));
+        }
+
+        protected override void InitializeCollider()
+        {
+            this.MovementSpeed = (int)PhysicsManager.ActorMovementSpeeds[this.Name][ActorSpeed.Normal];
+            this.FallSpeed = (int)PhysicsManager.ActorFallSpeeds[this.Name][ActorSpeed.Normal];
+            this.Collider = new Collider(this, boundingBox, null)
+            {
+                MovementSpeed = new Vector2(this.MovementSpeed, this.FallSpeed)
+            };
+            this.Collider.Flags[PhysicsFlag.ReactsToPhysics] = true;
+            this.Collider.Flags[PhysicsFlag.ReactsToGravity] = true;
+        }
+
+        protected override void InitializeLighting()
+        {
+            // Setup lighting.
+            this.Tags.Add(Lighting.DeferredRender);
+            this.Flags[EngineFlag.DeferredRender] = true;
+            this.AddComponent(LightSource.Tag, new PointLight(this, 0.8f, 2f, Color.White));
+        }
+
+        protected override void InitializeComponents()
+        {
+            var origin = new Vector2(this.Collider.BoundingBox.Center.X, this.Collider.BoundingBox.Bottom - 1);
+            this.AddComponent(Impact.ComponentName, ParticleEffectFactory.GetParticleEffect(this, Impact.ComponentName, origin));
+            this.AddComponent(Explosion.ComponentName, ParticleEffectFactory.GetParticleEffect(this, Explosion.ComponentName, origin));
+            this.AddComponent(Implosion.ComponentName, ParticleEffectFactory.GetParticleEffect(this, Implosion.ComponentName, origin));
+            this.AddComponent(DustPuff.ComponentName, ParticleEffectFactory.GetParticleEffect(this, DustPuff.ComponentName, origin));
+
+#if DEBUG
+            this.AddComponent("BoundingBox", new Border(this, Color.Green));
+#endif
         }
 
         protected override void ColliderOnCollision(CollisionEventArgs args)
@@ -877,7 +800,7 @@ namespace Abyss.World.Entities.Player
             sprite.Layers["colour"].IsVisible = true;
             sprite.Layers["hair"].IsVisible = true;
 
-            GameManager.CurrentDimension = Dimension.Normal;
+            Monde.GameManager.CurrentDimension = Dimension.Normal;
             this.PhaseGem.Generate();
 
             var implosion = (Implosion)this.Components[Implosion.ComponentName];

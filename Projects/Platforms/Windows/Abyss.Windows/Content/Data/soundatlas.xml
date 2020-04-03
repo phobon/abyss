@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SoundAtlas>
+  <Sounds>
+    <!-- UI sounds -->
+    <Sound
+      id="menubeep"
+      location="Sounds/UI/menubeep"
+      type="Basic"/>
+    
+    <!-- Player sounds -->
+    <Sound
+      id="hurt"
+      location="Sounds/Player/hurt"
+      type="Basic"/>
+    <Sound
+      id="land"
+      location="Sounds/Player/land"
+      type="Basic"/>
+    <Sound
+      id="step"
+      location="Sounds/Player/step"
+      type="Instanced"
+      instances="3"/>
+    <Sound
+      id="itempickup"
+      location="Sounds/Player/itempickup"
+      type="Basic"/>
+    <Sound
+      id="dimensionshift"
+      location="Sounds/Player/dimensionshift"
+      type="Basic"/>
+    <Sound
+      id="dimensionshiftcooldown"
+      location="Sounds/Player/dimensionshiftcooldown"
+      type="Basic"/>
+    <Sound
+      id="monsterstomped"
+      location="Sounds/Player/monsterstomped"
+      type="Basic"/>
+  </Sounds>
+  <Songs>
+  </Songs>
+</SoundAtlas>

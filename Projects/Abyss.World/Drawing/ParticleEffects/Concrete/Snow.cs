@@ -24,7 +24,6 @@ namespace Abyss.World.Drawing.ParticleEffects.Concrete
             particleDensity)
         {
             this.Color = color;
-            this.Flags[ParticleEffectFlag.RecycleToViewPort] = true;
         }
 
         /// <summary>
@@ -72,6 +71,12 @@ namespace Abyss.World.Drawing.ParticleEffects.Concrete
             {
                 Texture = TextureManager.GetColorTexture(this.Color)
             };
+        }
+
+        protected override void InitializeFlags()
+        {
+            base.InitializeFlags();
+            this.Flags[ParticleEffectFlag.RecycleToViewPort] = true;
         }
     }
 }

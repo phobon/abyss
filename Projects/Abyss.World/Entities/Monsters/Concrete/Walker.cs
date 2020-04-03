@@ -36,16 +36,25 @@ namespace Abyss.World.Entities.Monsters.Concrete
             boundingBox,
             ZoneType.Normal)
         {
-            this.Tags.Add(EntityTags.GroundedMonster);
-            this.Tags.Add(EntityTags.Walker);
-
-            this.Collider.Flags[PhysicsFlag.CollidesWithEnvironment] = false;
         }
 
         protected override void SetupStates()
         {
             this.States.Add(MonsterStates.Walk, new State(MonsterStates.Walk, this.Walk(), true));
             base.SetupStates();
+        }
+
+        protected override void InitializeTags()
+        {
+            base.InitializeTags();
+            this.Tags.Add(EntityTags.GroundedMonster);
+            this.Tags.Add(EntityTags.Walker);
+        }
+
+        protected override void InitializeCollider()
+        {
+            base.InitializeCollider();
+            this.Collider.Flags[PhysicsFlag.CollidesWithEnvironment] = false;
         }
 
         private IEnumerable Walk()

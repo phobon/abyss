@@ -9,11 +9,54 @@ namespace Abyss.World.Drawing.Shaders
 {
     public class RippleEffect : Shader
     {
+        private static string WaveKey = "wave";
+        private static string DistortionKey = "distortion";
+        private static string CenterCoordKey = "centerCoord";
+
+        public float Wave
+        {
+            get
+            {
+                return this.Effect.Parameters[WaveKey].GetValueSingle();
+            }
+
+            set
+            {
+                this.Effect.Parameters[WaveKey].SetValue(value);
+            }
+        }
+
+        public float Distortion
+        {
+            get
+            {
+                return this.Effect.Parameters[DistortionKey].GetValueSingle();
+            }
+
+            set
+            {
+                this.Effect.Parameters[DistortionKey].SetValue(value);
+            }
+        }
+
+        public Vector2 CenterCoordinate
+        {
+            get
+            {
+                return this.Effect.Parameters[CenterCoordKey].GetValueVector2();
+            }
+
+            set
+            {
+                this.Effect.Parameters[CenterCoordKey].SetValue(value);
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="RippleEffect"/> class.
         /// </summary>
         public RippleEffect()
-            : base("Ripple Effect", "Pixel shader that ripples the view on the screen.")
+            : base("Ripple Effect", "Pixel shader that ripples the view on the screen.", "RippleTechnique")
         {
         }
 
@@ -23,17 +66,9 @@ namespace Abyss.World.Drawing.Shaders
         public override void LoadContent()
         {
             this.Effect = DrawingManager.ContentManager.Load<Effect>("Effects/Ripple");
-        }
-
-        /// <summary>
-        /// Applies this Shader.
-        /// </summary>
-        public override void Apply()
-        {
-            ShaderManager.CurrentShader.Effect.CurrentTechnique = ShaderManager.CurrentShader.Effect.Techniques["RippleTechnique"];
-            ShaderManager.CurrentShader.Effect.Parameters["wave"].SetValue((float)(Math.PI / 0.75f));
-            ShaderManager.CurrentShader.Effect.Parameters["distortion"].SetValue(1f);
-            ShaderManager.CurrentShader.Effect.Parameters["centerCoord"].SetValue(new Vector2(0.5f));
+            this.Wave = (float) (Math.PI/0.75f);
+            this.Distortion = 1f;
+            this.CenterCoordinate = new Vector2(0.5f);
         }
     }
 }

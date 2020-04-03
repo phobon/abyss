@@ -26,8 +26,8 @@ namespace Abyss.World.Phases.Concrete.Phobon
         /// <param name="layer">The layer.</param>
         public override void Apply(ILayer layer)
         {
-            var newSpeed = new Vector2(GameManager.Player.Collider.MovementSpeed.X, 3);
-            GameManager.Player.Collider.MovementSpeed = newSpeed; 
+            var newSpeed = new Vector2(Monde.GameManager.Player.Collider.MovementSpeed.X, 3);
+            Monde.GameManager.Player.Collider.MovementSpeed = newSpeed; 
             
             base.Apply(layer);
         }
@@ -38,8 +38,8 @@ namespace Abyss.World.Phases.Concrete.Phobon
         /// <param name="layer">The layer.</param>
         public override void Remove(ILayer layer)
         {
-            var newSpeed = new Vector2(GameManager.Player.Collider.MovementSpeed.X, GameManager.Player.FallSpeed);
-            GameManager.Player.Collider.MovementSpeed = newSpeed;
+            var newSpeed = new Vector2(Monde.GameManager.Player.Collider.MovementSpeed.X, Monde.GameManager.Player.FallSpeed);
+            Monde.GameManager.Player.Collider.MovementSpeed = newSpeed;
 
             base.Remove(layer);
         }

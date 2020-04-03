@@ -48,7 +48,7 @@ namespace Abyss.World.Entities.Player.Components
                 return false;
             }
 
-            if (GameManager.CurrentDimension == Dimension.Limbo)
+            if (Monde.GameManager.CurrentDimension == Dimension.Limbo)
             {
                 return false;
             }
@@ -62,7 +62,7 @@ namespace Abyss.World.Entities.Player.Components
                 }
             }
 
-            GameManager.CurrentDimension = Dimension.Limbo;
+            Monde.GameManager.CurrentDimension = Dimension.Limbo;
 
             // Remove a phase gem charge.
             this.Charges--;
@@ -73,7 +73,7 @@ namespace Abyss.World.Entities.Player.Components
             //GameManager.RelicCollection.ActivateRelics(RelicActivationType.DimensionShift);
 
             // Update statistics.
-            GameManager.StatisticManager.DimensionsShifted++;
+            Monde.GameManager.StatisticManager.DimensionsShifted++;
             
             // Fire an event so that everything knows what's going on.
             this.OnChargeUsed();

@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Occasus.Core.Components;
 using Occasus.Core.Entities;
 
@@ -18,63 +19,33 @@ namespace Occasus.Core.Drawing.Lighting
         protected LightSource(IEntity parent, string name, string description, LightSourceType lightSourceType)
             : base(parent, name, description)
         {
-            // Add a tag to the parent of this light source so that it can be added to the correct cache.
-            parent.Tags.Add(Lighting.DeferredLightSource);
-
             this.LightSourceType = lightSourceType;
         }
 
         /// <summary>
         /// Gets or sets the intensity.
         /// </summary>
-        /// <value>
-        /// The intensity.
-        /// </value>
-        public float Intensity
-        {
-            get; set;
-        }
+        public float Intensity { get; set; }
 
         /// <summary>
         /// Gets or sets the decay rate of this light.
         /// </summary>
-        /// <value>
-        /// The decay.
-        /// </value>
-        public float Decay
-        {
-            get; set;
-        }
+        public float Decay { get; set; }
 
         /// <summary>
         /// Gets or sets the color.
         /// </summary>
-        /// <value>
-        /// The color.
-        /// </value>
-        public Color Color
-        {
-            get; set;
-        }
+        public Color Color { get; set; }
 
         /// <summary>
         /// Gets or sets the scale.
         /// </summary>
-        /// <value>
-        /// The scale.
-        /// </value>
-        public float Scale
-        {
-            get; set;
-        }
+        public float Scale { get; set; }
 
         /// <summary>
         /// Gets the type of light source this is.
         /// </summary>
-        public LightSourceType LightSourceType
-        {
-            get; private set;
-        }
+        public LightSourceType LightSourceType { get; private set; }
 
         /// <summary>
         /// Resumes updating and drawing of the Engine Component.
@@ -90,6 +61,13 @@ namespace Occasus.Core.Drawing.Lighting
         public override void Suspend()
         {
             this.Flags[EngineFlag.Active] = false;
+        }
+
+        protected override void InitializeTags()
+        {
+            // Add a tag to the parent of this light source so that it can be added to the correct cache.
+            this.Parent.Tags.Add(Lighting.DeferredLightSource);
+            this.Tags.Add(Lighting.DeferredLightSource);
         }
     }
 }

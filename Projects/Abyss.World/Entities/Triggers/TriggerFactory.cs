@@ -11,7 +11,9 @@ namespace Abyss.World.Entities.Triggers
         public static ITrigger GetTrigger(string id, Vector2 initialPosition, Rectangle boundingRectangle)
         {
             var qualifiedName = Qualifier + id;
-            return (ITrigger)Activator.CreateInstance(Type.GetType(qualifiedName), initialPosition, boundingRectangle);
+            var t = (ITrigger)Activator.CreateInstance(Type.GetType(qualifiedName), initialPosition, boundingRectangle);
+            t.Initialize();
+            return t;
         }
     }
 }

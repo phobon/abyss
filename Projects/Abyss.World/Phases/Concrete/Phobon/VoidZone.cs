@@ -57,7 +57,7 @@ namespace Abyss.World.Phases.Concrete.Phobon
                 var patch = PropFactory.GetVoidPatch();
                 patch.Begin();
                 layer.AddEntity(patch);
-                layer.UpdateEntityCache(GameManager.GameViewPort);
+                layer.UpdateEntityCache(Monde.GameManager.ViewPort);
                 yield return Coroutines.Pause(TimingHelper.GetFrameCount(3f));
             }
         }

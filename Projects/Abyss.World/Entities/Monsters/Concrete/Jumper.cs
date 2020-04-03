@@ -45,6 +45,13 @@ namespace Abyss.World.Entities.Monsters.Concrete
             base.SetupStates();
         }
 
+        protected override void InitializeTags()
+        {
+            base.InitializeTags();
+            this.Tags.Add(EntityTags.GroundedMonster);
+            this.Tags.Add(EntityTags.Jumper);
+        }
+
         private IEnumerable Jump()
         {
             var sprite = (ISprite)this.Components[Sprite.Tag];

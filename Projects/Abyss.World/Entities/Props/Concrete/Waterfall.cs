@@ -17,29 +17,6 @@ namespace Abyss.World.Entities.Props.Concrete
         public Waterfall(Vector2 initialPosition, Rectangle boundingBox)
             : base("Waterfall", "A flowing gush of water", initialPosition, boundingBox, Vector2.Zero)
         {
-            var sprite = this.GetSprite();
-            sprite.Flags[SpriteFlag.CropToConstraints] = true;
-            sprite.Flags[SpriteFlag.ScrollDown] = true;
-        }
-
-        /// <summary>
-        /// Initializes the Engine Component.
-        /// </summary>
-        public override void Initialize()
-        {
-            base.Initialize();
-
-            // Set up all the different effects that the player requires.
-            if (!this.Components.ContainsKey(Splash.ComponentName))
-            {
-                var effect = ParticleEffectFactory.GetParticleEffect(
-                    this,
-                    Splash.ComponentName,
-                    new Vector2(
-                        this.Collider.BoundingBox.Center.X,
-                        this.Collider.BoundingBox.Bottom));
-                this.Components.Add(Splash.ComponentName, effect);
-            }
         }
 
         /// <summary>
@@ -49,6 +26,20 @@ namespace Abyss.World.Entities.Props.Concrete
         {
             base.Begin();
             ((IParticleEffect)this.Components[Splash.ComponentName]).Emit();
+        }
+
+        protected override void InitializeSprite()
+        {
+            base.InitializeSprite();
+            var sprite = this.GetSprite();
+            sprite.Flags[SpriteFlag.CropToConstraints] = true;
+            sprite.Flags[SpriteFlag.ScrollDown] = true;
+        }
+
+        protected override void InitializeComponents()
+        {
+            var origin = new Vector2(this.Collider.BoundingBox.Center.X, this.Collider.BoundingBox.Bottom);
+            this.AddComponent(Splash.ComponentName, ParticleEffectFactory.GetParticleEffect(this, Splash.ComponentName, origin));
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Abyss.World.Scenes.Shop.Layers
         public override void Update(GameTime gameTime, IInputState inputState)
         {
             // Determine offset for each of the layers.
-            var depthOffset = GameManager.Player.Transform.Position.Y - this.previousDepth;
+            var depthOffset = Monde.GameManager.Player.Transform.Position.Y - this.previousDepth;
             if (!depthOffset.Equals(0f))
             {
                 var d = (int)depthOffset;
@@ -49,7 +49,7 @@ namespace Abyss.World.Scenes.Shop.Layers
             }
 
             // Cache the previous depth for the next call.
-            this.previousDepth = GameManager.Player.Transform.Position.Y;
+            this.previousDepth = Monde.GameManager.Player.Transform.Position.Y;
 
             base.Update(gameTime, inputState);
         }

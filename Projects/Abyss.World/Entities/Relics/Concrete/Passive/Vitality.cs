@@ -31,7 +31,7 @@ namespace Abyss.World.Entities.Relics.Concrete.Passive
         public override void Activate(IEnumerable<IEntity> entityCache)
         {
             base.Activate(entityCache);
-            GameManager.Player.MaximumLives++;
+            Monde.GameManager.Player.MaximumLives++;
         }
     }
 }

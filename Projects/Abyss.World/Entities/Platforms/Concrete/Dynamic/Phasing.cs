@@ -5,6 +5,8 @@ using Occasus.Core.Components.Logic;
 using Occasus.Core.Entities;
 using Occasus.Core.States;
 using System.Collections;
+using Occasus.Core.Maps;
+using Occasus.Core.Maps.Definitions;
 
 namespace Abyss.World.Entities.Platforms.Concrete.Dynamic
 {
@@ -22,7 +24,7 @@ namespace Abyss.World.Entities.Platforms.Concrete.Dynamic
                 platformDefinition.Size)
         {
             this.Tags.Add(EntityTags.InterdimensionalPlatform);
-            GameManager.DimensionShifted += this.ZoneSceneOnDimensionShifted;
+            Monde.GameManager.DimensionShifted += this.ZoneSceneOnDimensionShifted;
         }
 
         /// <summary>
@@ -31,7 +33,7 @@ namespace Abyss.World.Entities.Platforms.Concrete.Dynamic
         public override void Dispose()
         {
             base.Dispose();
-            GameManager.DimensionShifted -= this.ZoneSceneOnDimensionShifted;
+            Monde.GameManager.DimensionShifted -= this.ZoneSceneOnDimensionShifted;
         }
 
         protected override void SetupStates()
@@ -41,7 +43,7 @@ namespace Abyss.World.Entities.Platforms.Concrete.Dynamic
             this.States.Add(PlatformStates.Activating, new State(PlatformStates.Activating, this.Activating(), false));
             this.States.Add(PlatformStates.Deactivating, new State(PlatformStates.Deactivating, this.Deactivating(), false));
             this.States.Add(PlatformStates.Deactivated, State.GenericState(PlatformStates.Deactivated, sprite));
-            this.CurrentState = GameManager.CurrentDimension == Dimension.Normal ? PlatformStates.Activated : PlatformStates.Deactivated;
+            this.CurrentState = Monde.GameManager.CurrentDimension == Dimension.Normal ? PlatformStates.Activated : PlatformStates.Deactivated;
         }
 
         private void ZoneSceneOnDimensionShifted(DimensionShiftedEventArgs dimensionShiftedEventArgs)

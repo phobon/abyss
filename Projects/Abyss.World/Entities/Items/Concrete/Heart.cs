@@ -27,13 +27,13 @@ namespace Abyss.World.Entities.Items.Concrete
         public override void Collect(IPlayer player)
         {
             // If the player has maximum lives, then give some points instead.
-            if (GameManager.Player.Lives != 3)
+            if (Monde.GameManager.Player.Lives != 3)
             {
-                GameManager.Player.Lives++;
+                Monde.GameManager.Player.Lives++;
             }
             else
             {
-                GameManager.StatisticManager.TotalScore += 100;
+                Monde.GameManager.StatisticManager.TotalScore += 100;
             }
 
             base.Collect(player);

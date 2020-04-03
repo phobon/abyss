@@ -17,14 +17,11 @@ namespace Occasus.Core.Physics
         IEntity Parent { get; }
 
         /// <summary>
-        /// Gets the origin.
-        /// </summary>
-        Vector2 Origin { get; }
-
-        /// <summary>
         /// Gets or sets the velocity.
         /// </summary>
         Vector2 Velocity { get; set; }
+
+        Vector2 Origin { get; }
 
         /// <summary>
         /// Gets or sets the external force.

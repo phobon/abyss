@@ -31,14 +31,19 @@ namespace Abyss.World.Entities.Monsters.Concrete
             boundingBox,
             ZoneType.Normal)
         {
-            this.Tags.Add(EntityTags.GroundedMonster);
-            this.Tags.Add(EntityTags.Faller);
         }
 
         protected override void SetupStates()
         {
             this.States.Add(MonsterStates.Fall, new State(MonsterStates.Fall, this.Fall(), true));
             base.SetupStates();
+        }
+
+        protected override void InitializeTags()
+        {
+            base.InitializeTags();
+            this.Tags.Add(EntityTags.GroundedMonster);
+            this.Tags.Add(EntityTags.Faller);
         }
 
         private IEnumerable Fall()

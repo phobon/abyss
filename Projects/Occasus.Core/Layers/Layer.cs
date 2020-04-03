@@ -76,24 +76,12 @@ namespace Occasus.Core.Layers
         /// <summary>
         /// Gets the active, relevant entities.
         /// </summary>
-        public IEnumerable<IEntity> Entities
-        {
-            get
-            {
-                return this.entities;
-            }
-        }
+        public IEnumerable<IEntity> Entities => this.entities;
 
         /// <summary>
         /// Gets the lighting cache collection. Light sources are cached as part of regular game execution.
         /// </summary>
-        public IEnumerable<IEntityComponent> LightingCache
-        {
-            get
-            {
-                return this.lightingCache;
-            }
-        }
+        public IEnumerable<IEntityComponent> LightingCache => this.lightingCache;
 
         /// <summary>
         /// Gets the spritebatch for this particular layer.
@@ -173,7 +161,9 @@ namespace Occasus.Core.Layers
         /// <param name="inputState">The current input state.</param>
         public override void Update(GameTime gameTime, IInputState inputState)
         {
-            base.Update(gameTime, inputState);
+            // Handle input state for this layer if applicable.
+            // NOTE: This is usally only applicable for debug layers.
+            this.HandleInput(inputState);
 
             foreach (var e in this.Entities)
             {
@@ -184,7 +174,7 @@ namespace Occasus.Core.Layers
             }
 
 #if DEBUG
-            Engine.Debugger.EntityCount += this.entities.Count;
+            Engine<IGameManager<IEntity>>.Debugger.EntityCount += this.entities.Count;
 #endif
         }
 
@@ -195,8 +185,6 @@ namespace Occasus.Core.Layers
         /// <param name="spriteBatch">The sprite batch.</param>
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            base.Draw(gameTime, spriteBatch);
-
             foreach (var e in this.Entities)
             {
                 // Draw objects that are visible and not flagged as being deferred render.

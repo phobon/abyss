@@ -1,0 +1,67 @@
+{
+    "Physics": {
+        "MapWidth": 10,
+        "MapHeight": 20,
+        "BaseActorSpeed": 0.0,
+        "BaseMovementAcceleration": 0.5,
+        "BaseGravityAcceleration": 0.35,
+        "BaseGroundDragFactor": 0.48,
+        "BaseAirDragFactor": 0.58
+    },
+    "Drawing": {
+        "SpriteSheet": {
+            "Width": 20,
+            "Height": 40
+        },
+        "Tile": {
+            "Width": 16,
+            "Height": 16
+        },
+        "SpriteDepths": [
+            {
+                "Key": "Props",
+                "Value": 0.3
+            },
+            {
+                "Key": "GrayPlayer",
+                "Value": 0.15
+            },
+            {
+                "Key": "Player",
+                "Value": 0.1
+            },
+            {
+                "Key": "PlayerDimension",
+                "Value": 0.05
+            },
+            {
+                "Key": "PlayerShield",
+                "Value": 0.04
+            },
+            {
+                "Key": "Items",
+                "Value": 0.2
+            },
+            {
+                "Key": "Effect",
+                "Value": 0
+            },
+            {
+                "Key": "Monsters",
+                "Value": 0.15
+            },
+            {
+                "Key": "Debug",
+                "Value": 0
+            },
+            {
+                "Key": "Interface",
+                "Value": 0
+            },
+            {
+                "Key": "Environment",
+                "Value": 0.5
+            }
+        ]
+    }        
+}

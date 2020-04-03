@@ -18,66 +18,53 @@ namespace Occasus.Core
             this.Id = Guid.NewGuid().ToString();
             this.Name = name;
             this.Description = description;
-
             this.Flags = new Dictionary<string, bool>
-                             {
-                                 { EngineFlag.Active, false },
-                                 { EngineFlag.Visible, false },
-                                 { EngineFlag.Relevant, true },
-                                 { EngineFlag.Collidable, false },
-                                 { EngineFlag.Initialized, false },
-                                 { EngineFlag.DeferredRender, false },
-                                 { EngineFlag.DeferredBegin, false },
-                                 { EngineFlag.HasBegun, false },
-                                 { EngineFlag.New, false },
-                                 { EngineFlag.ForceIncludeInCache, false }
-                             };
+            {
+                { EngineFlag.Active, false },
+                { EngineFlag.Visible, false },
+                { EngineFlag.Relevant, false },
+                { EngineFlag.Collidable, false },
+                { EngineFlag.Initialized, false },
+                { EngineFlag.DeferredRender, false },
+                { EngineFlag.DeferredBegin, false },
+                { EngineFlag.HasBegun, false },
+                { EngineFlag.New, false },
+                { EngineFlag.ForceIncludeInCache, false }
+            };
         }
 
         /// <summary>
         /// Gets the identifier.
         /// </summary>
-        public string Id
-        {
-            get; private set;
-        }
+        public string Id { get; private set; }
 
         /// <summary>
         /// Gets the name.
         /// </summary>
-        public string Name
-        {
-            get; private set;
-        }
+        public string Name { get; private set; }
 
         /// <summary>
         /// Gets the description.
         /// </summary>
-        public string Description
-        {
-            get; private set;
-        }
+        public string Description { get; private set; }
 
-        public IDictionary<string, bool> Flags
-        {
-            get; private set;
-        }
+        public IDictionary<string, bool> Flags { get; private set; }
 
         /// <summary>
         /// Updates the Engine Component.
         /// </summary>
         /// <param name="gameTime">The game time object.</param>
         /// <param name="inputState">The current input state.</param>
-        public virtual void Update(GameTime gameTime, IInputState inputState)
-        {
-        }
+        public abstract void Update(GameTime gameTime, IInputState inputState);
 
         /// <summary>
         /// Draws the specified game time.
         /// </summary>
         /// <param name="gameTime">The game time.</param>
         /// <param name="spriteBatch">The sprite batch.</param>
-        public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        public abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch);
+
+        public virtual void HandleInput(IInputState inputState)
         {
         }
 
@@ -86,7 +73,9 @@ namespace Occasus.Core
         /// </summary>
         public virtual void Initialize()
         {
+            this.InitializeFlags();
             this.LoadContent();
+
             this.Flags[EngineFlag.Initialized] = true;
             this.Flags[EngineFlag.Relevant] = true;
         }
@@ -142,6 +131,10 @@ namespace Occasus.Core
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
         public virtual void Dispose()
+        {
+        }
+
+        protected virtual void InitializeFlags()
         {
         }
     }

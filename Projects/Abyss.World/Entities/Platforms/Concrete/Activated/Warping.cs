@@ -1,4 +1,6 @@
-﻿using Occasus.Core.Physics;
+﻿using Occasus.Core.Maps;
+using Occasus.Core.Maps.Definitions;
+using Occasus.Core.Physics;
 
 namespace Abyss.World.Entities.Platforms.Concrete.Activated
 {

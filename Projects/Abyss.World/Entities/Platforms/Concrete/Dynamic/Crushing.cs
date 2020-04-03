@@ -6,6 +6,8 @@ using Occasus.Core.Maths;
 using Occasus.Core.Physics;
 using System.Collections;
 using System.Linq;
+using Occasus.Core.Maps;
+using Occasus.Core.Maps.Definitions;
 
 namespace Abyss.World.Entities.Platforms.Concrete.Dynamic
 {
@@ -19,7 +21,6 @@ namespace Abyss.World.Entities.Platforms.Concrete.Dynamic
                 platformDefinition.Size,
                 platformDefinition.Path)
         {
-            this.Collider.MovementSpeed = new Vector2(300f, PhysicsManager.BaseActorSpeed);
         }
 
         /// <summary>
@@ -29,6 +30,12 @@ namespace Abyss.World.Entities.Platforms.Concrete.Dynamic
         {
             base.Begin();
             CoroutineManager.Add(this.Id + "_Crush", this.Crush());
+        }
+
+        protected override void InitializeCollider()
+        {
+            base.InitializeCollider();
+            this.Collider.MovementSpeed = new Vector2(300f, PhysicsManager.BaseActorSpeed);
         }
 
         private IEnumerator Crush()

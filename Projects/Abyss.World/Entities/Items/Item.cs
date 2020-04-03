@@ -8,7 +8,6 @@ using Microsoft.Xna.Framework;
 
 using Occasus.Core;
 using Occasus.Core.Assets;
-using Occasus.Core.Components;
 using Occasus.Core.Components.Logic;
 using Occasus.Core.Drawing.Animation;
 using Occasus.Core.Drawing.Lighting;
@@ -16,6 +15,9 @@ using Occasus.Core.Entities;
 using Occasus.Core.Maths;
 using Occasus.Core.Physics;
 using System.Collections;
+using Abyss.World.Drawing.ParticleEffects.Concrete;
+using Occasus.Core.Debugging.Components;
+using Occasus.Core.Drawing.ParticleEffects;
 using Occasus.Core.Drawing.Sprites;
 using Occasus.Core.States;
 
@@ -25,6 +27,8 @@ namespace Abyss.World.Entities.Items
     {
         private const float HoverTime = 1f;
         private const string FadedFlag = "Faded";
+
+        private readonly Rectangle boundingBox;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Item"/> class.
@@ -38,28 +42,10 @@ namespace Abyss.World.Entities.Items
             string description,
             Vector2 initialPosition,
             Rectangle boundingBox)
-            : base(name, description)
+            : base(name: name, description: description)
         {
+            this.boundingBox = boundingBox;
             this.Transform.Position = initialPosition;
-
-            // Add tags.
-            this.Tags.Add(EntityTags.Item);
-
-            // Add a sprite to this component.
-            this.Components.Add(Sprite.Tag, Atlas.GetSprite(AtlasTags.Gameplay, this.Name, this));
-
-            // Has collision.
-            this.Collider = new Collider(this, boundingBox, Vector2.Zero)
-                                {
-                                    MovementSpeed = new Vector2(PhysicsManager.BaseActorSpeed, PhysicsManager.BaseActorSpeed)
-                                };
-
-            // Set up basic lighting.
-            this.Tags.Add(Lighting.DeferredRenderEntity);
-            this.Flags[EngineFlag.DeferredRender] = true;
-
-            // Item specific flags.
-            this.Flags.Add(FadedFlag, false);
         }
 
         /// <summary>
@@ -140,6 +126,46 @@ namespace Abyss.World.Entities.Items
             base.SetupStates();
         }
 
+        protected override void InitializeTags()
+        {
+            this.Tags.Add(EntityTags.Item);
+        }
+
+        protected override void InitializeFlags()
+        {
+            this.Flags.Add(FadedFlag, false);
+        }
+
+        protected override void InitializeSprite()
+        {
+            this.AddComponent(Sprite.Tag, Atlas.GetSprite(AtlasTags.Gameplay, this.Name, this));
+        }
+
+        protected override void InitializeCollider()
+        {
+            this.Collider = new Collider(this, this.boundingBox, null)
+            {
+                MovementSpeed = new Vector2(PhysicsManager.BaseActorSpeed, PhysicsManager.BaseActorSpeed)
+            };
+        }
+
+        protected override void InitializeLighting()
+        {
+            this.Tags.Add(Lighting.DeferredRender);
+            this.Flags[EngineFlag.DeferredRender] = true;
+        }
+
+        protected override void InitializeComponents()
+        {
+            // Add an effect to the screen so the item doesn't just disappear into oblivion.
+            var effect = ParticleEffectFactory.GetParticleEffect(this, Sparkle.ComponentName, new Vector2(this.Collider.BoundingBox.Center.X, this.Collider.BoundingBox.Center.Y));
+            this.AddComponent(Sparkle.ComponentName, effect);
+
+#if DEBUG
+            this.AddComponent("BoundingBox", new Border(this, Color.Yellow));
+#endif
+        }
+
         protected override void ColliderOnCollision(CollisionEventArgs args)
         {
             base.ColliderOnCollision(args);
@@ -189,14 +215,8 @@ namespace Abyss.World.Entities.Items
                 c.End();
             }
 
-            this.Components.Clear();
-
-            // Add an effect to the screen so the item doesn't just disappear into oblivion.
-            var effect = ParticleEffectFactory.GetParticleEffect(
-                this,
-                "Sparkle",
-                new Vector2(this.Collider.BoundingBox.Center.X, this.Collider.BoundingBox.Center.Y));
-            this.Components.Add("SparkleEffect", effect);
+            this.ClearComponents();
+            var effect = (IParticleEffect) this.Components[Sparkle.ComponentName];
             effect.Emit();
 
             // Null out the collider so we don't have to worry about that anymore.

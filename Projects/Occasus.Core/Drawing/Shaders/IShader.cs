@@ -22,6 +22,11 @@ namespace Occasus.Core.Drawing.Shaders
         Effect Effect { get; }
 
         /// <summary>
+        /// Gets a value indicating whether this shader is active or not.
+        /// </summary>
+        bool IsActive { get; }
+
+        /// <summary>
         /// Gets the usages of this particular shader.
         /// </summary>
         IDictionary<ShaderUsage, bool> Usages { get; }
@@ -43,8 +48,13 @@ namespace Occasus.Core.Drawing.Shaders
         void LoadContent();
 
         /// <summary>
-        /// Applies this Shader.
+        /// Activates this shader.
         /// </summary>
-        void Apply();
+        void Activate();
+
+        /// <summary>
+        /// Deactivates this shader.
+        /// </summary>
+        void Deactivate();
     }
 }

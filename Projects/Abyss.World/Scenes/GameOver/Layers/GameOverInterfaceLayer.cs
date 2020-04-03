@@ -63,28 +63,28 @@ namespace Abyss.World.Scenes.GameOver.Layers
         {
             base.Draw(gameTime, spriteBatch);
 
-            spriteBatch.DrawString(DrawingManager.Font, GameManager.StatisticManager.GameOverMessage, gameOverPosition, Color.White);
+            spriteBatch.DrawString(DrawingManager.Font, Monde.GameManager.StatisticManager.GameOverMessage, gameOverPosition, Color.White);
             spriteBatch.DrawString(DrawingManager.Font, Instructions, instructionsPosition, Color.White);
 
             // Statistics details.
             spriteBatch.DrawString(DrawingManager.Font, StatisticsHeader, statisticsHeaderPosition, Color.White);
 
             var index = 0;
-            spriteBatch.DrawString(DrawingManager.Font, "Depth Travelled: " + GameManager.CurrentDepth, statisticsPositions[index], Color.White);
+            spriteBatch.DrawString(DrawingManager.Font, "Depth Travelled: " + Monde.GameManager.CurrentDepth, statisticsPositions[index], Color.White);
 
             index++;
-            foreach (var s in GameManager.StatisticManager.Statistics)
+            foreach (var s in Monde.GameManager.StatisticManager.Statistics)
             {
                 spriteBatch.DrawString(DrawingManager.Font, s.Key + ": " + s.Value, statisticsPositions[index], Color.White);
                 index++;
             }
 
-            spriteBatch.DrawString(DrawingManager.Font, "Relics Collected: " + GameManager.StatisticManager.TotalRelicsCollected, statisticsPositions[index], Color.White);
+            spriteBatch.DrawString(DrawingManager.Font, "Relics Collected: " + Monde.GameManager.StatisticManager.TotalRelicsCollected, statisticsPositions[index], Color.White);
             index++;
-            spriteBatch.DrawString(DrawingManager.Font, "Deaths: " + GameManager.StatisticManager.TotalDeaths, statisticsPositions[index], Color.White);
+            spriteBatch.DrawString(DrawingManager.Font, "Deaths: " + Monde.GameManager.StatisticManager.TotalDeaths, statisticsPositions[index], Color.White);
 
             // Score.
-            spriteBatch.DrawString(DrawingManager.Font, ScoreHeader + ": " + GameManager.StatisticManager.TotalScore, scoreHeaderPosition, Color.White);
+            spriteBatch.DrawString(DrawingManager.Font, ScoreHeader + ": " + Monde.GameManager.StatisticManager.TotalScore, scoreHeaderPosition, Color.White);
 
             // Retry.
             var textColor = this.gameOverScene.MenuIndex == 0 ? Color.Gold : Color.White;

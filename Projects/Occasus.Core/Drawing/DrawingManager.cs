@@ -32,95 +32,51 @@ namespace Occasus.Core.Drawing
         /// <summary>
         /// Gets the base resolution width.
         /// </summary>
-        public static float BaseResolutionWidth
-        {
-            get; private set;
-        }
+        public static float BaseResolutionWidth { get; private set; }
 
         /// <summary>
         /// Gets the base resolution height.
         /// </summary>
-        public static float BaseResolutionHeight
-        {
-            get; private set;
-        }
+        public static float BaseResolutionHeight { get; private set; }
 
         /// <summary>
         /// Gets the width of the sprite sheet in tiles.
         /// </summary>
-        public static int SpriteSheetWidth
-        {
-            get; private set;
-        }
+        public static int SpriteSheetWidth { get; private set; }
 
         /// <summary>
         /// Gets the height of the sprite sheet in tiles.
         /// </summary>
-        public static int SpriteSheetHeight
-        {
-            get; private set;
-        }
+        public static int SpriteSheetHeight { get; private set; }
 
         /// <summary>
         /// Gets the width of a tile.
         /// </summary>
-        public static int TileWidth
-        {
-            get; private set;
-        }
+        public static int TileWidth { get; private set; }
 
         /// <summary>
         /// Gets the height of a tile.
         /// </summary>
-        public static int TileHeight
-        {
-            get; private set;
-        }
+        public static int TileHeight { get; private set; }
 
         /// <summary>
         /// Gets the screen's vertical center.
         /// </summary>
-        public static int ScreenVerticalCenter
-        {
-            get
-            {
-                return ScreenHeight / 2;
-            }
-        }
+        public static int ScreenVerticalCenter => ScreenHeight / 2;
 
         /// <summary>
         /// Gets the screen's horizontal center.
         /// </summary>
-        public static int ScreenHorizontalCenter
-        {
-            get
-            {
-                return ScreenWidth / 2;
-            }
-        }
+        public static int ScreenHorizontalCenter => ScreenWidth / 2;
 
         /// <summary>
         /// Gets the window resolutions available to the game.
         /// </summary>
-        public static IDictionary<int, Vector2> WindowResolutions
-        {
-            get
-            {
-                if (windowResolutions == null)
-                {
-                    windowResolutions = new Dictionary<int, Vector2>();
-                }
-
-                return windowResolutions;
-            }
-        }
+        public static IDictionary<int, Vector2> WindowResolutions => windowResolutions ?? (windowResolutions = new Dictionary<int, Vector2>());
 
         /// <summary>
         /// Gets or sets the factor to scale the window against.
         /// </summary>
-        /// <value>
-        /// The window scale.
-        /// </value>
         /// <exception cref="System.InvalidOperationException">Cannot set this window scale.</exception>
         public static int WindowScale
         {
@@ -148,232 +104,106 @@ namespace Occasus.Core.Drawing
         /// <summary>
         /// Gets the height of the scaled window.
         /// </summary>
-        public static int ScaledWindowHeight
-        {
-            get
-            {
-                return (int)BaseResolutionHeight * WindowScale;
-            }
-        }
+        public static int ScaledWindowHeight => (int)BaseResolutionHeight * WindowScale;
 
         /// <summary>
         /// Gets the width of the scaled window.
         /// </summary>
-        public static int ScaledWindowWidth
-        {
-            get
-            {
-                return (int)BaseResolutionWidth * WindowScale;
-            }
-        }
+        public static int ScaledWindowWidth => (int)BaseResolutionWidth * WindowScale;
 
         /// <summary>
         /// Gets the tile bounding rectangle.
         /// </summary>
-        public static Rectangle TileBoundingRectangle
-        {
-            get
-            {
-                return tileBoundingRectangle;
-            }
-        }
+        public static Rectangle TileBoundingRectangle => tileBoundingRectangle;
 
         /// <summary>
         /// Gets the tile dimensions.
         /// </summary>
-        public static Point TileDimensions
-        {
-            get
-            {
-                return tileDimensions;
-            }
-        }
+        public static Point TileDimensions => tileDimensions;
 
         /// <summary>
         /// Gets the entity sprite depths.
         /// </summary>
-        public static IDictionary<string, float> EntitySpriteDepths
-        {
-            get
-            {
-                if (entitySpriteDepths == null)
-                {
-                    entitySpriteDepths = new Dictionary<string, float>();
-                }
-
-                return entitySpriteDepths;
-            }
-        }
+        public static IDictionary<string, float> EntitySpriteDepths => entitySpriteDepths ?? (entitySpriteDepths = new Dictionary<string, float>());
 
         /// <summary>
         /// Gets or sets the size of the texture in this engine instance.
         /// </summary>
-        /// <value>
-        /// The size of the texture.
-        /// </value>
-        public static float TextureSize
-        {
-            get; set;
-        }
+        public static float TextureSize { get; set; }
 
         /// <summary>
         /// Gets the width of the screen.
         /// </summary>
-        public static int ScreenWidth
-        {
-            get
-            {
-                return GraphicsDevice.PresentationParameters.BackBufferWidth;
-            }
-        }
+        public static int ScreenWidth => GraphicsDevice.PresentationParameters.BackBufferWidth;
 
         /// <summary>
         /// Gets the height of the screen.
         /// </summary>
-        public static int ScreenHeight
-        {
-            get
-            {
-                return GraphicsDevice.PresentationParameters.BackBufferHeight;
-            }
-        }
+        public static int ScreenHeight => GraphicsDevice.PresentationParameters.BackBufferHeight;
 
         /// <summary>
         /// Gets or sets the graphics device.
         /// </summary>
-        /// <value>
-        /// The graphics device.
-        /// </value>
-        public static GraphicsDevice GraphicsDevice
-        {
-            get; set;
-        }
+        public static GraphicsDevice GraphicsDevice { get; set; }
 
         /// <summary>
         /// Gets or sets the sprite batch.
         /// </summary>
-        /// <value>
-        /// The sprite batch.
-        /// </value>
-        public static SpriteBatch SpriteBatch
-        {
-            get; set;
-        }
+        public static SpriteBatch SpriteBatch { get; set; }
 
         /// <summary>
         /// Gets or sets the content manager.
         /// </summary>
-        /// <value>
-        /// The content manager.
-        /// </value>
-        public static ContentManager ContentManager
-        {
-            get; set;
-        }
+        public static ContentManager ContentManager { get; set; }
 
         /// <summary>
         /// Gets or sets the camera.
         /// </summary>
-        /// <value>
-        /// The camera.
-        /// </value>
-        public static ICamera2D Camera
-        {
-            get; set;
-        }
+        public static ICamera2D Camera { get; set; }
 
         /// <summary>
         /// Gets or sets the font.
         /// </summary>
-        /// <value>
-        /// The font.
-        /// </value>
-        public static SpriteFont Font
-        {
-            get; set;
-        }
+        public static SpriteFont Font { get; set; }
 
         /// <summary>
         /// Gets or sets the lighting shader.
         /// </summary>
-        /// <value>
-        /// The lighting shader.
-        /// </value>
-        public static Effect LightingShader
-        {
-            get; set;
-        }
+        public static Effect LightingShader { get; set; }
 
         /// <summary>
         /// Gets or sets the lighting render target.
         /// </summary>
-        /// <value>
-        /// The lighting render target.
-        /// </value>
-        public static RenderTarget2D DeferredLightingRenderTarget
-        {
-            get; set;
-        }
+        public static RenderTarget2D DeferredLightingRenderTarget { get; set; }
 
         /// <summary>
         /// Gets or sets the color map render target.
         /// </summary>
-        /// <value>
-        /// The color map render target.
-        /// </value>
-        public static RenderTarget2D ColorMapRenderTarget
-        {
-            get; set;
-        }
+        public static RenderTarget2D ColorMapRenderTarget { get; set; }
 
         /// <summary>
         /// Gets or sets the shader render target.
         /// </summary>
-        /// <value>
-        /// The shader render target.
-        /// </value>
-        public static RenderTarget2D ShaderRenderTarget
-        {
-            get; set;
-        }
+        public static RenderTarget2D ShaderRenderTarget { get; set; }
 
         /// <summary>
         /// Gets or sets the scale render target.
         /// </summary>
-        /// <value>
-        /// The scale render target.
-        /// </value>
-        public static RenderTarget2D ScaleRenderTarget
-        {
-            get; set;
-        }
+        public static RenderTarget2D ScaleRenderTarget { get; set; }
 
         /// <summary>
         /// Gets or sets the ambient light value.
         /// </summary>
-        /// <value>
-        /// The ambient light value.
-        /// </value>
-        public static float AmbientLightValue
-        {
-            get; set;
-        }
+        public static float AmbientLightValue { get; set; }
 
         /// <summary>
         /// Gets or sets the color of the ambient light.
         /// </summary>
-        /// <value>
-        /// The color of the ambient light.
-        /// </value>
-        public static Color AmbientLightColor
-        {
-            get; set;
-        }
+        public static Color AmbientLightColor { get; set; }
 
         /// <summary>
         /// Clones the render target.
         /// </summary>
-        /// <param name="device">The device.</param>
         /// <returns>A new render target with the properties of the provided device.</returns>
         public static RenderTarget2D CloneRenderTarget(GraphicsDevice device)
         {

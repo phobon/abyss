@@ -25,7 +25,7 @@ namespace Abyss.World.Phases.Concrete.Argus
         /// <param name="layer">The layer.</param>
         public override void Apply(ILayer layer)
         {
-            GameManager.DimensionShifted += GameManagerOnDimensionShifted;
+            Monde.GameManager.DimensionShifted += GameManagerOnDimensionShifted;
             base.Apply(layer);
         }
 
@@ -35,13 +35,13 @@ namespace Abyss.World.Phases.Concrete.Argus
         /// <param name="layer">The layer.</param>
         public override void Remove(ILayer layer)
         {
-            GameManager.DimensionShifted -= GameManagerOnDimensionShifted;
+            Monde.GameManager.DimensionShifted -= GameManagerOnDimensionShifted;
             base.Remove(layer);
         }
 
         private void GameManagerOnDimensionShifted(DimensionShiftedEventArgs dimensionShiftedEventArgs)
         {
-            GameManager.Player.TakeDamage(this.Name);
+            Monde.GameManager.Player.TakeDamage(this.Name);
         }
     }
 }

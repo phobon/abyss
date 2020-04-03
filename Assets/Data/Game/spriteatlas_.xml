@@ -1,0 +1,1277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SpriteAtlas>
+  <Sprites>
+    <Sprite id="Debug0" atlas="debug">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Debug" depth="Environment">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="0" />
+        </Layer>
+      </Layers>
+    </Sprite>
+    <Sprite id="Debug1" atlas="debug">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Debug" depth="Environment">
+          <Size x="16" y="16" />
+          <SpriteLocation x="1" y="0" />
+        </Layer>
+      </Layers>
+    </Sprite>
+    <Sprite id="Debug2" atlas="debug">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Debug" depth="Environment">
+          <Size x="16" y="16" />
+          <SpriteLocation x="2" y="0" />
+        </Layer>
+      </Layers>
+    </Sprite>
+    <Sprite id="Debug3" atlas="debug">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Debug" depth="Environment">
+          <Size x="16" y="16" />
+          <SpriteLocation x="3" y="0" />
+        </Layer>
+      </Layers>
+    </Sprite>
+    <Sprite id="VolatilePlatform" atlas="gameplay" tile="True">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Debug" depth="Environment">
+          <Size x="16" y="16" />
+          <SpriteLocation x="5" y="1" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="SpringyPlatform" atlas="gameplay" tile="True">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Debug" depth="Environment">
+          <Size x="16" y="16" />
+          <SpriteLocation x="4" y="1" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="MovingPlatform" atlas="gameplay" tile="True">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Debug" depth="Environment">
+          <Size x="16" y="16" />
+          <SpriteLocation x="3" y="1" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="heart" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Items" depth="Items">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="3" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="30" loop="True" looplag="60" frames="0-2">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="hourglass" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Items" depth="Items">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="10" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="30" loop="True" looplag="60" frames="0-4">
+          <SpriteLocation x="0" y="10" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="SmallRiftShard" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Items" depth="Items">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="0" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Neutral" speed="30" loop="True" looplag="60" frames="0-4">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Chaos" speed="30" loop="True" looplag="60" frames="0-4">
+          <SpriteLocation x="4" y="0" />
+        </Animation>
+        <Animation name="Balance" speed="30" loop="True" looplag="60" frames="0-4">
+          <SpriteLocation x="8" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="MediumRiftShard" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Items" depth="Items">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="1" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Neutral" speed="30" loop="True" looplag="60" frames="0-4">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Chaos" speed="30" loop="True" looplag="60" frames="0-4">
+          <SpriteLocation x="4" y="0" />
+        </Animation>
+        <Animation name="Balance" speed="30" loop="True" looplag="60" frames="0-4">
+          <SpriteLocation x="8" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="LargeRiftShard" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Items" depth="Items">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="2" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Neutral" speed="30" loop="True" looplag="60" frames="0-4">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Chaos" speed="30" loop="True" looplag="60" frames="0-4">
+          <SpriteLocation x="4" y="0" />
+        </Animation>
+        <Animation name="Balance" speed="30" loop="True" looplag="60" frames="0-4">
+          <SpriteLocation x="8" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="invulnerability" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Items" depth="Items">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="6" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="shield" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Items" depth="Items">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="8" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="vitality" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Items" depth="Items">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="4" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="cataclysm" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Items" depth="Items">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="5" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="speedup" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Items" depth="Items">
+          <Size x="16" y="16" />
+          <SpriteLocation x="1" y="6" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="slowtime" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Items" depth="Items">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="9" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="conduit" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Items" depth="Items">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="7" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="idler" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Monsters" depth="Monsters">
+          <Size x="16" y="16" />
+          <SpriteLocation x="2" y="0" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="15" loop="True" looplag="0" frames="0-2">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="Shooter" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Monsters" depth="Monsters">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="0" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Shoot" speed="30" loop="True" looplag="0" frames="0-5">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="Floater" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Monsters" depth="Monsters">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="5" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="30" loop="True" looplag="0" frames="0-2">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="Faller" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Monsters" depth="Monsters">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="6" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Fall" speed="30" loop="True" looplag="0" frames="0-5">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="Crawler" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Monsters" depth="Monsters">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="7" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Crawl" speed="30" loop="True" looplag="0" frames="0-5">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="Walker" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Monsters" depth="Monsters">
+          <Size x="16" y="16" />
+          <SpriteLocation x="8" y="8" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Walk" speed="8" loop="True" looplag="0" frames="0-4">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="Flyer" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Monsters" depth="Monsters">
+          <Size x="16" y="16" />
+          <SpriteLocation x="4" y="9" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Fly" speed="12" loop="True" looplag="0" frames="0-4">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="Stalker" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Monsters" depth="Monsters">
+          <Size x="16" y="16" />
+          <SpriteLocation x="4" y="5" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Stalk" speed="30" loop="True" looplag="0" frames="0-5">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="Jumper" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Monsters" depth="Monsters">
+          <Size x="16" y="16" />
+          <SpriteLocation x="12" y="3" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Jump" speed="30" loop="True" looplag="0" frames="0-4">
+          <SpriteLocation x="1" y="0" />
+        </Animation>
+        <Animation name="Impact" speed="30" loop="True" looplag="0" frames="0-2">
+          <SpriteLocation x="5" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="IcyPlatform" atlas="gameplay" tile="True">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Platforms" depth="Environment">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="2" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="30" loop="True" looplag="0" frames="0-7">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="GatePlatform" atlas="gameplay" tile="True">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Platforms" depth="Environment">
+          <Size x="16" y="16" />
+          <SpriteLocation x="16" y="1" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Locked" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Unlocked" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="1" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="BalancePlatform" atlas="gameplay" tile="True">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Platforms" depth="Environment">
+          <Size x="16" y="16" />
+          <SpriteLocation x="8" y="0" />
+        </Layer>
+        <Layer texture="Platforms" depth="Environment">
+          <Size x="16" y="16" />
+          <SpriteLocation x="8" y="1" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Activated" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Activating" speed="2" loop="False" looplag="0" frames="7-0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Deactivating" speed="2" loop="False" looplag="0" frames="0-7">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Deactivated" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="7" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="ChaosPlatform" atlas="gameplay" tile="True">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Platforms" depth="Environment">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="0" />
+        </Layer>
+        <Layer texture="Platforms" depth="Environment">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="1" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Activated" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Activating" speed="2" loop="False" looplag="0" frames="7-0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Deactivating" speed="2" loop="False" looplag="0" frames="0-7">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Deactivated" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="7" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="CrumblingPlatform" atlas="gameplay" tile="True">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Platforms" depth="Environment">
+          <Size x="16" y="16" />
+          <SpriteLocation x="16" y="0" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="KeyPlatform" atlas="gameplay" tile="True">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Platforms" depth="Environment">
+          <Size x="16" y="16" />
+          <SpriteLocation x="18" y="1" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Deactivated" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Activated" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="1" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="CrusherPlatform" atlas="gameplay" tile="True">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Platforms" depth="Environment">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="8" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="30" loop="True" looplag="0" frames="0-18">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="player" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer id="grayscale" texture="Player" depth="Player">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="0" />
+        </Layer>
+        <Layer id="colour" texture="Player" depth="PlayerDimension">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="2" />
+        </Layer>
+        <Layer id="hair" texture="Player" depth="PlayerDimension">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="4" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="12" loop="True" looplag="0" frames="0-5">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Run" speed="5" loop="True" looplag="0" frames="0-6">
+          <SpriteLocation x="0" y="1" />
+        </Animation>
+        <Animation name="Fall" speed="6" loop="True" looplag="0" frames="0-4">
+          <SpriteLocation x="6" y="0" />
+        </Animation>
+        <Animation name="Impact" speed="0" loop="False" looplag="0" frames="0-1">
+          <SpriteLocation x="6" y="1" />
+        </Animation>
+        <Animation name="Die" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="8" y="1" />
+        </Animation>
+        <Animation name="ShiftDimension" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="9" y="1" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="playerShield" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Player" depth="PlayerShield">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="6" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Inactive" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="11" y="6" />
+        </Animation>
+        <Animation name="Generate" speed="2" loop="False" looplag="0" frames="0-6">
+          <SpriteLocation x="0" y="6" />
+        </Animation>
+        <Animation name="Pulsing" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="7" y="6" />
+        </Animation>
+        <Animation name="Break" speed="0" loop="False" looplag="0" frames="0-3">
+          <SpriteLocation x="8" y="6" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="ExclamationBubble" atlas="gameplay" centre="True">
+      <Size x="9" y="9" />
+      <Layers>
+        <Layer texture="Props" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="9" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Inactive" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="Light" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Props" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="2" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="PurchasableItem" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Props" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="0" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="SpikeTrap" atlas="gameplay" tile="True">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Props" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="2" y="0" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="30" loop="True" looplag="0" frames="0-2">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="ShopEntrance" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Props" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="1" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="15" loop="True" looplag="60" frames="0-10">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="Exit" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Props" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="3" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="6" loop="True" looplag="60" frames="0-10">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="VoidPatch" atlas="gameplay" centre="True" tile="True">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Props" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="4" y="0" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="30" loop="True" looplag="0" frames="0-4">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="RiftSheet" atlas="gameplay" centre="True" tile="True">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Props" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="5" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="10" loop="True" looplag="0" frames="0-4">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="LavaColumn" atlas="gameplay" tile="True">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Props" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="5" y="2" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="10" loop="True" looplag="0" frames="0-4">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="TreasureChest" atlas="gameplay">
+      <Size x="16" y="16" />
+      <Layers>
+        <Layer texture="Props" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="5" y="9" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Activating" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="1" y="0" />
+        </Animation>
+        <Animation name="Activated" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="1" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="HeartGlyph" atlas="Interface">
+      <Size x="28" y="24" />
+      <Layers>
+        <Layer texture="HeartGlyph" depth="Interface">
+          <Size x="28" y="24" />
+          <SpriteLocation x="0" y="0" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Inactive" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+        <Animation name="Active" speed="30" loop="True" looplag="60" frames="0-2">
+          <SpriteLocation x="1" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="RiftGlyph" atlas="Interface">
+      <Size x="20" y="20" />
+      <Layers>
+        <Layer texture="RiftGlyph" depth="Interface">
+          <Size x="20" y="20" />
+          <SpriteLocation x="0" y="0" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="30" loop="True" looplag="60" frames="0-2">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="GameInterface" atlas="Interface">
+      <Size x="640" y="120" />
+      <Layers>
+        <Layer texture="UI" depth="Interface">
+          <Size x="640" y="88" />
+          <SpriteLocation x="0" y="0" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="ScoreInterface" atlas="Interface">
+      <Size x="20" y="20" />
+      <Layers>
+        <Layer texture="UI" depth="Interface">
+          <Size x="20" y="20" />
+          <SpriteLocation x="0" y="1" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="LogoElement" atlas="Interface" centre="True">
+      <Size x="568" y="202" />
+      <Layers>
+        <Layer texture="Logo" depth="Interface">
+          <Size x="568" y="202" />
+          <SpriteLocation x="0" y="0" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="PhaseNotificationElement" atlas="Interface">
+      <Size x="304" y="59" />
+      <Layers>
+        <Layer texture="PhaseNameUI" depth="Interface">
+          <Size x="304" y="59" />
+          <SpriteLocation x="0" y="0" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+    <Sprite id="DimensionIndicatorElement" atlas="Interface">
+      <Size x="100" y="100" />
+      <Layers>
+        <Layer texture="DimensionIndicator" depth="Interface">
+          <Size x="100" y="100" />
+          <SpriteLocation x="0" y="0" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="30" loop="True" looplag="60" frames="0-2">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Sprite>
+  </Sprites>
+  <Particles>
+    <Particle id="Explosion" atlas="gameplay" centre="True">
+      <Size x="12" y="12" />
+      <Layers>
+        <Layer texture="Particles" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="0" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Exploding" speed="5" loop="False" looplag="0" frames="0-9">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Particle>
+    <Particle id="Implosion" atlas="gameplay" centre="True">
+      <Size x="12" y="12" />
+      <Layers>
+        <Layer texture="Particles" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="1" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Exploding" speed="5" loop="False" looplag="0" frames="0-9">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Particle>
+    <Particle id="LargeCrossSparkle" atlas="gameplay" centre="True">
+      <Size x="6" y="6" />
+      <Layers>
+        <Layer texture="Particles" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="2" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Sparkling" speed="5" loop="False" looplag="0" frames="0-5">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Particle>
+    <Particle id="ReverseLargeCrossSparkle" atlas="gameplay" centre="True">
+      <Size x="6" y="6" />
+      <Layers>
+        <Layer texture="Particles" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="3" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Sparkling" speed="5" loop="False" looplag="0" frames="0-5">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Particle>
+    <Particle id="SmallCrossSparkle" atlas="gameplay" centre="True">
+      <Size x="3" y="3" />
+      <Layers>
+        <Layer texture="Particles" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="5" y="2" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Sparkling" speed="5" loop="False" looplag="0" frames="0-3">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Particle>
+    <Particle id="ReverseSmallCrossSparkle" atlas="gameplay" centre="True">
+      <Size x="3" y="3" />
+      <Layers>
+        <Layer texture="Particles" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="5" y="3" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Sparkling" speed="5" loop="False" looplag="0" frames="0-3">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Particle>
+    <Particle id="SquareSparkle" atlas="gameplay" centre="True">
+      <Size x="4" y="4" />
+      <Layers>
+        <Layer texture="Particles" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="4" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Sparkling" speed="5" loop="False" looplag="0" frames="0-4">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Particle>
+    <Particle id="ReverseSquareSparkle" atlas="gameplay" centre="True">
+      <Size x="4" y="4" />
+      <Layers>
+        <Layer texture="Particles" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="4" y="4" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Sparkling" speed="5" loop="False" looplag="0" frames="0-4">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Particle>
+    <Particle id="StaticLargeCross" atlas="gameplay" centre="True">
+      <Size x="6" y="6" />
+      <Layers>
+        <Layer texture="Particles" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="2" y="2" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Particle>
+    <Particle id="StaticLargeHollowCross" atlas="gameplay" centre="True">
+      <Size x="6" y="6" />
+      <Layers>
+        <Layer texture="Particles" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="3" y="2" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Particle>
+    <Particle id="StaticSmallCross" atlas="gameplay" centre="True">
+      <Size x="3" y="3" />
+      <Layers>
+        <Layer texture="Particles" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="6" y="2" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Particle>
+    <Particle id="StaticSmallHollowCross" atlas="gameplay" centre="True">
+      <Size x="3" y="3" />
+      <Layers>
+        <Layer texture="Particles" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="7" y="2" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Particle>
+    <Particle id="StaticSmallHollowSquare" atlas="gameplay" centre="True">
+      <Size x="4" y="4" />
+      <Layers>
+        <Layer texture="Particles" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="2" y="4" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Particle>
+    <Particle id="StaticCircle" atlas="gameplay" centre="True">
+      <Size x="6" y="6" />
+      <Layers>
+        <Layer texture="Particles" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="1" y="2" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Particle>
+    <Particle id="ExclamationBubble" atlas="gameplay" centre="True">
+      <Size x="9" y="9" />
+      <Layers>
+        <Layer texture="Particles" depth="Props">
+          <Size x="16" y="16" />
+          <SpriteLocation x="0" y="5" />
+        </Layer>
+      </Layers>
+      <Animations>
+        <Animation name="Idle" speed="0" loop="False" looplag="0" frames="0">
+          <SpriteLocation x="0" y="0" />
+        </Animation>
+      </Animations>
+    </Particle>
+  </Particles>
+  <Doodads>
+    <Doodad id="vine01" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="0" y="0" />
+    </Doodad>
+    <Doodad id="vine02" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="2" y="0" />
+    </Doodad>
+    <Doodad id="vine03" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="4" y="0" />
+    </Doodad>
+    <Doodad id="vine04" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="6" y="0" />
+    </Doodad>
+    <Doodad id="vine05" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="8" y="0" />
+    </Doodad>
+    <Doodad id="vine06" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="10" y="0" />
+    </Doodad>
+    <Doodad id="floatingdebris01" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="12" y="0" />
+    </Doodad>
+    <Doodad id="floatingdebris02" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="14" y="0" />
+    </Doodad>
+    <Doodad id="floatingdebris03" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="16" y="0" />
+    </Doodad>
+    <Doodad id="floatingdebris04" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="18" y="0" />
+    </Doodad>
+    <Doodad id="floatingdebris05" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="0" y="1" />
+    </Doodad>
+    <Doodad id="floatingdebris06" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="2" y="1" />
+    </Doodad>
+    <Doodad id="grass01" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="4" y="1" />
+    </Doodad>
+    <Doodad id="grass02" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="6" y="1" />
+    </Doodad>
+    <Doodad id="grass03" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="8" y="1" />
+    </Doodad>
+    <Doodad id="grass04" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="10" y="1" />
+    </Doodad>
+    <Doodad id="grass05" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="12" y="1" />
+    </Doodad>
+    <Doodad id="grass06" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="14" y="1" />
+    </Doodad>
+    <Doodad id="grass07" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="16" y="1" />
+    </Doodad>
+    <Doodad id="grass08" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="18" y="1" />
+    </Doodad>
+    <Doodad id="grass09" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="0" y="2" />
+    </Doodad>
+    <Doodad id="grass10" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="2" y="2" />
+    </Doodad>
+    <Doodad id="grass11" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="4" y="2" />
+    </Doodad>
+    <Doodad id="grass12" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="6" y="2" />
+    </Doodad>
+    <Doodad id="grass13" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="8" y="2" />
+    </Doodad>
+    <Doodad id="grass14" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="10" y="2" />
+    </Doodad>
+    <Doodad id="grass15" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="12" y="2" />
+    </Doodad>
+    <Doodad id="grass16" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="14" y="2" />
+    </Doodad>
+    <Doodad id="grass17" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="16" y="2" />
+    </Doodad>
+    <Doodad id="grass18" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="18" y="2" />
+    </Doodad>
+    <Doodad id="grass19" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="0" y="3" />
+    </Doodad>
+    <Doodad id="grass20" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="2" y="3" />
+    </Doodad>
+    <Doodad id="grass21" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="4" y="3" />
+    </Doodad>
+    <Doodad id="grass22" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="6" y="3" />
+    </Doodad>
+    <Doodad id="grass23" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="8" y="3" />
+    </Doodad>
+    <Doodad id="grass24" isAnimated="True" speed="30" looplag="60" frames="0-2">
+      <SpriteLocation x="10" y="3" />
+    </Doodad>
+    <Doodad id="creeper01" isAnimated="False">
+      <SpriteLocation x="0" y="4" />
+    </Doodad>
+    <Doodad id="creeper02" isAnimated="False">
+      <SpriteLocation x="1" y="4" />
+    </Doodad>
+    <Doodad id="creeper03" isAnimated="False">
+      <SpriteLocation x="2" y="4" />
+    </Doodad>
+    <Doodad id="creeper04" isAnimated="False">
+      <SpriteLocation x="3" y="4" />
+    </Doodad>
+    <Doodad id="creeper05" isAnimated="False">
+      <SpriteLocation x="4" y="4" />
+    </Doodad>
+    <Doodad id="creeper06" isAnimated="False">
+      <SpriteLocation x="5" y="4" />
+    </Doodad>
+    <Doodad id="creeper07" isAnimated="False">
+      <SpriteLocation x="6" y="4" />
+    </Doodad>
+    <Doodad id="creeper08" isAnimated="False">
+      <SpriteLocation x="7" y="4" />
+    </Doodad>
+    <Doodad id="creeper09" isAnimated="False">
+      <SpriteLocation x="8" y="4" />
+    </Doodad>
+    <Doodad id="creeper10" isAnimated="False">
+      <SpriteLocation x="9" y="4" />
+    </Doodad>
+    <Doodad id="creeper11" isAnimated="False">
+      <SpriteLocation x="10" y="4" />
+    </Doodad>
+    <Doodad id="creeper12" isAnimated="False">
+      <SpriteLocation x="11" y="4" />
+    </Doodad>
+    <Doodad id="creeper13" isAnimated="False">
+      <SpriteLocation x="12" y="4" />
+    </Doodad>
+    <Doodad id="creeper14" isAnimated="False">
+      <SpriteLocation x="13" y="4" />
+    </Doodad>
+    <Doodad id="creeper15" isAnimated="False">
+      <SpriteLocation x="14" y="4" />
+    </Doodad>
+    <Doodad id="creeper16" isAnimated="False">
+      <SpriteLocation x="15" y="4" />
+    </Doodad>
+    <Doodad id="creeper17" isAnimated="False">
+      <SpriteLocation x="16" y="4" />
+    </Doodad>
+    <Doodad id="creeper18" isAnimated="False">
+      <SpriteLocation x="17" y="4" />
+    </Doodad>
+    <Doodad id="creeper19" isAnimated="False">
+      <SpriteLocation x="18" y="4" />
+    </Doodad>
+    <Doodad id="creeper20" isAnimated="False">
+      <SpriteLocation x="19" y="4" />
+    </Doodad>
+    <Doodad id="creeper21" isAnimated="False">
+      <SpriteLocation x="0" y="5" />
+    </Doodad>
+    <Doodad id="creeper22" isAnimated="False">
+      <SpriteLocation x="1" y="5" />
+    </Doodad>
+    <Doodad id="creeper23" isAnimated="False">
+      <SpriteLocation x="2" y="5" />
+    </Doodad>
+    <Doodad id="creeper24" isAnimated="False">
+      <SpriteLocation x="3" y="5" />
+    </Doodad>
+    <Doodad id="grass01" isAnimated="False">
+      <SpriteLocation x="4" y="5" />
+    </Doodad>
+    <Doodad id="grass02" isAnimated="False">
+      <SpriteLocation x="5" y="5" />
+    </Doodad>
+    <Doodad id="grass03" isAnimated="False">
+      <SpriteLocation x="6" y="5" />
+    </Doodad>
+    <Doodad id="grass04" isAnimated="False">
+      <SpriteLocation x="7" y="5" />
+    </Doodad>
+    <Doodad id="grass05" isAnimated="False">
+      <SpriteLocation x="8" y="5" />
+    </Doodad>
+    <Doodad id="grass06" isAnimated="False">
+      <SpriteLocation x="9" y="5" />
+    </Doodad>
+    <Doodad id="grass07" isAnimated="False">
+      <SpriteLocation x="10" y="5" />
+    </Doodad>
+    <Doodad id="grass08" isAnimated="False">
+      <SpriteLocation x="11" y="5" />
+    </Doodad>
+    <Doodad id="grass09" isAnimated="False">
+      <SpriteLocation x="12" y="5" />
+    </Doodad>
+    <Doodad id="grass10" isAnimated="False">
+      <SpriteLocation x="13" y="5" />
+    </Doodad>
+  </Doodads>
+</SpriteAtlas>

@@ -1,4 +1,6 @@
-﻿namespace Occasus.Core.Drawing.Animation
+﻿using Occasus.Core.Entities;
+
+namespace Occasus.Core.Drawing.Animation
 {
     public static class TimingHelper
     {
@@ -9,7 +11,7 @@
         /// <returns>A duration based on the current DeltaTime and number of frames.</returns>
         public static float GetDuration(int frameCount)
         {
-            return Engine.DeltaTime * frameCount;
+            return Engine<IGameManager<IEntity>>.DeltaTime * frameCount;
         }
 
         /// <summary>
@@ -19,7 +21,7 @@
         /// <returns>A frame count given the duration.</returns>
         public static int GetFrameCount(float duration)
         {
-            return (int)(duration / Engine.DeltaTime);
+            return (int)(duration / Engine<IGameManager<IEntity>>.DeltaTime);
         }
     }
 }

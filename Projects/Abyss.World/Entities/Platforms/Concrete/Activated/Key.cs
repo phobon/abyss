@@ -3,7 +3,8 @@ using Occasus.Core;
 using Occasus.Core.Entities;
 using Occasus.Core.Physics;
 using System.Collections;
-
+using Occasus.Core.Maps;
+using Occasus.Core.Maps.Definitions;
 using Occasus.Core.States;
 
 namespace Abyss.World.Entities.Platforms.Concrete.Activated

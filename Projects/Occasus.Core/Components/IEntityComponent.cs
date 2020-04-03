@@ -1,4 +1,5 @@
-﻿using Occasus.Core.Entities;
+﻿using System.Collections.Generic;
+using Occasus.Core.Entities;
 
 namespace Occasus.Core.Components
 {
@@ -8,5 +9,7 @@ namespace Occasus.Core.Components
         /// Gets the parent entity of this component.
         /// </summary>
         IEntity Parent { get; }
+
+        IList<string> Tags { get; }
     }
 }

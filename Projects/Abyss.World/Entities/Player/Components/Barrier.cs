@@ -20,12 +20,6 @@ namespace Abyss.World.Entities.Player.Components
             : base("barrier", "The barrier for a player.")
         {
             this.player = player;
-
-            this.Components.Add(Sprite.Tag, Atlas.GetSprite(AtlasTags.Gameplay, this.Name, this));
-
-            this.Tags.Add(Lighting.DeferredRenderEntity);
-            this.Flags[EngineFlag.DeferredRender] = true;
-
             this.Charges = 0;
         }
 
@@ -108,6 +102,22 @@ namespace Abyss.World.Entities.Player.Components
             yield return Coroutines.Pause(7);
 
             this.CurrentState = BarrierStates.Inactive;
+        }
+
+        protected override void InitializeTags()
+        {
+            this.Tags.Add("PlayerComponent");
+        }
+
+        protected override void InitializeSprite()
+        {
+            this.AddComponent(Sprite.Tag, Atlas.GetSprite(AtlasTags.Gameplay, this.Name, this));
+        }
+
+        protected override void InitializeLighting()
+        {
+            this.Tags.Add(Lighting.DeferredRender);
+            this.Flags[EngineFlag.DeferredRender] = true;
         }
     }
 }

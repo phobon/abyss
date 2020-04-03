@@ -12,8 +12,7 @@ namespace Abyss.World.Entities.Monsters.Concrete
         /// Initializes a new instance of the <see cref="Idler" /> class.
         /// </summary>
         /// <param name="initialPosition">The initial position.</param>
-        /// <param name="path">The path.</param>
-        public Idler(Vector2 initialPosition, IEnumerable<Vector2> path)
+        public Idler(Vector2 initialPosition)
             : base(
             "Idler",
             "Idlers stand around being a nuisance.",
@@ -22,6 +21,11 @@ namespace Abyss.World.Entities.Monsters.Concrete
             boundingBox,
             ZoneType.Normal)
         {
+        }
+
+        protected override void InitializeTags()
+        {
+            base.InitializeTags();
             this.Tags.Add(EntityTags.GroundedMonster);
             this.Tags.Add(EntityTags.Idler);
         }

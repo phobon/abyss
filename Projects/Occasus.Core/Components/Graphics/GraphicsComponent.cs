@@ -6,6 +6,8 @@ namespace Occasus.Core.Components.Graphics
 {
     public abstract class GraphicsComponent : EntityComponent, IGraphicsComponent
     {
+        private const string GraphicsTag = "Graphics";
+
         /// <summary>
         /// Initializes a new instance of the <see cref="GraphicsComponent" /> class.
         /// </summary>
@@ -28,66 +30,41 @@ namespace Occasus.Core.Components.Graphics
         /// <summary>
         /// Gets or sets the color.
         /// </summary>
-        /// <value>
-        /// The color.
-        /// </value>
-        public Color Color
-        {
-            get; set;
-        }
+        public Color Color { get; set; }
 
         /// <summary>
         /// Gets the origin of this sprite.
         /// </summary>
-        public Vector2 Origin
-        {
-            get; private set;
-        }
+        public Vector2 Origin { get; private set; }
 
         /// <summary>
         /// Gets the centre of this Graphics component.
         /// </summary>
-        public Vector2 Centre
-        {
-            get; private set;
-        }
+        public Vector2 Centre { get; private set; }
 
         /// <summary>
         /// Gets the size of the frame.
         /// </summary>
-        public Vector2 FrameSize
-        {
-            get; private set;
-        }
+        public Vector2 FrameSize { get; private set; }
 
         /// <summary>
         /// Gets or sets the offset for this sprite.
         /// </summary>
-        public Vector2 Offset
-        {
-            get; set;
-        }
+        public Vector2 Offset { get; set; }
 
         /// <summary>
         /// Gets or sets the sprite effects.
         /// </summary>
-        /// <value>
-        /// The sprite effects.
-        /// </value>
-        public SpriteEffects SpriteEffects
-        {
-            get; set;
-        }
+        public SpriteEffects SpriteEffects { get; set; }
 
         /// <summary>
         /// Gets or sets the opacity.
         /// </summary>
-        /// <value>
-        /// The opacity.
-        /// </value>
-        public float Opacity
+        public float Opacity { get; set; }
+
+        protected override void InitializeTags()
         {
-            get; set;
+            this.Tags.Add(GraphicsTag);
         }
     }
 }

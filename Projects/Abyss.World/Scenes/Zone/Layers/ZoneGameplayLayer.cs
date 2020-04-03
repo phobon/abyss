@@ -41,13 +41,13 @@ namespace Abyss.World.Scenes.Zone.Layers
             var cachedEntities = this.entities.ToList();
             foreach (var e in cachedEntities)
             {
-                if (e is IMap || e is IFullScreenParticleEffect || e is IPlayer || e is IBarrier)
+                if (e is IAbyssMap || e is IFullScreenParticleEffect || e is IPlayer || e is IBarrier)
                 {
                     continue;
                 }
 
                 // If the entity is no longer relevant; suspend it and remove it.
-                if (e.Transform.GridPosition.Y < GameManager.GameViewPort.Top && e.Transform.GridPosition.Y > GameManager.GameViewPort.Bottom)
+                if (e.Transform.GridPosition.Y < Monde.GameManager.ViewPort.Top)
                 {
                     e.Suspend();
                     this.entities.Remove(e);
@@ -80,7 +80,7 @@ namespace Abyss.World.Scenes.Zone.Layers
                 }
 
                 // This item is new and hasn't been cached yet, so determine if it's relevant.
-                if (e.Flags[EngineFlag.ForceIncludeInCache] || (e.Transform.GridPosition.Y >= GameManager.GameViewPort.Top && e.Transform.GridPosition.Y <= GameManager.GameViewPort.Bottom))
+                if (e.Flags[EngineFlag.ForceIncludeInCache] || (e.Transform.GridPosition.Y >= Monde.GameManager.ViewPort.Top && e.Transform.GridPosition.Y <= Monde.GameManager.ViewPort.Bottom))
                 {
                     this.entities.Add(e);
 
@@ -134,7 +134,7 @@ namespace Abyss.World.Scenes.Zone.Layers
             foreach (var e in this.allEntities)
             {
                 // Map should always be relevant.
-                if (e is IMap)
+                if (e is IAbyssMap)
                 {
                     this.entities.Add(e);
                     continue;
@@ -161,7 +161,7 @@ namespace Abyss.World.Scenes.Zone.Layers
             }
             
 
-            this.UpdateEntityCache(GameManager.GameViewPort);
+            this.UpdateEntityCache(Monde.GameManager.ViewPort);
         }
     }
 }

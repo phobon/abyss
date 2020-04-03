@@ -85,12 +85,12 @@ namespace Abyss.World.Entities.Props
             base.Update(gameTime, inputState);
             if (this.playerColliding)
             {
-                var collision = GameManager.Player.Collider.QualifiedBoundingBox.GetIntersectionDepth(this.Collider.QualifiedBoundingBox);
+                var collision = Monde.GameManager.Player.Collider.QualifiedBoundingBox.GetIntersectionDepth(this.Collider.QualifiedBoundingBox);
                 if (collision == Vector2.Zero)
                 {
                     this.CanActivate = false;
                     this.playerColliding = false;
-                    GameManager.Player.CurrentProp = null;
+                    Monde.GameManager.Player.CurrentProp = null;
                 }
             }
         }

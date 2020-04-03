@@ -43,12 +43,6 @@ namespace Abyss.World.Entities.Props.Concrete
                 boundingBox,
                 Vector2.Zero)
         {
-            this.Tags.Add(EntityTags.TreasureChest);
-
-            // Set up basic lighting.
-            this.Tags.Add(Lighting.DeferredRenderEntity);
-            this.Flags[EngineFlag.DeferredRender] = true;
-            this.Components.Add(LightSource.Tag, new PointLight(this, 0.5f, 2f, Color.White));
         }
 
         /// <summary>
@@ -98,27 +92,6 @@ namespace Abyss.World.Entities.Props.Concrete
                     sprite.Color = Color.White;
                 }
             };
-
-            if (!this.Components.ContainsKey(Power.ComponentName))
-            {
-                this.Components.Add(
-                    Power.ComponentName,
-                    ParticleEffectFactory.GetParticleEffect(
-                        this,
-                        Power.ComponentName,
-                        new Vector2(this.Collider.BoundingBox.Center.X, this.Collider.BoundingBox.Top),
-                        Color.Gold));
-            }
-
-            if (!this.Components.ContainsKey(Curse.ComponentName))
-            {
-                this.Components.Add(
-                    Curse.ComponentName,
-                    ParticleEffectFactory.GetParticleEffect(
-                        this,
-                        Curse.ComponentName,
-                        new Vector2(this.Collider.BoundingBox.Center.X, this.Collider.BoundingBox.Top)));
-            }
         }
 
         /// <summary>
@@ -179,6 +152,26 @@ namespace Abyss.World.Entities.Props.Concrete
             this.States.Add(Cursed, new State(Cursed, this.CursedEffect(), false));
         }
 
+        protected override void InitializeTags()
+        {
+            base.InitializeTags();
+            this.Tags.Add(EntityTags.TreasureChest);
+        }
+
+        protected override void InitializeLighting()
+        {
+            this.Tags.Add(Lighting.DeferredRender);
+            this.Flags[EngineFlag.DeferredRender] = true;
+            this.AddComponent(LightSource.Tag, new PointLight(this, 0.5f, 2f, Color.White));
+        }
+
+        protected override void InitializeComponents()
+        {
+            var origin = new Vector2(this.Collider.BoundingBox.Center.X, this.Collider.BoundingBox.Top);
+            this.AddComponent(Power.ComponentName, ParticleEffectFactory.GetParticleEffect(this, Power.ComponentName, origin, Color.Gold));
+            this.AddComponent(Curse.ComponentName, ParticleEffectFactory.GetParticleEffect(this, Curse.ComponentName, origin, Color.Gold));
+        }
+
         private IEnumerable CursedEffect()
         {
             var sprite = this.GetSprite();
@@ -195,7 +188,7 @@ namespace Abyss.World.Entities.Props.Concrete
         private IEnumerator TreasureCollectedEffect(IItem item)
         {
             // Turn off the particle effect.
-            this.Components.Remove(Power.ComponentName);
+            this.RemoveComponent(Power.ComponentName);
 
             // TODO: Add a bouncy effect to the chest so it looks awesome when you open it.
 

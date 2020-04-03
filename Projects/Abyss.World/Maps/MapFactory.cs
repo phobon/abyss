@@ -1,35 +1,28 @@
-﻿using Abyss.World.Entities.Monsters;
-using Abyss.World.Entities.Platforms;
-using Abyss.World.Universe;
+﻿using Abyss.World.Universe;
 using Microsoft.Xna.Framework;
 using Occasus.Core.Assets;
 using Occasus.Core.Assets.AtlasDefinitions;
 using Occasus.Core.Drawing;
 using Occasus.Core.Maths;
 using Occasus.Core.Physics;
-using Occasus.Core.Tiles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using Occasus.Core.Maps;
+using Occasus.Core.Maps.Definitions;
+using Occasus.Core.Maps.Tiles;
 
 namespace Abyss.World.Maps
 {
     public static class MapFactory
     {
         private const int BackgroundOffset = 13;
-        private const int MapChunkHeight = 17;
 
         private static IDictionary<ZoneType, IList<IMapChunk>> mapChunks;
         private static IDictionary<ZoneType, IZoneData> zoneDataReference;
 
-        public static IDictionary<ZoneType, IZoneData> ZoneDataReference
-        {
-            get
-            {
-                return zoneDataReference ?? (zoneDataReference = new Dictionary<ZoneType, IZoneData>());
-            }
-        }
+        public static IDictionary<ZoneType, IZoneData> ZoneDataReference => zoneDataReference ?? (zoneDataReference = new Dictionary<ZoneType, IZoneData>());
 
         public static IDictionary<ZoneType, IList<IMapChunk>> MapChunks
         {
@@ -63,8 +56,8 @@ namespace Abyss.World.Maps
                 var chunk = mapChunks[ZoneType.Transition].First();
                 if (!hasSpawnPoints)
                 {
-                    chunk.MonsterSpawnPoints.Clear();
-                    chunk.ItemSpawnPoints.Clear();
+                    chunk.Spawns[MapChunkData.MonsterSpawns].Clear();
+                    chunk.Spawns[MapChunkData.ItemSpawns].Clear();
                 }
 
                 chunks.Add(chunk);
@@ -119,13 +112,16 @@ namespace Abyss.World.Maps
                     : mapChunks[key].Where(o => o.Type.Equals(zoneData.DefaultChunkType, StringComparison.InvariantCultureIgnoreCase)).ToList();
 
                 // Determine a random chunk to add to the list.
-                var index = MathsHelper.Random(selectedChunks.Count);
-                chunks.Add(selectedChunks[index]);
-
-                structureIndex++;
-                if (structureIndex == zoneData.Structure.Count())
+                if (selectedChunks.Any())
                 {
-                    structureIndex = 0;
+                    var index = MathsHelper.Random(selectedChunks.Count);
+                    chunks.Add(selectedChunks[index]);
+
+                    structureIndex++;
+                    if (structureIndex == zoneData.Structure.Count())
+                    {
+                        structureIndex = 0;
+                    }
                 }
             }
 
@@ -161,7 +157,19 @@ namespace Abyss.World.Maps
                 var chunks = new List<IMapChunk>();
                 foreach (var chunk in doc.Descendants("Chunks").Descendants("Chunk"))
                 {
-                    var newChunk = new MapChunk(chunk.Attribute("type").Value);
+                    var newChunk = new MapChunk(
+                        type: chunk.Attribute("type").Value, 
+                        width: PhysicsManager.MapWidth, 
+                        height: MapData.ChunkHeight,
+                        layoutKeys: new[] { MapChunkData.NormalPlatforms, MapChunkData.SpecialPlatforms },
+                        spawnKeys: new[]
+                        {
+                            MapChunkData.MonsterSpawns,
+                            MapChunkData.ItemSpawns,
+                            MapChunkData.PropSpawns,
+                            MapChunkData.TriggerSpawns,
+                            MapChunkData.HazardSpawns
+                        });
 
                     // Create a couple of collections here to help us with entity placement later in the process.
                     var layoutCells = new List<Point>();
@@ -174,7 +182,7 @@ namespace Abyss.World.Maps
                         var y = int.Parse(t.Attribute("y").Value);
                         var width = int.Parse(t.Attribute("w").Value);
                         var height = int.Parse(t.Attribute("h").Value);
-                        newChunk.Layout.Add(new Rectangle(x, y, width, height));
+                        newChunk.Layout[MapChunkData.NormalPlatforms].Add(new NormalPlatformDefinition(new Rectangle(x, y, width, height)));
 
                         // This is a bit of weird code to help us later when we add items and monsters.
                         var leftCell = x / DrawingManager.TileWidth;
@@ -210,7 +218,7 @@ namespace Abyss.World.Maps
                     var doodadMap = LoadGeometry(chunk, newChunk, "Normal", "Foreground", 0);
 
                     // Load tile-based doodads.
-                    for (var y = 0; y < MapChunkHeight; y++)
+                    for (var y = 0; y < MapData.ChunkHeight; y++)
                     {
                         for (var x = 0; x < PhysicsManager.MapWidth; x++)
                         {
@@ -228,10 +236,10 @@ namespace Abyss.World.Maps
 
                     // Load doodads that appear above the ground.
                     var randomDoodadMap = Atlas.GetDoodadGroupIndexMap("Normal", DoodadPlacement.Above);
-                    var aboveDoodadMap = new int[PhysicsManager.MapWidth, MapChunkHeight];
+                    var aboveDoodadMap = new int[PhysicsManager.MapWidth, MapData.ChunkHeight];
                     var aboveDoodadNode = chunk.Descendants("UpDoodad").First().Value;
                     var count = 0;
-                    for (var y = 0; y < MapChunkHeight; y++)
+                    for (var y = 0; y < MapData.ChunkHeight; y++)
                     {
                         for (var x = 0; x < PhysicsManager.MapWidth; x++)
                         {
@@ -249,7 +257,7 @@ namespace Abyss.World.Maps
                         }
                     }
 
-                    for (var y = 0; y < MapChunkHeight; y++)
+                    for (var y = 0; y < MapData.ChunkHeight; y++)
                     {
                         for (var x = 0; x < PhysicsManager.MapWidth; x++)
                         {
@@ -268,10 +276,10 @@ namespace Abyss.World.Maps
                     }
 
                     randomDoodadMap = Atlas.GetDoodadGroupIndexMap("Normal", DoodadPlacement.Below);
-                    var belowDoodadMap = new int[PhysicsManager.MapWidth, MapChunkHeight];
+                    var belowDoodadMap = new int[PhysicsManager.MapWidth, MapData.ChunkHeight];
                     var belowDoodadNode = chunk.Descendants("DownDoodad").First().Value;
                     count = 0;
-                    for (var y = 0; y < MapChunkHeight; y++)
+                    for (var y = 0; y < MapData.ChunkHeight; y++)
                     {
                         for (var x = 0; x < PhysicsManager.MapWidth; x++)
                         {
@@ -289,7 +297,7 @@ namespace Abyss.World.Maps
                         }
                     }
 
-                    for (var y = 0; y < MapChunkHeight; y++)
+                    for (var y = 0; y < MapData.ChunkHeight; y++)
                     {
                         for (var x = 0; x < PhysicsManager.MapWidth; x++)
                         {
@@ -345,14 +353,13 @@ namespace Abyss.World.Maps
                             continue;
                         }
 
-                        var position = new Vector2(
-                            int.Parse(t.Attribute("x").Value),
-                            int.Parse(t.Attribute("y").Value));
+                        var x = int.Parse(t.Attribute("x").Value);
+                        var y = int.Parse(t.Attribute("y").Value);
                         var width = int.Parse(t.Attribute("width").Value);
                         var height = int.Parse(t.Attribute("height").Value);
-                        var size = new Rectangle(0, 0, width, height);
+                        var size = new Rectangle(x, y, width, height);
 
-                        var platformDefinition = new PlatformDefinition(t.Name.LocalName, position, size);
+                        var platformDefinition = new PlatformDefinition(t.Name.LocalName, size, null);
 
                         // Add any nodes as required.
                         var nodes = t.Descendants("node");
@@ -365,7 +372,7 @@ namespace Abyss.World.Maps
                         }
 
                         // Add a path node to reset to.
-                        platformDefinition.Path.Add(position);
+                        platformDefinition.Path.Add(new Vector2(x, y));
 
                         // TODO: This is kind of janky - think of a better way to do this.
                         if (t.HasAttributes && t.Attribute("Warp") != null)
@@ -373,7 +380,7 @@ namespace Abyss.World.Maps
                             platformDefinition.Parameters.Add("Warp", int.Parse(t.Attribute("Warp").Value));
                         }
 
-                        newChunk.SpecialPlatforms.Add(platformDefinition);
+                        newChunk.Layout[MapChunkData.SpecialPlatforms].Add(platformDefinition);
                     }
 
                     // Props spawn points. These are determined by the map itself.
@@ -393,8 +400,8 @@ namespace Abyss.World.Maps
                         {
                             width = int.Parse(t.Attribute("width").Value);
                         }
-
-                        newChunk.PropSpawnPoints.Add(Tuple.Create(t.Name.LocalName, new Rectangle(x, y, width, height)));
+                        
+                        newChunk.Spawns[MapChunkData.PropSpawns].Add(new AreaSpawnDefinition(t.Name.LocalName, new Rectangle(x, y, width, height)));
                     }
 
                     // Trigger placement. These are determined by the map itself.
@@ -404,7 +411,7 @@ namespace Abyss.World.Maps
                         var y = int.Parse(t.Attribute("y").Value);
                         var width = int.Parse(t.Attribute("width").Value);
                         var height = int.Parse(t.Attribute("height").Value);
-                        newChunk.Triggers.Add(Tuple.Create(t.Name.LocalName, new Rectangle(x, y, width, height)));
+                        newChunk.Spawns[MapChunkData.TriggerSpawns].Add(new AreaSpawnDefinition(t.Name.LocalName, new Rectangle(x, y, width, height)));
                     }
                     
                     // Hazard spawn points.
@@ -413,7 +420,7 @@ namespace Abyss.World.Maps
                         var position = new Vector2(
                             int.Parse(t.Attribute("x").Value),
                             int.Parse(t.Attribute("y").Value));
-                        newChunk.Hazards.Add(position);
+                        newChunk.Spawns[MapChunkData.HazardSpawns].Add(new SpawnDefinition(t.Name.LocalName, position));
                     }
 
                     // If we have a map chunk of type "begin", don't do anything here.
@@ -434,7 +441,7 @@ namespace Abyss.World.Maps
                             continue;
                         }
 
-                        newChunk.ItemSpawnPoints.Add(new Vector2(g.X * DrawingManager.TileWidth, g.Y * DrawingManager.TileHeight));
+                        newChunk.Spawns[MapChunkData.ItemSpawns].Add(new SpawnDefinition("item", new Vector2(g.X * DrawingManager.TileWidth, g.Y * DrawingManager.TileHeight)));
                     }
 
                     // Idler spawn points. 
@@ -447,7 +454,7 @@ namespace Abyss.World.Maps
                             continue;
                         }
 
-                        newChunk.MonsterSpawnPoints.Add(new MonsterSpawnDefinition("Idler", new Vector2(g.X * DrawingManager.TileWidth, g.Y * DrawingManager.TileHeight), new List<Vector2>()));
+                        newChunk.Spawns[MapChunkData.MonsterSpawns].Add(new ActorSpawnDefinition("Idler", new Vector2(g.X * DrawingManager.TileWidth, g.Y * DrawingManager.TileHeight)));
                         monsterSpawns.Add(g);
                     }
 
@@ -461,10 +468,10 @@ namespace Abyss.World.Maps
 
                     // Walker spawn points.
                     // This requires a bit of special processing here because we need to determine its path. Walkers can spawn on any platform but limit this to 1 per platform.
-                    foreach (var r in newChunk.Layout)
+                    foreach (var r in newChunk.Layout[MapChunkData.NormalPlatforms])
                     {
                         // We can't have walkers on platforms that are only 1 cell in width.
-                        if (r.Width == DrawingManager.TileWidth)
+                        if (r.Size.Width == DrawingManager.TileWidth)
                         {
                             continue;
                         }
@@ -474,7 +481,7 @@ namespace Abyss.World.Maps
                             continue;
                         }
 
-                        var verticalSpawnPosition = r.Top - DrawingManager.TileHeight;
+                        var verticalSpawnPosition = r.Size.Top - DrawingManager.TileHeight;
 
                         // Determine a horizontal spawn position. This is either on the far left or the far right of the platform.
                         var path = new List<Vector2>();
@@ -482,17 +489,17 @@ namespace Abyss.World.Maps
                         if (MathsHelper.Random() > 50)
                         {
                             // Spawn on the right.
-                            spawn = new Vector2(r.Right - DrawingManager.TileWidth, verticalSpawnPosition);
-                            path.Add(new Vector2(r.Left, verticalSpawnPosition));
+                            spawn = new Vector2(r.Size.Right - DrawingManager.TileWidth, verticalSpawnPosition);
+                            path.Add(new Vector2(r.Size.Left, verticalSpawnPosition));
                         }
                         else
                         {
                             // Spawn on the left.
-                            spawn = new Vector2(r.Left, verticalSpawnPosition);
-                            path.Add(new Vector2(r.Right - DrawingManager.TileWidth, verticalSpawnPosition));
+                            spawn = new Vector2(r.Size.Left, verticalSpawnPosition);
+                            path.Add(new Vector2(r.Size.Right - DrawingManager.TileWidth, verticalSpawnPosition));
                         }
 
-                        newChunk.MonsterSpawnPoints.Add(new MonsterSpawnDefinition("Walker", spawn, path));
+                        newChunk.Spawns[MapChunkData.MonsterSpawns].Add(new ActorSpawnDefinition("Walker", spawn, path));
 
                         // Update the monster spawns list.
                         var x = (int)spawn.X / DrawingManager.TileWidth;
@@ -572,12 +579,12 @@ namespace Abyss.World.Maps
                                 }
                             }
 
-                            newChunk.MonsterSpawnPoints.Add(new MonsterSpawnDefinition("Flyer", spawn, path));
+                            newChunk.Spawns[MapChunkData.MonsterSpawns].Add(new ActorSpawnDefinition("Flyer", spawn, path));
                         }
                         else
                         {
                             // Just a regular floater enemy.
-                            newChunk.MonsterSpawnPoints.Add(new MonsterSpawnDefinition("Floater", spawn, new List<Vector2>()));
+                            newChunk.Spawns[MapChunkData.MonsterSpawns].Add(new ActorSpawnDefinition("Floater", spawn));
                         }
                     }
 
@@ -591,12 +598,12 @@ namespace Abyss.World.Maps
         private static int[,] LoadGeometry(XElement chunk, MapChunk newChunk, string zoneType, string layoutType, int offset)
         {
             // Set up for auto tiling.
-            var layoutMap = new int[PhysicsManager.MapWidth, MapChunkHeight];
+            var layoutMap = new int[PhysicsManager.MapWidth, MapData.ChunkHeight];
             var groupIndexMap = Atlas.GetTileGroupIndexMap(zoneType, 1);
 
             var foreground = chunk.Descendants(layoutType).First().Value;
             var count = 0;
-            for (var y = 0; y < MapChunkHeight; y++)
+            for (var y = 0; y < MapData.ChunkHeight; y++)
             {
                 for (var x = 0; x < PhysicsManager.MapWidth; x++)
                 {
@@ -614,7 +621,7 @@ namespace Abyss.World.Maps
                 }
             }
 
-            for (var y = 0; y < MapChunkHeight; y++)
+            for (var y = 0; y < MapData.ChunkHeight; y++)
             {
                 for (var x = 0; x < PhysicsManager.MapWidth; x++)
                 {
@@ -641,7 +648,7 @@ namespace Abyss.World.Maps
                     }
 
                     // Check the cell below to see if there's a tile there.
-                    if (y + 1 < MapChunkHeight)
+                    if (y + 1 < MapData.ChunkHeight)
                     {
                         if (layoutMap[x, y + 1] != 0 && newChunk.TileMap[x, y + 1] == null)
                         {

@@ -29,11 +29,11 @@ namespace Abyss.World.Entities.Props.Concrete
         public override void Activate(IPlayer player)
         {
             base.Activate(player);
-            
-            GameManager.StatisticManager.GameOverMessage = "You reached the exit... or did you?";
+
+            Monde.GameManager.StatisticManager.GameOverMessage = "You reached the exit... or did you?";
 
             // End the game.
-            Engine.ActivateScene("GameOver");
+            Monde.ActivateScene("GameOver");
         }
     }
 }

@@ -42,8 +42,6 @@ namespace Occasus.Core.Drawing.Lighting
         /// <param name="inputState">The current input state.</param>
         public override void Update(GameTime gameTime, Input.IInputState inputState)
         {
-            base.Update(gameTime, inputState);
-
             this.Scale += scaleStep;
             this.scalePulse += scaleStep;
 
@@ -64,8 +62,6 @@ namespace Occasus.Core.Drawing.Lighting
         /// <param name="spriteBatch">The sprite batch.</param>
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            base.Draw(gameTime, spriteBatch);
-
             var position = this.Parent.Transform.Position + new Vector2(this.Parent.Collider.BoundingBox.Center.X, this.Parent.Collider.BoundingBox.Center.Y);
             spriteBatch.Draw(TextureManager.Textures["PointLight"], position, null, this.Color * this.Intensity, 0f, origin, this.Scale, SpriteEffects.None, 0f);
         }

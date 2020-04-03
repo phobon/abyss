@@ -87,7 +87,7 @@ namespace Abyss.World.Scenes.Zone.Layers
             // Hook up the PhaseChanged event from the parent ZoneScene; this helps us create some special UI effects when needed.
             PhaseManager.PlaneCoalesced += this.ZoneSceneOnPhaseChanged;
             PhaseManager.PlaneFolded += this.ZoneSceneOnPhaseChanged;
-            GameManager.DimensionShifted += this.ZoneSceneOnDimensionShifted;
+            Monde.GameManager.DimensionShifted += this.ZoneSceneOnDimensionShifted;
 
             this.relicAuraEffect = ParticleEffectFactory.GetInterfaceParticleEffect("Aura", ParticleDensity.High, Color.White);
             
@@ -143,7 +143,7 @@ namespace Abyss.World.Scenes.Zone.Layers
         {
             base.Update(gameTime, inputState);
 
-            this.scoreTotal.Text = GameManager.StatisticManager.TotalScore.ToString("d6");
+            this.scoreTotal.Text = Monde.GameManager.StatisticManager.TotalScore.ToString("d6");
             this.scoreTotal.Measure(scoreTotalPosition);
         }
 
@@ -166,13 +166,13 @@ namespace Abyss.World.Scenes.Zone.Layers
             this.scoreTotal.Opacity = 0f;
 
             base.Begin();
-            
+
             // Hook up stuff.
-            GameManager.RelicCollection.RelicsActivated += this.RelicCollectionOnRelicCollected;
-            GameManager.Player.LifeGained += this.PlayerOnLifeGained;
-            GameManager.Player.LifeLost += this.PlayerOnLifeLost;
-            GameManager.Player.RiftCollected += PlayerOnRiftCollected;
-            GameManager.Player.PhaseGem.ChargeGenerated += this.PhaseGemOnChargeGenerated;
+            Monde.GameManager.RelicCollection.RelicsActivated += this.RelicCollectionOnRelicCollected;
+            Monde.GameManager.Player.LifeGained += this.PlayerOnLifeGained;
+            Monde.GameManager.Player.LifeLost += this.PlayerOnLifeLost;
+            Monde.GameManager.Player.RiftCollected += PlayerOnRiftCollected;
+            Monde.GameManager.Player.PhaseGem.ChargeGenerated += this.PhaseGemOnChargeGenerated;
 
             CoroutineManager.Add(this.beginKey, this.BeginEffect());
         }
@@ -197,11 +197,11 @@ namespace Abyss.World.Scenes.Zone.Layers
 
             PhaseManager.PlaneCoalesced -= this.ZoneSceneOnPhaseChanged;
             PhaseManager.PlaneFolded -= this.ZoneSceneOnPhaseChanged;
-            GameManager.DimensionShifted -= this.ZoneSceneOnDimensionShifted;
-            GameManager.RelicCollection.RelicsActivated -= this.RelicCollectionOnRelicCollected;
-            GameManager.Player.LifeGained -= this.PlayerOnLifeGained;
-            GameManager.Player.LifeLost -= this.PlayerOnLifeLost;
-            GameManager.Player.RiftCollected -= PlayerOnRiftCollected;
+            Monde.GameManager.DimensionShifted -= this.ZoneSceneOnDimensionShifted;
+            Monde.GameManager.RelicCollection.RelicsActivated -= this.RelicCollectionOnRelicCollected;
+            Monde.GameManager.Player.LifeGained -= this.PlayerOnLifeGained;
+            Monde.GameManager.Player.LifeLost -= this.PlayerOnLifeLost;
+            Monde.GameManager.Player.RiftCollected -= PlayerOnRiftCollected;
         }
 
         protected override void InitializeEntityCache()
@@ -314,7 +314,7 @@ namespace Abyss.World.Scenes.Zone.Layers
         private void PlayerOnRiftCollected(StatChangedEventArgs statChangedEventArgs)
         {
             // Update the rift total element.
-            riftTotal.Text = GameManager.Player.Rift.ToString("d3");
+            riftTotal.Text = Monde.GameManager.Player.Rift.ToString("d3");
             riftTotal.Measure(riftTotalPosition);
 
             CoroutineManager.Add(this.RiftCollectedEffect());
@@ -337,7 +337,7 @@ namespace Abyss.World.Scenes.Zone.Layers
             yield return Coroutines.Pause(TimingHelper.GetFrameCount(1f));
             
             // Transition each of the ui parts in.
-            for (var i = 0; i < GameManager.Player.Lives; i++)
+            for (var i = 0; i < Monde.GameManager.Player.Lives; i++)
             {
                 this.hearts[i].Begin();
                 yield return Coroutines.Pause(5);

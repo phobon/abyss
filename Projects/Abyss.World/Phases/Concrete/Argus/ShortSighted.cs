@@ -27,7 +27,7 @@ namespace Abyss.World.Phases.Concrete.Argus
         {
             base.Apply(layer);
 
-            GameManager.LightsOut();
+            Monde.GameManager.LightsOut();
 
             if (layer.Parent.TagCache.ContainsKey(EntityTags.Light))
             {
@@ -47,7 +47,7 @@ namespace Abyss.World.Phases.Concrete.Argus
         {
             base.Remove(layer);
 
-            GameManager.LightsOn();
+            Monde.GameManager.LightsOn();
 
             if (layer.Parent.TagCache.ContainsKey(EntityTags.Light))
             {

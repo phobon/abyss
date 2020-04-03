@@ -28,7 +28,7 @@ namespace Abyss.World.Entities.Relics.Concrete.Passive
         public override void Activate(IEnumerable<IEntity> entityCache)
         {
             base.Activate(entityCache);
-            GameManager.Player.MonsterStomped += PlayerOnMonsterSplit;
+            Monde.GameManager.Player.MonsterStomped += PlayerOnMonsterSplit;
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Abyss.World.Entities.Relics.Concrete.Passive
         public override void Deactivate(IEnumerable<IEntity> entityCache)
         {
             base.Deactivate(entityCache);
-            GameManager.Player.MonsterStomped -= PlayerOnMonsterSplit;
+            Monde.GameManager.Player.MonsterStomped -= PlayerOnMonsterSplit;
         }
 
         private void PlayerOnMonsterSplit(object sender, EventArgs eventArgs)

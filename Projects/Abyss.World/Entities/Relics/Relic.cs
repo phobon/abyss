@@ -42,9 +42,6 @@ namespace Abyss.World.Entities.Relics
             int lifeSpan = 0)
             : base(name, description, initialPosition, boundingBox)
         {
-            // Add tags.
-            this.Tags.Add(EntityTags.Relic);
-
             this.Transform.Position = initialPosition;
 
             this.RelicType = relicType;
@@ -127,7 +124,7 @@ namespace Abyss.World.Entities.Relics
             // If the CursedRelics phase is active, then the player is hurt.
             if (PhaseManager.IsPhaseActive(Phase.CursedRelics))
             {
-                GameManager.Player.TakeDamage(Phase.CursedRelics);
+                Monde.GameManager.Player.TakeDamage(Phase.CursedRelics);
                 return;
             }
 
@@ -145,7 +142,7 @@ namespace Abyss.World.Entities.Relics
         public virtual void Activate(IEnumerable<IEntity> entityCache)
         {
 #if DEBUG
-            Engine.Debugger.Add(RelicDebugKey, this.Name);
+            Monde.Debugger.Add(RelicDebugKey, this.Name);
 #endif
 
             this.OnActivated();
@@ -164,10 +161,15 @@ namespace Abyss.World.Entities.Relics
         public virtual void Deactivate(IEnumerable<IEntity> entityCache)
         {
 #if DEBUG
-            Engine.Debugger.Remove(RelicDebugKey);
+            Monde.Debugger.Remove(RelicDebugKey);
 #endif
 
             this.OnDeactivated();
+        }
+
+        protected override void InitializeTags()
+        {
+            this.Tags.Add(EntityTags.Relic);
         }
 
         private void OnActivated()

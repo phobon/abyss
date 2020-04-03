@@ -12,6 +12,7 @@ namespace Abyss.World.Entities.Props.Concrete
 {
     public class PurchasableItem : ActiveProp
     {
+        private readonly ISprite sprite;
         private Vector2 costPosition;
 
         /// <summary>
@@ -37,9 +38,12 @@ namespace Abyss.World.Entities.Props.Concrete
         {
             this.Cost = cost;
             this.Item = item;
+            this.sprite = sprite;
+        }
 
-            this.Components.Remove(Sprite.Tag);
-            this.Components.Add(Sprite.Tag, sprite);
+        protected override void InitializeSprite()
+        {
+            this.AddComponent(Sprite.Tag, this.sprite);
         }
 
         /// <summary>
@@ -73,7 +77,7 @@ namespace Abyss.World.Entities.Props.Concrete
                 this.costPosition = new Vector2(this.Collider.QualifiedBoundingBox.Center.X - (costWidth.X / 2), this.Collider.QualifiedBoundingBox.Center.Y - 32);
             }
 
-            var color = GameManager.Player.Rift >= this.Cost ? Color.White : Color.Red;
+            var color = Monde.GameManager.Player.Rift >= this.Cost ? Color.White : Color.Red;
             spriteBatch.DrawString(DrawingManager.Font, this.Cost.ToString(CultureInfo.InvariantCulture), this.costPosition, color);
         }
 
@@ -94,7 +98,7 @@ namespace Abyss.World.Entities.Props.Concrete
 
         protected override bool CheckCanActivate(IPlayer player)
         {
-            if (GameManager.Player.Rift < this.Cost)
+            if (Monde.GameManager.Player.Rift < this.Cost)
             {
                 return false;
             }

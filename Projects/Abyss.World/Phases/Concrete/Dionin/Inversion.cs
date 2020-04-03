@@ -27,10 +27,13 @@ namespace Abyss.World.Phases.Concrete.Dionin
         public override void Apply(ILayer layer)
         {
             base.Apply(layer);
+            ShaderManager.SupportedShaders["FlipVertical"].Activate();
+        }
 
-            // Apply the FlipVertical effect.
-            ShaderManager.CurrentShader = ShaderManager.SupportedShaders["FlipVertical"];
-            ShaderManager.CurrentShader.Apply();
+        public override void Remove(ILayer layer)
+        {
+            base.Remove(layer);
+            ShaderManager.SupportedShaders["FlipVertical"].Deactivate();
         }
     }
 }

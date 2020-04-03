@@ -1,4 +1,5 @@
 ﻿using Abyss.World.Drawing.ParticleEffects;
+using Abyss.World.Drawing.ParticleEffects.Concrete;
 using Abyss.World.Entities.Player;
 using Microsoft.Xna.Framework;
 using Occasus.Core;
@@ -17,7 +18,6 @@ namespace Abyss.World.Entities.Props.Concrete
             boundingBox,
             Vector2.Zero)
         {
-            this.Components.Add("PowerParticleEffect", ParticleEffectFactory.GetParticleEffect(this, "Power", new Vector2(this.Collider.BoundingBox.Center.X, this.Collider.BoundingBox.Top), Color.SkyBlue));
         }
 
         /// <summary>
@@ -27,8 +27,14 @@ namespace Abyss.World.Entities.Props.Concrete
         public override void Activate(IPlayer player)
         {
             base.Activate(player);
-            Engine.ActivateScene("Shop");
+            Monde.ActivateScene("Shop");
             (this.Components["PowerParticleEffect"]).Suspend();
+        }
+
+        protected override void InitializeComponents()
+        {
+            this.AddComponent(Power.ComponentName, ParticleEffectFactory.GetParticleEffect(this, Power.ComponentName, new Vector2(this.Collider.BoundingBox.Center.X, this.Collider.BoundingBox.Top), Color.SkyBlue));
+
         }
     }
 }

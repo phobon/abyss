@@ -69,14 +69,15 @@ namespace Abyss.World.Scenes.Zone
         private readonly IList<ICollider> items = new List<ICollider>();
         private readonly IList<ICollider> hazards = new List<ICollider>();
 
+        private IAbyssMap map;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ZoneScene"/> class.
         /// </summary>
         public ZoneScene()
             : base("Zone", "Main gameplay scene in Abyss.")
         {
-            this.Map = new Map();
-            GameManager.GameBegun += OnGameBegun;
+            Monde.GameManager.GameBegun += OnGameBegun;
             PhaseManager.PlaneFolded += GameManagerOnPhaseChanged;
             PhaseManager.PlaneCoalesced += GameManagerOnPhaseChanged;
         }
@@ -84,9 +85,18 @@ namespace Abyss.World.Scenes.Zone
         /// <summary>
         /// Gets the map.
         /// </summary>
-        public IMap Map
+        public IAbyssMap Map
         {
-            get; private set;
+            get
+            {
+                if (this.map == null)
+                {
+                    this.map = new AbyssMap();
+                    this.map.Initialize();
+                }
+
+                return this.map;
+            }
         }
 
         /// <summary>
@@ -101,7 +111,7 @@ namespace Abyss.World.Scenes.Zone
             // Check whether we should quit the game.
             if (inputState.IsNewKeyPress(Keys.Q, PlayerIndex.One, out playerIndex))
             {
-                Engine.ActivateScene("GameOver");
+                Monde.ActivateScene("GameOver");
             }
 
             // Check debug layer flags.
@@ -140,30 +150,27 @@ namespace Abyss.World.Scenes.Zone
             // Cycle through shaders.
             if (inputState.IsNewKeyPress(Keys.F3, PlayerIndex.One, out playerIndex))
             {
+                ShaderManager.ClearActiveShaders();
                 if (this.currentShaderIndex == ShaderManager.SupportedShaders.Count)
                 {
-                    ShaderManager.CurrentShader = null;
                     this.currentShaderIndex = 0;
                 }
                 else
                 {
-                    ShaderManager.CurrentShader = ShaderManager.SupportedShaders.Values.ElementAt(currentShaderIndex);
-                    ShaderManager.CurrentShader.Apply();
+                    ShaderManager.SupportedShaders.Values.ElementAt(this.currentShaderIndex).Activate();
+                    this.currentShaderIndex++;
                 }
-
-                // Increment or clamp the next shader index.
-                this.currentShaderIndex++;
             }
 
             // Set ambient light value.
             if (inputState.IsNewKeyPress(Keys.OemPlus, PlayerIndex.One, out playerIndex))
             {
-                GameManager.LightsOn();
+                Monde.GameManager.LightsOn();
             }
 
             if (inputState.IsNewKeyPress(Keys.OemMinus, PlayerIndex.One, out playerIndex))
             {
-                GameManager.LightsOut();
+                Monde.GameManager.LightsOut();
             }
 
             if (inputState.IsNewKeyPress(Keys.F4, PlayerIndex.One, out playerIndex))
@@ -179,32 +186,32 @@ namespace Abyss.World.Scenes.Zone
 
             if (inputState.IsNewKeyPress(Keys.F5, PlayerIndex.One, out playerIndex))
             {
-                GameManager.LightsOut();
+                Monde.GameManager.LightsOut();
             }
 
             if (inputState.IsNewKeyPress(Keys.F6, PlayerIndex.One, out playerIndex))
             {
-                GameManager.LightsOn();
+                Monde.GameManager.LightsOn();
             }
 
             if (inputState.IsNewKeyPress(Keys.F7, PlayerIndex.One, out playerIndex))
             {
-                Engine.ChangeFramerate(30f, 0);
+                Monde.ChangeFramerate(30f, 0);
             }
 
             if (inputState.IsNewKeyPress(Keys.F8, PlayerIndex.One, out playerIndex))
             {
-                Engine.ChangeFramerate(60f, 0);
+                Monde.ChangeFramerate(60f, 0);
             }
 
             if (inputState.IsNewKeyPress(Keys.Y, PlayerIndex.One, out playerIndex))
             {
-                this.AddEntityUpdateCache(ItemFactory.GetRiftShard(RiftShard.Small, GameManager.UniverseGameViewPort.GetRandomPoint()), GameManager.GameViewPort, GameplayLayerKey);
+                this.AddEntityUpdateCache(ItemFactory.GetRiftShard(RiftShard.Small, Monde.GameManager.UniverseViewPort.GetRandomPoint()), Monde.GameManager.ViewPort, GameplayLayerKey);
             }
 #endif
 
             // Handle player input.
-            GameManager.Player.HandleInput(inputState);
+            Monde.GameManager.Player.HandleInput(inputState);
         }
 
         /// <summary>
@@ -229,17 +236,17 @@ namespace Abyss.World.Scenes.Zone
         public override void Update(GameTime gameTime, IInputState inputState)
         {
             // Update the GameManager.
-            GameManager.Update(gameTime, inputState);
+            Monde.GameManager.Update(gameTime, inputState);
 
             // Update the cache to ensure we only update and draw entities that are relevant.
             if (this.refreshCache)
             {
-                Layers[GameplayLayerKey].UpdateEntityCache(GameManager.GameViewPort);
-                ((IFullScreenParticleEffect)this.TagCache["FullScreenParticleEffect"][0]).UpdateParticleCache(GameManager.GameViewPort);
+                Layers[GameplayLayerKey].UpdateEntityCache(Monde.GameManager.ViewPort);
+                ((IFullScreenParticleEffect)this.TagCache["FullScreenParticleEffect"][0]).UpdateParticleCache(Monde.GameManager.ViewPort);
 
                 // Refresh the level geometry.
                 this.levelGeometryColliders.Clear();
-                foreach (var r in this.Map.ViewPortTileBoundingBoxes(GameManager.GameViewPort))
+                foreach (var r in this.Map.ViewPortTileBoundingBoxes(Monde.GameManager.ViewPort))
                 {
                     this.levelGeometryColliders.Add(r);
                 }
@@ -275,20 +282,20 @@ namespace Abyss.World.Scenes.Zone
             base.Update(gameTime, inputState);
 
             // TODO: Figure out a better way to handle this.
-            GameManager.Player.CurrentProp = null;
+            Monde.GameManager.Player.CurrentProp = null;
 
             // Handle physics and determine whether relevantActor cache should be invalidated.
-            var previousPosition = GameManager.Player.Transform.GridPosition;
+            var previousPosition = Monde.GameManager.Player.Transform.GridPosition;
 
-            if (GameManager.Player.Flags[EngineFlag.Active])
+            if (Monde.GameManager.Player.Flags[EngineFlag.Active])
             {
-                if (!GameManager.Player.Collider.Flags[PhysicsFlag.CollidesWithEnvironment])
+                if (!Monde.GameManager.Player.Collider.Flags[PhysicsFlag.CollidesWithEnvironment])
                 {
-                    PhysicsManager.Apply(gameTime, GameManager.Player.Collider, new List<Rectangle>());
+                    PhysicsManager.Apply(gameTime, Monde.GameManager.Player.Collider, new List<Rectangle>());
                 }
                 else
                 {
-                    PhysicsManager.Apply(gameTime, GameManager.Player.Collider, platformColliders);
+                    PhysicsManager.Apply(gameTime, Monde.GameManager.Player.Collider, platformColliders);
                 }
             }
 
@@ -325,16 +332,16 @@ namespace Abyss.World.Scenes.Zone
                 }
             }
 
-            if (GameManager.Player.Flags[EngineFlag.Collidable])
+            if (Monde.GameManager.Player.Flags[EngineFlag.Collidable])
             {
-                PhysicsManager.HandleCollisionsWithEntities(GameManager.Player.Collider, this.props);
-                PhysicsManager.HandleCollisionsWithEntities(GameManager.Player.Collider, this.monsters);
-                PhysicsManager.HandleCollisionsWithEntities(GameManager.Player.Collider, this.items);
-                PhysicsManager.HandleCollisionsWithEntities(GameManager.Player.Collider, this.platforms);
-                PhysicsManager.HandleCollisionsWithEntities(GameManager.Player.Collider, this.triggers);
+                PhysicsManager.HandleCollisionsWithEntities(Monde.GameManager.Player.Collider, this.props);
+                PhysicsManager.HandleCollisionsWithEntities(Monde.GameManager.Player.Collider, this.monsters);
+                PhysicsManager.HandleCollisionsWithEntities(Monde.GameManager.Player.Collider, this.items);
+                PhysicsManager.HandleCollisionsWithEntities(Monde.GameManager.Player.Collider, this.platforms);
+                PhysicsManager.HandleCollisionsWithEntities(Monde.GameManager.Player.Collider, this.triggers);
                 if (this.TagCache.ContainsKey(EntityTags.Hazard))
                 {
-                    PhysicsManager.HandleCollisionsWithEntities(GameManager.Player.Collider, this.hazards);
+                    PhysicsManager.HandleCollisionsWithEntities(Monde.GameManager.Player.Collider, this.hazards);
                 }
             }
 
@@ -344,11 +351,11 @@ namespace Abyss.World.Scenes.Zone
             //    PhysicsHelper.HandleCollisionsWithEntities(t, monsters);
             //}
 
-            if (previousPosition.Y != GameManager.Player.Transform.GridPosition.Y)
+            if (previousPosition.Y != Monde.GameManager.Player.Transform.GridPosition.Y)
             {
                 this.refreshCache = true;
-                GameManager.CurrentDepth++;
-                GameManager.StatisticManager.TotalScore += 5;
+                Monde.GameManager.CurrentDepth++;
+                Monde.GameManager.StatisticManager.TotalScore += 5;
             }
 
             // Apply physics to monsters as required.
@@ -358,7 +365,7 @@ namespace Abyss.World.Scenes.Zone
             }
 
 #if DEBUG
-            Engine.Debugger.Add(PlatformCollidersDebugKey, platformColliders.Count.ToString(CultureInfo.InvariantCulture));
+            Monde.Debugger.Add(PlatformCollidersDebugKey, platformColliders.Count.ToString(CultureInfo.InvariantCulture));
 #endif
         }
 
@@ -374,73 +381,51 @@ namespace Abyss.World.Scenes.Zone
             this.platformColliders.Clear();
 
             // Reset dimension.
-            GameManager.CurrentDimension = Dimension.Limbo;
+            Monde.GameManager.CurrentDimension = Dimension.Limbo;
 
             // Reset the game manager and player.
-            GameManager.Initialize();
-            GameManager.Player = new Player();
-            GameManager.Player.Initialize();
+            Monde.GameManager.Initialize();
+            Monde.GameManager.Player = new Player();
+            Monde.GameManager.Player.Initialize();
 
-            if (GameManager.RelicCollection == null)
+            if (Monde.GameManager.RelicCollection == null)
             {
-                GameManager.RelicCollection = new RelicCollection();
+                Monde.GameManager.RelicCollection = new RelicCollection();
             }
             else
             {
-                GameManager.RelicCollection.Reset();
+                Monde.GameManager.RelicCollection.Reset();
             }
 
             // Reset the camera to the correct focus.
-            DrawingManager.Camera.Focus = GameManager.Player;
-            DrawingManager.Camera.Offset = new Vector2(0, -GameManager.Player.Collider.BoundingBox.Height);
+            DrawingManager.Camera.Focus = Monde.GameManager.Player;
+            DrawingManager.Camera.Offset = new Vector2(0, -Monde.GameManager.Player.Collider.BoundingBox.Height);
             DrawingManager.Camera.Flags[CameraFlag.LockFocusHorizontal] = false;
 
             // Hook up player events.
-            GameManager.RelicCollection.RelicsActivated += RelicCollectionOnRelicsActivated;
+            Monde.GameManager.RelicCollection.RelicsActivated += RelicCollectionOnRelicsActivated;
             
             // Clear all the entities out of the Gameplay layer.
             var gameplayLayer = this.Layers[GameplayLayerKey];
 
             // Add the player to the gameplay layer so that it can update and draw properly.
-            this.AddEntity(GameManager.Player, GameplayLayerKey);
-            this.AddEntity(GameManager.Player.Barrier, GameplayLayerKey);
+            this.AddEntity(Monde.GameManager.Player, GameplayLayerKey);
+            this.AddEntity(Monde.GameManager.Player.Barrier, GameplayLayerKey);
 
             // Generate a new map and add static entities as required.
             // TODO: Change the full screen particle effect based on the current area (probably can't be done in the scene, rather in the layer).
             this.Map.Initialize();
-            var mapEntities = this.Map.Generate(GameManager.GameMode, 5);
+            var mapEntities = this.Map.Generate(Monde.GameManager.GameMode, 5);
             gameplayLayer.AddEntity(this.Map);
             gameplayLayer.AddEntity(ParticleEffectFactory.GetFullScreenParticleEffect(ZoneType.Normal, ParticleDensity.Low));
 
             // Generate a new map and place the entities so they can update properly.
-            foreach (var e in mapEntities.Platforms)
+            foreach (var pair in mapEntities)
             {
-                gameplayLayer.AddEntity(e);
-            }
-
-            foreach (var e in mapEntities.Props)
-            {
-                gameplayLayer.AddEntity(e);
-            }
-
-            foreach (var e in mapEntities.Hazards)
-            {
-                gameplayLayer.AddEntity(e);
-            }
-
-            foreach (var e in mapEntities.Monsters)
-            {
-                gameplayLayer.AddEntity(e);
-            }
-
-            foreach (var e in mapEntities.Items)
-            {
-                gameplayLayer.AddEntity(e);
-            }
-
-            foreach (var e in mapEntities.Triggers)
-            {
-                gameplayLayer.AddEntity(e);
+                foreach (var e in pair.Value)
+                {
+                    gameplayLayer.AddEntity(e);
+                }
             }
 
             this.refreshCache = true;
@@ -460,9 +445,9 @@ namespace Abyss.World.Scenes.Zone
             base.End();
 
             // Unhook GameManager events.
-            GameManager.RelicCollection.RelicsActivated -= RelicCollectionOnRelicsActivated;
+            Monde.GameManager.RelicCollection.RelicsActivated -= RelicCollectionOnRelicsActivated;
 
-            GameManager.End();
+            Monde.GameManager.End();
         }
 
         private void RelicCollectionOnRelicsActivated(RelicsActivatedEventArgs relicsActivatedEventArgs)

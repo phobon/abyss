@@ -26,8 +26,8 @@ namespace Abyss.World.Phases.Concrete.Dionin
         /// <param name="layer">The layer.</param>
         public override void Apply(ILayer layer)
         {
-            GameManager.Player.ShowOutline(Color.Yellow, pulse: true);
-            Engine.ChangeFramerate(30f, 0);
+            Monde.GameManager.Player.ShowOutline(Color.Yellow, pulse: true);
+            Monde.ChangeFramerate(30f, 0);
 
             base.Apply(layer);
         }
@@ -38,8 +38,8 @@ namespace Abyss.World.Phases.Concrete.Dionin
         /// <param name="layer">The layer.</param>
         public override void Remove(ILayer layer)
         {
-            GameManager.Player.HideOutline();
-            Engine.ChangeFramerate(60f, 0);
+            Monde.GameManager.Player.HideOutline();
+            Monde.ChangeFramerate(60f, 0);
 
             base.Remove(layer);
         }

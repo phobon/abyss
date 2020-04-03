@@ -43,6 +43,12 @@ namespace Occasus.Core
         void Draw(GameTime gameTime, SpriteBatch spriteBatch);
 
         /// <summary>
+        /// Handles input for this engine component.
+        /// </summary>
+        /// <param name="inputState">The input state.</param>
+        void HandleInput(IInputState inputState);
+
+        /// <summary>
         /// Loads the content for this engine component.
         /// </summary>
         void LoadContent();

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Occasus.Core.Entities;
+﻿using Occasus.Core.Entities;
 
 namespace Abyss.World.Entities.Player
 {
@@ -14,5 +9,8 @@ namespace Abyss.World.Entities.Player
         {
         }
 
+        protected override void InitializeTags()
+        {
+        }
     }
 }

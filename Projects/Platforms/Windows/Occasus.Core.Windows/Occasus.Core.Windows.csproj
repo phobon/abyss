@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A22B8D42-5E11-470D-9F1A-6AF791FF4BE7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Occasus.Core.Windows</RootNamespace>
+    <AssemblyName>Occasus.Core.Windows</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.5.1.1679, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MonoGame.Framework.WindowsDX.3.5.1.1679\lib\net40\MonoGame.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Occasus.Core\Assets\Atlas.cs">
+      <Link>Assets\Atlas.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Assets\AtlasDefinitions\DoodadAtlasDefinition.cs">
+      <Link>Assets\AtlasDefinitions\DoodadAtlasDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Assets\AtlasDefinitions\DoodadPlacement.cs">
+      <Link>Assets\AtlasDefinitions\DoodadPlacement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Assets\AtlasDefinitions\TileAtlasDefinition.cs">
+      <Link>Assets\AtlasDefinitions\TileAtlasDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Assets\TextureManager.cs">
+      <Link>Assets\TextureManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Audio\AudioManager.cs">
+      <Link>Audio\AudioManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Audio\InstancedSound.cs">
+      <Link>Audio\InstancedSound.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Audio\ISound.cs">
+      <Link>Audio\ISound.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Audio\LoopingSound.cs">
+      <Link>Audio\LoopingSound.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Audio\Sound.cs">
+      <Link>Audio\Sound.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Audio\SoundBase.cs">
+      <Link>Audio\SoundBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Audio\SoundEffectExtensions.cs">
+      <Link>Audio\SoundEffectExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Audio\SoundType.cs">
+      <Link>Audio\SoundType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Camera\Camera2D.cs">
+      <Link>Camera\Camera2D.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Camera\CameraFlag.cs">
+      <Link>Camera\CameraFlag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Camera\ICamera2D.cs">
+      <Link>Camera\ICamera2D.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Components\CompositeEntityComponent.cs">
+      <Link>Components\CompositeEntityComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Components\EntityComponent.cs">
+      <Link>Components\EntityComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Components\Graphics\GraphicsComponent.cs">
+      <Link>Components\Graphics\GraphicsComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Components\Graphics\IGraphicsComponent.cs">
+      <Link>Components\Graphics\IGraphicsComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Components\ICompositeEntityComponent.cs">
+      <Link>Components\ICompositeEntityComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Components\IEntityComponent.cs">
+      <Link>Components\IEntityComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Components\Logic\Coroutine.cs">
+      <Link>Components\Logic\Coroutine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Components\Logic\CoroutineManager.cs">
+      <Link>Components\Logic\CoroutineManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Components\Logic\Coroutines.cs">
+      <Link>Components\Logic\Coroutines.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Components\Logic\ICoroutine.cs">
+      <Link>Components\Logic\ICoroutine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Debugging\Components\Border.cs">
+      <Link>Debugging\Components\Border.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Debugging\Components\Dot.cs">
+      <Link>Debugging\Components\Dot.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Debugging\Components\Geometry.cs">
+      <Link>Debugging\Components\Geometry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Debugging\DebugEntityComponent.cs">
+      <Link>Debugging\DebugEntityComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Debugging\Debugger.cs">
+      <Link>Debugging\Debugger.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Debugging\PhysicsLayer.cs">
+      <Link>Debugging\PhysicsLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Animation\Animation.cs">
+      <Link>Drawing\Animation\Animation.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Animation\AnimationExtensions.cs">
+      <Link>Drawing\Animation\AnimationExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Animation\AnimationFlag.cs">
+      <Link>Drawing\Animation\AnimationFlag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Animation\IAnimation.cs">
+      <Link>Drawing\Animation\IAnimation.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Animation\TimingHelper.cs">
+      <Link>Drawing\Animation\TimingHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Direction.cs">
+      <Link>Drawing\Direction.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\DrawingExtensions.cs">
+      <Link>Drawing\DrawingExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\DrawingManager.cs">
+      <Link>Drawing\DrawingManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Images\IImage.cs">
+      <Link>Drawing\Images\IImage.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Images\IImageLayer.cs">
+      <Link>Drawing\Images\IImageLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Images\Image.cs">
+      <Link>Drawing\Images\Image.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Images\ImageLayer.cs">
+      <Link>Drawing\Images\ImageLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Images\ImageLayerExtensions.cs">
+      <Link>Drawing\Images\ImageLayerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Interface\IInterfaceElement.cs">
+      <Link>Drawing\Interface\IInterfaceElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Interface\InterfaceElement.cs">
+      <Link>Drawing\Interface\InterfaceElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Lighting\ILightSource.cs">
+      <Link>Drawing\Lighting\ILightSource.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Lighting\Lighting.cs">
+      <Link>Drawing\Lighting\Lighting.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Lighting\LightSource.cs">
+      <Link>Drawing\Lighting\LightSource.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Lighting\LightSourceType.cs">
+      <Link>Drawing\Lighting\LightSourceType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Lighting\PointLight.cs">
+      <Link>Drawing\Lighting\PointLight.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\ParticleEffects\AnimatedParticle.cs">
+      <Link>Drawing\ParticleEffects\AnimatedParticle.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\ParticleEffects\BoundParticleEffect.cs">
+      <Link>Drawing\ParticleEffects\BoundParticleEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\ParticleEffects\FullScreenParticleEffect.cs">
+      <Link>Drawing\ParticleEffects\FullScreenParticleEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\ParticleEffects\IAnimatedParticle.cs">
+      <Link>Drawing\ParticleEffects\IAnimatedParticle.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\ParticleEffects\IFullScreenParticleEffect.cs">
+      <Link>Drawing\ParticleEffects\IFullScreenParticleEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\ParticleEffects\IInterfaceParticleEffect.cs">
+      <Link>Drawing\ParticleEffects\IInterfaceParticleEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\ParticleEffects\InterfaceParticleEffect.cs">
+      <Link>Drawing\ParticleEffects\InterfaceParticleEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\ParticleEffects\IParticle.cs">
+      <Link>Drawing\ParticleEffects\IParticle.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\ParticleEffects\IParticleEffect.cs">
+      <Link>Drawing\ParticleEffects\IParticleEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\ParticleEffects\Particle.cs">
+      <Link>Drawing\ParticleEffects\Particle.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\ParticleEffects\ParticleDensity.cs">
+      <Link>Drawing\ParticleEffects\ParticleDensity.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\ParticleEffects\ParticleEffect.cs">
+      <Link>Drawing\ParticleEffects\ParticleEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\ParticleEffects\ParticleEffectFlag.cs">
+      <Link>Drawing\ParticleEffects\ParticleEffectFlag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\ParticleEffects\ParticleFlag.cs">
+      <Link>Drawing\ParticleEffects\ParticleFlag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\RectangleExtensions.cs">
+      <Link>Drawing\RectangleExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Shaders\IShader.cs">
+      <Link>Drawing\Shaders\IShader.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Shaders\Shader.cs">
+      <Link>Drawing\Shaders\Shader.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Shaders\ShaderManager.cs">
+      <Link>Drawing\Shaders\ShaderManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Shaders\ShaderUsage.cs">
+      <Link>Drawing\Shaders\ShaderUsage.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\SpriteBatchExtensions.cs">
+      <Link>Drawing\SpriteBatchExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Sprites\ISprite.cs">
+      <Link>Drawing\Sprites\ISprite.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Sprites\ISpriteData.cs">
+      <Link>Drawing\Sprites\ISpriteData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Sprites\Sprite.cs">
+      <Link>Drawing\Sprites\Sprite.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Sprites\SpriteData.cs">
+      <Link>Drawing\Sprites\SpriteData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Sprites\SpriteDataExtensions.cs">
+      <Link>Drawing\Sprites\SpriteDataExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Sprites\SpriteFlag.cs">
+      <Link>Drawing\Sprites\SpriteFlag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Text\ITextElement.cs">
+      <Link>Drawing\Text\ITextElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Text\TextAlignment.cs">
+      <Link>Drawing\Text\TextAlignment.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Text\TextElement.cs">
+      <Link>Drawing\Text\TextElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Text\TextExtensions.cs">
+      <Link>Drawing\Text\TextExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Drawing\Vector2Extensions.cs">
+      <Link>Drawing\Vector2Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Engine.cs">
+      <Link>Engine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\EngineComponent.cs">
+      <Link>EngineComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\EngineEvents.cs">
+      <Link>EngineEvents.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\EngineFlag.cs">
+      <Link>EngineFlag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Entities\Entity.cs">
+      <Link>Entities\Entity.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Entities\EntityExtensions.cs">
+      <Link>Entities\EntityExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Entities\IEntity.cs">
+      <Link>Entities\IEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Entities\ITrigger.cs">
+      <Link>Entities\ITrigger.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Entities\Trigger.cs">
+      <Link>Entities\Trigger.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\GameManager.cs">
+      <Link>GameManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Generation\Factory.cs">
+      <Link>Generation\Factory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Generation\IFactory.cs">
+      <Link>Generation\IFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\IDebugger.cs">
+      <Link>IDebugger.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\IEngineComponent.cs">
+      <Link>IEngineComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\IGameManager.cs">
+      <Link>IGameManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Input\IInputState.cs">
+      <Link>Input\IInputState.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Input\InputManager.cs">
+      <Link>Input\InputManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Input\InputState.cs">
+      <Link>Input\InputState.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Layers\ILayer.cs">
+      <Link>Layers\ILayer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Layers\Layer.cs">
+      <Link>Layers\Layer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Layers\LayerType.cs">
+      <Link>Layers\LayerType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Logger.cs">
+      <Link>Logger.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maps\Definitions\ActorSpawnDefinition.cs">
+      <Link>Maps\Definitions\ActorSpawnDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maps\Definitions\AreaSpawnDefinition.cs">
+      <Link>Maps\Definitions\AreaSpawnDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maps\Definitions\IActorSpawnDefinition.cs">
+      <Link>Maps\Definitions\IActorSpawnDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maps\Definitions\IAreaSpawnDefinition.cs">
+      <Link>Maps\Definitions\IAreaSpawnDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maps\Definitions\IPlatformDefinition.cs">
+      <Link>Maps\Definitions\IPlatformDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maps\Definitions\ISpawnDefinition.cs">
+      <Link>Maps\Definitions\ISpawnDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maps\Definitions\NormalPlatformDefinition.cs">
+      <Link>Maps\Definitions\NormalPlatformDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maps\Definitions\PlatformDefinition.cs">
+      <Link>Maps\Definitions\PlatformDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maps\Definitions\SpawnDefinition.cs">
+      <Link>Maps\Definitions\SpawnDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maps\IMap.cs">
+      <Link>Maps\IMap.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maps\IMapChunk.cs">
+      <Link>Maps\IMapChunk.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maps\Map.cs">
+      <Link>Maps\Map.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maps\MapChunk.cs">
+      <Link>Maps\MapChunk.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maps\Tiles\ITile.cs">
+      <Link>Maps\Tiles\ITile.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maps\Tiles\Tile.cs">
+      <Link>Maps\Tiles\Tile.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maths\Ease.cs">
+      <Link>Maths\Ease.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maths\EaseType.cs">
+      <Link>Maths\EaseType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Maths\MathsHelper.cs">
+      <Link>Maths\MathsHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Physics\Collider.cs">
+      <Link>Physics\Collider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Physics\CollisionEvent.cs">
+      <Link>Physics\CollisionEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Physics\CollisionPosition.cs">
+      <Link>Physics\CollisionPosition.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Physics\CollisionTypes.cs">
+      <Link>Physics\CollisionTypes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Physics\ICollider.cs">
+      <Link>Physics\ICollider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Physics\ITransform.cs">
+      <Link>Physics\ITransform.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Physics\PhysicsFlag.cs">
+      <Link>Physics\PhysicsFlag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Physics\PhysicsManager.cs">
+      <Link>Physics\PhysicsManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Physics\Transform.cs">
+      <Link>Physics\Transform.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Physics\Tween.cs">
+      <Link>Physics\Tween.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Scenes\IScene.cs">
+      <Link>Scenes\IScene.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\Scenes\Scene.cs">
+      <Link>Scenes\Scene.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\States\IState.cs">
+      <Link>States\IState.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\States\IStateMachine.cs">
+      <Link>States\IStateMachine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\States\State.cs">
+      <Link>States\State.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\States\StateChangedEvent.cs">
+      <Link>States\StateChangedEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\States\StateEvents.cs">
+      <Link>States\StateEvents.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Occasus.Core\States\StateMachine.cs">
+      <Link>States\StateMachine.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\Debug\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

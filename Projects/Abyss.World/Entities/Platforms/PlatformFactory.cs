@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Occasus.Core.Maps;
+using Occasus.Core.Maps.Definitions;
 
 namespace Abyss.World.Entities.Platforms
 {

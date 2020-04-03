@@ -30,14 +30,7 @@ namespace Occasus.Core.Drawing.ParticleEffects
             ParticleDensity particleDensity)
             : base(name, description)
         {
-            this.Tags.Add("FullScreenParticleEffect");
             this.ParticleDensity = particleDensity;
-            this.Flags.Add(ParticleEffectFlag.Recycle, true);
-            this.Flags.Add(ParticleEffectFlag.RecycleToViewPort, true);
-
-            // Setup lighting.
-            this.Tags.Add(Lighting.Lighting.DeferredRenderEntity);
-            this.Flags[EngineFlag.DeferredRender] = true;
         }
 
         /// <summary>
@@ -138,6 +131,8 @@ namespace Occasus.Core.Drawing.ParticleEffects
         /// </summary>
         public override void Initialize()
         {
+            base.Initialize();
+
             var particleDensity = (int)this.ParticleDensity;
             for (var i = 0; i < particleDensity; i++)
             {
@@ -149,8 +144,6 @@ namespace Occasus.Core.Drawing.ParticleEffects
                 this.allParticles.Add(particle);
                 this.particleCloud.Add(particle);
             }
-
-            base.Initialize();
         }
 
         /// <summary>
@@ -158,5 +151,22 @@ namespace Occasus.Core.Drawing.ParticleEffects
         /// </summary>
         /// <returns>A new particle.</returns>
         protected abstract IParticle GetParticle();
+
+        protected override void InitializeTags()
+        {
+            this.Tags.Add("FullScreenParticleEffect");
+        }
+
+        protected override void InitializeFlags()
+        {
+            this.Flags.Add(ParticleEffectFlag.Recycle, true);
+            this.Flags.Add(ParticleEffectFlag.RecycleToViewPort, true);
+        }
+
+        protected override void InitializeLighting()
+        {
+            this.Tags.Add(Lighting.Lighting.DeferredRender);
+            this.Flags[EngineFlag.DeferredRender] = true;
+        }
     }
 }

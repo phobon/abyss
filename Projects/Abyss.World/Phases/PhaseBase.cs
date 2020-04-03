@@ -152,10 +152,8 @@ namespace Abyss.World.Phases
             DrawingManager.AmbientLightColor = this.LightingColour;
 
 #if DEBUG
-            Engine.Debugger.Add(PhaseDebugKey, this.Name);
+            Monde.Debugger.Add(PhaseDebugKey, this.Name);
 #endif
-            // Remove the CurrentShader.
-            ShaderManager.CurrentShader = null;
         }
 
         /// <summary>
@@ -165,7 +163,7 @@ namespace Abyss.World.Phases
         public virtual void Remove(ILayer layer)
         {
 #if DEBUG
-            Engine.Debugger.Remove(PhaseDebugKey);
+            Monde.Debugger.Remove(PhaseDebugKey);
 #endif
         }
 

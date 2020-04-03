@@ -5,14 +5,14 @@ namespace Occasus.Core.Physics
 {
     public class Transform : ITransform
     {
-        private Vector2 position;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Transform"/> class.
         /// </summary>
         public Transform()
         {
             Scale = Vector2.One;
+            Size = Vector2.One;
+            Origin = Vector2.Zero;
         }
 
         /// <summary>
@@ -21,20 +21,7 @@ namespace Occasus.Core.Physics
         /// <value>
         /// The position.
         /// </value>
-        public Vector2 Position
-        {
-            get { return this.position; }
-
-            set
-            {
-                if (this.position == value)
-                {
-                    return;
-                }
-
-                this.position = value;
-            }
-        }
+        public Vector2 Position { get; set; }
 
         /// <summary>
         /// Gets the grid position.
@@ -52,23 +39,15 @@ namespace Occasus.Core.Physics
         /// <summary>
         /// Gets or sets the scale.
         /// </summary>
-        /// <value>
-        /// The scale.
-        /// </value>
-        public Vector2 Scale
-        {
-            get; set;
-        }
+        public Vector2 Scale { get; set; }
 
         /// <summary>
         /// Gets or sets the rotation.
         /// </summary>
-        /// <value>
-        /// The rotation.
-        /// </value>
-        public float Rotation
-        {
-            get; set;
-        }
+        public float Rotation { get; set; }
+        
+        public Vector2 Origin { get; set; }
+
+        public Vector2 Size { get; set; }
     }
 }

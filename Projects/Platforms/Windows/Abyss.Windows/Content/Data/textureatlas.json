@@ -1,0 +1,76 @@
+{
+    "textures": [
+        {
+            "id": "Logo",
+            "location": "Graphics/logo"
+        },
+        {
+            "id": "Debug",
+            "location": "Graphics/debug"
+        },
+        {
+            "id": "UI",
+            "location": "Graphics/Sprites/UI/ui"
+        },
+        {
+            "id": "UIParts",
+            "location": "Graphics/Sprites/UI/uiparts"
+        },
+        {
+            "id": "HeartGlyph",
+            "location": "Graphics/Sprites/UI/heartglyph"
+        },
+        {
+            "id": "RiftGlyph",
+            "location": "Graphics/Sprites/UI/riftglyph"
+        },
+        {
+            "id": "DimensionIndicator",
+            "location": "Graphics/Sprites/UI/dimensionindicatorui"
+        },
+        {
+            "id": "ScoreUI",
+            "location": "Graphics/Sprites/UI/scoreui"
+        },
+        {
+            "id": "PhaseNameUI",
+            "location": "Graphics/Sprites/UI/phasenameui"
+        },
+        {
+            "id": "Player",
+            "location": "Graphics/Sprites/Tiles/Player"
+        },
+        {
+            "id": "Props",
+            "location": "Graphics/Sprites/Tiles/Props"
+        },
+        {
+            "id": "Monsters",
+            "location": "Graphics/Sprites/Tiles/Monsters"
+        },
+        {
+            "id": "Zones",
+            "location": "Graphics/Sprites/Tiles/Zones"
+        },
+        {
+            "id": "Doodads",
+            "location": "Graphics/Sprites/Tiles/doodads"
+        },
+        {
+            "id": "Items",
+            "location": "Graphics/Sprites/Tiles/Items"
+        },
+        {
+            "id": "NormalBackground",
+            "location": "Graphics/Sprites/Backgrounds/Zones/normal"
+        },
+        {
+            "id": "Platforms",
+            "location": "Graphics/Sprites/Tiles/platforms"
+        },
+        {
+            "id": "Particles",
+            "location": "Graphics/Sprites/Tiles/particles"
+        }
+    ]
+}

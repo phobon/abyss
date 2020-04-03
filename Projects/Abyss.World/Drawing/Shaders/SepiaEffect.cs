@@ -10,7 +10,7 @@ namespace Abyss.World.Drawing.Shaders
         /// Initializes a new instance of the <see cref="SepiaEffect"/> class.
         /// </summary>
         public SepiaEffect()
-            : base("Sepia Effect", "Pixel shader that applies a sepia effect to a scene.", new[] { ShaderUsage.IncludeDeferredRenderEntities })
+            : base("Sepia Effect", "Pixel shader that applies a sepia effect to a scene.", "SepiaToneTechnique", new[] { ShaderUsage.IncludeDeferredRenderEntities })
         {
         }
 
@@ -20,14 +20,6 @@ namespace Abyss.World.Drawing.Shaders
         public override void LoadContent()
         {
             this.Effect = DrawingManager.ContentManager.Load<Effect>("Effects/Screen");
-        }
-
-        /// <summary>
-        /// Applies this Shader.
-        /// </summary>
-        public override void Apply()
-        {
-            ShaderManager.CurrentShader.Effect.CurrentTechnique = ShaderManager.CurrentShader.Effect.Techniques["SepiaToneTechnique"];
         }
     }
 }

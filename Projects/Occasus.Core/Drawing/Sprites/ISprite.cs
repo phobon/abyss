@@ -1,6 +1,7 @@
 ﻿using Occasus.Core.Drawing.Animation;
 using System.Collections.Generic;
 using Occasus.Core.Drawing.Images;
+using Occasus.Core.Maths;
 
 namespace Occasus.Core.Drawing.Sprites
 {
@@ -39,8 +40,8 @@ namespace Occasus.Core.Drawing.Sprites
         /// <returns>Length of the animation in frames.</returns>
         int GetAnimationFrameLength(string animationName);
 
-        void Squash(float factor, int durationFrames);
+        void Squash(float factor, int durationFrames, Easer easingFunction = null);
 
-        void Stretch(float factor, int durationFrames);
+        void Stretch(float factor, int durationFrames, Easer easingFunction = null);
     }
 }

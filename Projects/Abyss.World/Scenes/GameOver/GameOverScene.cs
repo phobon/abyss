@@ -59,11 +59,11 @@ namespace Abyss.World.Scenes.GameOver
                     case 0:
                         break;
                     case 1:
-                        Engine.ActivateScene("Menu");
+                        Monde.ActivateScene("Menu");
                         return;
                 }
 
-                Engine.ActivateScene("Zone");
+                Monde.ActivateScene("Zone");
             }
 
             while (TouchPanel.IsGestureAvailable)
@@ -72,7 +72,7 @@ namespace Abyss.World.Scenes.GameOver
                 switch (gs.GestureType)
                 {
                     case GestureType.Tap:
-                        Engine.ActivateScene("Menu");
+                        Monde.ActivateScene("Menu");
                         break;
                 }
             }

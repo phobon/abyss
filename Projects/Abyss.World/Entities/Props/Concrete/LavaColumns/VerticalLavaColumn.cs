@@ -32,7 +32,7 @@ namespace Abyss.World.Entities.Props.Concrete.LavaColumns
             // Determine a random vertical starting position for this lava column. 
             var horizontalPosition = MathsHelper.Random(10) * DrawingManager.TileWidth;
             horizontalPosition += MathsHelper.Random(DrawingManager.TileWidth);
-            this.Transform.Position = new Vector2(horizontalPosition, GameManager.Player.Transform.Position.Y + 500);
+            this.Transform.Position = new Vector2(horizontalPosition, Monde.GameManager.Player.Transform.Position.Y + 500);
             this.endPosition = this.Transform.Position - new Vector2(0, boundingBox.Height * 2);
         }
 
@@ -47,7 +47,7 @@ namespace Abyss.World.Entities.Props.Concrete.LavaColumns
 
             if (this.maintainStartPosition)
             {
-                this.Transform.Position = new Vector2(this.Transform.Position.X, GameManager.Player.Transform.Position.Y + 500);
+                this.Transform.Position = new Vector2(this.Transform.Position.X, Monde.GameManager.Player.Transform.Position.Y + 500);
             }
         }
 

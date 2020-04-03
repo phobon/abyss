@@ -1,4 +1,5 @@
 ﻿using Abyss.World.Drawing.ParticleEffects;
+using Abyss.World.Drawing.ParticleEffects.Concrete;
 using Abyss.World.Entities.Player;
 using Abyss.World.Phases;
 using Abyss.World.Universe;
@@ -34,43 +35,14 @@ namespace Abyss.World.Entities.Items.Concrete.RiftShards
             int riftAmount) 
             : base(name, description, initialPosition, boundingBox)
         {
-            this.Tags.Add(EntityTags.RiftCrystal);
-
             this.RiftAmount = riftAmount;
-            
-            var sprite = this.GetSprite();
-            sprite.Layers["outline"].Opacity = 0f;
-
-            this.Components.Add(LightSource.Tag, new PointLight(this, 0.5f, 3f, UniverseConstants.NormalDimensionColor));
-
-            GameManager.DimensionShifted += ZoneSceneOnDimensionShifted;
+            Monde.GameManager.DimensionShifted += ZoneSceneOnDimensionShifted;
         }
 
         /// <summary>
         /// Gets the rift amount.
         /// </summary>
-        public int RiftAmount
-        {
-            get; private set;
-        }
-
-        /// <summary>
-        /// Initializes the Engine Component.
-        /// </summary>
-        public override void Initialize()
-        {
-            base.Initialize();
-
-            if (!this.Components.ContainsKey("PowerEffect"))
-            {
-                var powerEffect = ParticleEffectFactory.GetParticleEffect(
-                        this, 
-                        "Power", 
-                        new Vector2(this.Collider.BoundingBox.Center.X, this.Collider.BoundingBox.Top), 
-                        UniverseConstants.NeutralColor);
-                this.Components.Add("PowerEffect", powerEffect);
-            }
-        }
+        public int RiftAmount { get; private set; }
 
         /// <summary>
         /// Collects this item.
@@ -83,17 +55,17 @@ namespace Abyss.World.Entities.Items.Concrete.RiftShards
             {
                 // Remove the RiftAmount to the Player's Rift if possible.
                 player.Rift -= RiftAmount;
-                GameManager.StatisticManager.RiftCollected -= RiftAmount;
+                Monde.GameManager.StatisticManager.RiftCollected -= RiftAmount;
             }
             else
             {
                 // Add the RiftAmount to the Player's Rift if possible.
                 player.Rift += RiftAmount;
-                GameManager.StatisticManager.RiftCollected += RiftAmount;
+                Monde.GameManager.StatisticManager.RiftCollected += RiftAmount;
                 AudioManager.Play("itempickup");
             }
-            
-            GameManager.StatisticManager.TotalScore += RiftAmount;
+
+            Monde.GameManager.StatisticManager.TotalScore += RiftAmount;
             base.Collect(player);
         }
 
@@ -104,7 +76,7 @@ namespace Abyss.World.Entities.Items.Concrete.RiftShards
         {
             base.Begin();
 
-            if (GameManager.CurrentDimension == Dimension.Limbo)
+            if (Monde.GameManager.CurrentDimension == Dimension.Limbo)
             {
                 this.FadeOut();
             }
@@ -116,7 +88,7 @@ namespace Abyss.World.Entities.Items.Concrete.RiftShards
         public override void Dispose()
         {
             base.Dispose();
-            GameManager.DimensionShifted -= this.ZoneSceneOnDimensionShifted;
+            Monde.GameManager.DimensionShifted -= this.ZoneSceneOnDimensionShifted;
         }
 
         protected override void SetupStates()
@@ -124,6 +96,31 @@ namespace Abyss.World.Entities.Items.Concrete.RiftShards
             var sprite = this.GetSprite();
             this.States.Add(RiftShardStates.Neutral, State.GenericState(RiftShardStates.Neutral, sprite));
             base.SetupStates();
+        }
+
+        protected override void InitializeTags()
+        {
+            base.InitializeTags();
+            this.Tags.Add(EntityTags.RiftCrystal);
+        }
+
+        protected override void InitializeSprite()
+        {
+            base.InitializeSprite();
+            var sprite = this.GetSprite();
+            sprite.Layers["outline"].Opacity = 0f;
+        }
+
+        protected override void InitializeLighting()
+        {
+            base.InitializeLighting();
+            this.AddComponent(LightSource.Tag, new PointLight(this, 0.5f, 3f, UniverseConstants.NormalDimensionColor));
+        }
+
+        protected override void InitializeComponents()
+        {
+            var origin = new Vector2(this.Collider.BoundingBox.Center.X, this.Collider.BoundingBox.Top);
+            this.AddComponent(Power.ComponentName, ParticleEffectFactory.GetParticleEffect(this, Power.ComponentName, origin));
         }
 
         private void ZoneSceneOnDimensionShifted(DimensionShiftedEventArgs dimensionShiftedEventArgs)

@@ -8,6 +8,8 @@ namespace Abyss.World.Drawing.ParticleEffects.Concrete
 {
     public class Sparkle : ParticleEffect
     {
+        public static string ComponentName = "Sparkle";
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Sparkle" /> class.
         /// </summary>

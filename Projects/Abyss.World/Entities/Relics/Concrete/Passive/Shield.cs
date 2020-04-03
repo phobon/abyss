@@ -31,7 +31,7 @@ namespace Abyss.World.Entities.Relics.Concrete.Passive
         public override void Activate(IEnumerable<IEntity> entityCache)
         {
             // Generate the player's shield.
-            GameManager.Player.Barrier.Generate(1);
+            Monde.GameManager.Player.Barrier.Generate(1);
             base.Activate(entityCache);
         }
     }

@@ -61,20 +61,20 @@ namespace Abyss.World.Scenes.Menu
                 switch (this.MenuIndex)
                 {
                     case 0:
-                        GameManager.GameMode = GameMode.Normal;
-                        GameManager.Seed = Guid.NewGuid().GetHashCode();
+                        Monde.GameManager.GameMode = GameMode.Normal;
+                        Monde.GameManager.Seed = Guid.NewGuid().GetHashCode();
                         break;
                     case 1:
-                        GameManager.GameMode = GameMode.Daily;
-                        GameManager.Seed = UniverseConstants.DailySeed;
+                        Monde.GameManager.GameMode = GameMode.Daily;
+                        Monde.GameManager.Seed = UniverseConstants.DailySeed;
                         break;
                     case 2:
-                        GameManager.GameMode = GameMode.Speedrun;
-                        GameManager.Seed = UniverseConstants.SpeedrunSeed;
+                        Monde.GameManager.GameMode = GameMode.Speedrun;
+                        Monde.GameManager.Seed = UniverseConstants.SpeedrunSeed;
                         break;
                 }
 
-                Engine.ActivateScene("Zone");
+                Monde.ActivateScene("Zone");
             }
 
             while (TouchPanel.IsGestureAvailable)
@@ -83,7 +83,7 @@ namespace Abyss.World.Scenes.Menu
                 switch (gs.GestureType)
                 {
                     case GestureType.Tap:
-                        Engine.ActivateScene("Zone");
+                        Monde.ActivateScene("Zone");
                         break;
                 }
             }

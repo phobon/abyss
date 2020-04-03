@@ -35,5 +35,10 @@ namespace Occasus.Core.Entities
         /// Used primarily to accelerate lookups in a parent Scene. The Scene caches these tags as entities are created.
         /// </remarks>
         IList<string> Tags { get; }
+
+        IEnumerable<IEntityComponent> GetComponentsByTag(string tag);
+        void AddComponent(string key, IEntityComponent component);
+        void RemoveComponent(string key);
+        void ClearComponents();
     }
 }

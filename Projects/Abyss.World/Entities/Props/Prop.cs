@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 
 using Occasus.Core.Assets;
-using Occasus.Core.Components;
+using Occasus.Core.Debugging.Components;
 using Occasus.Core.Drawing.Sprites;
 using Occasus.Core.Entities;
 using Occasus.Core.Physics;
@@ -12,6 +12,9 @@ namespace Abyss.World.Entities.Props
 {
     public abstract class Prop : Entity, IProp
     {
+        private readonly Rectangle boundingBox;
+        private readonly Vector2 origin;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Prop" /> class.
         /// </summary>
@@ -28,26 +31,41 @@ namespace Abyss.World.Entities.Props
             Vector2 origin)
             : base(name, description)
         {
+            this.boundingBox = boundingBox;
+            this.origin = origin;
             this.Transform.Position = initialPosition;
-
-            // Add tags.
-            this.Tags.Add(EntityTags.Prop);
-
-            // Add a sprite to this component.
-            var sprite = Atlas.GetSprite(AtlasTags.Gameplay, this.Name, this, origin, new Vector2(boundingBox.Width, boundingBox.Height));
-            this.Components.Add(Sprite.Tag, sprite);
-
-            // Has collision.
-            this.Collider = new Collider(this, boundingBox, origin)
-                                {
-                                    MovementSpeed = new Vector2(PhysicsManager.BaseActorSpeed, PhysicsManager.BaseActorSpeed)
-                                };
         }
 
         protected override void SetupStates()
         {
             this.States.Add(PropStates.Idle, State.GenericState(PropStates.Idle, this.GetSprite()));
             base.SetupStates();
+        }
+
+        protected override void InitializeTags()
+        {
+            this.Tags.Add(EntityTags.Prop);
+        }
+
+        protected override void InitializeSprite()
+        {
+            var sprite = Atlas.GetSprite(AtlasTags.Gameplay, this.Name, this, this.origin, new Vector2(this.boundingBox.Width, this.boundingBox.Height));
+            this.AddComponent(Sprite.Tag, sprite);
+        }
+
+        protected override void InitializeCollider()
+        {
+            this.Collider = new Collider(this, this.boundingBox, this.origin)
+            {
+                MovementSpeed = new Vector2(PhysicsManager.BaseActorSpeed, PhysicsManager.BaseActorSpeed)
+            };
+        }
+
+        protected override void InitializeComponents()
+        {
+#if DEBUG
+            this.AddComponent("BoundingBox", new Border(this, Color.Teal));
+#endif
         }
     }
 }

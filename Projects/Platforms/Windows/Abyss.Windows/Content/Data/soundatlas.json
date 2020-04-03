@@ -1,0 +1,49 @@
+{
+    "soundAtlas": {
+        "sounds": [
+            {
+                "id": "menubeep",
+                "location": "Sounds/UI/menubeep",
+                "type": "Basic"
+            },
+            {
+                "id": "hurt",
+                "location": "Sounds/Player/hurt",
+                "type": "Basic"
+            },
+            {
+                "id": "land",
+                "location": "Sounds/Player/land",
+                "type": "Basic"
+            },
+            {
+                "id": "step",
+                "location": "Sounds/Player/step",
+                "type": "Instanced",
+                "instances": 3
+            },
+            {
+                "id": "itempickup",
+                "location": "Sounds/Player/itempickup",
+                "type": "Basic"
+            },
+            {
+                "id": "dimensionshift",
+                "location": "Sounds/Player/dimensionshift",
+                "type": "Basic"
+            },
+            {
+                "id": "dimensionshiftcooldown",
+                "location": "Sounds/Player/dimensionshiftcooldown",
+                "type": "Basic"
+            },
+            {
+                "id": "monsterstomped",
+                "location": "Sounds/Player/monsterstomped",
+                "type": "Basic"
+            }
+        ],
+        "songs": [            
+        ]
+    }
+}

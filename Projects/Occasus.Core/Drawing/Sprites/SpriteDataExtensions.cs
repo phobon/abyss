@@ -11,7 +11,13 @@ namespace Occasus.Core.Drawing.Sprites
     {
         public static ISprite ToSprite(this ISpriteData s, IEntity parent)
         {
-            var sprite = new Sprite(parent, s.Origin, s.FrameSize, s.Layers, s.AnimationStates.Clone());
+            var origin = s.Origin;
+            if (parent.Collider != null)
+            {
+                origin = new Vector2(s.Origin.X + parent.Collider.Origin.X, s.Origin.Y + parent.Collider.Origin.Y);
+            }
+
+            var sprite = new Sprite(parent, origin, s.FrameSize, s.Layers, s.AnimationStates.Clone());
             sprite.Flags[SpriteFlag.Tile] = s.TileTexture;
             return sprite;
         }

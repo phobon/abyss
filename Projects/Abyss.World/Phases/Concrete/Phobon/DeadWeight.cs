@@ -27,7 +27,7 @@ namespace Abyss.World.Phases.Concrete.Phobon
         /// <param name="layer">The layer.</param>
         public override void Apply(ILayer layer)
         {
-            GameManager.Player.Collider.Collision += ColliderOnCollision;
+            Monde.GameManager.Player.Collider.Collision += ColliderOnCollision;
             base.Apply(layer);
         }
 
@@ -37,18 +37,18 @@ namespace Abyss.World.Phases.Concrete.Phobon
         /// <param name="layer">The layer.</param>
         public override void Remove(ILayer layer)
         {
-            GameManager.Player.Collider.Collision -= ColliderOnCollision;
+            Monde.GameManager.Player.Collider.Collision -= ColliderOnCollision;
             base.Remove(layer);
         }
 
         private void ColliderOnCollision(CollisionEventArgs collisionEventArgs)
         {
-            if (GameManager.Player.Collider.UngroundedFrames > TerminalVelocity)
+            if (Monde.GameManager.Player.Collider.UngroundedFrames > TerminalVelocity)
             {
                 // The only way a player can survive a fall at terminal velocity is to bop an enemy.
                 if (collisionEventArgs.CollisionType == CollisionTypes.Environment)
                 {
-                    GameManager.Player.TakeDamage("DeadWeight");
+                    Monde.GameManager.Player.TakeDamage("DeadWeight");
                 }
             }
         }

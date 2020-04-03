@@ -1,0 +1,18 @@
+[
+   {
+      Folder: "Normal",
+      Destination: "..\\..\\Projects\\Content\\Data\\Level\\normal.xml"
+   },
+   {
+      Folder: "Testing",
+      Destination: "..\\..\\Projects\\Content\\Data\\Level\\test.xml"
+   },
+   {
+      Folder: "Tutorial",
+      Destination: "..\\..\\Projects\\Content\\Data\\Level\\tutorial.xml"
+   },
+   {
+      Folder: "Transition",
+      Destination: "..\\..\\Projects\\Content\\Data\\Level\\transition.xml"
+   }
+]

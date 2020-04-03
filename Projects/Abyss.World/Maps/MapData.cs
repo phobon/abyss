@@ -6,7 +6,7 @@ namespace Abyss.World.Maps
     public static class MapData
     {
         public const int ChunkWidth = 10;
-        public const int ChunkHeight = 18;
+        public const int ChunkHeight = 17;
 
         private static List<ZoneType> zoneTypes;
 

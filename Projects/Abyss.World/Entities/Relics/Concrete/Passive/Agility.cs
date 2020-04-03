@@ -27,7 +27,7 @@ namespace Abyss.World.Entities.Relics.Concrete.Passive
         public override void Activate(IEnumerable<IEntity> entityCache)
         {
             base.Activate(entityCache);
-            GameManager.Player.MovementSpeed++;
+            Monde.GameManager.Player.MovementSpeed++;
         }
     }
 }

@@ -43,12 +43,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Assemblies\Sensors\Windows\Microsoft.Devices.Sensors.dll</HintPath>
     </Reference>
-    <Reference Include="MonoGame.Framework, Version=3.4.0.459, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MonoGame.Framework.WindowsDX.3.4.0.459\lib\net40\MonoGame.Framework.dll</HintPath>
+    <Reference Include="MonoGame.Framework, Version=3.5.1.1679, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MonoGame.Framework.WindowsDX.3.5.1.1679\lib\net40\MonoGame.Framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -72,7 +72,6 @@
     <Compile Include="Drawing\ParticleEffects\Concrete\Implosion.cs" />
     <Compile Include="Drawing\ParticleEffects\ParticleEffectConstants.cs" />
     <Compile Include="Drawing\Shaders\BlurEffect.cs" />
-    <Compile Include="Drawing\Shaders\TestEffect.cs" />
     <Compile Include="Drawing\Shaders\MaskEffect.cs" />
     <Compile Include="Drawing\Shaders\RippleEffect.cs" />
     <Compile Include="Drawing\Shaders\FlipHorizontalEffect.cs" />
@@ -103,18 +102,28 @@
     <Compile Include="Entities\Monsters\Monster.cs" />
     <Compile Include="Entities\Monsters\IMonster.cs" />
     <Compile Include="Entities\Monsters\MonsterFactory.cs" />
-    <Compile Include="Entities\Monsters\MonsterSpawnDefinition.cs" />
     <Compile Include="Entities\Monsters\MonsterStates.cs" />
     <Compile Include="Entities\Platforms\Concrete\ActivatedPlatform.cs" />
-    <Compile Include="Entities\Platforms\Concrete\Activated\Spikey.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Activated\Crumbling.cs" />
     <Compile Include="Entities\Platforms\Concrete\Activated\Exploding.cs" />
-    <Compile Include="Entities\Platforms\Concrete\Activated\Warping.cs" />
-    <Compile Include="Entities\Platforms\Concrete\Activated\Key.cs" />
     <Compile Include="Entities\Platforms\Concrete\Activated\Gate.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Activated\Icy.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Activated\Key.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Activated\Spikey.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Activated\Warping.cs" />
+    <Compile Include="Entities\Platforms\Concrete\DynamicPlatform.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Dynamic\Crushing.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Dynamic\Moving.cs" />
+    <Compile Include="Entities\Platforms\Concrete\Dynamic\Phasing.cs" />
     <Compile Include="Entities\Platforms\Concrete\IConnectedPlatform.cs" />
+    <Compile Include="Entities\Platforms\Concrete\IDynamicPlatform.cs" />
+    <Compile Include="Entities\Platforms\IPlatform.cs" />
+    <Compile Include="Entities\Platforms\Platform.cs" />
     <Compile Include="Entities\Platforms\PlatformExtensions.cs" />
+    <Compile Include="Entities\Platforms\PlatformFactory.cs" />
     <Compile Include="Entities\Platforms\PlatformKeys.cs" />
     <Compile Include="Entities\Platforms\PlatformStates.cs" />
+    <Compile Include="Entities\Platforms\PlatformType.cs" />
     <Compile Include="Entities\Player\Components\IPhaseGem.cs" />
     <Compile Include="Entities\Player\Components\PhaseGem.cs" />
     <Compile Include="Entities\Player\Components\PhaseGemStates.cs" />
@@ -124,47 +133,33 @@
     <Compile Include="Entities\Props\ExclamationBubble.cs" />
     <Compile Include="Entities\Props\IExclamationBubble.cs" />
     <Compile Include="Entities\Relics\Concrete\ActiveRelic.cs" />
-    <Compile Include="Entities\Relics\Concrete\Active\Rumble.cs" />
-    <Compile Include="Entities\Relics\Concrete\Active\Phase.cs" />
     <Compile Include="Entities\Relics\Concrete\Active\Dash.cs" />
+    <Compile Include="Entities\Relics\Concrete\Active\Phase.cs" />
+    <Compile Include="Entities\Relics\Concrete\Active\Rumble.cs" />
+    <Compile Include="Entities\Relics\Concrete\Active\Vortex.cs" />
+    <Compile Include="Entities\Relics\Concrete\Active\Warp.cs" />
+    <Compile Include="Entities\Relics\Concrete\CosmeticRelic.cs" />
+    <Compile Include="Entities\Relics\Concrete\Cosmetic\FireTrail.cs" />
     <Compile Include="Entities\Relics\Concrete\Cosmetic\MonsterCostume.cs" />
-    <Compile Include="Entities\Relics\Concrete\Cosmetic\VagrantCostume.cs" />
+    <Compile Include="Entities\Relics\Concrete\Cosmetic\RainbowTrail.cs" />
     <Compile Include="Entities\Relics\Concrete\Cosmetic\RoyalCostume.cs" />
     <Compile Include="Entities\Relics\Concrete\Cosmetic\ShadowTrail.cs" />
-    <Compile Include="Entities\Relics\Concrete\Cosmetic\FireTrail.cs" />
     <Compile Include="Entities\Relics\Concrete\Cosmetic\SparkleTrail.cs" />
-    <Compile Include="Entities\Relics\Concrete\Cosmetic\RainbowTrail.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\Key\DioninKey.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\Key\KeyRelic.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\Key\PhobonKey.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\Key\ValusKey.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\Key\ArgusKey.cs" />
+    <Compile Include="Entities\Relics\Concrete\Cosmetic\VagrantCostume.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Agility.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Conduit.cs" />
     <Compile Include="Entities\Relics\Concrete\Passive\Crusher.cs" />
     <Compile Include="Entities\Relics\Concrete\Passive\Drain.cs" />
     <Compile Include="Entities\Relics\Concrete\Passive\HeartSeeker.cs" />
-    <Compile Include="Entities\Relics\Concrete\Passive\Parachute.cs" />
-    <Compile Include="Entities\Relics\Concrete\Passive\Vampire.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\Persistent\Shift.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\Persistent\Stability.cs" />
-    <Compile Include="Entities\Relics\Concrete\Passive\Wallet.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\PowerUp\Abundance.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\PowerUp\Merge.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\BoostRelic.cs" />
     <Compile Include="Entities\Relics\Concrete\Passive\Magnet.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\Coalesce.cs" />
-    <Compile Include="Entities\Relics\Concrete\StompRelic.cs" />
-    <Compile Include="Entities\Relics\Concrete\Active\Warp.cs" />
-    <Compile Include="Entities\Relics\Concrete\Active\Vortex.cs" />
-    <Compile Include="Entities\Relics\Concrete\Passive\TreasureSeeker.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\ChainReaction.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Parachute.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Shield.cs" />
     <Compile Include="Entities\Relics\Concrete\Passive\Spelunker.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\RiftWalker.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\VoidWalker.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\Firewalker.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\ShieldBoost.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\InvulnerabilityBoost.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\Transient\CataclysmBoost.cs" />
-    <Compile Include="Entities\Relics\Concrete\CosmeticRelic.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\TreasureSeeker.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Vampire.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Vitality.cs" />
+    <Compile Include="Entities\Relics\Concrete\Passive\Wallet.cs" />
+    <Compile Include="Entities\Relics\Concrete\StompRelic.cs" />
     <Compile Include="Entities\Relics\IRelicCollection.cs" />
     <Compile Include="Entities\Player\Player.cs" />
     <Compile Include="Entities\Player\PlayerColourMask.cs" />
@@ -192,12 +187,6 @@
     <Compile Include="Entities\Props\Prop.cs" />
     <Compile Include="Entities\Props\PropFactory.cs" />
     <Compile Include="Entities\Props\PropStates.cs" />
-    <Compile Include="Entities\Relics\Concrete\Passive\Conduit.cs" />
-    <Compile Include="Entities\Relics\Concrete\Passive\Agility.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\PowerUp\Cataclysm.cs" />
-    <Compile Include="Entities\Relics\Concrete\Passive\Vitality.cs" />
-    <Compile Include="Entities\Relics\Concrete\Passive\Shield.cs" />
-    <Compile Include="Entities\Relics\Concrete\Legacy\PowerUp\Invulnerability.cs" />
     <Compile Include="Entities\Relics\RelicActivationType.cs" />
     <Compile Include="Entities\Relics\RelicCollection.cs" />
     <Compile Include="Entities\Relics\RelicKeys.cs" />
@@ -206,21 +195,13 @@
     <Compile Include="Entities\Triggers\Concrete\BeginGame.cs" />
     <Compile Include="EntityTags.cs" />
     <Compile Include="GameData.cs" />
-    <Compile Include="GameManager.cs" />
+    <Compile Include="AbyssGameManager.cs" />
     <Compile Include="GameManagerFlags.cs" />
-    <Compile Include="GameWorld.cs" />
-    <Compile Include="Maps\IMapArea.cs" />
-    <Compile Include="Entities\Platforms\IPlatformDefinition.cs" />
+    <Compile Include="Monde.cs" />
+    <Compile Include="IAbyssGameManager.cs" />
     <Compile Include="Maps\IZoneData.cs" />
-    <Compile Include="Maps\MapArea.cs" />
-    <Compile Include="Maps\IMapEntities.cs" />
-    <Compile Include="Maps\IMapChunk.cs" />
-    <Compile Include="Maps\MapChunk.cs" />
-    <Compile Include="Maps\MapChunkTypes.cs" />
-    <Compile Include="Maps\MapEntities.cs" />
+    <Compile Include="Maps\MapChunkData.cs" />
     <Compile Include="Maps\MapFactory.cs" />
-    <Compile Include="Entities\Platforms\PlatformDefinition.cs" />
-    <Compile Include="Entities\Monsters\IMonsterSpawnDefinition.cs" />
     <Compile Include="Maps\ZoneData.cs" />
     <Compile Include="Phases\Concrete\Aberth\AberthPhase.cs" />
     <Compile Include="Phases\Concrete\Aberth\Invulnerable.cs" />
@@ -256,8 +237,8 @@
     <Compile Include="Phases\PhaseConstants.cs" />
     <Compile Include="Phases\PhaseFactory.cs" />
     <Compile Include="Phases\Phase.cs" />
-    <Compile Include="Maps\IMap.cs" />
-    <Compile Include="Maps\Map.cs" />
+    <Compile Include="Maps\IAbyssMap.cs" />
+    <Compile Include="Maps\AbyssMap.cs" />
     <Compile Include="Maps\MapData.cs" />
     <Compile Include="Drawing\ParticleEffects\Concrete\Power.cs" />
     <Compile Include="Drawing\ParticleEffects\Concrete\Snow.cs" />
@@ -268,11 +249,6 @@
     <Compile Include="Drawing\ParticleEffects\Concrete\Sparkle.cs" />
     <Compile Include="Drawing\ParticleEffects\Concrete\Speck.cs" />
     <Compile Include="Drawing\ParticleEffects\ParticleEffectFactory.cs" />
-    <Compile Include="Entities\Platforms\Concrete\Dynamic\Moving.cs" />
-    <Compile Include="Entities\Platforms\Concrete\Activated\Crumbling.cs" />
-    <Compile Include="Entities\Platforms\Concrete\Dynamic\Crushing.cs" />
-    <Compile Include="Entities\Platforms\Concrete\DynamicPlatform.cs" />
-    <Compile Include="Entities\Platforms\Concrete\IDynamicPlatform.cs" />
     <Compile Include="Phases\PhaseManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Relics\IRelic.cs" />
@@ -299,13 +275,6 @@
     <Compile Include="Scenes\Zone\ZoneScene.cs" />
     <Compile Include="Drawing\Shaders\SepiaEffect.cs" />
     <Compile Include="Drawing\Shaders\DesaturateEffect.cs" />
-    <Compile Include="Entities\Platforms\Concrete\Dynamic\Phasing.cs" />
-    <Compile Include="Entities\Platforms\Concrete\Activated\Icy.cs" />
-    <Compile Include="Entities\Platforms\IPlatform.cs" />
-    <Compile Include="Entities\Platforms\Platform.cs" />
-    <Compile Include="Maps\TileConstants.cs" />
-    <Compile Include="Entities\Platforms\PlatformFactory.cs" />
-    <Compile Include="Entities\Platforms\PlatformType.cs" />
     <Compile Include="Entities\Triggers\Concrete\InvisibleWall.cs" />
     <Compile Include="Entities\Triggers\TriggerFactory.cs" />
     <Compile Include="Scoring\IPhaseScore.cs" />

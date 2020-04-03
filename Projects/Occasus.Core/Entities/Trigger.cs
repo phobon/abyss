@@ -1,10 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
+using Occasus.Core.Debugging.Components;
 using Occasus.Core.Physics;
 
 namespace Occasus.Core.Entities
 {
     public abstract class Trigger : Entity, ITrigger
     {
+        private readonly Rectangle boundingBox;
+        private readonly Vector2 origin;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Trigger" /> class.
         /// </summary>
@@ -14,14 +18,29 @@ namespace Occasus.Core.Entities
         /// <param name="boundingBox">The bounding box.</param>
         /// <param name="origin">The origin.</param>
         protected Trigger(string name, string description, Vector2 initialPosition, Rectangle boundingBox, Vector2 origin)
-            : base(name, description)
+            : base(name: name, description: description)
         {
-            this.Tags.Add("Trigger");
+            this.boundingBox = boundingBox;
+            this.origin = origin;
 
             this.Transform.Position = initialPosition;
+        }
 
-            // Triggers typically have collision.
+        protected override void InitializeCollider()
+        {
             this.Collider = new Collider(this, boundingBox, origin);
+        }
+
+        protected override void InitializeTags()
+        {
+            this.Tags.Add("Trigger");
+        }
+
+        protected override void InitializeComponents()
+        {
+#if DEBUG
+            this.AddComponent("BoundingBox", new Border(this, Color.Plum));
+#endif
         }
     }
 }

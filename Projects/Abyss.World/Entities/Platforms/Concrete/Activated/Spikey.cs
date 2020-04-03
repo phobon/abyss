@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using Occasus.Core.Components.Logic;
+using Occasus.Core.Maps;
+using Occasus.Core.Maps.Definitions;
 using Occasus.Core.Physics;
 
 namespace Abyss.World.Entities.Platforms.Concrete.Activated

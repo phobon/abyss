@@ -13,7 +13,6 @@ namespace Abyss.World.Entities.Triggers.Concrete
         public InvisibleWall(Vector2 initialPosition, Rectangle boundingBox)
             : base("Invisible Wall", "Used to block monster AI.", initialPosition, boundingBox, Vector2.Zero)
         {
-            this.Tags.Add("Trigger");
             this.Tags.Add("InvisibleWall");
         }
     }

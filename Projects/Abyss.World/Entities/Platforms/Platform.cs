@@ -1,9 +1,6 @@
-﻿using Abyss.World.Entities.Monsters;
-
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 
 using Occasus.Core.Assets;
-using Occasus.Core.Components;
 using Occasus.Core.Drawing.Sprites;
 using Occasus.Core.Entities;
 using Occasus.Core.Physics;
@@ -16,37 +13,27 @@ namespace Abyss.World.Entities.Platforms
     /// </summary>
     public abstract class Platform : Entity, IPlatform
     {
+        private readonly Rectangle boundingBox;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Platform" /> class.
         /// </summary>
         /// <param name="name">The name.</param>
         /// <param name="description">The description.</param>
         /// <param name="initialPosition">The initial position.</param>
-        /// <param name="size">The size.</param>
+        /// <param name="boundingBox">The bounding box.</param>
         /// <param name="platformType">Type of the platform.</param>
         protected Platform(
             string name,
             string description,
             Vector2 initialPosition,
-            Rectangle size,
+            Rectangle boundingBox,
             PlatformType platformType)
             : base(name, description)
         {
+            this.boundingBox = boundingBox;
             this.Transform.Position = initialPosition;
             this.PlatformType = platformType;
-
-            this.Tags.Add(EntityTags.Platform);
-            this.Tags.Add(this.PlatformType.ToString());
-
-            // Add a sprite to this component.
-            var sprite = Atlas.GetSprite(AtlasTags.Gameplay, this.Name, this);
-            this.Components.Add(Sprite.Tag, sprite);
-
-            // Has collision.
-            this.Collider = new Collider(this, size, Vector2.Zero)
-                            {
-                                MovementSpeed = new Vector2(PhysicsManager.BaseActorSpeed, PhysicsManager.BaseActorSpeed)
-                            };
         }
 
         /// <summary>
@@ -62,6 +49,25 @@ namespace Abyss.World.Entities.Platforms
         {
             this.States.Add(PlatformStates.Idle, State.GenericState(PlatformStates.Idle, this.GetSprite()));
             base.SetupStates();
+        }
+
+        protected override void InitializeTags()
+        {
+            this.Tags.Add(EntityTags.Platform);
+            this.Tags.Add(this.PlatformType.ToString());
+        }
+
+        protected override void InitializeSprite()
+        {
+            this.AddComponent(Sprite.Tag, Atlas.GetSprite(AtlasTags.Gameplay, this.Name, this));
+        }
+
+        protected override void InitializeCollider()
+        {
+            this.Collider = new Collider(this, this.boundingBox, Vector2.Zero)
+            {
+                MovementSpeed = new Vector2(PhysicsManager.BaseActorSpeed, PhysicsManager.BaseActorSpeed)
+            };
         }
     }
 }

@@ -9,6 +9,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Occasus.Core.Maths;
+using Occasus.Core.Physics;
 
 namespace Occasus.Core.Drawing.Sprites
 {
@@ -363,7 +365,10 @@ namespace Occasus.Core.Drawing.Sprites
                     }
                     else
                     {
-                        spriteBatch.Draw(TextureManager.Textures[layer.TextureId], this.Parent.Transform.Position, layerFrame, layerColor * layerOpacity, this.Parent.Transform.Rotation, this.Origin, this.Parent.Transform.Scale, this.SpriteEffects, layer.Depth);
+                        // Depending on the origin (a vector between 0 and 1), we need to reposition the target frame.
+                        var position = new Vector2(this.Parent.Transform.Position.X + layerFrame.Width / 2, this.Parent.Transform.Position.Y + layerFrame.Height / 2);
+                        var origin = this.Centre + this.Origin;
+                        spriteBatch.Draw(TextureManager.Textures[layer.TextureId], position, layerFrame, layerColor * layerOpacity, this.Parent.Transform.Rotation, origin, this.Parent.Transform.Scale, this.SpriteEffects, layer.Depth);
                     }
                 }
             }
@@ -433,18 +438,25 @@ namespace Occasus.Core.Drawing.Sprites
             return animation.TotalFrames + (animation.DelayFrames * animation.TotalFrames);
         }
 
-        public void Squash(float factor, int durationFrames)
+        public void Squash(float factor, int durationFrames, Easer easingFunction = null)
         {
             CoroutineManager.Add(squashKey, this.SquashEffect(factor, durationFrames));
         }
 
-        public void Stretch(float factor, int durationFrames)
+        public void Stretch(float factor, int durationFrames, Easer easingFunction = null)
         {
         }
 
-        public IEnumerator SquashEffect(float factor, float duration)
+        public IEnumerator SquashEffect(float factor, int durationFrames, Easer easingFunction = null)
         {
-            yield return null;
+            if (easingFunction == null)
+            {
+                easingFunction = Ease.QuadOut;
+            }
+
+            var targetSquash = new Vector2((1f - factor) + 1f, factor);
+            yield return this.Parent.Transform.ScaleTo(targetSquash, durationFrames, easingFunction);
+            yield return this.Parent.Transform.ScaleTo(Vector2.One, 10, Ease.QuadOut);
         }
 
         private IEnumerator BlinkEffect(int frameCount, float duration)

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Occasus.Core;
 using Occasus.Core.Entities;
 using Occasus.Core.Physics;
 
@@ -14,7 +15,6 @@ namespace Abyss.World.Entities.Triggers.Concrete
         public BeginGame(Vector2 initialPosition, Rectangle boundingBox)
             : base("Begin Game", "Begins the game properly when the player passes through it.", initialPosition, boundingBox, Vector2.Zero)
         {
-            this.Tags.Add("Trigger");
         }
 
         protected override void ColliderOnCollision(CollisionEventArgs args)
@@ -24,7 +24,7 @@ namespace Abyss.World.Entities.Triggers.Concrete
             base.ColliderOnCollision(args);
 
             // Begin the game properly.
-            GameManager.Begin();
+            Monde.GameManager.Begin();
         }
     }
 }

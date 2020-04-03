@@ -142,12 +142,6 @@ namespace Abyss.World.Entities.Player
         /// <param name="totalFrames">The total frames.</param>
         void GainInvulnerability(int totalFrames);
 
-        /// <summary>
-        /// Handles the input.
-        /// </summary>
-        /// <param name="inputState">State of the input.</param>
-        void HandleInput(IInputState inputState);
-
         void ShowOutline(Color color, bool pulse);
 
         void HideOutline();

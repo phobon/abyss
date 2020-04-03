@@ -16,11 +16,18 @@ namespace Occasus.Core.Physics
         /// <param name="parent">The parent.</param>
         /// <param name="boundingBox">The bounding box.</param>
         /// <param name="origin">The origin.</param>
-        public Collider(IEntity parent, Rectangle boundingBox, Vector2 origin)
+        public Collider(IEntity parent, Rectangle boundingBox, Vector2? origin)
         {
             this.Parent = parent;
             this.BoundingBox = boundingBox;
-            this.Origin = origin;
+            if (origin.HasValue)
+            {
+                this.Origin = origin.Value;
+            }
+            else
+            {
+                this.Origin = new Vector2(boundingBox.X, boundingBox.Y);
+            }
 
             this.Flags = new Dictionary<PhysicsFlag, bool>
                              {
@@ -95,7 +102,9 @@ namespace Occasus.Core.Physics
         {
             get
             {
-                return new Rectangle(((int)this.Parent.Transform.Position.X + this.BoundingBox.X) - (int)this.Origin.X, ((int)this.Parent.Transform.Position.Y + this.BoundingBox.Y) - (int)this.Origin.Y, this.BoundingBox.Width, this.BoundingBox.Height);
+                return new Rectangle(((int)this.Parent.Transform.Position.X + this.BoundingBox.X), ((int)this.Parent.Transform.Position.Y + this.BoundingBox.Y), this.BoundingBox.Width, this.BoundingBox.Height);
+
+                //return new Rectangle(((int)this.Parent.Transform.Position.X + this.BoundingBox.X) - (int)this.Origin.X, ((int)this.Parent.Transform.Position.Y + this.BoundingBox.Y) - (int)this.Origin.Y, this.BoundingBox.Width, this.BoundingBox.Height);
             }
         }
 

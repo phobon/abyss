@@ -33,10 +33,10 @@ namespace Abyss.World.Entities.Relics.Concrete.Passive
 
             foreach (var i in entityCache)
             {
-                if (Vector2.Distance(i.Transform.Position, GameManager.Player.Transform.Position) < 5)
+                if (Vector2.Distance(i.Transform.Position, Monde.GameManager.Player.Transform.Position) < 5)
                 {
                     var item = (IItem)i;
-                    item.Collect(GameManager.Player);
+                    item.Collect(Monde.GameManager.Player);
                 }
             }
         }

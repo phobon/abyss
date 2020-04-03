@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ActorData>
+  <Actor name="Player">
+    <Movement slow="1" normal="3" fast="5"/>
+    <Fall slow="2" normal="5" fast="8"/>
+  </Actor>
+  <Actor name="Flyer">
+    <Movement slow="5" normal="45" fast="15"/>
+    <Fall slow="0" normal="0" fast="20"/>
+  </Actor>
+  <Actor name="Walker">
+    <Movement slow="3" normal="30" fast="10"/>
+    <Fall slow="8" normal="12" fast="16"/>
+  </Actor>
+  <Actor name="Crawler">
+    <Movement slow="3" normal="40" fast="10"/>
+    <Fall slow="8" normal="12" fast="16"/>
+  </Actor>
+  <Actor name="Faller">
+    <Movement slow="3" normal="80" fast="10"/>
+    <Fall slow="8" normal="12" fast="16"/>
+  </Actor>
+  <Actor name="Floater">
+    <Movement slow="3" normal="5" fast="10"/>
+    <Fall slow="8" normal="12" fast="16"/>
+  </Actor>
+  <Actor name="Idler">
+    <Movement slow="3" normal="5" fast="10"/>
+    <Fall slow="8" normal="12" fast="16"/>
+  </Actor>
+  <Actor name="Jumper">
+    <Movement slow="3" normal="5" fast="10"/>
+    <Fall slow="8" normal="12" fast="16"/>
+  </Actor>
+  <Actor name="Shooter">
+    <Movement slow="3" normal="5" fast="10"/>
+    <Fall slow="8" normal="12" fast="16"/>
+  </Actor>
+  <Actor name="Stalker">
+    <Movement slow="3" normal="50" fast="10"/>
+    <Fall slow="8" normal="12" fast="16"/>
+  </Actor>
+</ActorData>
+

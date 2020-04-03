@@ -33,10 +33,6 @@ namespace Abyss.World.Scenes.Zone.Layers.Interface
             "Phase notification element.",
             initialPosition)
         {
-            this.Flags[EngineFlag.DeferredBegin] = true;
-            var sprite = (ISprite)this.Components[Sprite.Tag];
-            sprite.Opacity = 0f;
-
             this.fadeInKey = this.Id + "_FadeIn";
             this.fadeOutKey = this.Id + "_FadeOut";
             this.endKey = this.Id + "_End";
@@ -115,6 +111,19 @@ namespace Abyss.World.Scenes.Zone.Layers.Interface
         public void FadeOut()
         {
             CoroutineManager.Add(this.fadeOutKey, this.FadeOutEffect());
+        }
+
+        protected override void InitializeFlags()
+        {
+            base.InitializeFlags();
+            this.Flags[EngineFlag.DeferredBegin] = true;
+        }
+
+        protected override void InitializeSprite()
+        {
+            base.InitializeSprite();
+            var sprite = this.GetSprite();
+            sprite.Opacity = 0f;
         }
 
         private IEnumerator FadeInEffect()

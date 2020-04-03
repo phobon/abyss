@@ -32,8 +32,8 @@ namespace Abyss.World.Entities.Relics.Concrete.Active
         {
             base.Activate(entityCache);
 
-            var newPosition = GameManager.Player.Transform.Position;
-            if (GameManager.Player.GetSprite().SpriteEffects == SpriteEffects.FlipHorizontally)
+            var newPosition = Monde.GameManager.Player.Transform.Position;
+            if (Monde.GameManager.Player.GetSprite().SpriteEffects == SpriteEffects.FlipHorizontally)
             {
                 newPosition.X += BaseWarpDistance;
             }
@@ -42,7 +42,7 @@ namespace Abyss.World.Entities.Relics.Concrete.Active
                 newPosition.X -= BaseWarpDistance;
             }
 
-            GameManager.Player.Transform.MoveTo(newPosition, 0);
+            Monde.GameManager.Player.Transform.MoveTo(newPosition, 0);
 
             // TODO: Effect is required.
         }

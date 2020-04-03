@@ -1,4 +1,5 @@
-﻿using Occasus.Core.Entities;
+﻿using System.Collections.Generic;
+using Occasus.Core.Entities;
 
 namespace Occasus.Core.Components
 {
@@ -14,6 +15,7 @@ namespace Occasus.Core.Components
             : base(name, description)
         {
             this.Parent = parent;
+            this.Tags = new List<string>();
         }
         
         /// <summary>
@@ -24,14 +26,19 @@ namespace Occasus.Core.Components
             get; private set;
         }
 
+        public IList<string> Tags { get; private set; }
+        
         /// <summary>
         /// Initializes the Engine Component.
         /// </summary>
         public override void Initialize()
         {
-            base.Initialize();
+            this.InitializeTags();
 
+            base.Initialize();
             this.Resume();
         }
+
+        protected abstract void InitializeTags();
     }
 }

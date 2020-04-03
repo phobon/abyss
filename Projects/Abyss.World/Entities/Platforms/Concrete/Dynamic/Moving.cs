@@ -7,6 +7,8 @@ using Occasus.Core.Maths;
 using Occasus.Core.Physics;
 using System.Collections;
 using System.Linq;
+using Occasus.Core.Maps;
+using Occasus.Core.Maps.Definitions;
 
 namespace Abyss.World.Entities.Platforms.Concrete.Dynamic
 {

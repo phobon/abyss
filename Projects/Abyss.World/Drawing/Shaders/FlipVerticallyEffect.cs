@@ -10,7 +10,7 @@ namespace Abyss.World.Drawing.Shaders
         /// Initializes a new instance of the <see cref="FlipVerticallyEffect"/> class.
         /// </summary>
         public FlipVerticallyEffect()
-            : base("Flip Vertically Effect", "Pixel shader that flips the scene vertically.")
+            : base("Flip Vertically Effect", "Pixel shader that flips the scene vertically.", "FlipVerticallyTechnique")
         {
         }
 
@@ -20,14 +20,6 @@ namespace Abyss.World.Drawing.Shaders
         public override void LoadContent()
         {
             this.Effect = DrawingManager.ContentManager.Load<Effect>("Effects/Screen");
-        }
-
-        /// <summary>
-        /// Applies this Shader.
-        /// </summary>
-        public override void Apply()
-        {
-            ShaderManager.CurrentShader.Effect.CurrentTechnique = ShaderManager.CurrentShader.Effect.Techniques["FlipVerticallyTechnique"];
         }
     }
 }

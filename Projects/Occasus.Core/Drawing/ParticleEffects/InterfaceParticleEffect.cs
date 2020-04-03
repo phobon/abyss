@@ -28,11 +28,8 @@ namespace Occasus.Core.Drawing.ParticleEffects
             ParticleDensity particleDensity)
             : base(name, description)
         {
-            this.Tags.Add("InterfaceParticleEffect");
             this.ParticleDensity = particleDensity;
             this.particleCloud = new List<IParticle>();
-            this.Flags.Add(ParticleEffectFlag.Recycle, true);
-            this.Flags.Add(ParticleEffectFlag.RecycleToViewPort, false);
 
             // Coroutine keys.
             this.emittingKey = this.Id + "_Emitting";
@@ -145,6 +142,17 @@ namespace Occasus.Core.Drawing.ParticleEffects
         /// <returns>A new particle.</returns>
         protected abstract IParticle GetParticle();
 
+        protected override void InitializeTags()
+        {
+            this.Tags.Add("InterfaceParticleEffect");
+        }
+
+        protected override void InitializeFlags()
+        {
+            this.Flags.Add(ParticleEffectFlag.Recycle, true);
+            this.Flags.Add(ParticleEffectFlag.RecycleToViewPort, false);
+        }
+
         private void EmitInternal()
         {
             this.Flags[ParticleEffectFlag.Recycle] = true;
@@ -160,7 +168,7 @@ namespace Occasus.Core.Drawing.ParticleEffects
         private IEnumerator ParticleFadeOutEffect(float duration)
         {
             // Determine the number of frames that the phase requires to complete.
-            var framesLeft = (float)Math.Round(duration / Engine.DeltaTime);
+            var framesLeft = (float)Math.Round(duration / Engine<IGameManager<IEntity>>.DeltaTime);
             var elapsedFrames = 0;
 
             var cachedMaximumParticles = this.maximumParticles;

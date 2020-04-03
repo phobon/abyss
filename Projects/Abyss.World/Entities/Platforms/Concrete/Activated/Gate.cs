@@ -6,6 +6,8 @@ using Occasus.Core.Entities;
 using Occasus.Core.Physics;
 using Occasus.Core.States;
 using System.Collections;
+using Occasus.Core.Maps;
+using Occasus.Core.Maps.Definitions;
 
 namespace Abyss.World.Entities.Platforms.Concrete.Activated
 {
@@ -97,12 +99,12 @@ namespace Abyss.World.Entities.Platforms.Concrete.Activated
 
         private IEnumerator Warp()
         {
-            GameManager.Player.Collider.Flags[PhysicsFlag.CollidesWithEnvironment] = false;
+            Monde.GameManager.Player.Collider.Flags[PhysicsFlag.CollidesWithEnvironment] = false;
 
             // TODO: Add some sort of animation or something that makes things a little less jarring.
-            yield return GameManager.Player.Transform.MoveTo(new Vector2(GameManager.Player.Transform.Position.X, this.VerticalWarpPoint), TimingHelper.GetFrameCount(0.2f));
+            yield return Monde.GameManager.Player.Transform.MoveTo(new Vector2(Monde.GameManager.Player.Transform.Position.X, this.VerticalWarpPoint), TimingHelper.GetFrameCount(0.2f));
 
-            GameManager.Player.Collider.Flags[PhysicsFlag.CollidesWithEnvironment] = true;
+            Monde.GameManager.Player.Collider.Flags[PhysicsFlag.CollidesWithEnvironment] = true;
 
             this.isActivated = false;
         }

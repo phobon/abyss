@@ -9,12 +9,14 @@ using Occasus.Core.Layers;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using Occasus.Core.Components;
 
 namespace Occasus.Core.Scenes
 {
     public abstract class Scene : EngineComponent, IScene
     {
-        private readonly IList<IEntity> defferedRenderEntities = new List<IEntity>();
+        private readonly IList<IEntity> deferredRenderEntities = new List<IEntity>();
+        private readonly IList<IEntityComponent> deferredRenderEntityComponents = new List<IEntityComponent>();
         private readonly IList<ILayer> targetLayers = new List<ILayer>();
 
         private float lightSourceOpacity = 1f;
@@ -34,18 +36,12 @@ namespace Occasus.Core.Scenes
         /// <summary>
         /// Gets the collection of sorted layers.
         /// </summary>
-        public IDictionary<string, ILayer> Layers 
-        { 
-            get; private set;
-        }
+        public IDictionary<string, ILayer> Layers { get; private set; } 
 
         /// <summary>
         /// Gets the tag cache collection. This allows the scene to easily query groups of entities based on a particular tag.
         /// </summary>
-        public IDictionary<string, IList<IEntity>> TagCache
-        {
-            get; private set;
-        }
+        public IDictionary<string, IList<IEntity>> TagCache { get; private set; }
 
         /// <summary>
         /// Updates the Engine Component.
@@ -54,8 +50,6 @@ namespace Occasus.Core.Scenes
         /// <param name="inputState">The current input state.</param>
         public override void Update(GameTime gameTime, IInputState inputState)
         {
-            base.Update(gameTime, inputState);
-
             // Handle input for the scene.
             this.HandleInput(inputState);
 
@@ -74,169 +68,6 @@ namespace Occasus.Core.Scenes
 #endif
         }
 
-        //public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
-        //{
-        //    base.Draw(gameTime, spriteBatch);
-
-        //    // Get the set of layers we need to transform to camera and draw a basic scene.
-        //    this.targetLayers.Clear();
-        //    foreach (var l in this.Layers.Values)
-        //    {
-        //        if (l.LayerType == LayerType.TransformedToCamera && l.Flags[EngineFlag.Visible])
-        //        {
-        //            this.targetLayers.Add(l);
-        //        }
-        //    }
-
-        //    // Draw the color map. Note that any entities that are tagged as being EngineFlags.DeferRender are excluded from this draw call.
-        //    DrawingManager.GraphicsDevice.SetRenderTarget(DrawingManager.ColorMapRenderTarget);
-        //    DrawingManager.GraphicsDevice.Clear(Color.Transparent);
-
-        //    foreach (var layer in targetLayers)
-        //    {
-        //        layer.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointWrap, null, null, null, DrawingManager.Camera.Transform);
-        //        layer.Draw(gameTime, layer.SpriteBatch);
-        //        layer.SpriteBatch.End();
-        //    }
-
-        //    // Perform a lighting pass. This involves getting all light source components; even those from deferred rendering entities.
-        //    DrawingManager.GraphicsDevice.SetRenderTarget(DrawingManager.DeferredLightingRenderTarget);
-        //    DrawingManager.GraphicsDevice.Clear(Color.Transparent);
-
-        //    DrawingManager.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.Additive, SamplerState.PointClamp, null, null, null, DrawingManager.Camera.Transform);
-        //    foreach (var l in this.Layers.Values)
-        //    {
-        //        foreach (var light in l.LightingCache)
-        //        {
-        //            if (light.Flags[EngineFlag.Active])
-        //            {
-        //                light.Draw(gameTime, DrawingManager.SpriteBatch);
-        //            }
-        //        }
-        //    }
-        //    DrawingManager.SpriteBatch.End();
-
-        //    // Change to our final scene render target.
-        //    DrawingManager.GraphicsDevice.SetRenderTarget(DrawingManager.ShaderRenderTarget);
-        //    DrawingManager.GraphicsDevice.Clear(Color.Transparent);
-
-        //    DrawingManager.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
-
-        //    // Draw a black shadow mask to blend against.
-        //    DrawingManager.LightingShader.CurrentTechnique = DrawingManager.LightingShader.Techniques["BlackMaskTechnique"];
-        //    DrawingManager.LightingShader.CurrentTechnique.Passes[0].Apply();
-        //    DrawingManager.SpriteBatch.Draw(DrawingManager.ColorMapRenderTarget, Vector2.Zero, Color.White);
-
-        //    // Draw our scene with all deferred lighting included.
-        //    DrawingManager.LightingShader.CurrentTechnique = DrawingManager.LightingShader.Techniques["DeferredLightingTechnique"];
-
-        //    DrawingManager.LightingShader.Parameters["AmbientIntensity"].SetValue(DrawingManager.AmbientLightValue);
-        //    DrawingManager.LightingShader.Parameters["AmbientColor"].SetValue(DrawingManager.AmbientLightColor.ToVector4());
-        //    DrawingManager.LightingShader.Parameters["ShadowMap"].SetValue(DrawingManager.DeferredLightingRenderTarget);
-
-        //    DrawingManager.LightingShader.CurrentTechnique.Passes[0].Apply();
-        //    DrawingManager.SpriteBatch.Draw(DrawingManager.ColorMapRenderTarget, Vector2.Zero, Color.White);
-        //    DrawingManager.SpriteBatch.End();
-
-        //    // We need to be creative with our deferred render entities here. Some may need to be affected by our final shader; others may not.
-        //    this.defferedRenderEntities.Clear();
-        //    var containsDeferredRenderEntities = false;
-        //    if (this.TagCache.ContainsKey(Lighting.DeferredRenderEntity))
-        //    {
-        //        containsDeferredRenderEntities = true;
-        //        foreach (var t in targetLayers)
-        //        {
-        //            foreach (var e in t.Entities)
-        //            {
-        //                if (e.Flags[EngineFlag.DeferredRender])
-        //                {
-        //                    this.defferedRenderEntities.Add(e);
-        //                }
-        //            }
-        //        }
-
-        //        if (ShaderManager.CurrentShader != null && ShaderManager.CurrentShader.Usage == ShaderUsage.IncludeDeferredRenderEntities)
-        //        {
-        //            DrawingManager.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointWrap, null, null, null, DrawingManager.Camera.Transform);
-
-        //            foreach (var e in this.TagCache[Lighting.DeferredRenderEntity])
-        //            {
-        //                e.Draw(gameTime, DrawingManager.SpriteBatch);
-
-        //                // Remove the entity from the deferred render entity list so those can draw after the shader is drawn.
-        //                this.defferedRenderEntities.Remove(e);
-        //            }
-
-        //            DrawingManager.SpriteBatch.End();
-        //        }
-        //    }
-
-        //    // Change to the back buffer.
-        //    DrawingManager.GraphicsDevice.SetRenderTarget(DrawingManager.BackBufferRenderTarget);
-        //    DrawingManager.GraphicsDevice.Clear(Color.Transparent);
-
-        //    DrawingManager.LightingShader.CurrentTechnique = null;
-        //    DrawingManager.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointWrap, null, null);
-
-        //    // Draw static layers.
-        //    foreach (var layer in this.Layers.Values)
-        //    {
-        //        if (layer.LayerType == LayerType.Static)
-        //        {
-        //            layer.Draw(gameTime, DrawingManager.SpriteBatch);
-        //        }
-        //    }
-
-        //    DrawingManager.SpriteBatch.Draw(DrawingManager.ShaderRenderTarget, Vector2.Zero, Color.White);
-        //    DrawingManager.SpriteBatch.End();
-
-        //    // Draw any deferred render entities that are not effected by the final shader effect.
-        //    if (containsDeferredRenderEntities)
-        //    {
-        //        DrawingManager.SpriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.PointWrap, null, null, null, DrawingManager.Camera.Transform);
-
-        //        foreach (var e in this.defferedRenderEntities)
-        //        {
-        //            e.Draw(gameTime, DrawingManager.SpriteBatch);
-        //        }
-
-        //        DrawingManager.SpriteBatch.End();
-        //    }
-
-        //    // Scale the final render target.
-        //    DrawingManager.GraphicsDevice.SetRenderTarget(DrawingManager.ScaleRenderTarget);
-        //    DrawingManager.GraphicsDevice.Clear(Color.Transparent);
-        //    DrawingManager.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null, Matrix.Identity);
-        //    DrawingManager.SpriteBatch.Draw(DrawingManager.BackBufferRenderTarget, Vector2.Zero, null, Color.White, 0, Vector2.Zero, DrawingManager.WindowScale, SpriteEffects.None, 0f);
-        //    DrawingManager.SpriteBatch.End();
-
-        //    // Draw the final scene.
-        //    DrawingManager.GraphicsDevice.SetRenderTarget(null);
-        //    DrawingManager.GraphicsDevice.Clear(Color.Transparent);
-
-        //    DrawingManager.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null, Matrix.Identity);
-
-        //    if (ShaderManager.CurrentShader != null)
-        //    {
-        //        ShaderManager.CurrentShader.Effect.CurrentTechnique.Passes[0].Apply();
-        //    }
-
-        //    DrawingManager.SpriteBatch.Draw(DrawingManager.ScaleRenderTarget, Vector2.Zero, null, Color.White, 0, Vector2.Zero, 1f, SpriteEffects.None, 0f);
-        //    DrawingManager.SpriteBatch.End();
-
-        //    // Draw any interface layers.
-        //    DrawingManager.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null, Matrix.Identity);
-        //    foreach (var layer in this.Layers.Values)
-        //    {
-        //        if (layer.LayerType == LayerType.Interface && layer.Flags[EngineFlag.Visible])
-        //        {
-        //            layer.Draw(gameTime, DrawingManager.SpriteBatch);
-        //        }
-        //    }
-
-        //    DrawingManager.SpriteBatch.End();
-        //}
-
         /// <summary>
         /// Draws the Engine Component.
         /// </summary>
@@ -244,8 +75,6 @@ namespace Occasus.Core.Scenes
         /// <param name="spriteBatch">The sprite batch.</param>
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            base.Draw(gameTime, spriteBatch);
-
             // Get the set of layers we need to transform to camera and draw a basic scene.
             this.targetLayers.Clear();
             foreach (var l in this.Layers.Values)
@@ -322,9 +151,10 @@ namespace Occasus.Core.Scenes
             DrawingManager.SpriteBatch.End();
 
             // We need to be creative with our deferred render entities here. Some may need to be affected by our final shader; others may not.
-            this.defferedRenderEntities.Clear();
+            this.deferredRenderEntities.Clear();
+            this.deferredRenderEntityComponents.Clear();
             var containsDeferredRenderEntities = false;
-            if (this.TagCache.ContainsKey(Lighting.DeferredRenderEntity))
+            if (this.TagCache.ContainsKey(Lighting.DeferredRender) || this.TagCache.ContainsKey(Lighting.HasDeferredRenderComponents))
             {
                 containsDeferredRenderEntities = true;
                 foreach (var t in targetLayers)
@@ -333,21 +163,30 @@ namespace Occasus.Core.Scenes
                     {
                         if (e.Flags[EngineFlag.DeferredRender])
                         {
-                            this.defferedRenderEntities.Add(e);
+                            this.deferredRenderEntities.Add(e);
+                        }
+
+                        if (e.Tags.Contains(Lighting.HasDeferredRenderComponents))
+                        {
+                            var components = e.GetComponentsByTag(Lighting.DeferredRender);
+                            foreach (var ec in components)
+                            {
+                                this.deferredRenderEntityComponents.Add(ec);
+                            }
                         }
                     }
                 }
 
-                if (ShaderManager.CurrentShader != null && ShaderManager.CurrentShader.Usages[ShaderUsage.IncludeDeferredRenderEntities])
+                if (ShaderManager.IncludeDeferredRenderEntityShaders.Any())
                 {
                     DrawingManager.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointWrap, null, null, null, DrawingManager.Camera.Transform);
 
-                    foreach (var e in this.TagCache[Lighting.DeferredRenderEntity])
+                    foreach (var e in this.TagCache[Lighting.DeferredRender])
                     {
                         e.Draw(gameTime, DrawingManager.SpriteBatch);
 
                         // Remove the entity from the deferred render entity list so those can draw after the shader is drawn.
-                        this.defferedRenderEntities.Remove(e);
+                        this.deferredRenderEntities.Remove(e);
                     }
 
                     DrawingManager.SpriteBatch.End();
@@ -359,9 +198,14 @@ namespace Occasus.Core.Scenes
             {
                 DrawingManager.SpriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.PointWrap, null, null, null, DrawingManager.Camera.Transform);
 
-                foreach (var e in this.defferedRenderEntities)
+                foreach (var e in this.deferredRenderEntities)
                 {
                     e.Draw(gameTime, DrawingManager.SpriteBatch);
+                }
+
+                foreach (var ec in this.deferredRenderEntityComponents)
+                {
+                    ec.Draw(gameTime, DrawingManager.SpriteBatch);
                 }
 
                 DrawingManager.SpriteBatch.End();
@@ -371,14 +215,19 @@ namespace Occasus.Core.Scenes
             // This mainly applies to Vertical and Horizontal flipping, but the general gist is that we have to do some interesting things
             // to ensure that certain shaders that make changes to pixel screen coordinates must be done on a pre-scaled image, otherwise it all turns
             // to garbage.
-            if (ShaderManager.CurrentShader != null && ShaderManager.CurrentShader.Usages[ShaderUsage.ApplyBeforeScale])
+            if (ShaderManager.ApplyBeforeScaleShaders.Any())
             {
                 // Apply the shader as required using the shader's draw offset (set in the shader itself) using a different buffer.
                 DrawingManager.GraphicsDevice.SetRenderTarget(DrawingManager.ScaleRenderTarget);
                 DrawingManager.GraphicsDevice.Clear(Color.Transparent);
                 DrawingManager.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null, Matrix.Identity);
-                ShaderManager.CurrentShader.Effect.CurrentTechnique.Passes[0].Apply();
-                DrawingManager.SpriteBatch.Draw(DrawingManager.ShaderRenderTarget, ShaderManager.CurrentShader.DrawOffset, null, Color.White, 0, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+
+                foreach (var s in ShaderManager.ApplyBeforeScaleShaders)
+                {
+                    s.Effect.CurrentTechnique.Passes[0].Apply();
+                    DrawingManager.SpriteBatch.Draw(DrawingManager.ShaderRenderTarget, s.DrawOffset, null, Color.White, 0, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+                }
+                
                 DrawingManager.SpriteBatch.End();
 
                 // Draw the final scene to the backbuffer
@@ -397,14 +246,19 @@ namespace Occasus.Core.Scenes
 
                 DrawingManager.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null, Matrix.Identity);
 
-                var drawOffset = Vector2.Zero;
-                if (ShaderManager.CurrentShader != null && !ShaderManager.CurrentShader.Usages[ShaderUsage.ApplyBeforeScale])
+                if (ShaderManager.IncludeDeferredRenderEntityShaders.Any())
                 {
-                    ShaderManager.CurrentShader.Effect.CurrentTechnique.Passes[0].Apply();
-                    drawOffset = ShaderManager.CurrentShader.DrawOffset;
+                    foreach (var s in ShaderManager.IncludeDeferredRenderEntityShaders)
+                    {
+                        s.Effect.CurrentTechnique.Passes[0].Apply();
+                        DrawingManager.SpriteBatch.Draw(DrawingManager.ShaderRenderTarget, s.DrawOffset, null, Color.White, 0, Vector2.Zero, DrawingManager.WindowScale, SpriteEffects.None, 0f);
+                    }
+                }
+                else
+                {
+                    DrawingManager.SpriteBatch.Draw(DrawingManager.ShaderRenderTarget, Vector2.Zero, null, Color.White, 0, Vector2.Zero, DrawingManager.WindowScale, SpriteEffects.None, 0f);
                 }
 
-                DrawingManager.SpriteBatch.Draw(DrawingManager.ShaderRenderTarget, drawOffset, null, Color.White, 0, Vector2.Zero, DrawingManager.WindowScale, SpriteEffects.None, 0f);
                 DrawingManager.SpriteBatch.End();
             }
 
@@ -420,17 +274,11 @@ namespace Occasus.Core.Scenes
 
 #if DEBUG
             // Draw debug information.
-            Engine.Debugger.Draw(gameTime, DrawingManager.SpriteBatch);
+            Engine<IGameManager<IEntity>>.Debugger.Draw(gameTime, DrawingManager.SpriteBatch);
 #endif
 
             DrawingManager.SpriteBatch.End();
         }
-
-        /// <summary>
-        /// Handles the input for this scene.
-        /// </summary>
-        /// <param name="inputState">State of the input.</param>
-        public abstract void HandleInput(IInputState inputState);
 
         /// <summary>
         /// Adds layers to this scene.

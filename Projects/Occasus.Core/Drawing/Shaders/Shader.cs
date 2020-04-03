@@ -6,6 +6,8 @@ namespace Occasus.Core.Drawing.Shaders
 {
     public abstract class Shader : IShader
     {
+        private readonly string technique;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Shader" /> class.
         /// </summary>
@@ -13,10 +15,11 @@ namespace Occasus.Core.Drawing.Shaders
         /// <param name="description">The description.</param>
         /// <param name="usages">The usage.</param>
         /// <param name="drawOffset">The draw offset.</param>
-        protected Shader(string name, string description, IEnumerable<ShaderUsage> usages = null, Vector2 drawOffset = new Vector2())
+        protected Shader(string name, string description, string technique, IEnumerable<ShaderUsage> usages = null, Vector2 drawOffset = new Vector2())
         {
             this.Name = name;
             this.Description = description;
+            this.technique = technique;
 
             this.Usages = new Dictionary<ShaderUsage, bool>
             {
@@ -38,43 +41,30 @@ namespace Occasus.Core.Drawing.Shaders
         /// <summary>
         /// Gets the name.
         /// </summary>
-        public string Name
-        {
-            get; private set;
-        }
+        public string Name { get; private set; }
 
         /// <summary>
         /// Gets the description.
         /// </summary>
-        public string Description
-        {
-            get; private set;
-        }
+        public string Description { get; private set; }
 
         /// <summary>
         /// Gets the effect.
         /// </summary>
-        public Effect Effect
-        {
-            get; protected set;
-        }
+        public Effect Effect { get; protected set; }
+
+        public bool IsActive { get; private set; }
 
         /// <summary>
         /// Gets the usage of this particular shader.
         /// </summary>
-        public IDictionary<ShaderUsage, bool> Usages
-        {
-            get; private set;
-        }
+        public IDictionary<ShaderUsage, bool> Usages { get; private set; }
 
         /// <summary>
         /// Gets the draw offset for this shader. This is only applicable to fullscreen effects that alter rendered pixel positions in the shader.
         /// eg: Vertical and Horizontal flip.
         /// </summary>
-        public Vector2 DrawOffset
-        {
-            get; private set;
-        }
+        public Vector2 DrawOffset { get; private set; }
 
         /// <summary>
         /// Initializes this instance.
@@ -88,9 +78,18 @@ namespace Occasus.Core.Drawing.Shaders
         /// </summary>
         public abstract void LoadContent();
 
-        /// <summary>
-        /// Applies this Shader.
-        /// </summary>
-        public abstract void Apply();
+        public void Activate()
+        {
+            ShaderManager.ActiveShaders.Add(this);
+            this.Effect.CurrentTechnique = this.Effect.Techniques[this.technique];
+            this.IsActive = true;
+        }
+
+        public void Deactivate()
+        {
+            ShaderManager.ActiveShaders.Remove(this);
+            this.Effect.CurrentTechnique = null;
+            this.IsActive = false;
+        }
     }
 }

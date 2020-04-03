@@ -39,12 +39,27 @@ namespace Abyss.World.Entities.Props
             this.initialPosition = position;
             position.Y -= 3;
             this.floatPosition = position;
+        }
 
+        protected override void InitializeTags()
+        {
+            this.Tags.Add("ExclamationBubble");
+        }
+
+        protected override void InitializeSprite()
+        {
             var sprite = Atlas.GetSprite(AtlasTags.Gameplay, this.Name, this);
             sprite.Opacity = 0f;
-            this.Components.Add(Sprite.Tag, sprite);
+            this.AddComponent(Sprite.Tag, sprite);
+        }
 
-            this.Tags.Add(Lighting.DeferredRenderEntity);
+        protected override void InitializeCollider()
+        {
+        }
+
+        protected override void InitializeLighting()
+        {
+            this.Tags.Add(Lighting.DeferredRender);
             this.Flags[EngineFlag.DeferredRender] = true;
         }
 

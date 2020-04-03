@@ -7,9 +7,6 @@ namespace Occasus.Core.Physics
         /// <summary>
         /// Gets or sets the position.
         /// </summary>
-        /// <value>
-        /// The position.
-        /// </value>
         Vector2 Position { get; set; }
 
         /// <summary>
@@ -20,17 +17,18 @@ namespace Occasus.Core.Physics
         /// <summary>
         /// Gets or sets the scale.
         /// </summary>
-        /// <value>
-        /// The scale.
-        /// </value>
         Vector2 Scale { get; set; }
 
         /// <summary>
         /// Gets or sets the rotation.
         /// </summary>
-        /// <value>
-        /// The rotation.
-        /// </value>
         float Rotation { get; set; }
+
+        /// <summary>
+        /// Gets or sets the origin of the transform.
+        /// </summary>
+        Vector2 Origin { get; set; }
+
+        Vector2 Size { get; set; }
     }
 }

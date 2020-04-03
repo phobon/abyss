@@ -34,14 +34,19 @@ namespace Abyss.World.Entities.Monsters.Concrete
                 boundingBox,
                 ZoneType.Normal)
         {
-            this.Tags.Add(EntityTags.GroundedMonster);
-            this.Tags.Add(EntityTags.Crawler);
         }
 
         protected override void SetupStates()
         {
             this.States.Add(MonsterStates.Crawl, new State(MonsterStates.Crawl, this.Crawl(), true));
             base.SetupStates();
+        }
+
+        protected override void InitializeTags()
+        {
+            base.InitializeTags();
+            this.Tags.Add(EntityTags.GroundedMonster);
+            this.Tags.Add(EntityTags.Crawler);
         }
 
         private IEnumerable Crawl()

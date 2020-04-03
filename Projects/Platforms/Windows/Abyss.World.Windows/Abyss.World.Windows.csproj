@@ -1,0 +1,751 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B2E8FA6A-C79C-4448-A22C-FAA1A4BC95EF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Abyss.World.Windows</RootNamespace>
+    <AssemblyName>Abyss.World.Windows</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.5.1.1679, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MonoGame.Framework.WindowsDX.3.5.1.1679\lib\net40\MonoGame.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Abyss.World\AbyssGameManager.cs">
+      <Link>AbyssGameManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\AtlasTags.cs">
+      <Link>AtlasTags.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\Aura.cs">
+      <Link>Drawing\ParticleEffects\Concrete\Aura.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\Curse.cs">
+      <Link>Drawing\ParticleEffects\Concrete\Curse.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\DimensionMerge.cs">
+      <Link>Drawing\ParticleEffects\Concrete\DimensionMerge.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\DimensionSplit.cs">
+      <Link>Drawing\ParticleEffects\Concrete\DimensionSplit.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\DustPuff.cs">
+      <Link>Drawing\ParticleEffects\Concrete\DustPuff.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\Explosion.cs">
+      <Link>Drawing\ParticleEffects\Concrete\Explosion.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\Fire.cs">
+      <Link>Drawing\ParticleEffects\Concrete\Fire.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\Impact.cs">
+      <Link>Drawing\ParticleEffects\Concrete\Impact.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\Implosion.cs">
+      <Link>Drawing\ParticleEffects\Concrete\Implosion.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\Lava.cs">
+      <Link>Drawing\ParticleEffects\Concrete\Lava.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\Power.cs">
+      <Link>Drawing\ParticleEffects\Concrete\Power.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\Smoke.cs">
+      <Link>Drawing\ParticleEffects\Concrete\Smoke.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\Snow.cs">
+      <Link>Drawing\ParticleEffects\Concrete\Snow.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\Sparkle.cs">
+      <Link>Drawing\ParticleEffects\Concrete\Sparkle.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\Speck.cs">
+      <Link>Drawing\ParticleEffects\Concrete\Speck.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\Splash.cs">
+      <Link>Drawing\ParticleEffects\Concrete\Splash.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\Starburst.cs">
+      <Link>Drawing\ParticleEffects\Concrete\Starburst.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\Concrete\VoidSparkle.cs">
+      <Link>Drawing\ParticleEffects\Concrete\VoidSparkle.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\ParticleEffectConstants.cs">
+      <Link>Drawing\ParticleEffects\ParticleEffectConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\ParticleEffects\ParticleEffectFactory.cs">
+      <Link>Drawing\ParticleEffects\ParticleEffectFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\Shaders\BlurEffect.cs">
+      <Link>Drawing\Shaders\BlurEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\Shaders\DesaturateEffect.cs">
+      <Link>Drawing\Shaders\DesaturateEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\Shaders\FlipHorizontalEffect.cs">
+      <Link>Drawing\Shaders\FlipHorizontalEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\Shaders\FlipVerticalEffect.cs">
+      <Link>Drawing\Shaders\FlipVerticalEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\Shaders\FlipVerticallyEffect.cs">
+      <Link>Drawing\Shaders\FlipVerticallyEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\Shaders\MaskEffect.cs">
+      <Link>Drawing\Shaders\MaskEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\Shaders\RippleEffect.cs">
+      <Link>Drawing\Shaders\RippleEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Drawing\Shaders\SepiaEffect.cs">
+      <Link>Drawing\Shaders\SepiaEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Items\Concrete\Coalescer.cs">
+      <Link>Entities\Items\Concrete\Coalescer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Items\Concrete\Folder.cs">
+      <Link>Entities\Items\Concrete\Folder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Items\Concrete\Heart.cs">
+      <Link>Entities\Items\Concrete\Heart.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Items\Concrete\Hourglass.cs">
+      <Link>Entities\Items\Concrete\Hourglass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Items\Concrete\RiftShards\LargeRiftShard.cs">
+      <Link>Entities\Items\Concrete\RiftShards\LargeRiftShard.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Items\Concrete\RiftShards\MediumRiftShard.cs">
+      <Link>Entities\Items\Concrete\RiftShards\MediumRiftShard.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Items\Concrete\RiftShards\RiftShard.cs">
+      <Link>Entities\Items\Concrete\RiftShards\RiftShard.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Items\Concrete\RiftShards\RiftShardStates.cs">
+      <Link>Entities\Items\Concrete\RiftShards\RiftShardStates.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Items\Concrete\RiftShards\SmallRiftShard.cs">
+      <Link>Entities\Items\Concrete\RiftShards\SmallRiftShard.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Items\IItem.cs">
+      <Link>Entities\Items\IItem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Items\Item.cs">
+      <Link>Entities\Items\Item.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Items\ItemFactory.cs">
+      <Link>Entities\Items\ItemFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Items\ItemStates.cs">
+      <Link>Entities\Items\ItemStates.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Items\ItemType.cs">
+      <Link>Entities\Items\ItemType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Monsters\Concrete\Crawler.cs">
+      <Link>Entities\Monsters\Concrete\Crawler.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Monsters\Concrete\Faller.cs">
+      <Link>Entities\Monsters\Concrete\Faller.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Monsters\Concrete\Floater.cs">
+      <Link>Entities\Monsters\Concrete\Floater.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Monsters\Concrete\Flyer.cs">
+      <Link>Entities\Monsters\Concrete\Flyer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Monsters\Concrete\Idler.cs">
+      <Link>Entities\Monsters\Concrete\Idler.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Monsters\Concrete\Jumper.cs">
+      <Link>Entities\Monsters\Concrete\Jumper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Monsters\Concrete\Shooter.cs">
+      <Link>Entities\Monsters\Concrete\Shooter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Monsters\Concrete\Stalker.cs">
+      <Link>Entities\Monsters\Concrete\Stalker.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Monsters\Concrete\Walker.cs">
+      <Link>Entities\Monsters\Concrete\Walker.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Monsters\IMonster.cs">
+      <Link>Entities\Monsters\IMonster.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Monsters\Monster.cs">
+      <Link>Entities\Monsters\Monster.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Monsters\MonsterFactory.cs">
+      <Link>Entities\Monsters\MonsterFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Monsters\MonsterStates.cs">
+      <Link>Entities\Monsters\MonsterStates.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\Concrete\ActivatedPlatform.cs">
+      <Link>Entities\Platforms\Concrete\ActivatedPlatform.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\Concrete\Activated\Crumbling.cs">
+      <Link>Entities\Platforms\Concrete\Activated\Crumbling.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\Concrete\Activated\Exploding.cs">
+      <Link>Entities\Platforms\Concrete\Activated\Exploding.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\Concrete\Activated\Gate.cs">
+      <Link>Entities\Platforms\Concrete\Activated\Gate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\Concrete\Activated\Icy.cs">
+      <Link>Entities\Platforms\Concrete\Activated\Icy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\Concrete\Activated\Key.cs">
+      <Link>Entities\Platforms\Concrete\Activated\Key.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\Concrete\Activated\Spikey.cs">
+      <Link>Entities\Platforms\Concrete\Activated\Spikey.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\Concrete\Activated\Warping.cs">
+      <Link>Entities\Platforms\Concrete\Activated\Warping.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\Concrete\DynamicPlatform.cs">
+      <Link>Entities\Platforms\Concrete\DynamicPlatform.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\Concrete\Dynamic\Crushing.cs">
+      <Link>Entities\Platforms\Concrete\Dynamic\Crushing.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\Concrete\Dynamic\Moving.cs">
+      <Link>Entities\Platforms\Concrete\Dynamic\Moving.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\Concrete\Dynamic\Phasing.cs">
+      <Link>Entities\Platforms\Concrete\Dynamic\Phasing.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\Concrete\IConnectedPlatform.cs">
+      <Link>Entities\Platforms\Concrete\IConnectedPlatform.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\Concrete\IDynamicPlatform.cs">
+      <Link>Entities\Platforms\Concrete\IDynamicPlatform.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\IPlatform.cs">
+      <Link>Entities\Platforms\IPlatform.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\Platform.cs">
+      <Link>Entities\Platforms\Platform.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\PlatformExtensions.cs">
+      <Link>Entities\Platforms\PlatformExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\PlatformFactory.cs">
+      <Link>Entities\Platforms\PlatformFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\PlatformKeys.cs">
+      <Link>Entities\Platforms\PlatformKeys.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\PlatformStates.cs">
+      <Link>Entities\Platforms\PlatformStates.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Platforms\PlatformType.cs">
+      <Link>Entities\Platforms\PlatformType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Player\Components\Barrier.cs">
+      <Link>Entities\Player\Components\Barrier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Player\Components\BarrierStates.cs">
+      <Link>Entities\Player\Components\BarrierStates.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Player\Components\IBarrier.cs">
+      <Link>Entities\Player\Components\IBarrier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Player\Components\IPhaseGem.cs">
+      <Link>Entities\Player\Components\IPhaseGem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Player\Components\PhaseGem.cs">
+      <Link>Entities\Player\Components\PhaseGem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Player\Components\PhaseGemStates.cs">
+      <Link>Entities\Player\Components\PhaseGemStates.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Player\IPlayer.cs">
+      <Link>Entities\Player\IPlayer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Player\Player.cs">
+      <Link>Entities\Player\Player.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Player\PlayerColourMask.cs">
+      <Link>Entities\Player\PlayerColourMask.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Player\PlayerConstants.cs">
+      <Link>Entities\Player\PlayerConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Player\PlayerEvents.cs">
+      <Link>Entities\Player\PlayerEvents.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Player\PlayerFlag.cs">
+      <Link>Entities\Player\PlayerFlag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Player\PlayerStates.cs">
+      <Link>Entities\Player\PlayerStates.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\ActiveProp.cs">
+      <Link>Entities\Props\ActiveProp.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\Concrete\Exit.cs">
+      <Link>Entities\Props\Concrete\Exit.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\Concrete\LavaColumns\HorizontalLavaColumn.cs">
+      <Link>Entities\Props\Concrete\LavaColumns\HorizontalLavaColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\Concrete\LavaColumns\LavaColumn.cs">
+      <Link>Entities\Props\Concrete\LavaColumns\LavaColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\Concrete\LavaColumns\VerticalLavaColumn.cs">
+      <Link>Entities\Props\Concrete\LavaColumns\VerticalLavaColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\Concrete\Light.cs">
+      <Link>Entities\Props\Concrete\Light.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\Concrete\PurchasableItem.cs">
+      <Link>Entities\Props\Concrete\PurchasableItem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\Concrete\RiftSheet.cs">
+      <Link>Entities\Props\Concrete\RiftSheet.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\Concrete\ShopEntrance.cs">
+      <Link>Entities\Props\Concrete\ShopEntrance.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\Concrete\SpikeTrap.cs">
+      <Link>Entities\Props\Concrete\SpikeTrap.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\Concrete\TreasureChest.cs">
+      <Link>Entities\Props\Concrete\TreasureChest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\Concrete\VoidPatch.cs">
+      <Link>Entities\Props\Concrete\VoidPatch.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\Concrete\Waterfall.cs">
+      <Link>Entities\Props\Concrete\Waterfall.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\ExclamationBubble.cs">
+      <Link>Entities\Props\ExclamationBubble.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\IActiveProp.cs">
+      <Link>Entities\Props\IActiveProp.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\IExclamationBubble.cs">
+      <Link>Entities\Props\IExclamationBubble.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\IProp.cs">
+      <Link>Entities\Props\IProp.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\Prop.cs">
+      <Link>Entities\Props\Prop.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\PropFactory.cs">
+      <Link>Entities\Props\PropFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Props\PropStates.cs">
+      <Link>Entities\Props\PropStates.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\ActiveRelic.cs">
+      <Link>Entities\Relics\Concrete\ActiveRelic.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Active\Dash.cs">
+      <Link>Entities\Relics\Concrete\Active\Dash.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Active\Phase.cs">
+      <Link>Entities\Relics\Concrete\Active\Phase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Active\Rumble.cs">
+      <Link>Entities\Relics\Concrete\Active\Rumble.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Active\Vortex.cs">
+      <Link>Entities\Relics\Concrete\Active\Vortex.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Active\Warp.cs">
+      <Link>Entities\Relics\Concrete\Active\Warp.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\CosmeticRelic.cs">
+      <Link>Entities\Relics\Concrete\CosmeticRelic.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Cosmetic\FireTrail.cs">
+      <Link>Entities\Relics\Concrete\Cosmetic\FireTrail.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Cosmetic\MonsterCostume.cs">
+      <Link>Entities\Relics\Concrete\Cosmetic\MonsterCostume.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Cosmetic\RainbowTrail.cs">
+      <Link>Entities\Relics\Concrete\Cosmetic\RainbowTrail.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Cosmetic\RoyalCostume.cs">
+      <Link>Entities\Relics\Concrete\Cosmetic\RoyalCostume.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Cosmetic\ShadowTrail.cs">
+      <Link>Entities\Relics\Concrete\Cosmetic\ShadowTrail.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Cosmetic\SparkleTrail.cs">
+      <Link>Entities\Relics\Concrete\Cosmetic\SparkleTrail.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Cosmetic\VagrantCostume.cs">
+      <Link>Entities\Relics\Concrete\Cosmetic\VagrantCostume.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Passive\Agility.cs">
+      <Link>Entities\Relics\Concrete\Passive\Agility.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Passive\Conduit.cs">
+      <Link>Entities\Relics\Concrete\Passive\Conduit.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Passive\Crusher.cs">
+      <Link>Entities\Relics\Concrete\Passive\Crusher.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Passive\Drain.cs">
+      <Link>Entities\Relics\Concrete\Passive\Drain.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Passive\HeartSeeker.cs">
+      <Link>Entities\Relics\Concrete\Passive\HeartSeeker.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Passive\Magnet.cs">
+      <Link>Entities\Relics\Concrete\Passive\Magnet.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Passive\Parachute.cs">
+      <Link>Entities\Relics\Concrete\Passive\Parachute.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Passive\Shield.cs">
+      <Link>Entities\Relics\Concrete\Passive\Shield.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Passive\Spelunker.cs">
+      <Link>Entities\Relics\Concrete\Passive\Spelunker.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Passive\TreasureSeeker.cs">
+      <Link>Entities\Relics\Concrete\Passive\TreasureSeeker.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Passive\Vampire.cs">
+      <Link>Entities\Relics\Concrete\Passive\Vampire.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Passive\Vitality.cs">
+      <Link>Entities\Relics\Concrete\Passive\Vitality.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\Passive\Wallet.cs">
+      <Link>Entities\Relics\Concrete\Passive\Wallet.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Concrete\StompRelic.cs">
+      <Link>Entities\Relics\Concrete\StompRelic.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\IRelic.cs">
+      <Link>Entities\Relics\IRelic.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\IRelicCollection.cs">
+      <Link>Entities\Relics\IRelicCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\Relic.cs">
+      <Link>Entities\Relics\Relic.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\RelicActivationType.cs">
+      <Link>Entities\Relics\RelicActivationType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\RelicCollection.cs">
+      <Link>Entities\Relics\RelicCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\RelicFactory.cs">
+      <Link>Entities\Relics\RelicFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\RelicKeys.cs">
+      <Link>Entities\Relics\RelicKeys.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\RelicsActivatedEvent.cs">
+      <Link>Entities\Relics\RelicsActivatedEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Relics\RelicType.cs">
+      <Link>Entities\Relics\RelicType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Triggers\Concrete\BeginGame.cs">
+      <Link>Entities\Triggers\Concrete\BeginGame.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Triggers\Concrete\InvisibleWall.cs">
+      <Link>Entities\Triggers\Concrete\InvisibleWall.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Entities\Triggers\TriggerFactory.cs">
+      <Link>Entities\Triggers\TriggerFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\EntityTags.cs">
+      <Link>EntityTags.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\GameData.cs">
+      <Link>GameData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\GameManagerFlags.cs">
+      <Link>GameManagerFlags.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\IAbyssGameManager.cs">
+      <Link>IAbyssGameManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Maps\AbyssMap.cs">
+      <Link>Maps\AbyssMap.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Maps\IAbyssMap.cs">
+      <Link>Maps\IAbyssMap.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Maps\IZoneData.cs">
+      <Link>Maps\IZoneData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Maps\MapChunkData.cs">
+      <Link>Maps\MapChunkData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Maps\MapData.cs">
+      <Link>Maps\MapData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Maps\MapFactory.cs">
+      <Link>Maps\MapFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Maps\ZoneData.cs">
+      <Link>Maps\ZoneData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Monde.cs">
+      <Link>Monde.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Aberth\AberthPhase.cs">
+      <Link>Phases\Concrete\Aberth\AberthPhase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Aberth\Abundance.cs">
+      <Link>Phases\Concrete\Aberth\Abundance.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Aberth\Calm.cs">
+      <Link>Phases\Concrete\Aberth\Calm.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Aberth\Invulnerable.cs">
+      <Link>Phases\Concrete\Aberth\Invulnerable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Aberth\Overpower.cs">
+      <Link>Phases\Concrete\Aberth\Overpower.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Argus\CursedChests.cs">
+      <Link>Phases\Concrete\Argus\CursedChests.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Argus\CursedShifts.cs">
+      <Link>Phases\Concrete\Argus\CursedShifts.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Argus\Darkness.cs">
+      <Link>Phases\Concrete\Argus\Darkness.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Argus\LimboWalking.cs">
+      <Link>Phases\Concrete\Argus\LimboWalking.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Argus\ShortSighted.cs">
+      <Link>Phases\Concrete\Argus\ShortSighted.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Dionin\EmptyPockets.cs">
+      <Link>Phases\Concrete\Dionin\EmptyPockets.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Dionin\Haywire.cs">
+      <Link>Phases\Concrete\Dionin\Haywire.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Dionin\Inversion.cs">
+      <Link>Phases\Concrete\Dionin\Inversion.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Dionin\LeadBones.cs">
+      <Link>Phases\Concrete\Dionin\LeadBones.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Dionin\Malfunction.cs">
+      <Link>Phases\Concrete\Dionin\Malfunction.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Dionin\Mirror.cs">
+      <Link>Phases\Concrete\Dionin\Mirror.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Phobon\DeadWeight.cs">
+      <Link>Phases\Concrete\Phobon\DeadWeight.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Phobon\LowGravity.cs">
+      <Link>Phases\Concrete\Phobon\LowGravity.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Phobon\RiftVeil.cs">
+      <Link>Phases\Concrete\Phobon\RiftVeil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Phobon\Unstable.cs">
+      <Link>Phases\Concrete\Phobon\Unstable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Phobon\VoidZone.cs">
+      <Link>Phases\Concrete\Phobon\VoidZone.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Phobon\Vortex.cs">
+      <Link>Phases\Concrete\Phobon\Vortex.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Valus\LavaFissure.cs">
+      <Link>Phases\Concrete\Valus\LavaFissure.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Valus\LavaTorrent.cs">
+      <Link>Phases\Concrete\Valus\LavaTorrent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Valus\Marooned.cs">
+      <Link>Phases\Concrete\Valus\Marooned.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Valus\Swiftness.cs">
+      <Link>Phases\Concrete\Valus\Swiftness.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Concrete\Valus\Volatile.cs">
+      <Link>Phases\Concrete\Valus\Volatile.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\IPhase.cs">
+      <Link>Phases\IPhase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\IPhaseFactory.cs">
+      <Link>Phases\IPhaseFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\Phase.cs">
+      <Link>Phases\Phase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\PhaseBase.cs">
+      <Link>Phases\PhaseBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\PhaseChangedEvent.cs">
+      <Link>Phases\PhaseChangedEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\PhaseConstants.cs">
+      <Link>Phases\PhaseConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\PhaseFactory.cs">
+      <Link>Phases\PhaseFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Phases\PhaseManager.cs">
+      <Link>Phases\PhaseManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\GameOver\GameOverScene.cs">
+      <Link>Scenes\GameOver\GameOverScene.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\GameOver\Layers\GameOverInterfaceLayer.cs">
+      <Link>Scenes\GameOver\Layers\GameOverInterfaceLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Menu\Layers\Interface\LogoElement.cs">
+      <Link>Scenes\Menu\Layers\Interface\LogoElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Menu\Layers\MenuBackgroundLayer.cs">
+      <Link>Scenes\Menu\Layers\MenuBackgroundLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Menu\Layers\MenuInterfaceLayer.cs">
+      <Link>Scenes\Menu\Layers\MenuInterfaceLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Menu\MenuScene.cs">
+      <Link>Scenes\Menu\MenuScene.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Shop\Layers\ShopBackgroundLayer.cs">
+      <Link>Scenes\Shop\Layers\ShopBackgroundLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Shop\Layers\ShopInterfaceLayer.cs">
+      <Link>Scenes\Shop\Layers\ShopInterfaceLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Shop\ShopScene.cs">
+      <Link>Scenes\Shop\ShopScene.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Zone\Layers\Interface\DimensionIndicator.cs">
+      <Link>Scenes\Zone\Layers\Interface\DimensionIndicator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Zone\Layers\Interface\GameInterface.cs">
+      <Link>Scenes\Zone\Layers\Interface\GameInterface.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Zone\Layers\Interface\HeartGlyph.cs">
+      <Link>Scenes\Zone\Layers\Interface\HeartGlyph.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Zone\Layers\Interface\PhaseNotification.cs">
+      <Link>Scenes\Zone\Layers\Interface\PhaseNotification.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Zone\Layers\Interface\RiftGlyph.cs">
+      <Link>Scenes\Zone\Layers\Interface\RiftGlyph.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Zone\Layers\ZoneBackgroundLayer.cs">
+      <Link>Scenes\Zone\Layers\ZoneBackgroundLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Zone\Layers\ZoneGameplayLayer.cs">
+      <Link>Scenes\Zone\Layers\ZoneGameplayLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Zone\Layers\ZoneInterfaceLayer.cs">
+      <Link>Scenes\Zone\Layers\ZoneInterfaceLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Zone\Layers\ZonePhysicsDebugLayer.cs">
+      <Link>Scenes\Zone\Layers\ZonePhysicsDebugLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scenes\Zone\ZoneScene.cs">
+      <Link>Scenes\Zone\ZoneScene.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scoring\IPhaseScore.cs">
+      <Link>Scoring\IPhaseScore.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scoring\IStatisticManager.cs">
+      <Link>Scoring\IStatisticManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scoring\PhaseRank.cs">
+      <Link>Scoring\PhaseRank.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scoring\PhaseScore.cs">
+      <Link>Scoring\PhaseScore.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Scoring\StatisticManager.cs">
+      <Link>Scoring\StatisticManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Universe\Dimension.cs">
+      <Link>Universe\Dimension.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Universe\GameMode.cs">
+      <Link>Universe\GameMode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Universe\Plane.cs">
+      <Link>Universe\Plane.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Universe\UniverseConstants.cs">
+      <Link>Universe\UniverseConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Abyss.World\Universe\ZoneType.cs">
+      <Link>Universe\ZoneType.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Occasus.Core.Windows\Occasus.Core.Windows.csproj">
+      <Project>{a22b8d42-5e11-470d-9f1a-6af791ff4be7}</Project>
+      <Name>Occasus.Core.Windows</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\Props\Concrete\Shrines\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

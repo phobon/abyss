@@ -59,7 +59,7 @@ namespace Abyss.World.Phases.Concrete.Phobon
             rightSheet.Begin();
             layer.AddEntity(leftSheet);
             layer.AddEntity(rightSheet);
-            layer.UpdateEntityCache(GameManager.GameViewPort);
+            layer.UpdateEntityCache(Monde.GameManager.ViewPort);
 
             yield return null;
 

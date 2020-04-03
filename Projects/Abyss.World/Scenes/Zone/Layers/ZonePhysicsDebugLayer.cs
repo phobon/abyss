@@ -38,72 +38,12 @@ namespace Abyss.World.Scenes.Zone.Layers
             base.Draw(gameTime, spriteBatch);
 
             // Draw debug for Map.
-            var map = this.Parent.TagCache["Map"].FirstOrDefault() as IMap;
+            var map = this.Parent.TagCache["Map"].FirstOrDefault() as IAbyssMap;
             if (map != null)
             {
-                foreach (var b in map.ViewPortTileBoundingBoxes(GameManager.GameViewPort))
+                foreach (var b in map.ViewPortTileBoundingBoxes(Monde.GameManager.ViewPort))
                 {
                     spriteBatch.DrawBorder(b, Color.Red);
-                }
-            }
-
-            // Draw debug for Player.
-            spriteBatch.DrawBorder(GameManager.Player.Collider.QualifiedBoundingBox, Color.Green);
-
-            // Draw debug for Monsters.
-            if (this.Parent.TagCache.ContainsKey("Monster"))
-            {
-                foreach (var e in this.Parent.TagCache["Monster"])
-                {
-                    if (e.Flags[EngineFlag.Active])
-                    {
-                        spriteBatch.DrawBorder(e.Collider.QualifiedBoundingBox, Color.Green);
-                    }
-                }
-            }
-            
-            // Draw debug for Items.
-            if (this.Parent.TagCache.ContainsKey("Item"))
-            {
-                foreach (var e in this.Parent.TagCache["Item"])
-                {
-                    if (e.Flags[EngineFlag.Active] && e.Collider != null)
-                    {
-                        spriteBatch.DrawBorder(e.Collider.QualifiedBoundingBox, Color.Yellow);
-                    }
-                }
-            }
-
-            // Draw debug for Props.
-            foreach (var e in this.Parent.TagCache["Prop"])
-            {
-                if (e.Flags[EngineFlag.Active])
-                {
-                    spriteBatch.DrawBorder(e.Collider.QualifiedBoundingBox, Color.Blue);
-                }
-            }
-
-            // Draw debug for Triggers.
-            if (this.Parent.TagCache.ContainsKey("Trigger"))
-            {
-                foreach (var e in this.Parent.TagCache["Trigger"])
-                {
-                    if (e.Flags[EngineFlag.Active])
-                    {
-                        spriteBatch.DrawBorder(e.Collider.QualifiedBoundingBox, Color.Plum);
-                    }
-                }
-            }
-
-            // Draw debug for Dimensional tiles.
-            if (this.Parent.TagCache.ContainsKey(EntityTags.InterdimensionalPlatform))
-            {
-                foreach (var e in this.Parent.TagCache[EntityTags.InterdimensionalPlatform])
-                {
-                    if (e.Flags[EngineFlag.Active])
-                    {
-                        spriteBatch.DrawBorder(e.Collider.QualifiedBoundingBox, Color.Pink);
-                    }
                 }
             }
         }

@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Occasus.Core.Assets;
 using Occasus.Core.Components.Graphics;
 using Occasus.Core.Entities;
+using Occasus.Core.Input;
 
 namespace Occasus.Core.Drawing.Images
 {
@@ -50,6 +51,11 @@ namespace Occasus.Core.Drawing.Images
         }
 
         /// <summary>
+        /// Gets the layers of this sprite.
+        /// </summary>
+        public IDictionary<string, IImageLayer> Layers { get; private set; }
+
+        /// <summary>
         /// Draws the Engine Component.
         /// </summary>
         /// <param name="gameTime">The game time object.</param>
@@ -71,12 +77,8 @@ namespace Occasus.Core.Drawing.Images
             }
         }
 
-        /// <summary>
-        /// Gets the layers of this sprite.
-        /// </summary>
-        public IDictionary<string, IImageLayer> Layers
+        public override void Update(GameTime gameTime, IInputState inputState)
         {
-            get; private set;
         }
     }
 }

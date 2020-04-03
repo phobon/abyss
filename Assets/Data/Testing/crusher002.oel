@@ -1,0 +1,105 @@
+<level width="160" height="272">
+  <Layout exportMode="Rectangles">
+    <rect x="48" y="48" w="16" h="16" />
+    <rect x="48" y="208" w="16" h="16" />
+    <rect x="64" y="128" w="32" h="16" />
+    <rect x="96" y="48" w="16" h="16" />
+    <rect x="96" y="208" w="16" h="16" />
+  </Layout>
+  <Background exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Background>
+  <Foreground exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</Foreground>
+  <UpDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</UpDoodad>
+  <DownDoodad exportMode="Bitstring">0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000</DownDoodad>
+  <Geometry tileset="Zones" exportMode="XMLCoords">
+    <tile x="3" y="3" tx="4" ty="1" />
+    <tile x="3" y="13" tx="5" ty="1" />
+    <tile x="4" y="8" tx="6" ty="2" />
+    <tile x="5" y="8" tx="7" ty="2" />
+    <tile x="6" y="3" tx="6" ty="1" />
+    <tile x="6" y="13" tx="9" ty="1" />
+  </Geometry>
+  <Doodads tileset="Zones" exportMode="XMLCoords" />
+  <Platforms>
+    <Crusher id="0" x="32" y="48" width="16" height="16">
+      <node x="0" y="48" />
+    </Crusher>
+    <Crusher id="1" x="112" y="48" width="16" height="16">
+      <node x="144" y="48" />
+    </Crusher>
+    <Crusher id="4" x="112" y="208" width="16" height="16">
+      <node x="144" y="208" />
+    </Crusher>
+    <Crusher id="5" x="32" y="208" width="16" height="16">
+      <node x="0" y="208" />
+    </Crusher>
+  </Platforms>
+  <Props />
+  <Triggers />
+  <Items />
+  <Hazards />
+  <Monsters />
+</level>

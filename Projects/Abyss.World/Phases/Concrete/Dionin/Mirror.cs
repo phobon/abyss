@@ -27,10 +27,13 @@ namespace Abyss.World.Phases.Concrete.Dionin
         public override void Apply(ILayer layer)
         {
             base.Apply(layer);
+            ShaderManager.SupportedShaders["FlipHorizontal"].Activate();
+        }
 
-            // Apply the HorizontalFlip effect.
-            ShaderManager.CurrentShader = ShaderManager.SupportedShaders["FlipHorizontal"];
-            ShaderManager.CurrentShader.Apply();
+        public override void Remove(ILayer layer)
+        {
+            base.Remove(layer);
+            ShaderManager.SupportedShaders["FlipHorizontal"].Deactivate();
         }
     }
 }

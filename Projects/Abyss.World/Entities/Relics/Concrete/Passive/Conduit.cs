@@ -52,7 +52,7 @@ namespace Abyss.World.Entities.Relics.Concrete.Passive
         private void ItemOnCollected(object sender, EventArgs eventArgs)
         {
             var riftShard = (RiftShard) sender;
-            GameManager.Player.Rift += riftShard.RiftAmount;
+            Monde.GameManager.Player.Rift += riftShard.RiftAmount;
         }
     }
 }

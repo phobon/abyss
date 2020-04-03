@@ -177,23 +177,23 @@ namespace Abyss.World.Entities.Relics
 
             //switch (relic.RelicActivationType)
             //{
-                //case RelicActivationType.Stomp:
-                //    this.stompRelics.Add(relic);
-                //    break;
-                //case RelicActivationType.Passive:
-                //    this.passiveRelics.Add(relic);
-                //    break;
-                //case RelicActivationType.DimensionShift:
-                //    this.dimensionShiftRelics.Add(relic);
-                //    break;
-                //case RelicActivationType.Instant:
-                //    // Relic is activated instantly.
-                //    this.OnRelicsActivated(new RelicsActivatedEventArgs(relic));
-                //    relic.Deactivated += this.RelicOnDeactivated;
-                //    break;
+            //case RelicActivationType.Stomp:
+            //    this.stompRelics.Add(relic);
+            //    break;
+            //case RelicActivationType.Passive:
+            //    this.passiveRelics.Add(relic);
+            //    break;
+            //case RelicActivationType.DimensionShift:
+            //    this.dimensionShiftRelics.Add(relic);
+            //    break;
+            //case RelicActivationType.Instant:
+            //    // Relic is activated instantly.
+            //    this.OnRelicsActivated(new RelicsActivatedEventArgs(relic));
+            //    relic.Deactivated += this.RelicOnDeactivated;
+            //    break;
             //}
 
-            GameManager.StatisticManager.RelicsCollected.Add(relic.Name);
+            Monde.GameManager.StatisticManager.RelicsCollected.Add(relic.Name);
         }
 
         public void RemoveRelic(IRelic relic)
@@ -308,7 +308,7 @@ namespace Abyss.World.Entities.Relics
             //this.KeyRelics = RelicKeys.KeyRelics;
             //this.PersistentRelics = RelicKeys.PersistentRelics;
 
-            GameManager.Player.PlatformStomped += PlayerOnPlatformStomped;
+            Monde.GameManager.Player.PlatformStomped += PlayerOnPlatformStomped;
         }
 
         /// <summary>
